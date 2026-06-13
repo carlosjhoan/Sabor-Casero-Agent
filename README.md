@@ -108,6 +108,7 @@ uv run python src/main.py --mode gradio
 
 Clean Architecture with three strict layers. Dependencies point inward: infrastructure → application → domain.
 
+```mermaid
 graph TD
     %% Estilos de las capas
     classDef UI fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff;
@@ -176,6 +177,7 @@ graph TD
     F -.->|Orchestrates| Skills
     Agent_Layer ==>|Uses Core Business Logic| Core_Layer
     Core_Layer ==>|Depends on| Infra_Layer
+```
 
 ### Observability
 
