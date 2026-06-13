@@ -351,7 +351,7 @@ class TestStageIsolation:
     async def test_input_guard_fast_rejection(self, assistant):
         """CRITICAL: fast guard rejection should return guard_rejected dict."""
         with patch(
-            "src.core.assistant.check_message_quality_fast",
+            "src.engine.pipeline.check_message_quality_fast",
             return_value=GuardResult(
                 is_valid=False,
                 reason="mensaje_vacio",
@@ -368,7 +368,7 @@ class TestStageIsolation:
     async def test_input_guard_llm_rejection(self, assistant):
         """CRITICAL: LLM guard rejection should return guard_rejected dict."""
         with patch(
-            "src.core.assistant.llm_guard_check",
+            "src.engine.pipeline.llm_guard_check",
             return_value=GuardResult(
                 is_valid=False,
                 reason="fuera_de_contexto",
@@ -466,7 +466,7 @@ class TestInterfaceContract:
     async def test_guard_rejected_response_keys(self, assistant):
         """Guard-rejected response has guard_rejected and reject_reason."""
         with patch(
-            "src.core.assistant.check_message_quality_fast",
+            "src.engine.pipeline.check_message_quality_fast",
             return_value=GuardResult(
                 is_valid=False,
                 reason="mensaje_vacio",
