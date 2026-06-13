@@ -1,5 +1,7 @@
 
 # ── ChromaDB ──────────────────────────────────────────────────
+data/vector_db/
+chroma_db_storage/
 # ── Datos generados por el asistente ──────────────────────────
 # ── Documentos generados (PDFs de sesion) ──────────────────────
 # ── Entorno virtual ────────────────────────────────────────────
@@ -35,7 +37,6 @@
 STATE_OF_ART.md
 __pycache__/
 build/
-chroma_db_storage/
 configs/*.yaml
 configs/*.yml
 conversation_states.json
