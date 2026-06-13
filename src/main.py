@@ -5,7 +5,6 @@ Main entry point for the assistant
 import sys
 import argparse
 from pathlib import Path
-import os
 
 # Add the parent directory to sys.path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -188,31 +187,14 @@ def main():
     
     args = parser.parse_args()
 
-    from src.utils.config import load_config
+    from src.config.environment import settings
 
-
-    if not args.config:
-        default_locations = [
-            "configs/development.yaml",
-            "config.yaml",
-            "config.yml"
-        ]
-        
-        for location in default_locations:
-            if os.path.exists(location):
-                args.config = location
-                print(f"📁 Using config file: {location}")
-                break
-    
-    config = load_config(args.config)
-
-    # Check API key
-    if not config.get("deepseek_api_key"):
+    if not settings.deepseek_api_key:
         print("❌ ERROR: DeepSeek API key not found!")
-        print("Set DEEPSEEK_API_KEY environment variable or add to config file")
-        print("Example: export DEEPSEEK_API_KEY='sk-...'")
+        print("Set DEEPSEEK_API_KEY in .env file")
+        print("Example: DEEPSEEK_API_KEY=sk-...")
         sys.exit(1)
-    
+
     # Run in selected mode
     if args.mode == "gradio":
         run_gradio(reload=args.reload)

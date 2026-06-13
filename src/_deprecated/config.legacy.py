@@ -1,9 +1,9 @@
 """
-DEPRECATED — use src/config/environment.py instead.
+DEPRECATED — use src/config/environment.py (pydantic-settings) instead.
 
-This legacy YAML loader is kept for reference. All configuration is now
-handled by ``Settings`` from ``src.config.environment`` (pydantic-settings).
-The canonical copy lives in ``src/_deprecated/config.legacy.py``.
+This module is kept for reference only. All configuration is now
+handled by ``Settings`` from ``src.config.environment``, which reads
+from ``.env`` via ``pydantic-settings``.
 """
 import os
 from typing import Dict, Any
