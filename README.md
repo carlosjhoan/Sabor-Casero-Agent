@@ -10,12 +10,12 @@ Intent classification, RAG retrieval, order orchestration, and response generati
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](#)
 [![pytest](https://img.shields.io/badge/tests-pytest_9.0-%230A9EDC?logo=pytest)](#)
 [![LiteLLM](https://img.shields.io/badge/llm-litellm-%23FF6F00)](#)
+[![Langfuse](https://img.shields.io/badge/traces-langfuse-%23F97316)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](#)
 
 <!--
   TODO: Add a screenshot of the Gradio interface here.
   Recommended: 800px wide, show a conversation with menu query + order flow.
-  Example:
   <img src="docs/demo.png" width="700" alt="Sabor Casero AI chat interface"/>
 -->
 
@@ -38,25 +38,27 @@ Sabor Casero flips that. **Business semantics live in the data** — the menu, t
 ```
 message
   │
-  ├─ Framework stages (linear, always run)
+  ├─ Framework stages (linear, always run)            ← @observe("process_message")
   │   ├─ Input Guard ── quality checks (no LLM)
   │   ├─ Session Prep ── load / create session
   │   └─ LLM Guard ──── context-aware validation
   │
-  ├─ Planner loop (agentic, run until done)
+  ├─ Planner loop (agentic, run until done)           ← @observe() per skill
   │   │
   │   │  Each iteration:
   │   │    think → select skill → execute → (repeat or exit)
   │   │
-  │   ├─ classify ───── hybrid: rules + LLM intent detection
+  │   ├─ classify ───── @observe("classify")        hybrid: rules + LLM
   │   ├─ menu-query ─── OWL ontology routing
-  │   ├─ rag-retrieve ─ ChromaDB + BM25 multi-signal RRF
-  │   ├─ order-flow ─── add / update / confirm / cancel items
-  │   └─ response-build ─ brand voice + order state + RAG results
+  │   ├─ rag-retrieve ─ ChromaDB + BM25 multi-signal
+  │   ├─ order-flow ─── add / update / confirm / cancel
+  │   └─ response-build ─ @observe("build_hybrid")   brand voice + state
   │
   ├─ Memory Store ───── entity extraction → semantic memory
   └─ Summarize ──────── fire-and-forget background task
 ```
+
+Every LLM call is traced. Every stage is timed. Evaluation scores are pushed back to the same trace for full auditability.
 
 ---
 
@@ -64,6 +66,7 @@ message
 
 | Capability | Detail |
 |---|---|
+| **Full observability** | Every interaction traced via Langfuse `@observe()` — prompt versions, latency, token count, and evaluation scores in one place. Prompt Management with file-based fallback. |
 | **Multi-provider routing** | Each stage or skill uses a different model via `.env` — classifier on DeepSeek, response on Claude, summarizer on GPT-4o-mini |
 | **Hybrid classification** | Rule-based fast-path + LLM fallback for intent and topic detection |
 | **RAG with OWL semantics** | ChromaDB vector retrieval fused with BM25 keyword scoring and ontology-based menu routing |
@@ -71,7 +74,7 @@ message
 | **Structured grounding** | Field states (`asked`, `answered`, `confirmed`), cross-turn planner history, entity memory injection |
 | **Memory hub** | Three memory types: semantic (ChromaDB), episodic (session), procedural (preferences) |
 | **Checkpointing** | Per-skill save/restore with crash resume — survive mid-turn failures |
-| **Evaluation** | Fire-and-forget LLM-as-judge scoring after each interaction |
+| **Evaluation** | Fire-and-forget LLM-as-judge scoring, scores pushed to Langfuse trace |
 | **Two interfaces** | Gradio chat UI (port 7860) + CLI mode |
 
 ---
@@ -90,13 +93,14 @@ uv sync
 cp .env.example .env
 # Edit .env — set at least DEEPSEEK_API_KEY
 
-# Run the interface  
+# Run the interface
 uv run python src/main.py --mode gradio
 # → http://localhost:7860
 ```
 
 > [!NOTE]
 > The first run triggers menu ingestion into the ChromaDB vector store. Subsequent runs load from cache.
+> To enable Langfuse tracing, set `LANGFUSE_PUBLIC_KEY` and `LANGFUSE_SECRET_KEY` in `.env`.
 
 ---
 
@@ -130,9 +134,19 @@ Clean Architecture with three strict layers. Dependencies point inward: infrastr
 │   LiteLLM Client ──── 6 providers                       │
 │   ChromaDB ─────────── semantic + BM25 retrieval        │
 │   JSON Repositories ── orders, sessions, logs           │
-│   Langfuse ─────────── full LLM trace via @observe()    │
+│   Langfuse ─────────── @observe() tracing + prompts     │
 └─────────────────────────────────────────────────────────┘
 ```
+
+### Observability
+
+Langfuse is not an add-on — it is woven into the system:
+
+- **`@observe()` decorator** on `process_message`, every skill entry point, and every LLM call via `LiteLLMClient.chat_completion()`
+- **Prompt Management** — `PromptManager` fetches prompts from Langfuse first, falls back to local files. No hardcoded prompts in code.
+- **Evaluation scores** — per-criterion scores are pushed to the originating Langfuse trace after each interaction
+- **Session propagation** — `session_id` and `user_id` propagate to every span for per-customer filtering
+- **LiteLLM compatibility** — includes monkey-patches for Langfuse 4.x compatibility with LiteLLM's callback system
 
 ### Project structure
 
@@ -154,9 +168,12 @@ src/
 │   ├── conversation_log/           # Interaction persistence
 │   ├── evaluation/                 # LLM-as-judge
 │   └── knowledge/                  # Registry
-├── infrastructure/                 # LiteLLM client, prompt manager
+├── infrastructure/
+│   ├── litellm_client.py           # Universal LLM client (6 providers)
+│   ├── prompt_manager.py           # Langfuse Prompt Management + file fallback
+│   └── providers/                  # Provider-specific (legacy)
 ├── ui/gradio_app.py                # Gradio 6.x chat
-├── prompts/                        # All prompts (versioned)
+├── prompts/                        # All prompt templates (versioned)
 └── tests/                          # pytest (70% coverage floor)
 ```
 
@@ -177,6 +194,8 @@ USE_LLM_PLANNER=false
 USE_OWL=true
 EVALUATION_ENABLED=true
 ```
+
+Prompts live in Langfuse Prompt Management. If Langfuse is unreachable, the system falls back to `prompts/` — zero downtime.
 
 See `.env.example` for the complete reference with all supported provider formats and optional services (Langfuse, Pushover, SendGrid, Resend).
 
