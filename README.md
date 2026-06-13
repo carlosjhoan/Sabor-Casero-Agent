@@ -2,9 +2,9 @@
 
 # Sabor Casero AI
 
-**Multi-stage LLM pipeline for restaurant order management**
+**Skill-based LLM agent for restaurant order management**
 
-Intent classification, RAG retrieval, order orchestration, and response generation — with hybrid provider routing across six LLM backends.
+Intent classification, RAG retrieval, order orchestration, and response generation — orchestrated by a Planner loop with hybrid provider routing across six LLM backends.
 
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue?logo=python)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](#)
@@ -19,7 +19,7 @@ Intent classification, RAG retrieval, order orchestration, and response generati
   <img src="docs/demo.png" width="700" alt="Sabor Casero AI chat interface"/>
 -->
 
-One API key. One pipeline. Six providers. A restaurant assistant that takes orders, answers menu questions, and remembers every customer.
+One API key. Six providers. A restaurant assistant that takes orders, answers menu questions, and remembers every customer.
 
 </div>
 
@@ -33,16 +33,21 @@ Sabor Casero flips that. **Business semantics live in the data** — the menu, t
 
 ---
 
-## Pipeline
+## Execution model
 
 ```
 message
   │
-  ├─ Input Guard ────── quality checks (no LLM)
-  ├─ Session Prep ───── load / create session  
-  ├─ LLM Guard ──────── context-aware validation
+  ├─ Framework stages (linear, always run)
+  │   ├─ Input Guard ── quality checks (no LLM)
+  │   ├─ Session Prep ── load / create session
+  │   └─ LLM Guard ──── context-aware validation
   │
-  ├─ Skill Orchestration (loaded per request)
+  ├─ Planner loop (agentic, run until done)
+  │   │
+  │   │  Each iteration:
+  │   │    think → select skill → execute → (repeat or exit)
+  │   │
   │   ├─ classify ───── hybrid: rules + LLM intent detection
   │   ├─ menu-query ─── OWL ontology routing
   │   ├─ rag-retrieve ─ ChromaDB + BM25 multi-signal RRF
@@ -59,7 +64,7 @@ message
 
 | Capability | Detail |
 |---|---|
-| **Multi-provider routing** | Each pipeline stage uses a different provider/model via `.env` — classifier on DeepSeek, response on Claude, summarizer on GPT-4o-mini |
+| **Multi-provider routing** | Each stage or skill uses a different model via `.env` — classifier on DeepSeek, response on Claude, summarizer on GPT-4o-mini |
 | **Hybrid classification** | Rule-based fast-path + LLM fallback for intent and topic detection |
 | **RAG with OWL semantics** | ChromaDB vector retrieval fused with BM25 keyword scoring and ontology-based menu routing |
 | **Order lifecycle** | `add-item` → `update-item` → `confirm` / `cancel` — partial items allowed, field-level state tracking |
@@ -100,24 +105,33 @@ uv run python src/main.py --mode gradio
 Clean Architecture with three strict layers. Dependencies point inward: infrastructure → application → domain.
 
 ```
-┌─────────────────────────────────────────────────────────┐
-│                     Interface (Gradio / CLI)              │
-├─────────────────────────────────────────────────────────┤
-│                    Skill Orchestration                    │
-│   classify → menu-query → rag-retrieve → order-flow →    │
-│                    response-build                         │
-├─────────────────────────────────────────────────────────┤
-│        Domain              │       Application            │
-│   Order, OrderItem,       │   OrderOrchestrator,         │
-│   Session, FieldStates    │   ActionPlanner, FlowTracker │
-│   Menu (OWL ontology)    │   ResponseBuilder, Evaluator │
-├──────────────────────────┴──────────────────────────────┤
-│                  Infrastructure                           │
-│   LiteLLM Client ──── 6 providers                        │
-│   ChromaDB ─────────── semantic + BM25 retrieval         │
-│   JSON Repositories ── orders, sessions, logs            │
+┌────────────────────────────────────────────────────────┐
+│                    Interface (Gradio / CLI)              │
+├────────────────────────────────────────────────────────┤
+│              Framework (linear stages)                   │
+│         Guard → Session Prep → LLM Guard                │
+├────────────────────────────────────────────────────────┤
+│              Planner Loop (agentic)                      │
+│                                                         │
+│    ┌─────────┐    ┌──────────┐    ┌──────────────┐     │
+│    │  Think   │───▶│  Select  │───▶│  Execute Skill│     │
+│    └─────────┘    └──────────┘    └──────┬───────┘     │
+│         ▲                                 │            │
+│         └─────────────────────────────────┘            │
+│    Skills: classify, menu-query, rag-retrieve,         │
+│            order-flow, response-build                   │
+├────────────────────────────────────────────────────────┤
+│        Domain          │       Application              │
+│   Order, OrderItem,    │   OrderOrchestrator,           │
+│   Session, FieldStates │   ActionPlanner, FlowTracker   │
+│   Menu (OWL ontology) │   ResponseBuilder, Evaluator   │
+├────────────────────────┴───────────────────────────────┤
+│                 Infrastructure                           │
+│   LiteLLM Client ──── 6 providers                       │
+│   ChromaDB ─────────── semantic + BM25 retrieval        │
+│   JSON Repositories ── orders, sessions, logs           │
 │   Langfuse ─────────── full LLM trace via @observe()    │
-└──────────────────────────────────────────────────────────┘
+└─────────────────────────────────────────────────────────┘
 ```
 
 ### Project structure
@@ -127,7 +141,7 @@ src/
 ├── main.py                         # Entry point
 ├── config/environment.py           # pydantic-settings (.env → config)
 ├── core/
-│   ├── assistant.py                # Pipeline orchestrator
+│   ├── assistant.py                # Orchestrator entry point
 │   ├── classifier/                 # HybridClassifier (rules + LLM)
 │   ├── order/
 │   │   ├── domain/                 # Order, OrderItem, field states
@@ -150,7 +164,7 @@ src/
 
 ## Configuration
 
-Every pipeline stage maps to a `.env` variable. Mix providers freely:
+Every stage and skill can use a different model. Set them in `.env` in LiteLLM format:
 
 ```ini
 # Stage-specific models (LiteLLM format: "provider/model_name")
