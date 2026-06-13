@@ -108,35 +108,74 @@ uv run python src/main.py --mode gradio
 
 Clean Architecture with three strict layers. Dependencies point inward: infrastructure → application → domain.
 
-```
-┌────────────────────────────────────────────────────────┐
-│                    Interface (Gradio / CLI)              │
-├────────────────────────────────────────────────────────┤
-│              Framework (linear stages)                   │
-│         Guard → Session Prep → LLM Guard                │
-├────────────────────────────────────────────────────────┤
-│              Planner Loop (agentic)                      │
-│                                                         │
-│    ┌─────────┐    ┌──────────┐    ┌──────────────┐     │
-│    │  Think   │───▶│  Select  │───▶│  Execute Skill│     │
-│    └─────────┘    └──────────┘    └──────┬───────┘     │
-│         ▲                                 │            │
-│         └─────────────────────────────────┘            │
-│    Skills: classify, menu-query, rag-retrieve,         │
-│            order-flow, response-build                   │
-├────────────────────────────────────────────────────────┤
-│        Domain          │       Application              │
-│   Order, OrderItem,    │   OrderOrchestrator,           │
-│   Session, FieldStates │   ActionPlanner, FlowTracker   │
-│   Menu (OWL ontology) │   ResponseBuilder, Evaluator   │
-├────────────────────────┴───────────────────────────────┤
-│                 Infrastructure                           │
-│   LiteLLM Client ──── 6 providers                       │
-│   ChromaDB ─────────── semantic + BM25 retrieval        │
-│   JSON Repositories ── orders, sessions, logs           │
-│   Langfuse ─────────── @observe() tracing + prompts     │
-└─────────────────────────────────────────────────────────┘
-```
+graph TD
+    %% Estilos de las capas
+    classDef UI fill:#1f2937,stroke:#3b82f6,stroke-width:2px,color:#fff;
+    classDef Framework fill:#1e1b4b,stroke:#6366f1,stroke-width:2px,color:#fff;
+    classDef Agent fill:#311042,stroke:#a855f7,stroke-width:2px,color:#fff;
+    classDef DomainApp fill:#111827,stroke:#10b981,stroke-width:2px,color:#fff;
+    classDef Infra fill:#1c1917,stroke:#f59e0b,stroke-width:2px,color:#fff;
+    classDef SkillNode fill:#4c1d95,stroke:#c084fc,stroke-width:1px,color:#fff;
+
+    %% --- CAPA INTERFAZ ---
+    subgraph UI_Layer ["💻 Interface Layer"]
+        A[Gradio UI / CLI Application]
+    end
+    class UI_Layer,A UI;
+
+    %% --- CAPA FRAMEWORK ---
+    subgraph FW_Layer ["⚙️ Framework (Linear Stages)"]
+        B[Guard Ingest] --> C[Session Prep] --> D[LLM Guard]
+    end
+    class FW_Layer,B,C,D Framework;
+
+    %% --- CAPA AGENTE (LOOP) ---
+    subgraph Agent_Layer ["🤖 Planner Loop (Agentic)"]
+        E((Think)) --> F[Select Skill] --> G[Execute Skill]
+        G -->|Feedback Loop| E
+        
+        subgraph Skills ["🛠️ Available Skills"]
+            S1[classify]
+            S2[menu-query]
+            S3[rag-retrieve]
+            S4[order-flow]
+            S5[response-build]
+        end
+    end
+    class Agent_Layer,E,F,G Agent;
+    class Skills,S1,S2,S3,S4,S5 SkillNode;
+
+    %% --- CAPA DOMINIO Y APLICACIÓN ---
+    subgraph Core_Layer ["🧱 Domain & Application Core"]
+        subgraph Domain ["📦 Domain Models"]
+            D1[Order / OrderItem]
+            D2[Session / FieldStates]
+            D3[Menu OWL Ontology]
+        end
+        subgraph App ["🚀 Application Services"]
+            A1[OrderOrchestrator]
+            A2[ActionPlanner]
+            A3[FlowTracker]
+            A4[ResponseBuilder / Evaluator]
+        end
+    end
+    class Core_Layer,Domain,App,D1,D2,D3,A1,A2,A3,A4 DomainApp;
+
+    %% --- CAPA INFRAESTRUCTURA ---
+    subgraph Infra_Layer ["🏗️ Infrastructure Layer"]
+        I1[LiteLLM Client <br> Multi-provider router]
+        I2[ChromaDB <br> Hybrid: Semantic + BM25]
+        I3[JSON Repositories <br> Persistence & Logs]
+        I4[Langfuse <br> @observe Tracing & Prompt Mgmt]
+    end
+    class Infra_Layer,I1,I2,I3,I4 Infra;
+
+    %% --- RELACIONES ENTRE CAPAS ---
+    A -->|User Input| B
+    D -->|Sanitized Input| E
+    F -.->|Orchestrates| Skills
+    Agent_Layer ==>|Uses Core Business Logic| Core_Layer
+    Core_Layer ==>|Depends on| Infra_Layer
 
 ### Observability
 
