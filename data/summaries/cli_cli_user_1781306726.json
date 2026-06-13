@@ -1,0 +1,210 @@
+[
+  {
+    "summary_id": "summary_c1459c",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 1,
+    "created_at": "2026-06-12T18:25:46.491172",
+    "summary_text": "  [Turno 1]\n  usuario: hla, me regalas la carta\n  asistente: ¡Aquí tienes el menú completo de **Sabor Casero** para hoy! 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principios (acompañamiento principal)**\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n### 🥗 ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_2d807a",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 1,
+    "created_at": "2026-06-12T18:26:04.052840",
+    "summary_text": "Turno 1: hla, me regalas la carta... | Asistente: ¡Aquí tienes el menú completo de **Sabor Casero** para hoy! 🍽️\n\n---\n\n### 🥣 **Sop...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_02e20e",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 2,
+    "created_at": "2026-06-12T18:26:21.307293",
+    "summary_text": "  [Turno 2]\n  usuario: uno pescado frito\n  asistente: ¡Listo! Ya tengo registrado tu **Bocachico criollo frito** 🐟 por $13.500.\n\nAhora cuéntame, ¿qué principio te gustaría como acompañamiento? Tenemos estas opciones:\n\n1. 🍝 **Macarrón con carne molida**\n2. 🥘 **Guiso de yota con huevo**\n3. 🔄 **Principio m",
+    "previous_summary": "  [Turno 1]\n  usuario: hla, me regalas la carta\n  asistente: ¡Aquí tienes el menú completo de **Sabor Casero** para hoy! 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principios (acompañamiento principal)**\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n### 🥗 ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_8d69fe",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 2,
+    "created_at": "2026-06-12T18:27:04.514809",
+    "summary_text": "Turno 2: uno pescado frito... | Asistente: ¡Listo! Ya tengo registrado tu **Bocachico criollo frito** 🐟 por $13.500.\n\nAhora...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_4f7184",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 3,
+    "created_at": "2026-06-12T18:27:18.862443",
+    "summary_text": "  [Turno 3]\n  usuario: uy con macarrones que me encanta. Porfa sin sopa. Venga pero ese trae mini?\n  asistente: Perfecto, ya te tengo registrado:\n\n✅ **Bocachico criollo frito / sudado** — $13.500\n✅ **Principio: Macarrón con carne molida**\n✅ **Tamaño: Corriente** (no trae mini, pero es una porción bien generosa)\n✅ **Sin sopa** — anotado como lo pediste 🙌\n\nAhora",
+    "previous_summary": "  [Turno 2]\n  usuario: uno pescado frito\n  asistente: ¡Listo! Ya tengo registrado tu **Bocachico criollo frito** 🐟 por $13.500.\n\nAhora cuéntame, ¿qué principio te gustaría como acompañamiento? Tenemos estas opciones:\n\n1. 🍝 **Macarrón con carne molida**\n2. 🥘 **Guiso de yota con huevo**\n3. 🔄 **Principio m",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_391eee",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 3,
+    "created_at": "2026-06-12T18:27:53.712833",
+    "summary_text": "Turno 3: uy con macarrones que me encanta. Porfa sin sopa. Venga pero ese trae mini?... | Asistente: Perfecto, ya te tengo registrado:\n\n✅ **Bocachico criollo frito / sudado** — $13....",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_fc3464",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 4,
+    "created_at": "2026-06-12T18:28:02.089401",
+    "summary_text": "  [Turno 4]\n  usuario: ya dije que sin sopa\n  asistente: Listo, ya quedó registrado: **con todo menos la sopita** ✅🙌\n\nAhora, para terminar de armar tu pedido, necesito algunos datos:\n\n**¿A nombre de quién es el pedido?** (tu nombre) 😊",
+    "previous_summary": "  [Turno 3]\n  usuario: uy con macarrones que me encanta. Porfa sin sopa. Venga pero ese trae mini?\n  asistente: Perfecto, ya te tengo registrado:\n\n✅ **Bocachico criollo frito / sudado** — $13.500\n✅ **Principio: Macarrón con carne molida**\n✅ **Tamaño: Corriente** (no trae mini, pero es una porción bien generosa)\n✅ **Sin sopa** — anotado como lo pediste 🙌\n\nAhora",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_f5ddc0",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 4,
+    "created_at": "2026-06-12T18:28:12.966887",
+    "summary_text": "Turno 4: ya dije que sin sopa... | Asistente: Listo, ya quedó registrado: **con todo menos la sopita** ✅🙌\n\nAhora, para termina...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_38f58a",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 5,
+    "created_at": "2026-06-12T18:28:20.214878",
+    "summary_text": "  [Turno 5]\n  usuario: carlos aguilar\n  asistente: Perfecto, **Carlos Aguilar** ✅ ya quedó registrado.\n\nAhora cuéntame, **¿cómo prefieres recibir tu pedido?** 🚗\n\n1. 🚚 **Delivery** — Te lo llevamos a la casa\n2. 🏪 **Recogida en el local (Pickup)** — Pasas a recogerlo\n\n¿Cuál te queda más cómodo?",
+    "previous_summary": "  [Turno 4]\n  usuario: ya dije que sin sopa\n  asistente: Listo, ya quedó registrado: **con todo menos la sopita** ✅🙌\n\nAhora, para terminar de armar tu pedido, necesito algunos datos:\n\n**¿A nombre de quién es el pedido?** (tu nombre) 😊",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida",
+    "source_turns": [
+      5
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_1e7c1d",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 5,
+    "created_at": "2026-06-12T18:28:34.816617",
+    "summary_text": "Turno 5: carlos aguilar... | Asistente: Perfecto, **Carlos Aguilar** ✅ ya quedó registrado.\n\nAhora cuéntame, **¿cómo pre...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida",
+    "source_turns": [
+      5
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_e61962",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 6,
+    "created_at": "2026-06-12T18:28:42.427067",
+    "summary_text": "  [Turno 6]\n  usuario: delivery, a mi casa\n  asistente: ¡Listo, va a domicilio! 🎉\n\nAhora **Carlitos**, para poder llevarte el almuerzo, **¿cuál es tu dirección?** 📍 Así el domiciliario llega sin problema a la casa. 😊",
+    "previous_summary": "  [Turno 5]\n  usuario: carlos aguilar\n  asistente: Perfecto, **Carlos Aguilar** ✅ ya quedó registrado.\n\nAhora cuéntame, **¿cómo prefieres recibir tu pedido?** 🚗\n\n1. 🚚 **Delivery** — Te lo llevamos a la casa\n2. 🏪 **Recogida en el local (Pickup)** — Pasas a recogerlo\n\n¿Cuál te queda más cómodo?",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida",
+    "source_turns": [
+      6
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_def4ca",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 6,
+    "created_at": "2026-06-12T18:29:25.840667",
+    "summary_text": "Turno 6: delivery, a mi casa... | Asistente: ¡Listo, va a domicilio! 🎉\n\nAhora **Carlitos**, para poder llevarte el almuerzo, ...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida",
+    "source_turns": [
+      6
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_c38c6d",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 7,
+    "created_at": "2026-06-12T18:29:34.317518",
+    "summary_text": "  [Turno 7]\n  usuario: Es en villalcazar Transv 147 #57a-47 eso queda entrando a villalcazar la primera peatonal\n  asistente: ¡Dirección registrada perfectamente! 📍✅\n\nEntrando a Villalcazar por la primera peatonal, Transv 147 #57a-47. ¡Bien ubicado!\n\nYa casi terminamos, Carlitos. Solo me falta un último detalle:\n\n**¿Cómo vas a pagar?** 💰\n- **Efectivo**\n- **Nequi**\n- **Trans",
+    "previous_summary": "  [Turno 6]\n  usuario: delivery, a mi casa\n  asistente: ¡Listo, va a domicilio! 🎉\n\nAhora **Carlitos**, para poder llevarte el almuerzo, **¿cuál es tu dirección?** 📍 Así el domiciliario llega sin problema a la casa. 😊",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida [A domicilio]",
+    "source_turns": [
+      7
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_8fa9ee",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 7,
+    "created_at": "2026-06-12T18:29:59.641743",
+    "summary_text": "Turno 7: Es en villalcazar Transv 147 #57a-47 eso queda entrando a villalcazar la primera... | Asistente: ¡Dirección registrada perfectamente! 📍✅\n\nEntrando a Villalcazar por la primera p...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida [A domicilio]",
+    "source_turns": [
+      7
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_3fa84a",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 8,
+    "created_at": "2026-06-12T18:30:09.254051",
+    "summary_text": "  [Turno 8]\n  usuario: en efectivo- Tengo uno de 100\n  asistente: Aquí tienes el **resumen de tu pedido**, Carlitos 📋✅\n\n---\n\n🧾 **Pedido #ORD-E811F2**\n\n🍽 **1x Bocachico criollo frito / sudado** — Corriente\n   - Principio: **Macarrón con carne molida**\n   - Sin sopa\n   💰 **$13.500**\n\n📌 **Datos de entrega:**\n- **Clien",
+    "previous_summary": "  [Turno 7]\n  usuario: Es en villalcazar Transv 147 #57a-47 eso queda entrando a villalcazar la primera peatonal\n  asistente: ¡Dirección registrada perfectamente! 📍✅\n\nEntrando a Villalcazar por la primera peatonal, Transv 147 #57a-47. ¡Bien ubicado!\n\nYa casi terminamos, Carlitos. Solo me falta un último detalle:\n\n**¿Cómo vas a pagar?** 💰\n- **Efectivo**\n- **Nequi**\n- **Trans",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida [A domicilio]",
+    "source_turns": [
+      8
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_50f874",
+    "session_id": "cli_cli_user_1781306726",
+    "turn_number": 8,
+    "created_at": "2026-06-12T18:30:45.512976",
+    "summary_text": "Turno 8: en efectivo- Tengo uno de 100... | Asistente: Aquí tienes el **resumen de tu pedido**, Carlitos 📋✅\n\n---\n\n🧾 **Pedido #ORD-E811F...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-2c544ba4 --> 1x Bocachico criollo frito / sudado | principio: Macarrón con carne molida [A domicilio]",
+    "source_turns": [
+      8
+    ],
+    "tokens_estimated": 10
+  }
+]

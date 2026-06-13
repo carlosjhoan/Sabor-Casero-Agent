@@ -1,0 +1,41 @@
+[
+  {
+    "summary_id": "summary_44f66d",
+    "session_id": "cli_cli_user_1781037404",
+    "turn_number": 0,
+    "created_at": "2026-06-09T15:40:40.679342",
+    "summary_text": "Turno 0: Hola, me regalan la carta, porfa... | Asistente: ¡Hola! Soy Luz Stella, tu asistente de Sabor Casero. 😊 ¡Claro que sí! Aquí te co...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_22682b",
+    "session_id": "cli_cli_user_1781037404",
+    "turn_number": 0,
+    "created_at": "2026-06-09T15:41:30.163558",
+    "summary_text": "Turno 0: una pechuga, porfa... | Asistente: ¡Hola! Soy Luz Stella de Sabor Casero. 😊 Con gusto te ayudo. Veo que deseas pech...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_5f025e",
+    "session_id": "cli_cli_user_1781037404",
+    "turn_number": 0,
+    "created_at": "2026-06-09T15:43:41.635683",
+    "summary_text": "Turno 0: a la plancha... | Asistente: ¡Qué bien! 🥘 Tenemos varias opciones a la plancha. ¿Cuál te gustaría?\n\n- **Carne...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

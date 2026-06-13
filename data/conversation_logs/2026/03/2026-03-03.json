@@ -1,0 +1,83 @@
+[
+  {
+    "log_id": "log_551dcf5a",
+    "session_id": "sess_43b18988cfcf",
+    "timestamp": "2026-03-03T16:57:49.421745",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultarme sobre nuestro menú, horarios, precios, domicilios o realizar un pedido.",
+    "processing_time_ms": 10003.329753875732,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-03T16:57:59.453226"
+  },
+  {
+    "log_id": "log_f451db63",
+    "session_id": "sess_8fb4eb02a2bd",
+    "timestamp": "2026-03-03T17:02:57.720356",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 7516.554355621338,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-03T17:03:05.283667"
+  },
+  {
+    "log_id": "log_cca70c33",
+    "session_id": "sess_9faf92d73d81",
+    "timestamp": "2026-03-03T17:07:32.228810",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 7370.285511016846,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-03T17:07:39.636622"
+  }
+]

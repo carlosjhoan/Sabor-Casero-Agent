@@ -1,0 +1,45 @@
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+    "ignore::UserWarning",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "llm: marks tests that mock LLM calls",
+    "integration: marks integration tests",
+    "filesystem: marks tests that touch filesystem",
+]
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "src/infrastructure/providers/*",
+    "src/main.py",
+    "*/__init__.py",
+]
+concurrency = ["asyncio"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 70
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "rdflib>=7.6.0",
+]

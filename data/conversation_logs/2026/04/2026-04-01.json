@@ -1,0 +1,56 @@
+[
+  {
+    "log_id": "log_edfbd994",
+    "session_id": "sess_fb4f4602bae8",
+    "timestamp": "2026-04-01T17:58:53.318390",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "No hay información por el momento"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, precios, horarios de atención, servicio a domicilio o realizar un pedido.",
+    "processing_time_ms": 5951.132774353027,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-01T17:58:59.443492"
+  },
+  {
+    "log_id": "log_13759cbc",
+    "session_id": "sess_fb4f4602bae8",
+    "timestamp": "2026-04-01T17:59:09.210645",
+    "user_message": "Qué hya para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué hya para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar qué opciones del menú están disponibles hoy",
+        "file_source": "menu.md",
+        "info_extracted": "No hay información por el momento"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Soy Luz Stella, tu asistente virtual de Sabor Casero. 😊\n\nActualmente no tengo información disponible sobre el menú del día. Te sugiero contactarnos directamente para conocer las opciones frescas que tenemos preparadas.\n\n¿Hay algo más en lo que pueda asistirte?",
+    "processing_time_ms": 5396.9361782073975,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-01T17:59:14.792746"
+  }
+]

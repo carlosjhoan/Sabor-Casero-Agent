@@ -1,0 +1,155 @@
+# context_manager/guidelines/coding_standards.yaml
+
+coding_standards:
+  description: |
+    Estándares de código para el proyecto Sabor Casero Assistant.
+    Se sigue Clean Architecture con separación en Domain, Application e Infrastructure.
+    Comentarios en español, nombres de variables y funciones en inglés.
+
+  language:
+    comments: "Español"
+    code: "Inglés (variables, funciones, clases)"
+    docstrings: "Español"
+
+  architecture:
+    layers:
+      domain:
+        description: |
+          Capa de dominio - contiene las reglas de negocio puras.
+          NO debe tener dependencias externas (ni de infrastructure, ni de application).
+        components:
+          - models: "Entidades y value objects (Order, OrderItem, ServiceDetails)"
+          - interfaces: "Puertos (repositorios, servicios) como ABC"
+          - exceptions: "Excepciones de dominio (BusinessRuleViolation)"
+        rules:
+          - "No importar nada de application o infrastructure"
+          - "Todo debe ser puro Python + Pydantic"
+          - "Las reglas de negocio van aquí"
+
+      application:
+        description: |
+          Capa de aplicación - orquesta los casos de uso.
+          Depende de domain, pero NO de infrastructure (por interfaz).
+        components:
+          - processors: "Orquestadores (ThoughtGenerator, ActionPlanner, OrderOrchestrator)"
+          - services: "Servicios de aplicación"
+          - validators: "Validadores de entrada"
+          - dtos: "Objetos de transferencia de datos"
+        rules:
+          - "Puede importar domain"
+          - "NO puede importar infrastructure directamente (usa interfaces)"
+          - "La lógica de negocio debe delegarse al dominio"
+
+      infrastructure:
+        description: |
+          Capa de infraestructura - implementaciones concretas.
+          Depende de domain y application (implementa interfaces).
+        components:
+          - repositories: "Implementaciones de repositorios (JSON, PostgreSQL, Redis)"
+          - llm_clients: "Clientes para LLMs (DeepSeek, OpenAI)"
+          - persistence: "Manejo de archivos, bases de datos"
+        rules:
+          - "Implementa interfaces definidas en domain"
+          - "Puede tener dependencias externas (httpx, aiofiles, etc.)"
+          - "NO debe contener lógica de negocio"
+
+  naming_conventions:
+    classes:
+      - pattern: "PascalCase"
+      - examples:
+          - "OrderRepository"
+          - "ThoughtGenerator"
+          - "ActionPlanner"
+    functions:
+      - pattern: "snake_case"
+      - examples:
+          - "get_order_by_id"
+          - "process_order_intent"
+          - "validate_focus_length"
+    variables:
+      - pattern: "snake_case"
+      - examples:
+          - "order_id"
+          - "current_order_state"
+          - "max_retries"
+    constants:
+      - pattern: "UPPER_SNAKE_CASE"
+      - examples:
+          - "MAX_ITEMS_PER_ORDER"
+          - "DEFAULT_SERVICE_TYPE"
+    private_members:
+      - pattern: "_leading_underscore"
+      - examples:
+          - "_read_data"
+          - "_validate_order"
+          - "_lock"
+
+  file_structure:
+    domain:
+      path: "src/core/{module}/domain/"
+      files:
+        - "models.py": "Modelos de dominio (Order, OrderItem, etc.)"
+        - "interfaces.py": "Puertos (OrderRepository, SessionRepository)"
+        - "exceptions.py": "Excepciones de dominio"
+    application:
+      path: "src/core/{module}/application/"
+      subdirectories:
+        - "processors/": "Orquestadores principales"
+        - "services/": "Servicios de aplicación"
+        - "validators/": "Validadores"
+        - "dtos/": "DTOs"
+    infrastructure:
+      path: "src/core/{module}/infrastructure/"
+      subdirectories:
+        - "repositories/": "Implementaciones de repositorios"
+        - "llm/": "Clientes LLM"
+        - "persistence/": "Manejo de archivos"
+
+  docstrings:
+    format: "Google style"
+    required: true
+    language: "Español"
+    example: |
+      def get_order_by_id(self, order_id: str) -> Optional[Order]:
+          """
+          Obtiene una orden por su ID.
+
+          Args:
+              order_id: Identificador único de la orden
+
+          Returns:
+              La orden si existe, None en caso contrario
+
+          Raises:
+              FileNotFoundError: Si el archivo de persistencia no existe
+          """
+          pass
+
+  comments:
+    inline_comments:
+      - "Usar # para comentarios en línea"
+      - "Separar con un espacio después del #"
+      - "Comentarios en español"
+    block_comments:
+      - "Usar triple comillas \"\"\" para documentación"
+      - "Usar # para bloques de explicación"
+    todo_format: "TODO(autor): descripción"
+    fixme_format: "FIXME(autor): descripción"
+
+  imports:
+    order:
+      - "Standard library (import os, import json)"
+      - "Third-party (import pydantic, import httpx)"
+      - "Local application (from src.core.order.domain import ...)"
+    formatting:
+      - "Una línea por import"
+      - "Agrupar por tipo con línea en blanco entre grupos"
+      - "No usar imports relativos (from .models import ...) dentro de src"
+
+  references:
+    Puedes referenciarte a los siguientes archivos para ver ejemplos de cómo se aplican estos estándares en el proyecto:
+      - "src/core/memory/domain/models.py"
+      - "src/core/memory/domain/summary_interface.py"
+      - "src/core/memory/application/context_summarizer.py"
+      - "src/core/memory/infrastructure/repositories/"
+      - "src/core/memory/infrastructure/json_summary_repository.py"

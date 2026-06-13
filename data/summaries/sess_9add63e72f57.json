@@ -1,0 +1,60 @@
+[
+  {
+    "summary_id": "summary_fbde8c",
+    "session_id": "sess_9add63e72f57",
+    "turn_number": 1,
+    "created_at": "2026-05-28T16:34:00.413887",
+    "summary_text": "El usuario saludó y solicitó la carta. Luz Stella saludó y presentó el menú del día: sopa (crema de verdura), principio (guiso de yota con huevo, macarrón con carne molida o mixto), acompañamientos (yuca, arroz, ensalada, jugo, caramelo) y proteínas (bandeja mixta $15.000, bocachico",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 283
+  },
+  {
+    "summary_id": "summary_4f69fa",
+    "session_id": "sess_9add63e72f57",
+    "turn_number": 2,
+    "created_at": "2026-05-28T16:35:03.492520",
+    "summary_text": "",
+    "previous_summary": "El usuario saludó y solicitó la carta. Luz Stella saludó y presentó el menú del día: sopa (crema de verdura), principio (guiso de yota con huevo, macarrón con carne molida o mixto), acompañamientos (yuca, arroz, ensalada, jugo, caramelo) y proteínas (bandeja mixta $15.000, bocachico",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_8f11bc",
+    "session_id": "sess_9add63e72f57",
+    "turn_number": 3,
+    "created_at": "2026-05-28T16:36:02.077484",
+    "summary_text": "Usuario solicita pechuga gratinada",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 34
+  },
+  {
+    "summary_id": "summary_cbedd4",
+    "session_id": "sess_9add63e72f57",
+    "turn_number": 4,
+    "created_at": "2026-05-28T16:36:49.579111",
+    "summary_text": "Usuario consulta disponibilidad de fríjol; asistente informa que no hay y ofrece lentejas, guiso de yota o principio mixto como alternativas. Pregunta si desea cambiar algún acompañamiento del pedido actual: 1x Pechuga gratinada (mini) con todo. Pendiente respuesta del usuario.",
+    "previous_summary": "Usuario solicita pechuga gratinada",
+    "current_order_state": "item_id:item-b0829cd7 --> 1x Pechuga gratinada | (mini) | [Con todo]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tokens_estimated": 278
+  }
+]

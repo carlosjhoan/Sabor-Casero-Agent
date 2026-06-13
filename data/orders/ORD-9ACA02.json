@@ -1,0 +1,25 @@
+{
+  "id": "ORD-9ACA02",
+  "customer_id": null,
+  "status": "draft",
+  "items": [
+    {
+      "id": "item-3a4637eb",
+      "quantity": 1,
+      "protein": "pechuga",
+      "principle": null,
+      "size": "corriente",
+      "unit_price": 13500.0,
+      "requirements": [
+        "Con todo"
+      ],
+      "subtotal": 13500.0
+    }
+  ],
+  "service": null,
+  "payment_method": null,
+  "subtotal": 13500.0,
+  "total": 13500.0,
+  "created_at": "2026-06-11T11:33:41.231570",
+  "observations": []
+}

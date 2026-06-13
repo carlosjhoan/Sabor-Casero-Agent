@@ -1,0 +1,47 @@
+# Información de servicio
+
+TIPO DE SERVICIO:
+- Delivery hasta el lugar donde el cliente lo solicite
+- Ordenar para recoger en el lugar
+- No tenemos servicio para comer en el restaurante/lugar/mesa
+
+COSTO DE ENVÍO/DOMICILIO
+- Dentro del Barrio La Cumbre el domicilio es gratis
+- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:
+    ** Prados del sur
+    ** Cendas
+    ** García Echeverry
+- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar
+  para donde debe ser entregado el pedido.
+
+ZONAS DE ENTREGA
+- Bucaramanga
+- Floridablanca
+- Girón
+- Piedecuesta
+** NOTA: Solamente entegamos pedidos dentro del ÁREA METROPOLITANA DE BUCARAMANGA
+
+MÉTODOS DE PAGO:
+- El cliente puede pagar en efectivo cuando reciba su pedido.
+- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.
+  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:
+  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos
+- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.
+- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que
+  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.
+
+HORARIOS DE ATENCIÓN
+- Lunes a Sábado: 7:30 am --> 2:00 pm
+  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.
+
+HORARIOS DE DESPACHO DE PEDIDOS
+- Lunes a Sábado: 11:30 am --> 2:00 pm
+
+CONTACTO
+- WHATSAPP : 310 6728 007
+
+Nosotros te tomamos directamente el pedido desde nuestro sitio web.
+
+ATENCIÓN A SUGERENCIAS Y RECLAMOS
+- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno
+  de nuestros asistentes.

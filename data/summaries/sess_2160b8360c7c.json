@@ -1,0 +1,177 @@
+[
+  {
+    "summary_id": "summary_0b889d",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 1,
+    "created_at": "2026-05-29T11:02:51.401444",
+    "summary_text": "El usuario saludó y solicitó el menú; el asistente respondió con la carta completa (sopa, principio, acompañamientos, proteínas con precios) y preguntó si desea ordenar. No hay pedido realizado.",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 194
+  },
+  {
+    "summary_id": "summary_e93f8d",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 2,
+    "created_at": "2026-05-29T11:04:57.278222",
+    "summary_text": "El usuario eligió \"una pechuga\" para su plato; el asistente preguntó si prefiere pechuga a la plancha ($13.500), gratinada ($13.500) o bandeja mixta con pechuga ($15.000). No hay pedido confirmado.",
+    "previous_summary": "El usuario saludó y solicitó el menú; el asistente respondió con la carta completa (sopa, principio, acompañamientos, proteínas con precios) y preguntó si desea ordenar. No hay pedido realizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 197
+  },
+  {
+    "summary_id": "summary_5fa8c4",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 3,
+    "created_at": "2026-05-29T11:06:02.741500",
+    "summary_text": "El usuario eligió pechuga a la plancha; el asistente pregunta tamaño Corriente ($13.500) o Mini ($12.000). Sin pedido confirmado.",
+    "previous_summary": "El usuario eligió \"una pechuga\" para su plato; el asistente preguntó si prefiere pechuga a la plancha ($13.500), gratinada ($13.500) o bandeja mixta con pechuga ($15.000). No hay pedido confirmado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 129
+  },
+  {
+    "summary_id": "summary_9cf85e",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 4,
+    "created_at": "2026-05-29T11:07:06.815789",
+    "summary_text": "",
+    "previous_summary": "El usuario eligió pechuga a la plancha; el asistente pregunta tamaño Corriente ($13.500) o Mini ($12.000). Sin pedido confirmado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_afe48d",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 5,
+    "created_at": "2026-05-29T11:08:14.695033",
+    "summary_text": "Cliente solicita tamaño mini para pechuga a la plancha. Asistente confirma: 1x pechuga a la plancha mini ($12,000) con todo. Pregunta pendiente: domicilio o recoger.",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-de3900f2 --> 1x pechuga a la plancha | [Con todo]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "tokens_estimated": 165
+  },
+  {
+    "summary_id": "summary_c3ddee",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 6,
+    "created_at": "2026-05-29T11:09:21.478276",
+    "summary_text": "",
+    "previous_summary": "Cliente solicita tamaño mini para pechuga a la plancha. Asistente confirma: 1x pechuga a la plancha mini ($12,000) con todo. Pregunta pendiente: domicilio o recoger.",
+    "current_order_state": "item_id:item-de3900f2 --> 1x pechuga a la plancha | [Con todo] | item_id:item-e2827b57 --> 1x pechuga a la plancha | (mini) | [Con todo]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_d3d0eb",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 7,
+    "created_at": "2026-05-29T11:10:27.089384",
+    "summary_text": "",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-de3900f2 --> 1x pechuga a la plancha | [Con todo] | item_id:item-e2827b57 --> 1x pechuga a la plancha | (mini) | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_29a0a3",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 8,
+    "created_at": "2026-05-29T11:14:07.989062",
+    "summary_text": "Cliente se quejó de que ayer le informaron que hoy habría lentejas, pero no están disponibles. Asistente saludó y se disculpó, ofreciendo menú alternativo o ajustar el pedido actual (2x pechuga a la plancha: 1 con todo, 1 mini con todo y a domicilio).",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-de3900f2 --> 1x pechuga a la plancha | [Con todo] | item_id:item-e2827b57 --> 1x pechuga a la plancha | (mini) | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tokens_estimated": 251
+  },
+  {
+    "summary_id": "summary_140d5d",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 9,
+    "created_at": "2026-05-29T11:15:11.253963",
+    "summary_text": "",
+    "previous_summary": "Cliente se quejó de que ayer le informaron que hoy habría lentejas, pero no están disponibles. Asistente saludó y se disculpó, ofreciendo menú alternativo o ajustar el pedido actual (2x pechuga a la plancha: 1 con todo, 1 mini con todo y a domicilio).",
+    "current_order_state": "item_id:item-de3900f2 --> 1x pechuga a la plancha | [Con todo] | item_id:item-e2827b57 --> 1x pechuga a la plancha | (mini) | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_04ca13",
+    "session_id": "sess_2160b8360c7c",
+    "turn_number": 10,
+    "created_at": "2026-05-29T11:16:32.306478",
+    "summary_text": "Usuario corrige: solo pidió pechuga mini, elimina corriente. Asistente pregunta principio para mini (lentejas, guiso de yota o mixto).",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-de3900f2 --> 1x pechuga a la plancha | [Con todo] | item_id:item-e2827b57 --> 1x pechuga a la plancha | (mini) | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "tokens_estimated": 134
+  }
+]

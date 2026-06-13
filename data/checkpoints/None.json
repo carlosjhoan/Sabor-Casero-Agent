@@ -1,0 +1,30 @@
+[
+  {
+    "stage_name": "menu-query",
+    "stage_index": 1,
+    "trace_id": "28fb5895-d27c-45e0-9609-b6d0a9a6ee7f",
+    "input_data": {
+      "skill": "menu-query",
+      "message": "Hola, buenas noches, qué tienen para hoy?"
+    },
+    "output_data": {
+      "success": false
+    },
+    "created_at": "2026-06-08T23:38:23.942721",
+    "validated": true
+  },
+  {
+    "stage_name": "rag-retrieve",
+    "stage_index": 2,
+    "trace_id": "28fb5895-d27c-45e0-9609-b6d0a9a6ee7f",
+    "input_data": {
+      "skill": "rag-retrieve",
+      "message": "Hola, buenas noches, qué tienen para hoy?"
+    },
+    "output_data": {
+      "success": true
+    },
+    "created_at": "2026-06-08T23:38:23.965224",
+    "validated": true
+  }
+]

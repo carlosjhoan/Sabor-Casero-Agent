@@ -1,0 +1,451 @@
+[
+  {
+    "log_id": "log_378a8eba",
+    "session_id": "sess_e42d00b33340",
+    "timestamp": "2026-04-23T16:48:19.587095",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario desea ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario inicia saludando y luego solicita una pechuga a la plancha. Según la información del menú, la pechuga a la plancha está disponible en tamaño corriente (13.500 COP) y mini (12.000 COP), por lo que el ítem es válido. Sin embargo, el usuario no especifica el tamaño, lo que genera una ambigüedad que debe resolverse preguntando si la desea corriente o mini. Tampoco menciona modificaciones en los acompañamientos, por lo que los requirements se mantendrían por defecto como [\"Con todo\"], y el principio (principle) no se ha especificado, quedando pendiente para confirmación. Se necesita clarificar el tamaño y, opcionalmente, el principio deseado.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nCon gusto te preparo una pechuga a la plancha. Solo para confirmarte, la tenemos en dos tamaños:\n\n- **Corriente**: $13.500 COP\n- **Mini**: $12.000 COP\n\n¿De qué tamaño la deseas?",
+    "processing_time_ms": 12110.567092895508,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T16:48:32.175174"
+  },
+  {
+    "log_id": "log_b87b32eb",
+    "session_id": "sess_e4e3533e0226",
+    "timestamp": "2026-04-23T16:52:59.910474",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario desea ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario inicia saludando y luego solicita una \"pechuga a la plancha\". Según la información del menú, la pechuga a la plancha está disponible en tamaño corriente (13.500 COP) y mini (12.000 COP), por lo que el ítem es válido. Sin embargo, el usuario no ha especificado el tamaño, lo que genera una ambigüedad que debe resolverse preguntando si la desea corriente o mini. Como no hay pedido previo, se debe crear un nuevo ítem con proteína \"pechuga a la plancha\", y por defecto los requirements serán [\"Con todo\"] y el principio no se ha mencionado, por lo que se asume el principio estándar del restaurante (a confirmar si es necesario). Se necesita clarificar el tamaño antes de proceder.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nCon gusto te preparo una pechuga a la plancha. Solo para confirmar, ¿la deseas **corriente** (13.500 COP) o **mini** (12.000 COP)?",
+    "processing_time_ms": 10918.232679367065,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T16:53:11.105646"
+  },
+  {
+    "log_id": "log_d11b48f6",
+    "session_id": "sess_cf6668f9e50d",
+    "timestamp": "2026-04-23T16:54:55.905508",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El cliente inicia saludando y luego solicita una pechuga a la plancha. Según la información del menú, la pechuga a la plancha está disponible en tamaño corriente (13.500 COP) y mini (12.000 COP), por lo que el ítem es válido. Sin embargo, el usuario no ha especificado el tamaño, por lo que es necesario preguntarle si la desea corriente o mini. Además, no ha mencionado modificaciones en los acompañamientos, por lo que los requirements se mantendrían por defecto como [\"Con todo\"]. Tampoco ha indicado el principio (acompañamiento principal), por lo que se debe preguntar qué principio desea (frijoles, lentejas, etc.). La solicitud es clara en cuanto al ítem, pero requiere clarificación sobre el tamaño y el principio.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nCon gusto te preparo una pechuga a la plancha. ¿La prefieres **corriente** ($13.500) o **mini** ($12.000)?",
+    "processing_time_ms": 10946.334600448608,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T16:55:07.135960"
+  },
+  {
+    "log_id": "log_1df3d02b",
+    "session_id": "sess_56560b7bf890",
+    "timestamp": "2026-04-23T17:06:49.452873",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario desea ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario inicia saludando y luego solicita una \"pechuga a la plancha\". Según la información del menú, la pechuga a la plancha está disponible en tamaño corriente (13.500 COP) y mini (12.000 COP), por lo que el ítem es válido. Sin embargo, el usuario no especifica el tamaño, lo que genera una ambigüedad que debe resolverse preguntando si la desea corriente o mini. Tampoco menciona modificaciones en los acompañamientos, por lo que los requirements se mantendrían por defecto como [\"Con todo\"], y el principio (principle) no se ha especificado, asumiéndose el que viene por defecto en el plato. Se necesita clarificar el tamaño para proceder con el pedido.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola, buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nClaro que sí, con gusto te preparo una pechuga a la plancha. Solo para confirmar, ¿la deseas **corriente** (13.500 COP) o **mini** (12.000 COP)?",
+    "processing_time_ms": 10943.588256835938,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T17:07:00.681813"
+  },
+  {
+    "log_id": "log_ccf132d6",
+    "session_id": "sess_821d0bba159a",
+    "timestamp": "2026-04-23T17:13:01.552870",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario está saludando y luego solicita una pechuga a la plancha. Según la información del menú, la pechuga a la plancha está disponible en tamaño corriente (13.500 COP) y mini (12.000 COP), por lo que el ítem es válido. Sin embargo, el usuario no ha especificado el tamaño, por lo que se necesita clarificación para saber si la quiere corriente o mini. Además, como no menciona modificaciones en los acompañamientos, los requirements se mantendrían por defecto como [\"Con todo\"].",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nCon gusto te preparo una pechuga a la plancha. Solo para confirmarte, ¿la deseas en tamaño **corriente ($13.500)** o **mini ($12.000)**?",
+    "processing_time_ms": 10061.182260513306,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T17:13:11.927055"
+  },
+  {
+    "log_id": "log_51e7d69a",
+    "session_id": "sess_3675d737eaaa",
+    "timestamp": "2026-04-23T17:15:24.524725",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario desea ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario inicia saludando y luego solicita una \"pechuga a la plancha\". Según la información del menú, la pechuga a la plancha está disponible en tamaño corriente (13.500 COP) y mini (12.000 COP), por lo que el ítem es válido. Sin embargo, el usuario no especifica el tamaño, lo que genera una ambigüedad que debe resolverse preguntando si la desea corriente o mini. Tampoco menciona modificaciones en los acompañamientos, por lo que, por defecto, los requirements se mantendrían como [\"Con todo\"] y el principio (principle) quedaría sin especificar, asumiendo el que viene por defecto en el plato. Se necesita clarificar el tamaño para proceder con el pedido.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nCon gusto te preparo una pechuga a la plancha. Solo para confirmar, ¿la deseas **corriente** (13.500 COP) o **mini** (12.000 COP)?",
+    "processing_time_ms": 10022.665023803711,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T17:15:34.839320"
+  },
+  {
+    "log_id": "log_4831977b",
+    "session_id": "sess_3675d737eaaa",
+    "timestamp": "2026-04-23T17:16:08.348804",
+    "user_message": "uno mini",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "uno mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar un plato de tamaño mini, posiblemente la pechuga a la plancha mencionada antes",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente, tras haber mencionado inicialmente una pechuga a la plancha, ahora especifica que desea \"uno mini\". Según la información del menú, la pechuga a la plancha sí está disponible en tamaño mini (12.000 COP), por lo que la solicitud es válida. El pedido sería 1 pechuga a la plancha en tamaño mini. Como no se han especificado modificaciones en los acompañamientos, los requirements se mantienen por defecto como [\"Con todo\"], lo que significa que el plato incluirá yuca al vapor, arroz, ensalada, jugo y caramelo. No hay ambigüedad en la solicitud, ya que el contexto de la conversación indica claramente que se refiere a la pechuga.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "size": "mini",
+          "unit_price": 12000,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Perfecto! Una pechuga a la plancha en tamaño mini (12.000 COP). 😊\n\nEl plato incluye yuca al vapor, arroz, ensalada, jugo y caramelo. ¿Te gustaría hacer algún cambio en los acompañamientos o está bien \"con todo\"?",
+    "processing_time_ms": 9733.37984085083,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T17:16:18.445205"
+  },
+  {
+    "log_id": "log_cf51dd23",
+    "session_id": "sess_d27b9061a933",
+    "timestamp": "2026-04-23T17:27:55.631375",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_c855f0da",
+    "session_id": "sess_a14c7452713b",
+    "timestamp": "2026-04-23T17:31:27.789973",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_66b9aad9",
+    "session_id": "sess_9da96a2a7b92",
+    "timestamp": "2026-04-23T17:33:04.974151",
+    "user_message": "Hola, buenos días\nMe regala una pechuga a la plancha, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala una pechuga a la plancha, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario desea ordenar una pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario inicia saludando y luego solicita una \"pechuga a la plancha\". Según la información del menú, este ítem está disponible en tamaño \"Corriente\" (13.500 COP) y \"Mini\" (12.000 COP), por lo que la proteína es válida. Sin embargo, el usuario no especifica el tamaño, lo que genera una ambigüedad que debe resolverse preguntando si la desea \"corriente\" o \"mini\". Tampoco menciona modificaciones en los acompañamientos, por lo que, por defecto, los requirements se mantendrían como [\"Con todo\"] y el principio (principle) quedaría sin especificar, asumiendo el estándar del restaurante. Se necesita clarificar el tamaño para proceder con el pedido.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-032C43",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-6a84b98b",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-23T17:33:14.057263",
+      "updated_at": "2026-04-23T17:33:14.134688",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Buenos días! Soy Luz Stella, de Sabor Casero, con gusto te atiendo. 😊\n\nClaro que sí, tenemos pechuga a la plancha disponible. ¿La prefieres en tamaño **Corriente** ($13,500) o **Mini** ($12,000)?",
+    "processing_time_ms": 10875.014781951904,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-23T17:33:16.167201"
+  }
+]

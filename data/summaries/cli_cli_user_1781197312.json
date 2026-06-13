@@ -1,0 +1,67 @@
+[
+  {
+    "summary_id": "summary_a60e52",
+    "session_id": "cli_cli_user_1781197312",
+    "turn_number": 1,
+    "created_at": "2026-06-11T12:02:08.862103",
+    "summary_text": "Turno 1: Hola, me regalas la carta, porfa | Asistente: ¡Aquí tienes nuestro menú del día de hoy, **Jueves Caserito**! 🍽️✨\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Prin | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_7a60bd",
+    "session_id": "cli_cli_user_1781197312",
+    "turn_number": 1,
+    "created_at": "2026-06-11T12:02:14.598374",
+    "summary_text": "Turno 1: Hola, me regalas la carta, porfa... | Asistente: ¡Aquí tienes nuestro menú del día de hoy, **Jueves Caserito**! 🍽️✨\n\n---\n\n### 🥣 *...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_8cbe81",
+    "session_id": "cli_cli_user_1781197312",
+    "turn_number": 2,
+    "created_at": "2026-06-11T12:02:25.784888",
+    "summary_text": "Turno 2: Una pechuga | Asistente: ¡Qué bien! 🎉 Aquí están las opciones de **pechuga** que tenemos hoy en nuestro **Jueves Caserito**:\n\n1. 🧀 **Pechuga grat | Intento: ",
+    "previous_summary": "Turno 1: Hola, me regalas la carta, porfa | Asistente: ¡Aquí tienes nuestro menú del día de hoy, **Jueves Caserito**! 🍽️✨\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Prin | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_55c666",
+    "session_id": "cli_cli_user_1781197312",
+    "turn_number": 2,
+    "created_at": "2026-06-11T12:02:30.844666",
+    "summary_text": "Turno 2: Una pechuga... | Asistente: ¡Qué bien! 🎉 Aquí están las opciones de **pechuga** que tenemos hoy en nuestro *...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_f7dcc7",
+    "session_id": "cli_cli_user_1781197312",
+    "turn_number": 3,
+    "created_at": "2026-06-11T12:02:50.114892",
+    "summary_text": "Turno 3: a la plancha | Asistente: ¡Excelente! 🎉 He agregado tu **Pechuga a la plancha** a la orden. Aquí te va un resumen:\n\n📋 **Pedido #ORD-F2FC95**\n| Ite | Intento: ",
+    "previous_summary": "Turno 2: Una pechuga | Asistente: ¡Qué bien! 🎉 Aquí están las opciones de **pechuga** que tenemos hoy en nuestro **Jueves Caserito**:\n\n1. 🧀 **Pechuga grat | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  }
+]

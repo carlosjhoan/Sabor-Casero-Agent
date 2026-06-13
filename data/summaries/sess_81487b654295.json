@@ -1,0 +1,60 @@
+[
+  {
+    "summary_id": "summary_52c7bc",
+    "session_id": "sess_81487b654295",
+    "turn_number": 1,
+    "created_at": "2026-05-27T17:01:10.153064",
+    "summary_text": "El usuario saludó. Luz Stella respondió el saludo, se presentó como asistente de Sabor Casero y preguntó si desea conocer el menú, hacer un pedido o tiene otra consulta. No hay pedido.",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 184
+  },
+  {
+    "summary_id": "summary_a8d15c",
+    "session_id": "sess_81487b654295",
+    "turn_number": 2,
+    "created_at": "2026-05-27T17:01:26.662721",
+    "summary_text": "El usuario preguntó por el menú del día. Luz Stella compartió el menú: sopa crema de verdura, principios (guiso de yota con huevo, macarrón con carne molida, mixto), acompañamientos (yuca, arroz, ensalada, jugo, caramelo) y proteínas (bandeja mixta $15.000, bocachico $13.500, carne a la plancha, carnes mixtas en vegetales, lomo de cerdo, pechuga a la plancha/gratinada desde $12.000). No hay pedido.",
+    "previous_summary": "El usuario saludó. Luz Stella respondió el saludo, se presentó como asistente de Sabor Casero y preguntó si desea conocer el menú, hacer un pedido o tiene otra consulta. No hay pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 401
+  },
+  {
+    "summary_id": "summary_f7f2ad",
+    "session_id": "sess_81487b654295",
+    "turn_number": 3,
+    "created_at": "2026-05-27T17:02:21.880433",
+    "summary_text": "El usuario pidió \"con carne, porfa\". Luz Stella listó opciones de carne: carne a la plancha ($12.000 mini/$13.500 corriente), lomo de cerdo asado ($12.000 mini/$13.500 corriente, con salsa BBQ o miel-mostaza), bandeja mixta ($15.000) y carnes mixtas en vegetales ($12.000 mini/$13.500 corriente). Pregunta cuál desea ordenar. No hay pedido.",
+    "previous_summary": "El usuario preguntó por el menú del día. Luz Stella compartió el menú: sopa crema de verdura, principios (guiso de yota con huevo, macarrón con carne molida, mixto), acompañamientos (yuca, arroz, ensalada, jugo, caramelo) y proteínas (bandeja mixta $15.000, bocachico $13.500, carne a la plancha, carnes mixtas en vegetales, lomo de cerdo, pechuga a la plancha/gratinada desde $12.000). No hay pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 340
+  },
+  {
+    "summary_id": "summary_1c5c4e",
+    "session_id": "sess_81487b654295",
+    "turn_number": 4,
+    "created_at": "2026-05-27T17:02:52.481285",
+    "summary_text": "El usuario seleccionó carne a la plancha en tamaño mini ($12.000). Luz Stella confirmó el pedido y preguntó por el principio: lentejas, guiso de yota o principio mixto. No hay pedido completo.",
+    "previous_summary": "El usuario pidió \"con carne, porfa\". Luz Stella listó opciones de carne: carne a la plancha ($12.000 mini/$13.500 corriente), lomo de cerdo asado ($12.000 mini/$13.500 corriente, con salsa BBQ o miel-mostaza), bandeja mixta ($15.000) y carnes mixtas en vegetales ($12.000 mini/$13.500 corriente). Pregunta cuál desea ordenar. No hay pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tokens_estimated": 192
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "id": "ORD-46EFDD",
+  "customer_id": "default_user",
+  "status": "draft",
+  "items": [
+    {
+      "id": "item-dd8bb4ce",
+      "quantity": 1,
+      "protein": "lomo de cerdo asado a la plancha",
+      "principle": "Macarrón con carne molida",
+      "size": "mini",
+      "unit_price": 12000.0,
+      "requirements": [
+        "sin arroz",
+        "extra principio",
+        "bien asado"
+      ],
+      "subtotal": 12000.0
+    }
+  ],
+  "service": {
+    "category": "delivery",
+    "details": {
+      "address": "Transv 147a #57a-47",
+      "fee": 0.0,
+      "estimated_time": null,
+      "instructions": null
+    }
+  },
+  "payment_method": "efectivo",
+  "subtotal": 12000.0,
+  "total": 12000.0,
+  "created_at": "2026-05-22T11:08:42.452427",
+  "observations": []
+}

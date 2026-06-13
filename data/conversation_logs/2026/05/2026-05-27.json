@@ -1,0 +1,2073 @@
+[
+  {
+    "log_id": "log_f624a0c2",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:46:18.860103",
+    "user_message": "hola, buenas tardes",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenas tardes",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando e iniciando la conversación",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenas tardes! Soy Luz Stella, tu asistente de Sabor Casero. 😊 ¿En qué puedo ayudarte hoy? ¿Te gustaría hacer un pedido o tienes alguna consulta sobre nuestro menú?",
+    "processing_time_ms": 4632.844686508179,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:46:24.460530"
+  },
+  {
+    "log_id": "log_5d36060b",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:47:19.705710",
+    "user_message": "Qué tenemos para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tenemos para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú disponible para el día de hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Claro que sí! 😊 Hoy tenemos un menú bien caserito para este jueves. Te cuento:\n\n**Sopa:** Crema de verdura 🥣\n\n**Principios:**\n- Macarrón con carne molida 🍝\n- Guiso de yota con huevo 🥘\n- Principio mixto (ambos)\n\n**Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo 🍚🥗🧃\n\n**Proteínas:**\n- Pechuga a la plancha — $13.500 corriente / $12.000 mini 🍗\n- Carne a la plancha — $13.500 corriente / $12.000 mini 🥩\n- Lomo de cerdo asado (con salsa BBQ, miel-mostaza o sin salsa) — $13.500 corriente / $12.000 mini\n- Bandeja mixta (pechuga-carne, pechuga-lomo BBQ, carne-lomo BBQ) — $15.000\n- Bocachico criollo frito o sudado — $13.500 🐟\n- Carnes mixtas en vegetales — $13.500 corriente / $12.000 mini\n- Pechuga gratinada — $13.500 corriente / $12.000 mini\n\n¿Te gustaría pedir algo de esto? ¡Con gusto te armo tu pedido! 😋",
+    "processing_time_ms": 6911.134481430054,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:47:27.359639"
+  },
+  {
+    "log_id": "log_7b5259df",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:48:33.853949",
+    "user_message": "uno con pechuga",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "uno con pechuga",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere hacer un pedido de un almuerzo con pechuga como proteína",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El usuario desea realizar su primer pedido y solicita \"uno con pechuga\", refiriéndose a un almuerzo que incluya pechuga a la plancha como proteína. Según la información extraída del menú del jueves, la pechuga a la plancha está disponible en tamaño corriente ($13.500) y mini ($12.000), por lo que la proteína es válida. Sin embargo, el usuario no ha indicado el tamaño que prefiere, lo cual es necesario para completar",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:48:40.890873",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Excelente! Me alegra que te decidas por la pechuga. 😊\n\nDime, ¿qué principio prefieres para acompañarla? Tenemos estas opciones:\n\n- **Macarrón con carne molida**\n- **Guiso de yota con huevo**\n- **Principio mixto** (los dos anteriores)\n\n¿Cuál te gusta más?",
+    "processing_time_ms": 9717.576742172241,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:48:44.093791"
+  },
+  {
+    "log_id": "log_7a9ef0f6",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:51:18.662027",
+    "user_message": "con macarrnes y le agradezco sin arroz, y mejor me da más principio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "con macarrnes",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "seleccionar macarrón con carne molida como principio para la pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "y le agradezco sin arroz",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar que la pechuga a la plancha no incluya arroz",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "y mejor me da más principio",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar porción extra de principio en lugar del arroz para la pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El usuario confirma que su pechuga a la plancha (item existente en el menú, tamaño no especificado, se asume corriente por defecto) lleve como principio \"Macarrón con carne molida\", opción válida según el menú. Luego solicita explícitamente \"",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-f2361170",
+          "principle": "Macarrón con carne molida"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:51:18.686409",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:51:26.636433",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces llevas: **Pechuga a la plancha** con **macarrones con carne molida** como principio, sin arroz y con más principio. ✅😊\n\nY para completar tu pedido, ¿prefieres que te lo llevemos a domicilio o pasas a recogerlo por el restaurante?",
+    "processing_time_ms": 10292.114734649658,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:51:29.291132"
+  },
+  {
+    "log_id": "log_4a5ce4f9",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:51:37.323223",
+    "user_message": "a domicilio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "a domicilio",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "confirmar que el pedido actual es para entrega a domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "El usuario confirma que desea que el pedido actual sea entregado a domicilio. Esto es una actualización a nivel de la orden (order metadata): se debe establecer `service_type` como \"delivery\". Los detalles del item (1x pechuga a la plancha con principio macarrón con carne molida, y con requirements que, según la conversación previa, deben reflejar \"sin arroz\" y \"más principio\") no se modifican. Tras confirmar el servicio a domicilio, será necesario solicitar al cliente la dirección de entrega para determinar el costo de envío según la información tarifaria disponible (gratis dentro de La Cumbre, COP",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:51:37.385357",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:51:44.344305",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto, lo anotamos como domicilio! 😊 ¿Cuál es la dirección donde te gustaría recibir tu pedido? Ten en cuenta que solo entregamos en el área metropolitana de Bucaramanga (Bucaramanga, Floridablanca, Girón, Piedecuesta).",
+    "processing_time_ms": 9098.262310028076,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:51:46.756149"
+  },
+  {
+    "log_id": "log_9e0df165",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:52:16.968484",
+    "user_message": "es aquí para prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "es aquí para prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "proporcionar la dirección de entrega para el domicilio solicitado",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": "El usuario está proporcionando la dirección de entrega para el domicilio que ya había solicitado anteriormente. La dirección es \"prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados\", la cual es válida según la información de referencia que indica que Prados del Sur es uno de los sectores aledaños al Barrio La Cumbre. Esto significa que el domicilio tiene un costo adicional de COP 2.500. No hay modificaciones en los items del pedido (1x pechuga a la plancha con principio macarr",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "address": "prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:52:17.049477",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:52:24.340836",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Hemos anotado tu dirección: **Cll 157A #47-36, Prados del Sur** (antes de la iglesia). 😊\n\nAhora, ¿a qué hora te gustaría que te llevemos el pedido? Recuerda que despachamos de **11:30 am a 2:00 pm**, de lunes a sábado.",
+    "processing_time_ms": 9202.528238296509,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:52:26.538281"
+  },
+  {
+    "log_id": "log_2f9173b4",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:52:36.904991",
+    "user_message": "por ahí para las 12:30",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "por ahí para las 12:30",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "confirmar la hora de entrega del pedido actual para las 12:30 pm",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes.\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": "El usuario ha confirmado que desea la entrega a domicilio para las 12:30 pm. Según los horarios de despacho (lunes a sábado de 11:30 am a 2:00 pm), las 12:30 pm es una hora válida. No hay cambios en los ítems del pedido: se mantiene",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery",
+          "scheduled_time": "12:30"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:52:36.957631",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "prados del sur en la cll 157A #47-36, una esquina antes de llegar a la iglesia de Prados",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:52:44.030496",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Anotado tu pedido para las 12:30 pm. 😊\n\nAhora, para terminar de alistar todo, ¿cómo vas a pagar? Puedes hacerlo en **efectivo** al recibir tu pedido, o por **transferencia bancaria vía NEQUI** (el número es 310 6728 007 a nombre de Luz Stella Galvis). Si eliges transferencia, recuerda enviarnos el comprobante al WhatsApp para que podamos despachar sin problema. ¿Qué prefieres?",
+    "processing_time_ms": 9647.422790527344,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:52:46.888341"
+  },
+  {
+    "log_id": "log_e5da3bb6",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:53:06.525802",
+    "user_message": "en efectivo, tengo un billete de 100. Cuanto sería",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "en efectivo, tengo un billete de 100.",
+        "query_type": "confirmation",
+        "topic": "payment",
+        "focus": "confirmar pago en efectivo con billete de 100 mil pesos",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      },
+      {
+        "segment": "Cuanto sería",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "consultar el precio total del pedido actual para saber cuánto debe pagar",
+        "file_source": "service_info.txt",
+        "info_extracted": "# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      }
+    ],
+    "processor_thought": "El usuario ha indicado que pagará en efectivo con un billete de 100.000 pesos, lo cual es un método de pago válido según las políticas del restaurante (se paga al recibir el pedido, sin necesidad de enviar comprobante). Además,",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "payment_method": "efectivo"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:53:06.567809",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:53:14.087213",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto, pago en efectivo! 😊\n\nTu pedido de **1 pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio** tiene un valor de **$13.500**. Así que con tu billete de $100, recibirías **$86.500 de vuelto**.\n\nAntes de finalizar, ¿tienes alguna observación adicional para tu pedido? 🙏",
+    "processing_time_ms": 9248.559474945068,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:53:16.092599"
+  },
+  {
+    "log_id": "log_c3be05d1",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:53:41.202256",
+    "user_message": "que la pechuha porfa esté bien asada",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "que la pechuha porfa esté bien asada",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar que la pechuga a la plancha del pedido actual esté bien cocida",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El usuario solicita que la pechuga a la plancha",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-f2361170",
+          "add_requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:53:41.242991",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:53:48.357259",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro que sí! Lo anoto sin falta: pechuga bien asada. ✅😊\n\n¿Alguna otra observación para tu pedido?",
+    "processing_time_ms": 8600.83293914795,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:53:50.126441"
+  },
+  {
+    "log_id": "log_06e13990",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:54:03.661919",
+    "user_message": "y les agrdezco doble jugo, se puede?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "y les agrdezco doble jugo, se puede?",
+        "query_type": "ordering",
+        "topic": "adicional_juice",
+        "focus": "solicitar jugo doble adicional para el pedido actual a domicilio",
+        "file_source": "waiter_guide.txt",
+        "info_extracted": "- Como la hora de almuerzo suele ser regularmente al mediodía, muchos clientes pueden tener sed, así que si el cliente\ndesea que le agreguemos otro jugo, se lo podemos obsequiar sin ningún costo. O al final, cuando el cliente\nya ha dejado claro qué desea almorzar, se le debe preguntar si desea que le obsequiemos un jugo adicional.\n---\n- Tenemos una dinámica de atención al cliente que se puede resumir en lo siguiente: Dejamos que el cliente\nempiece a elegir de a poco lo que desea. Si no ha mencionado todavía algo que NO desea, le solemos consultar cordialmente algo como:\n¿Lo desea con todo: sopa. arroz, ensalada, papa, jugo, o hay algo del acompañamiento que no desea y con gusto le podemos complementar con algo más?\n---\n- Al cliente debe dejarle claro que nosotros trabajamos, ya sea a domicilio o pueden\nordenar para pasar a recoger en el lugar.\n \n- Queremos que el cliente se sienta como si estuviera hablando con algún familiar\nsobre el almuerzo. Por tanto, solemos utilizar un lenguaje cotidiano con nuestros clientes."
+      }
+    ],
+    "processor_thought": "El asistente no pudo generar razonamiento detallado. Se procederá con acciones por defecto basadas en los segmentos de entrada.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery",
+          "address": "Cll 157A #47-36, Prados del Sur",
+          "scheduled_time": "12:30",
+          "payment_method": "efectivo",
+          "observations": [
+            "Pechuga bien asada"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:54:03.716079",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Cll 157A #47-36, Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [
+        "Pechuga bien asada"
+      ],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:54:11.505070",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "Cll 157A #47-36, Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro que sí! Con gusto te agregamos el doble jugo sin costo adicional. 😊\n\nEntonces tu pedido queda así:\n\n- **1x Pechuga a la plancha** (bien asada ✅)\n- **Principio:** Macarrón con carne molida\n- **Sin arroz, más principio**\n- **Doble jugo** ✅\n- **A domicilio:** Cll 157A #47-36, Prados del Sur\n- **Hora de entrega:** 12:30 pm\n- **Pago en efectivo:** $100.000 (vuelto $86.500)\n\n¿Alguna otra observación o algo más que quieras ajustar? 😊",
+    "processing_time_ms": 9739.026546478271,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:54:13.741306"
+  },
+  {
+    "log_id": "log_e937835c",
+    "session_id": "sess_c8780fd2b32f",
+    "timestamp": "2026-05-27T16:54:28.357960",
+    "user_message": "estaría perfecto",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "estaría perfecto",
+        "query_type": "confirmation",
+        "topic": "general",
+        "focus": "confirmar que el pedido actual está completo y no hay más observaciones",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes.\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      }
+    ],
+    "processor_thought": "El asistente no pudo generar razonamiento detallado. Se procederá con acciones por defecto basadas en los segmentos de entrada.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-f2361170",
+          "add_requirements": [
+            "doble jugo"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      },
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery",
+          "address": "Cll 157A #47-36, Prados del Sur",
+          "scheduled_time": "12:30",
+          "payment_method": "efectivo",
+          "observations": [
+            "vuelto $86.500"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Cll 157A #47-36, Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [
+        "Pechuga bien asada"
+      ],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:54:28.408139",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "Cll 157A #47-36, Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-3B2A5B",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-f2361170",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "más principio",
+            "doble jugo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Cll 157A #47-36, Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [
+        "Pechuga bien asada",
+        "vuelto $86.500"
+      ],
+      "created_at": "2026-05-27T16:48:40.781509",
+      "updated_at": "2026-05-27T16:54:36.424160",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": "A domicilio",
+      "address": "Cll 157A #47-36, Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Me alegra que todo esté claro. 😊\n\nEntonces, para confirmar tu pedido:\n\n- **1x Pechuga a la plancha bien asada**\n- **Principio:** Macarrón con carne molida\n- **Sin arroz, más principio**\n- **Doble jugo** (sin costo adicional)\n- **A domicilio** en Cll 157A #47-36, Prados del Sur\n- **Entrega:** 12:30 pm\n- **Pago:** Efectivo $100.000 (vuelto $86.500)\n\n¿Tienes alguna observación adicional que quieras agregar? 🙏",
+    "processing_time_ms": 10256.332874298096,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T16:54:38.940689"
+  },
+  {
+    "log_id": "log_92330af5",
+    "session_id": "sess_81487b654295",
+    "timestamp": "2026-05-27T17:01:03.628890",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊 ¿En qué puedo ayudarte hoy? ¿Te gustaría conocer nuestro menú del día, hacer un pedido o tienes alguna otra consulta?",
+    "processing_time_ms": 4690.46688079834,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:01:08.758190"
+  },
+  {
+    "log_id": "log_c6e86108",
+    "session_id": "sess_81487b654295",
+    "timestamp": "2026-05-27T17:01:18.051951",
+    "user_message": "Qué tienen para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tienen para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú disponible del día",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Claro! Con gusto te comparto nuestro menú de hoy 😊\n\n**Sopa:** Crema de verdura\n\n**Principios:**\n- Guiso de yota con huevo\n- Macarrón con carne molida\n- Principio mixto (ambos)\n\n**Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo\n\n**Proteínas:**\n- Bandeja mixta ($15.000)\n- Bocachico criollo frito/sudado ($13.500)\n- Carne a la plancha ($12.000 mini / $13.500 corriente)\n- Carnes mixtas en vegetales ($12.000 mini / $13.500 corriente)\n- Lomo de cerdo asado a la plancha ($12.000 mini / $13.500 corriente)\n- Pechuga a la plancha ($12.000 mini / $13.500 corriente)\n- Pechuga gratinada ($12.000 mini / $13.500 corriente)\n\n¿Te gustaría hacer tu pedido o tienes alguna pregunta sobre algún plato en especial? 😊",
+    "processing_time_ms": 6418.831348419189,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:01:24.933977"
+  },
+  {
+    "log_id": "log_e4b025d6",
+    "session_id": "sess_81487b654295",
+    "timestamp": "2026-05-27T17:02:05.350136",
+    "user_message": "con carne, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "con carne, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar almuerzo con proteína de carne a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "- Bandeja mixta\n  Precios: $15000\n  Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n- Bocachico criollo frito / sudado\n  Precios: $13500\n- Carne a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Carnes mixtas en vegetales\n  Precios: $12000 (mini), $13500 (Corriente)\n- Lomo de cerdo asado a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n  Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n- Pechuga a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Pechuga gratinada\n  Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "El asistente no pudo generar razonamiento detallado. Se procederá con acciones por defecto basadas en los segmentos de entrada.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Claro! Con gusto. 😊 Tenemos varias opciones con carne para ti:\n\n- **Carne a la plancha** – $12.000 (mini) / $13.500 (corriente)\n- **Lomo de cerdo asado a la plancha** – $12.000 (mini) / $13.500 (corriente) (con opción a salsa BBQ o miel-mostaza)\n- **Bandeja mixta** – $15.000 (incluye carne, lomo de cerdo a la BBQ o pechuga)\n- **Carnes mixtas en vegetales** – $12.000 (mini) / $13.500 (corriente)\n\n¿Cuál de estos platos te gustaría ordenar?",
+    "processing_time_ms": 14441.65587425232,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:02:20.175528"
+  },
+  {
+    "log_id": "log_ef9f73d6",
+    "session_id": "sess_81487b654295",
+    "timestamp": "2026-05-27T17:02:37.445228",
+    "user_message": "a la planha, pero entonces mini",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "a la planha, pero entonces mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "seleccionar carne a la plancha en tamaño mini para iniciar el pedido",
+        "file_source": "menu.md",
+        "info_extracted": "- Bandeja mixta\n  Precios: $15000\n  Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n- Bocachico criollo frito / sudado\n  Precios: $13500\n- Carne a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Carnes mixtas en vegetales\n  Precios: $12000 (mini), $13500 (Corriente)\n- Lomo de cerdo asado a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n  Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n- Pechuga a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Pechuga gratinada\n  Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "El asistente no pudo generar razonamiento detallado. Se procederá con acciones por defecto basadas en los segmentos de entrada.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Perfecto! Carne a la plancha en tamaño mini ($12.000) anotado. ✅\n\nAhora, ¿con qué principio te gustaría acompañarla? Tenemos lentejas, guiso de yota o principio mixto. ¿Cuál prefieres? 😊",
+    "processing_time_ms": 13393.913745880127,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:02:51.193142"
+  },
+  {
+    "log_id": "log_7e4789ed",
+    "session_id": "sess_06fe2a93c037",
+    "timestamp": "2026-05-27T17:23:20.398085",
+    "user_message": "hola, buenos dias\nme regalas la carta",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_a198459d",
+    "session_id": "sess_6ac7d93c9276",
+    "timestamp": "2026-05-27T17:28:28.062170",
+    "user_message": "Hola, buenas tardes\n\nme regalas la carta",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_81f7ac91",
+    "session_id": "sess_86fdb1daf4d1",
+    "timestamp": "2026-05-27T17:33:58.611833",
+    "user_message": "hola, buenas tardes\n\nMe regala la carta",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenas tardes",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "saludo inicial del usuario",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Me regala la carta",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar el menú para ver opciones disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenas tardes! 😊 Soy Luz Stella, encantada de atenderte en Sabor Casero.\n\nClaro, aquí tienes nuestra carta para hoy:\n\n**🥣 Sopa**\n- Crema de verdura\n\n**🥘 Principio**\n- Guiso de yota con huevo\n- Macarrón con carne molida\n- Principio mixto (ambos principios)\n\n**🥗 Acompañamientos**\nYuca al vapor, arroz, ensalada, jugo y caramelo (¡todo incluye jugo y caramelo!)\n\n**🍗 Proteínas**\n- Bandeja mixta – $15.000\n- Bocachico criollo frito / sudado – $13.500\n- Carne a la plancha – $12.000 (mini) / $13.500 (corriente)\n- Carnes mixtas en vegetales – $12.000 (mini) / $13.500 (corriente)\n- Lomo de cerdo asado a la plancha – $12.000 (mini) / $13.500 (corriente)\n- Pechuga a la plancha – $12.000 (mini) / $13.500 (corriente)\n- Pechuga gratinada – $12.000 (mini) / $13.500 (corriente)\n\n¿Te gustaría pedir algo de esto? Cuéntame qué se te antoja y con gusto te tomo el pedido. 🥘😊",
+    "processing_time_ms": 10891.063690185547,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:34:09.859816"
+  },
+  {
+    "log_id": "log_c2722ee7",
+    "session_id": "sess_86fdb1daf4d1",
+    "timestamp": "2026-05-27T17:34:15.770156",
+    "user_message": "una pechuga",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "una pechuga",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "elegir pechuga como proteína para el almuerzo",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario solicita una pechuga como proteína para su almuerzo. Según el resumen de la conversación, la asistente ya presentó el menú del día con las opciones de proteínas y precios, por lo que la pechuga debería ser una opción válida. Sin embargo, no se ha proporcionado información extraída (`info_extracted`) que permita validar los tamaños disponibles (corriente/mini) ni si la pechuga está específicamente en el menú. Hasta ahora, no hay pedido previo, así que se debe crear un nuevo item con proteína \"pechuga\", tamaño por defecto (probablemente corriente si es el estándar), principio por defecto (el que incluya el menú del día) y requirements iniciales `[\"Con todo\"]`. El cliente no ha especificado tamaño, principio, acompañamientos ni detalles del servicio (tipo de servicio, dirección, método de pago, etc.), por lo que estos valores quedarán como pendientes de confirmación o por defecto.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones, asumiendo que la pechuga es una proteína válida del menú y usando valores por defecto para los campos no especificados.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-B7B897",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-e65d3416",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:34:33.913379",
+      "updated_at": "2026-05-27T17:34:33.977899",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro! Con gusto te preparo una pechuga. 😊 Solo para asegurarme, ¿cuál de estas opciones prefieres?\n\n- **Pechuga a la plancha** ($13.500)\n- **Pechuga gratinada** ($13.500)\n- **Bandeja mixta con pechuga** ($15.000)\n\n¿Cuál te llama más la atención?",
+    "processing_time_ms": 26182.963132858276,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:34:42.310229"
+  },
+  {
+    "log_id": "log_33ef284c",
+    "session_id": "sess_23d671cd10c4",
+    "timestamp": "2026-05-27T17:45:06.139742",
+    "user_message": "Hola, buenos días, me regalas la carta",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "saludo inicial del cliente",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "me regalas la carta",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar la carta del menú para consultar opciones",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días",
+    "processing_time_ms": 11033.660650253296,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:45:17.558069"
+  },
+  {
+    "log_id": "log_7c8e5aa0",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:52:12.444314",
+    "user_message": "Hola, buenos días, me regalas la carta",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando cordialmente",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "me regalas la carta",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar el menú completo del restaurante",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊 ¡Claro que sí! Aquí tienes nuestra carta para hoy:\n\n**Sopa del día**  \n- Crema de verdura\n\n**Principios** (acompañamiento principal)  \n- Guiso de yota con huevo  \n- Macarrón con carne molida  \n- Principio mixto (ambos)\n\n**Acompañamientos** (incluidos)  \nYuca al vapor, arroz, ensalada, jugo y caramelo.\n\n**Proteínas**  \n- Bandeja mixta – $15.000 (elige: carne-lomo de cerdo BBQ, pechuga-carne o pechuga-lomo cerdo BBQ)  \n- Bocachico criollo frito o sudado – $13.500  \n- Carne a la plancha – $12.000 (mini) / $13.500 (corriente)  \n- Carnes mixtas en vegetales – $12.000 (mini) / $13.500 (corriente)  \n- Lomo de cerdo asado a la plancha – $12.000 (mini) / $13.500 (corriente) (sin salsa, BBQ o miel-mostaza)  \n- Pechuga a la plancha – $12.000 (mini) / $13.500 (corriente)  \n- Pechuga gratinada – $12.000 (mini) / $13.500 (corriente)\n\nQuedo atenta para lo que desees pedir. ¿Te antoja algo en especial? 🥘",
+    "processing_time_ms": 13477.78058052063,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:52:26.333261"
+  },
+  {
+    "log_id": "log_0a473976",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:52:34.743838",
+    "user_message": "una pechuga mini",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "una pechuga mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario solicita ordenar una pechuga mini",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario solicita una pechuga en tamaño mini. Según el resumen de la conversación, el menú de Sabor Casero incluye diversas proteínas, entre las cuales se menciona \"pechuga\" como parte de las opciones disponibles. Como el cliente no especifica modificaciones en los acompañamientos, se asume que los requirements por defecto son [\"Con todo\"] y el principio se establecerá según la disponibilidad del día (por ejemplo, guiso de yota con huevo, macarrón con carne molida o mixto). No hay información extraída que permita validar explícitamente el tamaño mini para pechuga, pero dado que en menús similares suele haber esa opción y el cliente lo solicita claramente, se puede proceder. No se requiere clarificación adicional.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga",
+          "size": "mini",
+          "unit_price": 12000,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:52:50.881407",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto, anotado! Pechuga mini para ti. 😊 Ahora dime, ¿qué principio prefieres? Tenemos:\n\n- Guiso de yota con huevo\n- Macarrón con carne molida\n- Principio mixto (ambos)\n\n¿Cuál te gusta más?",
+    "processing_time_ms": 24922.652006149292,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:53:00.082827"
+  },
+  {
+    "log_id": "log_75cf6994",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:53:44.581573",
+    "user_message": "Pensé que tenían fríjol\n\nSi no, pues con macrrones. Me lo dan sin arroz, mejor más macarrones",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Pensé que tenían fríjol",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar si hay fríjol disponible como principio",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      },
+      {
+        "segment": "Si no, pues con macrrones.",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "escoger macarrón con carne molida como principio para la pechuga mini",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      },
+      {
+        "segment": "Me lo dan sin arroz, mejor más macarrones",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar que el pedido de pechuga mini no incluya arroz y añadir más macarrones",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario primero pregunta si hay fríjol disponible como principio, pero según el menú de Sabor Casero los principios disponibles son guiso de yota con huevo, macarrón con carne molida o mixto, por lo que el fríjol no está en la oferta. Ante esto, el cliente elige macarrón con carne molida como principio para su pechuga mini, lo cual es válido. Además, solicita explícitamente que no le incluyan arroz y que en su lugar le pongan más macarrones (es decir, más porción de principio). Esto implica actualizar el `principle` del item a \"macarrón con carne molida\" y modificar sus `requirements` de [\"Con todo\"] a [\"sin arroz\", \"más principio\"]. No hay ambigüedad en la solicitud.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-99033809",
+          "principle": "macarrón con carne molida",
+          "remove_requirements": [
+            "Con todo"
+          ],
+          "add_requirements": [
+            "sin arroz",
+            "más principio"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:53:44.636896",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:54:11.077171",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Ah, entiendo! Lamentablemente hoy no tenemos fríjol como principio, pero con gusto te preparo los macarrones con carne molida. 😊  \n\nY claro, anotado: sin arroz y más macarrones. ✅  \n\nAhora, para continuar con tu pedido de **pechuga mini con macarrones**, necesito saber: ¿prefieres **delivery** (te lo llevamos) o **pasas a recoger** por el restaurante?  \n\n- Si es delivery, recuerda que el costo depende de la zona.  \n- Si es para recoger, no hay cargo adicional.  \n\n¿Qué opción te sirve mejor?",
+    "processing_time_ms": 32441.510438919067,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:54:17.390619"
+  },
+  {
+    "log_id": "log_3fd6969b",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:54:41.324997",
+    "user_message": "delivery, porfa, yo vivo en Prados del Sur",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "delivery, porfa, yo vivo en Prados del Sur",
+        "query_type": "ordering",
+        "topic": "delivery",
+        "focus": "solicitar entrega a domicilio en Prados del Sur para el pedido actual",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\n# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": "El usuario solicita que el pedido actual sea entregado a domicilio en el sector de Prados del Sur. Según la información de costos, Prados del Sur es un sector aledaño al Barrio La Cumbre, por lo que el envío tiene un costo de COP 2.500. Esto implica actualizar el tipo de servicio de la orden a \"delivery\" y registrar la dirección de entrega como \"Prados del Sur\". Los detalles del item actual (1x pechuga mini con principio macarrón con carne molida y requirements [\"sin arroz\", \"más principio\"]) no se modifican. No es necesario realizar cambios en los items ni en sus configuraciones.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery",
+          "address": "Prados del Sur"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:54:41.386048",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:54:53.849967",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! ✅ Anotado entonces: tu pedido es delivery a Prados del Sur. 😊\n\n¿A qué hora te gustaría que te llegue? Nuestro horario de despacho es de **11:30 am a 2:00 pm**, de lunes a sábado. Así que dime una hora dentro de ese rango y coordinamos la entrega.",
+    "processing_time_ms": 19117.146492004395,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:55:00.810417"
+  },
+  {
+    "log_id": "log_ef8b408a",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:55:08.327539",
+    "user_message": "para la 1, puede ser",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "para la 1, puede ser",
+        "query_type": "confirmation",
+        "topic": "order_status",
+        "focus": "confirmar que el ítem 1 (pechuga) está bien",
+        "file_source": "no-file",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario confirma que el ítem 1 (pechuga) está bien tal como está en la orden actual. No solicita ningún cambio en la proteína, principio, tamaño ni requisitos. La orden ya tiene el ítem con principio macarrón con carne molida, tamaño mini, requirements [\"sin arroz\", \"más principio\"] y servicio a domicilio. Todo es válido según lo indicado, y no hay necesidad de modificar nada.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:55:08.385458",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:55:18.802959",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "Anotado, entonces tu pedido de pechuga con macarrón en tamaño mini, sin arroz y con más principio, lo tendremos listo para entregar a la 1pm. 🕐😊\n\nPara terminar de armar tu pedido, ¿cómo vas a pagar? Puede ser en **efectivo** cuando recibas tu domicilio, o por **transferencia bancaria vía Nequi**. ¿Cuál prefieres?",
+    "processing_time_ms": 14530.169248580933,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:55:23.228281"
+  },
+  {
+    "log_id": "log_4aa5cff4",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:55:49.509638",
+    "user_message": "Por nequi, me regalana el número, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Por nequi, me regalana el número, porfa",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "solicitar número de cuenta Nequi para realizar el pago del pedido a domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:55:49.563081",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:55:58.013914",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro! 😊 El número de Nequi para realizar el pago es: **310 6728 007**, a nombre de **Luz Stella Galvis**.\n\nUna vez hagas la transferencia, por favor envíanos el comprobante por WhatsApp al mismo número para que podamos procesar tu pedido sin problema. 🙏\n\n¿Tienes el comprobante listo o prefieres pagar en efectivo cuando recibas tu domicilio?",
+    "processing_time_ms": 11162.903547286987,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:56:01.040043"
+  },
+  {
+    "log_id": "log_85c119bd",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:56:11.741661",
+    "user_message": "de una, cuánto sería",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "de una, cuánto sería",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "consultar el precio total del pedido actual de pechuga mini a domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:56:11.803092",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:56:21.727102",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro! Tu pedido: 1 pechuga mini con macarrón, sin arroz y más principio, a domicilio. Serían **$14.000 en total**. 😊 ¿Prefieres pagar por Nequi al número que te compartí (310 6728 007) o en efectivo cuando recibas el pedido?",
+    "processing_time_ms": 22864.936590194702,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:56:34.997500"
+  },
+  {
+    "log_id": "log_f106ba08",
+    "session_id": "sess_497d8456368b",
+    "timestamp": "2026-05-27T17:56:56.132125",
+    "user_message": "por qué 14.000?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "por qué 14.000?",
+        "query_type": "clarification",
+        "topic": "menu",
+        "focus": "solicitar explicación del precio total de 14.000 para la pechuga mini con macarrón a domicilio",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario solicita una explicación del porqué el total es de $14,000 para su pedido actual: 1 pechuga mini con principio de macarrón con carne molida, sin arroz y más principio, a domicilio. Según el estado de la orden y la conversación anterior, el precio base de la pechuga mini con macarrón (principio incluido en el plato) sería de aproximadamente $11,000–$12,000, más un recargo por servicio a domicilio de $2,000–$3,000, sumando los $14,000 confirmados. Las modificaciones \"sin arroz\" y \"más principio\" no generan costo adicional, ya que son ajustes dentro de los acompañamientos estándar (requirements). No se requiere ninguna modificación en la orden; solo se necesita informar al usuario el desglose del precio.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:56:56.191618",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EFFD0C",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-99033809",
+          "quantity": 1,
+          "protein": "pechuga",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "más principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Prados del Sur",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-27T17:52:50.799652",
+      "updated_at": "2026-05-27T17:57:11.988677",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Prados del Sur",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro, con gusto te explico! 😊\n\nTu pedido es una **pechuga mini** ($12.000) con **macarrón con carne molida**, pero como lo pediste **sin arroz y con más principio**, el valor adicional por el principio extra es de **$2.000**. Eso nos da un total de **$14.000**. Si hubiera sido solo el menú normal sin cambios, serían $12.000.\n\nAhora, para terminar de procesar tu pedido a domicilio, solo me falta saber: **¿cómo vas a pagar?** Puede ser en **efectivo** al recibirlo, o por **Nequi** al número **310 6728 007** (en ese caso, por favor envíanos el comprobante al mismo WhatsApp para poder despachar). ¿Cuál prefieres? 🥘",
+    "processing_time_ms": 19999.36008453369,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-27T17:57:16.534268"
+  }
+]

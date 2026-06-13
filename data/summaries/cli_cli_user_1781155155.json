@@ -1,0 +1,15 @@
+[
+  {
+    "summary_id": "summary_52fd9e",
+    "session_id": "cli_cli_user_1781155155",
+    "turn_number": 0,
+    "created_at": "2026-06-11T00:20:12.540009",
+    "summary_text": "Turno 0: Hola, me regalas la carta porfa | Asistente: ¡Espero que te haya gustado la carta! Si quieres ordenar algo o necesitas más detalles, solo dímelo. ¡En Sabor Casero es | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

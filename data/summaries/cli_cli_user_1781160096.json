@@ -1,0 +1,28 @@
+[
+  {
+    "summary_id": "summary_797bf8",
+    "session_id": "cli_cli_user_1781160096",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:42:26.788540",
+    "summary_text": "Turno 0: hola, la carta porfa | Asistente: ¡Ay, lo siento muchísimo! 😅 Parece que el sistema para consultar el menú está teniendo dificultades técnicas en este mom | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_0b2d3d",
+    "session_id": "cli_cli_user_1781160096",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:46:59.464332",
+    "summary_text": "Turno 0: hola, la carta porfa... | Asistente: ¡Ay, lo siento muchísimo! 😅 Parece que el sistema para consultar el menú está te...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

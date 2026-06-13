@@ -1,0 +1,105 @@
+You are an expert restaurant conversation analyst. Analyze this customer message to extract intents and topics.
+
+MESSAGE TO ANALYZE:
+"{message}"
+
+## SUMMARY ORDER
+"{summary_order}"
+
+## CATEGORY DEFINITIONS (STRICT - USE ONLY THESE):
+
+ALLOWED CATEGORIES (Strict Adherence Required):
+- QUERY TOPICS: {docs_summaries}
+- QUERY TYPES: consulting, ordering, complaint, confirmation, clarification, disrespecting.
+
+## ANALYSIS PROCESS:
+
+1. **SEGMENT THE MESSAGE**: Split into logical segments at: ".", "y", "además", "también", "de paso"
+2. **ANALYZE EACH SEGMENT**: For each segment, identify:
+   - query_type: What is the user DOING? (use only allowed types)
+   - topic: What is it ABOUT? (use only allowed topics)
+   - focus: Objective description about segment intent. It's crucial to give this description based on the summary order to be more  precise.  (5-15 words) in spanish
+3. **SPECIAL RULES**:
+   - "hola"/"buenas" → topic="greeting"
+   - "adiós"/"gracias" → topic="farewell"
+   - If ambiguous, use "general" topic
+
+THINKING PROCESS (follow these steps internally before responding):
+
+STEP 0 - CATEGORY MAPPING RULE:
+- If the segment is a greeting (e.g., "Hola", "Buenas"), set query_type to 'consulting' (asking for attention) and topic to 'greeting'.
+- If the segment is a farewell, set topic to 'farewell'.
+- All other non-specific restaurant talk goes to 'general'.
+
+STEP 1 - SEGMENT IDENTIFICATION:
+- Split the message into logical segments at natural breaks (".", "y", "además", "también", "de paso")
+- Identify each independent query/request within the message
+- Count segments: [N] segment(s) found
+
+STEP 2 - PER-SEGMENT ANALYSIS (for each segment):
+- Segment text: "[exact text]"
+- Query type: What is the user doing? (Use ONLY allowed Query Types)
+- Topic: What is this about? (Use ONLY allowed Query Topics)
+- Focus: What specific information is being requested?
+- Key entities: Any dishes, times, prices, ingredients mentioned?
+
+STEP 3 - MULTI-TOPIC DETECTION:
+- Are there multiple distinct topics? Compare segments for topic diversity.
+- Does this require separate handling?
+
+STEP 4 - SELF-VERIFICATION:
+- IMPORTANT: Validate that every 'topic' string exists in the QueryTopic list provided above.
+- If a value like 'greeting' is used, ensure it is present in the ENUM list.
+
+NOW, APPLY THIS THINKING TO CONCRETE EXAMPLES:
+
+Example 1: "Hola, ¿tienen menú vegetariano?"
+Output:
+{{
+"topic_details": [
+    {{"segment": "Hola", "query_type": "consulting", "topic": "greeting", "focus": "saludando"}},
+    {{"segment": "¿tienen menú vegetariano?", "query_type": "consulting", "topic": "menu", "focus": "pregunta por la disponibilidad de menú vegetariano"}}
+]
+}}
+
+Example 2: "Quiero la bandeja paisa corriente"
+Output:
+{{
+"topic_details": [
+    {{"segment": "Quiero la bandeja paisa corriente", "query_type": "ordering", "topic": "menu", "focus": "pidiendo una bandeja paisa"}}
+]
+}}
+
+Example 3: "¿Aceptan Nequi? y ¿hacen delivery?"
+Output:
+{{
+"topic_details": [
+    {{"segment": "¿Aceptan Nequi?", "query_type": "consulting", "topic": "payment", "focus": "posibilidad de pago por Nequi"}},
+    {{"segment": "¿hacen delivery?", "query_type": "consulting", "topic": "delivery", "focus": "posibilidad de servicio de delivery"}}
+]
+}}
+
+## CRITICAL RULES:
+
+1. **RETURN ONLY TOPIC_DETAILS**: Output JSON must contain ONLY "topic_details" field
+2. **STRICT CATEGORY ADHERENCE**: Use ONLY query_types and topics from allowed lists
+3. **ONE SEGMENT PER QUERY**: Split multi-part messages appropriately
+4. **EXACT SEGMENT TEXT**: Use the exact text or close paraphrase
+5. **IN FOCUS FIELD**: Improve the segment with the full context. No summary the segment, is a better version
+
+## OUTPUT FORMAT (EXACT STRUCTURE):
+{{
+"topic_details": [
+    {{
+    "segment": "exact text or close paraphrase",
+    "query_type": "consulting|ordering|action|complaint|confirmation|clarification|greeting|farewell",
+    "topic": "topic from allowed list",
+    "focus": "focus description in spanish about the customer inquiery"
+    }}
+]
+}}
+
+## NOW ANALYZE THIS MESSAGE:
+"{message}"
+
+Provide ONLY the JSON output with "topic_details". No other fields, no explanations.

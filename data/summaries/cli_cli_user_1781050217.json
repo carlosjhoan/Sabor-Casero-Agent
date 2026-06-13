@@ -1,0 +1,67 @@
+[
+  {
+    "summary_id": "summary_d387f6",
+    "session_id": "cli_cli_user_1781050217",
+    "turn_number": 0,
+    "created_at": "2026-06-09T19:10:44.587307",
+    "summary_text": "Turno 0: me regalan la carta, porfa | Asistente: ¡Claro que sí, con mucho gusto! Aquí te va la carta completa de **Sabor Casero** 🍽️✨\n\n---\n\n### 🥣 **SOPA**\n- Crema de ver | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_d03d86",
+    "session_id": "cli_cli_user_1781050217",
+    "turn_number": 0,
+    "created_at": "2026-06-09T19:10:57.257837",
+    "summary_text": "Turno 0: me regalan la carta, porfa... | Asistente: ¡Claro que sí, con mucho gusto! Aquí te va la carta completa de **Sabor Casero**...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_f83323",
+    "session_id": "cli_cli_user_1781050217",
+    "turn_number": 0,
+    "created_at": "2026-06-09T19:11:22.344974",
+    "summary_text": "Turno 0: me regala una pechuga, porfa | Asistente: ¡Claro que sí! Tenemos **dos opciones deliciosas de pechuga** en el menú 😊\n\n**1. 🍗 Pechuga a la plancha**\n   - $13.500 ( | Intento: ordering",
+    "previous_summary": "Turno 0: me regalan la carta, porfa | Asistente: ¡Claro que sí, con mucho gusto! Aquí te va la carta completa de **Sabor Casero** 🍽️✨\n\n---\n\n### 🥣 **SOPA**\n- Crema de ver | Intento: consulting",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_7356a5",
+    "session_id": "cli_cli_user_1781050217",
+    "turn_number": 0,
+    "created_at": "2026-06-09T19:11:39.477816",
+    "summary_text": "Turno 0: me regala una pechuga, porfa... | Asistente: ¡Claro que sí! Tenemos **dos opciones deliciosas de pechuga** en el menú 😊\n\n**1....",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_b94dcb",
+    "session_id": "cli_cli_user_1781050217",
+    "turn_number": 0,
+    "created_at": "2026-06-09T19:11:57.664158",
+    "summary_text": "Turno 0: a la plancha y que sea mini | Asistente: ¡Aquí está la información! 🎉 Tenemos varias opciones **a la plancha** con versión **mini** disponibles en **Sabor Casero | Intento: ordering",
+    "previous_summary": "Turno 0: me regalan la carta, porfa | Asistente: ¡Claro que sí, con mucho gusto! Aquí te va la carta completa de **Sabor Casero** 🍽️✨\n\n---\n\n### 🥣 **SOPA**\n- Crema de ver | Intento: consulting",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

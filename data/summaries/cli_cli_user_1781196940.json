@@ -1,0 +1,80 @@
+[
+  {
+    "summary_id": "summary_7f634b",
+    "session_id": "cli_cli_user_1781196940",
+    "turn_number": 0,
+    "created_at": "2026-06-11T11:55:56.136169",
+    "summary_text": "Turno 0: Hola, me regalas la carta porfa | Asistente: ¡Aquí tienes el menú completo del **Jueves Caserito**! 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principios**\n | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_b8f885",
+    "session_id": "cli_cli_user_1781196940",
+    "turn_number": 0,
+    "created_at": "2026-06-11T11:57:46.475956",
+    "summary_text": "Turno 0: Hola, me regalas la carta porfa... | Asistente: ¡Aquí tienes el menú completo del **Jueves Caserito**! 🍽️\n\n---\n\n### 🥣 **Sopa**\n-...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_289447",
+    "session_id": "cli_cli_user_1781196940",
+    "turn_number": 0,
+    "created_at": "2026-06-11T11:57:56.743911",
+    "summary_text": "Turno 0: Una pechuga | Asistente: ¡Excelente! Aquí en **Sabor Casero** tenemos varias opciones de pechuga para ti 😊\n\n**Opciones de Pechuga:**\n\n1. 🐔 **Pech | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_cf4c1e",
+    "session_id": "cli_cli_user_1781196940",
+    "turn_number": 0,
+    "created_at": "2026-06-11T11:58:12.287316",
+    "summary_text": "Turno 0: Una pechuga... | Asistente: ¡Excelente! Aquí en **Sabor Casero** tenemos varias opciones de pechuga para ti ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_9e9bfc",
+    "session_id": "cli_cli_user_1781196940",
+    "turn_number": 0,
+    "created_at": "2026-06-11T11:58:21.461213",
+    "summary_text": "Turno 0: a la plancha, que sea mini | Asistente: ¡Excelente! Aquí están las opciones **a la plancha** que tenemos disponibles en presentación **mini** (a solo **$12,000* | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_464479",
+    "session_id": "cli_cli_user_1781196940",
+    "turn_number": 0,
+    "created_at": "2026-06-11T12:00:56.944757",
+    "summary_text": "Turno 0: a la plancha, que sea mini... | Asistente: ¡Excelente! Aquí están las opciones **a la plancha** que tenemos disponibles en ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "stage_name": "menu-query",
+    "stage_index": 1,
+    "trace_id": "3f6c801c-958a-46ed-97b2-fb57bccf91ff",
+    "input_data": {
+      "skill": "menu-query",
+      "message": "¿Qué hay en el menú?"
+    },
+    "output_data": {
+      "success": false
+    },
+    "created_at": "2026-06-09T18:45:29.370250",
+    "validated": true
+  },
+  {
+    "stage_name": "rag-retrieve",
+    "stage_index": 2,
+    "trace_id": "3f6c801c-958a-46ed-97b2-fb57bccf91ff",
+    "input_data": {
+      "skill": "rag-retrieve",
+      "message": "¿Qué hay en el menú?"
+    },
+    "output_data": {
+      "success": true
+    },
+    "created_at": "2026-06-09T18:45:29.557328",
+    "validated": true
+  }
+]

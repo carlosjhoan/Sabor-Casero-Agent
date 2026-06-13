@@ -1,0 +1,23 @@
+{
+  "id": "ORD-EB058A",
+  "customer_id": null,
+  "status": "draft",
+  "items": [
+    {
+      "id": "item-6928300c",
+      "quantity": 1,
+      "protein": "Pechuga a la plancha",
+      "principle": null,
+      "size": "mini",
+      "unit_price": 12000.0,
+      "requirements": [],
+      "subtotal": 12000.0
+    }
+  ],
+  "service": null,
+  "payment_method": null,
+  "subtotal": 12000.0,
+  "total": 12000.0,
+  "created_at": "2026-06-11T17:00:31.257382",
+  "observations": []
+}

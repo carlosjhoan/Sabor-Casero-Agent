@@ -1,0 +1,158 @@
+[
+  {
+    "summary_id": "summary_43737c",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 1,
+    "created_at": "2026-06-11T17:53:20.065677",
+    "summary_text": "Turno 1: hola, me regalas la carta | Asistente: ¡Aquí tienes! Este es el menú de hoy — **jueves caserito** 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principio | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_20ece2",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 1,
+    "created_at": "2026-06-11T17:53:32.720024",
+    "summary_text": "Turno 1: hola, me regalas la carta... | Asistente: ¡Aquí tienes! Este es el menú de hoy — **jueves caserito** 🍽️\n\n---\n\n### 🥣 **Sopa...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_419372",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 2,
+    "created_at": "2026-06-11T17:53:44.257406",
+    "summary_text": "Turno 2: una pechuga, porfa | Asistente: ¡Qué buena elección! Tenemos estas opciones de **pechuga** para hoy:\n\n1. 🐔 **Pechuga gratinada** — $13,500 (corriente) / | Intento: ",
+    "previous_summary": "Turno 1: hola, me regalas la carta | Asistente: ¡Aquí tienes! Este es el menú de hoy — **jueves caserito** 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principio | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_d9721b",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 2,
+    "created_at": "2026-06-11T17:54:04.113182",
+    "summary_text": "Turno 2: una pechuga, porfa... | Asistente: ¡Qué buena elección! Tenemos estas opciones de **pechuga** para hoy:\n\n1. 🐔 **Pec...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_1ff0dd",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 3,
+    "created_at": "2026-06-11T17:54:20.592353",
+    "summary_text": "Turno 3: porfa a la plancha, mini y con macarrones | Asistente: ¡Listo! 🎉 He registrado tu pedido:\n\n**Resumen de tu pedido:**\n- 🐔 **Pechuga a la plancha** (mini)\n- 🍝 **Macarrón con car | Intento: ",
+    "previous_summary": "Turno 2: una pechuga, porfa | Asistente: ¡Qué buena elección! Tenemos estas opciones de **pechuga** para hoy:\n\n1. 🐔 **Pechuga gratinada** — $13,500 (corriente) / | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_a9e22f",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 3,
+    "created_at": "2026-06-11T17:55:58.141710",
+    "summary_text": "Turno 3: porfa a la plancha, mini y con macarrones... | Asistente: ¡Listo! 🎉 He registrado tu pedido:\n\n**Resumen de tu pedido:**\n- 🐔 **Pechuga a la...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_66411a",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 4,
+    "created_at": "2026-06-11T17:56:09.740649",
+    "summary_text": "Turno 4: para que me lo traigan a la casa | Asistente: ¡Perfecto! Me alegra que quieras llevártelo a casa 🏠 Entiendo que el servicio es **delivery**. Según las reglas, primero | Intento: ",
+    "previous_summary": "Turno 3: porfa a la plancha, mini y con macarrones | Asistente: ¡Listo! 🎉 He registrado tu pedido:\n\n**Resumen de tu pedido:**\n- 🐔 **Pechuga a la plancha** (mini)\n- 🍝 **Macarrón con car | Intento: ",
+    "current_order_state": "item_id:item-39a966ba --> 1x Pechuga a la plancha | principio: Macarrón con carne molida | (mini)",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_f49c04",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 4,
+    "created_at": "2026-06-11T17:56:29.394904",
+    "summary_text": "Turno 4: para que me lo traigan a la casa... | Asistente: ¡Perfecto! Me alegra que quieras llevártelo a casa 🏠 Entiendo que el servicio es...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-39a966ba --> 1x Pechuga a la plancha | principio: Macarrón con carne molida | (mini)",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_5a5b65",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 5,
+    "created_at": "2026-06-11T17:56:42.867711",
+    "summary_text": "Turno 5: sin sopa, porfa | Asistente: ¡Listo! ✅ Ya anoté **sin sopa** para tu pedido.\n\nMe queda claro que quieres **delivery** a tu casa también. Ahora necesi | Intento: ",
+    "previous_summary": "Turno 4: para que me lo traigan a la casa | Asistente: ¡Perfecto! Me alegra que quieras llevártelo a casa 🏠 Entiendo que el servicio es **delivery**. Según las reglas, primero | Intento: ",
+    "current_order_state": "item_id:item-39a966ba --> 1x Pechuga a la plancha | principio: Macarrón con carne molida | (mini)",
+    "source_turns": [
+      5
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_ce16ba",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 5,
+    "created_at": "2026-06-11T17:57:11.117672",
+    "summary_text": "Turno 5: sin sopa, porfa... | Asistente: ¡Listo! ✅ Ya anoté **sin sopa** para tu pedido.\n\nMe queda claro que quieres **de...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-39a966ba --> 1x Pechuga a la plancha | principio: Macarrón con carne molida | (mini)",
+    "source_turns": [
+      5
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_9f0e04",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 6,
+    "created_at": "2026-06-11T17:57:27.609381",
+    "summary_text": "Turno 6: carlos aguilar | Asistente: ¡Listo, Carlos! ✅ Tu pedido ya quedó así:\n\n**📋 Pedido actualizado:**\n- 👤 **Nombre:** Carlos Aguilera\n- 🥩 **Proteína:** P | Intento: ",
+    "previous_summary": "Turno 5: sin sopa, porfa | Asistente: ¡Listo! ✅ Ya anoté **sin sopa** para tu pedido.\n\nMe queda claro que quieres **delivery** a tu casa también. Ahora necesi | Intento: ",
+    "current_order_state": "item_id:item-39a966ba --> 1x Pechuga a la plancha | principio: Macarrón con carne molida | (mini) | [sin sopa]",
+    "source_turns": [
+      6
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_2e6106",
+    "session_id": "cli_cli_user_1781218357",
+    "turn_number": 6,
+    "created_at": "2026-06-11T17:57:47.073589",
+    "summary_text": "Turno 6: carlos aguilar... | Asistente: ¡Listo, Carlos! ✅ Tu pedido ya quedó así:\n\n**📋 Pedido actualizado:**\n- 👤 **Nombr...",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-39a966ba --> 1x Pechuga a la plancha | principio: Macarrón con carne molida | (mini) | [sin sopa]",
+    "source_turns": [
+      6
+    ],
+    "tokens_estimated": 10
+  }
+]

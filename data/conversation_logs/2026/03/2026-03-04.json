@@ -1,0 +1,662 @@
+[
+  {
+    "log_id": "log_15e58aed",
+    "session_id": "sess_ec9f205f0868",
+    "timestamp": "2026-03-04T11:11:26.416195",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 12073.14682006836,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:11:38.544954"
+  },
+  {
+    "log_id": "log_9a145e1a",
+    "session_id": "sess_eac5a783a19a",
+    "timestamp": "2026-03-04T11:20:37.722562",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultarme sobre nuestro menú, precios, horarios de atención, servicio de domicilio o realizar un pedido.",
+    "processing_time_ms": 10373.301982879639,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:20:48.139583"
+  },
+  {
+    "log_id": "log_c7c38210",
+    "session_id": "sess_e6e45deda700",
+    "timestamp": "2026-03-04T11:25:42.587669",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultarme sobre nuestro menú, horarios, precios, domicilios o realizar un pedido.",
+    "processing_time_ms": 10077.39782333374,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:25:52.710676"
+  },
+  {
+    "log_id": "log_1977181a",
+    "session_id": "sess_166362dee09a",
+    "timestamp": "2026-03-04T11:29:35.661930",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 10858.899116516113,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:29:46.570369"
+  },
+  {
+    "log_id": "log_abf17349",
+    "session_id": "sess_2a3aa9876476",
+    "timestamp": "2026-03-04T11:36:35.102338",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 11718.411922454834,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:36:47.224837"
+  },
+  {
+    "log_id": "log_54a5e022",
+    "session_id": "sess_260774d8d846",
+    "timestamp": "2026-03-04T11:41:55.045987",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 9348.45232963562,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:42:04.444150"
+  },
+  {
+    "log_id": "log_ba600ce9",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:47:33.828172",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar una conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. 😊\n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 9377.130031585693,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:47:43.252904"
+  },
+  {
+    "log_id": "log_aaa61b8e",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:47:57.848480",
+    "user_message": "Qué tienen para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tienen para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar qué opciones del menú están disponibles hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Soy Luz Stella, tu asistente virtual de Sabor Casero 😊\n\nPara hoy, jueves, tenemos un menú caserito con las siguientes opciones:\n\n**Sopa:** Crema de verdura  \n**Principio:** Puedes elegir entre:\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n**Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo\n\n**Proteínas disponibles:**\n- Pechuga a la plancha: $13.500 (corriente) / $12.000 (mini)\n- Carne a la plancha: $13.500 (corriente) / $12.000 (mini)\n- Lomo de cerdo asado a la plancha: $13.500 (corriente) / $12.000 (mini)\n  *Opciones de salsa:* BBQ, miel-mostaza o sin salsa\n\n¿Te gustaría ordenar algo de nuestro menú de hoy? Con gusto quedo atenta para tomarte el pedido con lo que desees 🍽️",
+    "processing_time_ms": 17100.00491142273,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:48:14.997952"
+  },
+  {
+    "log_id": "log_6f830ebc",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:48:45.562145",
+    "user_message": "Me regala una pechuga, pero que sea corriente, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Me regala una pechuga, pero que sea corriente, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar un pedido de pechuga corriente sin orden previa",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "Cliente solicita iniciar un pedido con 'pechuga corriente'. Según la información del menú (info_extracted), 'Pechuga a la plancha' está disponible en tamaño 'Corriente' por 13500 COP. No se especifican acompañamientos (principle, sides) ni instrucciones especiales (requirements). Como no hay un pedido activo, primero se debe crear la orden y luego el ítem solicitado.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "size": "corriente",
+          "sides": [],
+          "requirements": []
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Con gusto! La pechuga a la plancha corriente tiene un precio de $13.500. ¿Con qué principio lo deseas?",
+    "processing_time_ms": 21335.891485214233,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:49:06.944459"
+  },
+  {
+    "log_id": "log_bc42ec4c",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:49:34.906050",
+    "user_message": "Qué principios tienen?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué principios tienen?",
+        "query_type": "consulting",
+        "topic": "about",
+        "focus": "consultar los valores o principios del restaurante",
+        "file_source": "about_us.txt",
+        "info_extracted": "Sabor casero fue fundado por Luz Stella Galvis en Mayo del año 2020, tiempo de Pandemia. Por aquel tiempo, se dio cuenta que algunos vecinos\nque se encontraban trabajando de manera remota producto de la cuarentena, solían pedir almuerzo a domicilio y consideró que este servicio\n---\nlo podía prestar y que por delante, el buen sabor y el caluroso servicio estaban garantizados. Sus manos respaldaban esta garantía\ncargando entre sí más de 30 años de trabajo en cocinas para empresas, restaurantes propios y ajenos.\n---\nNuestras recetas son preparadas con alimentos 100% de huertas y fincas de nuestros campesinos de la región.\nNo utilizamos ningún tipo de condimentos y priorizamos a su vez,que nuestra comida sea preparada con un nivel bajo de sal, \nya que comprendemos la importancia del cuidado de la salud de nuestros clientes.\n\nLe damos una sabrosa y casera bienvenida  a todos nuestros clientes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": null,
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:49:34.920299",
+      "total_amount": 0.0
+    },
+    "order_after": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": null,
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:49:39.754915",
+      "total_amount": 0.0
+    },
+    "assistant_response": "¡Hola! Con mucho gusto te cuento sobre los principios que guían a Sabor Casero.\n\nNuestro restaurante fue fundado por Luz Stella Galvis en mayo de 2020, durante la pandemia, con el propósito de ofrecer almuerzos caseros y de calidad a quienes trabajaban desde casa. Desde entonces, nos regimos por estos valores fundamentales:\n\n🍃 **Ingredientes 100% locales y naturales**: Todas nuestras recetas se preparan con alimentos frescos provenientes de huertas y fincas de campesinos de la región. No utilizamos condimentos artificiales.\n\n🧂 **Cuidado de la salud**: Priorizamos que nuestra comida tenga un nivel bajo de sal, porque entendemos lo importante que es el bienestar de nuestros clientes.\n\n❤️ **Sabor auténtico y servicio cálido**: Cada plato lleva el toque casero y el amor de más de 30 años de experiencia en cocinas, garantizando un sabor delicioso y una atención que te hace sentir como en casa.\n\n¿Te gustaría conocer más sobre nuestro menú o hacer algún pedido? ¡Estoy aquí para ayudarte!",
+    "processing_time_ms": 17707.237005233765,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:49:52.663566"
+  },
+  {
+    "log_id": "log_4a51892a",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:50:52.496542",
+    "user_message": "No, pero qué tienen de principio, no estoy preguntando por los principios éticos",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "No, pero qué tienen de principio",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar qué opciones de entradas o primeros platos están disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "no estoy preguntando por los principios éticos",
+        "query_type": "clarification",
+        "topic": "menu",
+        "focus": "aclarar que la consulta es sobre platos, no sobre valores del restaurante",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario está aclarando que su consulta es sobre platos del menú, no sobre valores del restaurante. No hay una solicitud de modificación, adición o eliminación de ítems en el pedido actual. El pedido actual contiene 1x Pechuga a la plancha. Según el menú extraído, la proteína 'Pechuga a la plancha' no aparece explícitamente. Las proteínas disponibles son: Bandeja mixta (con opciones de Pechuga-Carne, Pechuga-Lomo de cerdo, Carne-Lomo de cerdo), Bocachico criollo frito/sudado, Carnes mixtas en vegetales y Pechuga gratinada. Por lo tanto, el ítem actual 'Pechuga a la plancha' podría no ser válido según el menú y requeriría clarificación. Sin embargo, como el usuario solo está aclarando el tema de su consulta y no pide cambios, no se planifican acciones.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": null,
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:50:52.503783",
+      "total_amount": 0.0
+    },
+    "order_after": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": null,
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:51:12.310371",
+      "total_amount": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entiendo perfectamente que te refieres a los platos de entrada o primeros platos, no a valores éticos 😊\n\nPara el menú de hoy **Jueves Caserito**, tenemos estas opciones de **principio**:\n\n**NUESTROS PRINCIPIOS:**\n🍝 **Macarrón con carne molida**\n🥘 **Guiso de yota con huevo**\n🍽️ **Principio mixto** (ambos principios juntos)\n\nTodos los almuerzos incluyen: **Yuca al vapor, arroz, ensalada, jugo y caramelo**\n\n¿Te gustaría conocer las proteínas disponibles o prefieres que te ayude a armar tu pedido? ¡Quedo atenta!",
+    "processing_time_ms": 29635.637998580933,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:51:22.186602"
+  },
+  {
+    "log_id": "log_6abe6b1b",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:52:15.316412",
+    "user_message": "Regáleme ese con macarrones",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Regáleme ese con macarrones",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar la pechuga a la plancha existente para que incluya macarrones",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar la pechuga a la plancha existente para que incluya macarrones. Según el GLOSARIO, 'macarrones' se refiere a un 'principio' (principle), no a un acompañamiento (sides). Verificando el menú extraído: en la sección 'Principio' se encuentra 'Macarrón con carne molida', lo que confirma que 'macarrones' es un principio válido disponible. El ítem actual (item-53b39536) es 'Pechuga a la plancha', que según el menú es una proteína principal. La modificación solicitada es agregar un principio a un ítem que actualmente no tiene uno definido. Por lo tanto, se debe actualizar el ítem existente para incluir el principio 'macarrones con carne molida'. No se mencionan cambios en cantidad, proteína, acompañamientos, tamaño o requisitos, por lo que esos campos se mantendrán como están (si existen) o se dejarán sin definir.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-53b39536",
+          "principle": "macarrón con carne molida"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": null,
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:52:15.328049",
+      "total_amount": 0.0
+    },
+    "order_after": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": "macarrón con carne molida",
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:52:35.782906",
+      "total_amount": 0.0
+    },
+    "assistant_response": "¡Con gusto! Para modificar tu pechuga a la plancha para que incluya macarrones, primero necesito confirmar el tamaño: ¿lo deseas corriente o mini?",
+    "processing_time_ms": 23965.648651123047,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:52:39.328438"
+  },
+  {
+    "log_id": "log_911fd233",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:53:40.374924",
+    "user_message": "No, mejor mini, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "No, mejor mini, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar la pechuga a la plancha existente a tamaño mini",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar la pechuga a la plancha existente (item-53b39536) cambiando su tamaño de 'corriente' a 'mini'. Según la información extraída del menú, la 'Pechuga a la plancha' SÍ está disponible en tamaño mini (PRICES: 13500 (Corriente), 12000 (mini)). Por lo tanto, la modificación es válida y se puede proceder con la actualización. Se mantendrán todos los demás campos del ítem (proteína, principio, acompañamientos, etc.) sin cambios.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-53b39536",
+          "size": "mini"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": "macarrón con carne molida",
+          "sides": [],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:53:40.385674",
+      "total_amount": 0.0
+    },
+    "order_after": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": "macarrón con carne molida",
+          "sides": [],
+          "size": "mini",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:53:54.830101",
+      "total_amount": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces tu pedido queda así:\n\n**Pechuga a la plancha - Tamaño mini**\n\n¿Con qué principio lo deseas? Tenemos disponible:\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)",
+    "processing_time_ms": 19929.677963256836,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:54:00.363324"
+  },
+  {
+    "log_id": "log_9d7fba3a",
+    "session_id": "sess_72b4453056b9",
+    "timestamp": "2026-03-04T11:54:51.961328",
+    "user_message": "Regáleme otro con Bocachico frito, también mini",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Regáleme otro con Bocachico frito, también mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar un segundo plato con Bocachico frito, manteniendo el tamaño mini del pedido actual",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "Cliente solicita agregar un segundo plato con Bocachico frito, manteniendo el tamaño mini del pedido actual. Verificando disponibilidad en el menú: La información extraída confirma que 'Bocachico criollo frito / sudado' está disponible como proteína. Sin embargo, el menú no especifica precios diferenciados por tamaño (solo muestra 'PRICE: 13500'), lo que sugiere que podría no estar disponible en tamaño 'mini'. El cliente pide explícitamente 'manteniendo el tamaño mini', lo cual requiere clarificación sobre si el Bocachico frito viene en porción mini. Dado que el menú no lista un precio para 'mini' de este ítem, no se puede proceder con la creación sin confirmación. Se necesita aclarar con el cliente si el Bocachico frito está disponible en tamaño mini o si debe ser corriente.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": "macarrón con carne molida",
+          "sides": [],
+          "size": "mini",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:54:51.971055",
+      "total_amount": 0.0
+    },
+    "order_after": {
+      "id": "ORD-B47E42",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-53b39536",
+          "quantity": 1,
+          "protein": "Pechuga a la plancha",
+          "principle": "macarrón con carne molida",
+          "sides": [],
+          "size": "mini",
+          "unit_price": 0.0,
+          "requirements": [],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-04T11:55:10.046298",
+      "total_amount": 0.0
+    },
+    "assistant_response": "¡Con gusto! El Bocachico criollo frito está disponible en el menú. ¿Con qué principio lo deseas? Tenemos Macarrón con carne molida, Guiso de yota con huevo o Principio mixto (ambos principios).",
+    "processing_time_ms": 22593.17135810852,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-04T11:55:14.600382"
+  }
+]

@@ -1,0 +1,8 @@
+# Execution mode = gradio
+python src/main.py --mode gradio --reload
+python src/main.py --mode cli
+
+# Upload prompts to Langfuse Prompt Management
+python scripts/upload_prompts_to_langfuse.py --dry-run  # preview first
+python scripts/upload_prompts_to_langfuse.py           # do it
+

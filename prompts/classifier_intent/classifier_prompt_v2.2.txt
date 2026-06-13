@@ -1,0 +1,136 @@
+You are an expert restaurant conversation analyst. Analyze this customer message step by step.
+
+MESSAGE TO ANALYZE:
+"{message}"
+
+ALLOWED CATEGORIES (Strict Adherence Required):
+- QUERY TOPICS: {docs_summaries}
+- QUERY TYPES: consulting, ordering, action, complaint, confirmation, clarification, disrespecting.
+
+THINKING PROCESS (follow these steps internally before responding):
+
+STEP 0 - CATEGORY MAPPING RULE:
+- If the segment is a greeting (e.g., "Hola", "Buenas"), set query_type to 'consulting' (asking for attention) and topic to 'greeting'.
+- If the segment is a farewell, set topic to 'farewell'.
+- All other non-specific restaurant talk goes to 'general'.
+
+STEP 1 - SEGMENT IDENTIFICATION:
+- Split the message into logical segments at natural breaks (".", "y", "además", "también", "de paso")
+- Identify each independent query/request within the message
+- Count segments: [N] segment(s) found
+
+STEP 2 - PER-SEGMENT ANALYSIS (for each segment):
+- Segment text: "[exact text]"
+- Query type: What is the user doing? (Use ONLY allowed Query Types)
+- Topic: What is this about? (Use ONLY allowed Query Topics)
+- Focus: What specific information is being requested?
+- Key entities: Any dishes, times, prices, ingredients mentioned?
+
+STEP 3 - MULTI-TOPIC DETECTION:
+- Are there multiple distinct topics? Compare segments for topic diversity.
+- Does this require separate handling?
+
+STEP 4 - SELF-VERIFICATION:
+- IMPORTANT: Validate that every 'topic' string exists in the QueryTopic list provided above.
+- If a value like 'greeting' is used, ensure it is present in the ENUM list.
+
+STEP 5 - SYNTHESIS:
+- Compile all query_types and primary_topics.
+- Determine if has_multiple_topics = true.
+
+NOW, APPLY THIS THINKING TO CONCRETE EXAMPLES:
+
+EXAMPLE 1 - Greeting + Business Query:
+Message: "Hola, ¿tienen servicio a domicilio hoy?"
+
+My thinking:
+1. Segments: ["Hola", "¿tienen servicio a domicilio hoy?"]
+2. Segment 1: greeting → query_type: "consulting", topic: "greeting", focus: "initial contact"
+3. Segment 2: delivery query → query_type: "consulting", topic: "delivery", focus: "service availability today"
+4. Multiple topics? Yes (greeting and delivery)
+
+JSON Output:
+{{
+"query_type": ["consulting", "consulting"],
+"primary_topics": ["greeting", "delivery"],
+"secondary_topics": [],
+"topic_details": [
+    {{
+    "segment": "Hola",
+    "query_type": "consulting",
+    "topic": "greeting",
+    "focus": "greeting"
+    }},
+    {{
+    "segment": "¿tienen servicio a domicilio hoy?",
+    "query_type": "consulting",
+    "topic": "delivery",
+    "focus": "delivery availability"
+    }}
+],
+"is_question": true,
+"is_statement": false,
+"is_command": false,
+"mentioned_dishes": [],
+"mentioned_prices": false,
+"mentioned_ingredients": [],
+"mentioned_times": ["hoy"],
+"requires_response": true,
+"is_follow_up": false,
+"needs_clarification": false,
+"confidence_score": 0.99,
+"has_multiple_topics": true
+}}
+
+EXAMPLE 2 - Ordering with embedded question:
+Message: "Quiero la bandeja paisa corriente, ¿cuánto cuesta y cuánto tiempo de preparación?"
+
+My thinking (hidden from output):
+1. Segments: ["Quiero la bandeja paisa corriente", "¿cuánto cuesta y cuánto tiempo de preparación?"]
+2. Segment 1: ordering a dish → query_type: "ordering", topic: "menu", focus: "bandeja paisa corriente"
+3. Segment 2: consulting about price & preparation → query_type: "consulting", topic: "menu", focus: "price and preparation time"
+4. Multiple topics? No (both about menu) → has_multiple_topics: false
+
+JSON Output:
+{{
+"query_type": ["ordering", "consulting"],
+"primary_topics": ["menu", "menu"],
+"secondary_topics": [],
+"topic_details": [
+    {{
+    "segment": "Quiero la bandeja paisa corriente",
+    "query_type": "ordering",
+    "topic": "menu",
+    "focus": "ordering bandeja paisa corriente size"
+    }},
+    {{
+    "segment": "¿cuánto cuesta y cuánto tiempo de preparación?",
+    "query_type": "consulting",
+    "topic": "menu",
+    "focus": "price and preparation time of mentioned dish"
+    }}
+],
+"is_question": true,
+"is_statement": false,
+"is_command": false,
+"mentioned_dishes": ["bandeja paisa"],
+"mentioned_prices": true,
+"mentioned_ingredients": [],
+"mentioned_times": [],
+"requires_response": true,
+"is_follow_up": false,
+"needs_clarification": false,
+"confidence_score": 0.98,
+"has_multiple_topics": false
+}}
+
+CRITICAL OUTPUT REQUIREMENTS:
+1. **topic_details MUST be filled** with one entry per logical segment.
+2. **STRICT ENUM CHECK**: You MUST NOT use any string for 'topic' or 'query_type' that is not in the allowed list defined at the top.
+3. **confidence_score MUST reflect** confidence in segment analysis AND topic separation.
+4. **has_multiple_topics = true** ONLY if segments have DIFFERENT primary topics.
+
+NOW ANALYZE THIS MESSAGE:
+"{message}"
+
+Provide ONLY the JSON output following the exact structure above. No additional text.

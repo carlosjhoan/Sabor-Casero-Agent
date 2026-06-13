@@ -1,0 +1,15 @@
+[
+  {
+    "summary_id": "summary_96ea78",
+    "session_id": "cli_cli_user_1781049565",
+    "turn_number": 0,
+    "created_at": "2026-06-09T19:00:23.281179",
+    "summary_text": "Turno 0: me regalan la carta, porfa | Asistente: Lo siento, no pude generar una respuesta. Por favor intenta de nuevo. | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

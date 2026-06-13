@@ -1,0 +1,206 @@
+@prefix : <http://saborcasero.com/menu#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+
+# ============================================================
+# Ontology — Menú Sabor Casero
+# Modela secciones, items, precios y opciones del menú.
+# ============================================================
+
+# --- Clases ---
+:MenuItem a owl:Class .
+:MenuSection a owl:Class .
+:ItemOption a owl:Class .
+:PriceOption a owl:Class .
+
+# --- Propiedades de objeto ---
+:hasSection a owl:ObjectProperty .
+:hasItem a owl:ObjectProperty .
+:hasOption a owl:ObjectProperty .
+:hasPriceOption a owl:ObjectProperty .
+
+# ============================================================
+# P5: CookingMethod / Ingredient taxonomy enrichment
+# ============================================================
+
+# --- Nuevas clases ---
+:CookingMethod a owl:Class .
+:Ingredient a owl:Class .
+
+# --- Nuevas propiedades de objeto ---
+:hasCookingMethod a owl:ObjectProperty .
+:hasMainIngredient a owl:ObjectProperty .
+
+# --- Instancias de método de cocción ---
+:Sudado a :CookingMethod .
+:Frito a :CookingMethod .
+:APlancha a :CookingMethod .
+:Gratinado a :CookingMethod .
+:BBQ a :CookingMethod .
+:Asado a :CookingMethod .
+
+# --- Instancias de ingrediente principal ---
+:Pollo a :Ingredient .
+:Cerdo a :Ingredient .
+:Res a :Ingredient .
+:Pescado a :Ingredient .
+:Verdura a :Ingredient .
+
+# ============================================================
+# P5: Relacionar items existentes con CookingMethod / Ingredient
+# ============================================================
+
+:Bocachico :hasCookingMethod :Sudado, :Frito ;
+           :hasMainIngredient :Pescado .
+
+:PechugaAPlancha :hasCookingMethod :APlancha ;
+                 :hasMainIngredient :Pollo .
+
+:PechugaGratinada :hasCookingMethod :Gratinado ;
+                  :hasMainIngredient :Pollo .
+
+:LomoCerdo :hasCookingMethod :Asado, :APlancha ;
+            :hasMainIngredient :Cerdo .
+
+:CarnesMixtas :hasMainIngredient :Res, :Cerdo .
+
+# --- Propiedades de dato ---
+:sectionName a owl:DatatypeProperty .
+:itemName a owl:DatatypeProperty .
+:optionName a owl:DatatypeProperty .
+:sectionDescription a owl:DatatypeProperty .
+:hasAmount a owl:DatatypeProperty .
+:hasSize a owl:DatatypeProperty .
+
+# ============================================================
+# SECCIÓN: Sopa
+# ============================================================
+:Sopa a :MenuSection ;
+    :sectionName "Sopa" ;
+    :hasItem :CremaDeVerdura .
+
+:CremaDeVerdura a :MenuItem ;
+    :itemName "Crema de verdura" .
+
+# ============================================================
+# SECCIÓN: Principio
+# ============================================================
+:Principio a :MenuSection ;
+    :sectionName "Principio" ;
+    :hasItem :MacarronConCarneMolida, :GuisoDeYotaConHuevo, :PrincipioMixto .
+
+:MacarronConCarneMolida a :MenuItem ;
+    :itemName "Macarrón con carne molida" .
+
+:GuisoDeYotaConHuevo a :MenuItem ;
+    :itemName "Guiso de yota con huevo" .
+
+:PrincipioMixto a :MenuItem ;
+    :itemName "Principio mixto (Ambos principios)" .
+
+# ============================================================
+# SECCIÓN: Acompañamientos
+# ============================================================
+:Acompanamientos a :MenuSection ;
+    :sectionName "Acompañamientos" ;
+    :sectionDescription "Yuca al vapor arroz, ensalada, jugo y caramelo" .
+
+# ============================================================
+# SECCIÓN: Proteínas
+# ============================================================
+:Proteinas a :MenuSection ;
+    :sectionName "Proteínas" ;
+    :hasItem :BandejaMixta, :Bocachico, :CarnesMixtas, :PechugaGratinada, :PechugaAPlancha, :CarneAPlancha, :LomoCerdo .
+
+# --- Bandeja mixta ---
+:BandejaMixta a :MenuItem ;
+    :itemName "Bandeja mixta" ;
+    :hasPriceOption :BandejaMixta_Price ;
+    :hasOption :BandejaMixta_Opt1, :BandejaMixta_Opt2, :BandejaMixta_Opt3 .
+
+:BandejaMixta_Price a :PriceOption ;
+    :hasAmount "15000"^^xsd:decimal .
+
+:BandejaMixta_Opt1 a :ItemOption ;
+    :optionName "Pechuga - Carne" .
+
+:BandejaMixta_Opt2 a :ItemOption ;
+    :optionName "Pechuga - Lomo de cerdo a la BBQ" .
+
+:BandejaMixta_Opt3 a :ItemOption ;
+    :optionName "Carne - Lomo de cerdo a la BBQ" .
+
+# --- Bocachico criollo frito / sudado ---
+:Bocachico a :MenuItem ;
+    :itemName "Bocachico criollo frito / sudado" ;
+    :hasPriceOption :Bocachico_Price .
+
+:Bocachico_Price a :PriceOption ;
+    :hasAmount "13500"^^xsd:decimal .
+
+# --- Carnes mixtas en vegetales ---
+:CarnesMixtas a :MenuItem ;
+    :itemName "Carnes mixtas en vegetales" ;
+    :hasPriceOption :CarnesMixtas_Corriente, :CarnesMixtas_mini .
+
+:CarnesMixtas_Corriente a :PriceOption ;
+    :hasAmount "13500"^^xsd:decimal ; :hasSize "Corriente" .
+
+:CarnesMixtas_mini a :PriceOption ;
+    :hasAmount "12000"^^xsd:decimal ; :hasSize "mini" .
+
+# --- Pechuga gratinada ---
+:PechugaGratinada a :MenuItem ;
+    :itemName "Pechuga gratinada" ;
+    :hasPriceOption :PechugaGratinada_Corriente, :PechugaGratinada_mini .
+
+:PechugaGratinada_Corriente a :PriceOption ;
+    :hasAmount "13500"^^xsd:decimal ; :hasSize "Corriente" .
+
+:PechugaGratinada_mini a :PriceOption ;
+    :hasAmount "12000"^^xsd:decimal ; :hasSize "mini" .
+
+# --- Pechuga a la plancha ---
+:PechugaAPlancha a :MenuItem ;
+    :itemName "Pechuga a la plancha" ;
+    :hasPriceOption :PechugaAPlancha_Corriente, :PechugaAPlancha_mini .
+
+:PechugaAPlancha_Corriente a :PriceOption ;
+    :hasAmount "13500"^^xsd:decimal ; :hasSize "Corriente" .
+
+:PechugaAPlancha_mini a :PriceOption ;
+    :hasAmount "12000"^^xsd:decimal ; :hasSize "mini" .
+
+# --- Carne a la plancha ---
+:CarneAPlancha a :MenuItem ;
+    :itemName "Carne a la plancha" ;
+    :hasPriceOption :CarneAPlancha_Corriente, :CarneAPlancha_mini .
+
+:CarneAPlancha_Corriente a :PriceOption ;
+    :hasAmount "13500"^^xsd:decimal ; :hasSize "Corriente" .
+
+:CarneAPlancha_mini a :PriceOption ;
+    :hasAmount "12000"^^xsd:decimal ; :hasSize "mini" .
+
+# --- Lomo de cerdo asado a la plancha ---
+:LomoCerdo a :MenuItem ;
+    :itemName "Lomo de cerdo asado a la plancha" ;
+    :hasPriceOption :LomoCerdo_Corriente, :LomoCerdo_mini ;
+    :hasOption :LomoCerdo_Opt1, :LomoCerdo_Opt2, :LomoCerdo_Opt3 .
+
+:LomoCerdo_Corriente a :PriceOption ;
+    :hasAmount "13500"^^xsd:decimal ; :hasSize "Corriente" .
+
+:LomoCerdo_mini a :PriceOption ;
+    :hasAmount "12000"^^xsd:decimal ; :hasSize "mini" .
+
+:LomoCerdo_Opt1 a :ItemOption ;
+    :optionName "con salsa BBQ" .
+
+:LomoCerdo_Opt2 a :ItemOption ;
+    :optionName "con salsa miel-mostaza" .
+
+:LomoCerdo_Opt3 a :ItemOption ;
+    :optionName "Sin ninguna salsa" .

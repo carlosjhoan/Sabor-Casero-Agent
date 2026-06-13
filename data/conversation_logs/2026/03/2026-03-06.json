@@ -1,0 +1,808 @@
+[
+  {
+    "log_id": "log_b7426553",
+    "session_id": "sess_5e6796b06982",
+    "timestamp": "2026-03-06T16:59:30.612777",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_db27520a",
+    "session_id": "sess_af85c6e83dea",
+    "timestamp": "2026-03-06T17:01:10.610472",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_4b4204cb",
+    "session_id": "sess_0edc57282e41",
+    "timestamp": "2026-03-06T17:03:39.561650",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_00261241",
+    "session_id": "sess_93e8934c1508",
+    "timestamp": "2026-03-06T17:06:09.967739",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_ded469b7",
+    "session_id": "sess_dfe5ca826f15",
+    "timestamp": "2026-03-06T17:07:13.116195",
+    "user_message": "Hola, buenas",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenas",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Bienvenido/a a Sabor Casero, donde preparamos comida casera con el sabor de hogar. 😊\n\n¿En qué puedo ayudarte hoy? Puedes consultarme sobre nuestro menú, horarios, domicilios o cualquier otra información de nuestro restaurante.",
+    "processing_time_ms": 7185.373067855835,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:07:20.362732"
+  },
+  {
+    "log_id": "log_c59010e8",
+    "session_id": "sess_066449b5a25c",
+    "timestamp": "2026-03-06T17:12:11.924955",
+    "user_message": "Hola, buenas",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenas",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenas tardes, soy Luz Stella, tu asistente virtual de Sabor Casero. 😊\n\nEstoy aquí para ayudarte con información sobre nuestro menú, horarios, domicilios o para tomar tu pedido. \n\n¿En qué puedo asistirte hoy?",
+    "processing_time_ms": 6765.950441360474,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:12:18.763528"
+  },
+  {
+    "log_id": "log_bd59f060",
+    "session_id": "sess_066449b5a25c",
+    "timestamp": "2026-03-06T17:13:17.987871",
+    "user_message": "qué hay para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "qué hay para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar qué opciones del menú están disponibles hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te cuento lo que tenemos hoy en Sabor Casero para este jueves caserito 😊\n\n**Menú del día:**\n- **Sopa:** Crema de verdura\n- **Principio:** Macarrón con carne molida o Guiso de yota con huevo (también puedes elegir principio mixto con ambos)\n- **Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo\n\n**Proteínas disponibles:**\n- Pechuga a la plancha: $13.500 (corriente) / $12.000 (mini)\n- Carne a la plancha: $13.500 (corriente) / $12.000 (mini)\n- Lomo de cerdo asado a la plancha: $13.500 (corriente) / $12.000 (mini)\n  *Opciones de salsa:* BBQ, miel-mostaza o sin salsa\n\n¿Te gustaría ordenar algo del menú? Con gusto quedo atenta para tomarte el pedido con lo que desees 🍽️",
+    "processing_time_ms": 9759.620666503906,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:13:27.807429"
+  },
+  {
+    "log_id": "log_8debb91d",
+    "session_id": "sess_066449b5a25c",
+    "timestamp": "2026-03-06T17:14:32.066890",
+    "user_message": "regáleme un Lomo de cerdo con BBQ, pero que porfa esté bien asado",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "regáleme un Lomo de cerdo con BBQ, pero que porfa esté bien asado",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar un nuevo pedido de lomo de cerdo con BBQ, especificando que esté bien asado",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:14:42.020886"
+  },
+  {
+    "log_id": "log_3f060922",
+    "session_id": "sess_c10768b0b73e",
+    "timestamp": "2026-03-06T17:17:45.085905",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, horarios, métodos de pago o realizar un pedido.",
+    "processing_time_ms": 6534.138441085815,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:17:51.677053"
+  },
+  {
+    "log_id": "log_24da340e",
+    "session_id": "sess_c10768b0b73e",
+    "timestamp": "2026-03-06T17:18:41.869927",
+    "user_message": "Qué hay de menú?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué hay de menú?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar qué opciones hay disponibles en el menú del restaurante",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te comparto el menú de hoy **Jueves Caserito** en Sabor Casero:\n\n🍲 **Sopa del día:** Crema de verdura  \n🥘 **Principios disponibles:**  \n- Macarrón con carne molida  \n- Guiso de yota con huevo  \n- Principio mixto (ambos principios)  \n\n🍽️ **Acompañamientos base:** Yuca al vapor, arroz, ensalada, jugo y caramelo  \n\n🥩 **Proteínas principales:**  \n- **Pechuga a la plancha** – $13.500 (corriente) / $12.000 (mini)  \n- **Carne a la plancha** – $13.500 (corriente) / $12.000 (mini)  \n- **Lomo de cerdo asado a la plancha** – $13.500 (corriente) / $12.000 (mini)  \n  *Opciones de salsa:* BBQ, miel-mostaza o sin salsa  \n\n🍛 **Especiales del día:**  \n- **Bandeja mixta** (elige 2 proteínas) – $15.000  \n  *Combinaciones:* Pechuga + Carne, Pechuga + Lomo BBQ, Carne + Lomo BBQ  \n- **Bocachico criollo** (frito o sudado) – $13.500  \n- **Carnes mixtas en vegetales** – $13.500 (corriente) / $12.000 (mini)  \n- **Pechuga gratinada** – $13.500 (corriente) / $12.000 (mini)  \n\n¿Te gustaría pedir algo del menú? ¡Quedo atenta para ayudarte con tu orden! 😊",
+    "processing_time_ms": 13354.20823097229,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:18:55.279832"
+  },
+  {
+    "log_id": "log_998cea77",
+    "session_id": "sess_c10768b0b73e",
+    "timestamp": "2026-03-06T17:19:47.639588",
+    "user_message": "me regala un lomo de cerdo BBQ, pero porfa que esté bien asado, les agradezco",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "me regala un lomo de cerdo BBQ",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario inicia un pedido de lomo de cerdo BBQ",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      },
+      {
+        "segment": "pero porfa que esté bien asado",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "especifica una preferencia de preparación para el lomo",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "les agradezco",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario agradece al finalizar su solicitud",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:20:24.712725"
+  },
+  {
+    "log_id": "log_2f3dc215",
+    "session_id": "sess_f17d1ffc9bdc",
+    "timestamp": "2026-03-06T17:23:50.073882",
+    "user_message": "Hola, buenios días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenios días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nZONAS DE ENTREGA\n- Bucaramanga\n- Floridablanca\n- Girón\n- Piedecuesta\n** NOTA: Solamente entegamos pedidos dentro del ÁREA METROPOLITANA DE BUCARAMANGA\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! ¡Buenos días! 🌞\n\nGracias por saludar. Soy Luz Stella, tu asistente virtual de **Sabor Casero**. \n\n¿En qué puedo ayudarte hoy? Puedes consultarme sobre nuestro menú, precios, horarios de atención, zonas de entrega o si deseas realizar un pedido. \n\nQuedo atenta a tu respuesta. 😊",
+    "processing_time_ms": 7174.448013305664,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:23:57.307382"
+  },
+  {
+    "log_id": "log_44eaac87",
+    "session_id": "sess_f17d1ffc9bdc",
+    "timestamp": "2026-03-06T17:24:11.483929",
+    "user_message": "me regala el menú",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "me regala el menú",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar el menú para consultar opciones disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Con gusto! Aquí te comparto el menú de hoy, **Jueves Caserito** 🍽️:\n\n---\n\n### **Sopa del día**\n- Crema de verdura\n\n### **Principios** (elige uno)\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n### **Acompañamientos**\nTodos los almuerzos incluyen: yuca al vapor, arroz, ensalada, jugo y caramelo.\n\n---\n\n### **Proteínas disponibles** 🍗🥩🐟\n\n| Plato | Precio (Corriente) | Precio (Mini) |\n|-------|-------------------|---------------|\n| Bandeja mixta (elige combinación):<br>• Pechuga - Carne<br>• Pechuga - Lomo de cerdo a la BBQ<br>• Carne - Lomo de cerdo a la BBQ | $15,000 | — |\n| Bocachico criollo frito / sudado | $13,500 | — |\n| Carnes mixtas en vegetales | $13,500 | $12,000 |\n| Pechuga gratinada | $13,500 | $12,000 |\n| Pechuga a la plancha | $13,500 | $12,000 |\n| Carne a la plancha | $13,500 | $12,000 |\n| Lomo de cerdo asado a la plancha (opciones de salsa: BBQ, miel-mostaza o sin salsa) | $13,500 | $12,000 |\n\n---\n\n¿Te gustaría ordenar algo del menú? Quedo atenta para ayudarte con tu pedido 😊",
+    "processing_time_ms": 13195.908308029175,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:24:24.747819"
+  },
+  {
+    "log_id": "log_2e5cc2b9",
+    "session_id": "sess_f17d1ffc9bdc",
+    "timestamp": "2026-03-06T17:24:47.142244",
+    "user_message": "Me regala un lomo de cerdo BBQ",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Me regala un lomo de cerdo BBQ",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar un lomo de cerdo BBQ como su primer pedido",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:25:18.060863"
+  },
+  {
+    "log_id": "log_f5cdf374",
+    "session_id": "sess_c19782967239",
+    "timestamp": "2026-03-06T17:39:36.513159",
+    "user_message": "Hola, buenos días. Me regalan el menú",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días.",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando al inicio de la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      },
+      {
+        "segment": "Me regalan el menú",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar ver el menú para consultar opciones disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, gracias por contactar a Sabor Casero. Con mucho gusto te comparto nuestro menú para hoy:\n\n**Menú para un Jueves Caserito**\n\n**Sopa:**  \nCrema de verdura\n\n**Principio (elige uno):**  \n- Macarrón con carne molida  \n- Guiso de yota con huevo  \n- Principio mixto (ambos principios)\n\n**Acompañamientos:**  \nYuca al vapor, arroz, ensalada, jugo y caramelo\n\n**Proteínas (elige una):**  \n- Pechuga a la plancha – $13.500 (corriente) / $12.000 (mini)  \n- Carne a la plancha – $13.500 (corriente) / $12.000 (mini)  \n- Lomo de cerdo asado a la plancha (con salsa BBQ, salsa miel-mostaza o sin salsa) – $13.500 (corriente) / $12.000 (mini)  \n- Bandeja mixta (Pechuga-Carne, Pechuga-Lomo de cerdo a la BBQ o Carne-Lomo de cerdo a la BBQ) – $15.000  \n- Bocachico criollo frito/sudado – $13.500  \n- Carnes mixtas en vegetales – $13.500 (corriente) / $12.000 (mini)  \n- Pechuga gratinada – $13.500 (corriente) / $12.000 (mini)\n\n¿Te gustaría ordenar algo del menú? Quedo atenta para ayudarte con tu pedido.",
+    "processing_time_ms": 15088.554620742798,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:39:51.663112"
+  },
+  {
+    "log_id": "log_4f773ae1",
+    "session_id": "sess_c19782967239",
+    "timestamp": "2026-03-06T17:40:20.846722",
+    "user_message": "Me regala porfa un lomo BBQ",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Me regala porfa un lomo BBQ",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar un plato de lomo BBQ como su primer pedido",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:40:54.616690"
+  },
+  {
+    "log_id": "log_d0663c3f",
+    "session_id": "sess_d4528429cc39",
+    "timestamp": "2026-03-06T17:43:34.814452",
+    "user_message": "Hola, buenos días, me regala un lomo BBQ",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando al inicio de la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      },
+      {
+        "segment": "me regala un lomo BBQ",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar un plato de lomo BBQ",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere ordenar un plato de lomo BBQ. Según la información extraída del menú, el 'Lomo de cerdo asado a la plancha' está disponible con la opción 'con salsa BBQ'. El precio es 13500 (Corriente) o 12000 (mini). El cliente no especificó tamaño, por defecto será 'corriente'. El menú también indica que los acompañamientos incluidos son: Yuca al vapor, arroz, ensalada, jugo y caramelo. Como no hay un pedido activo, primero se debe crear la orden y luego el ítem.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Lomo de cerdo asado a la plancha",
+          "size": "corriente",
+          "sides": [
+            "Yuca al vapor",
+            "arroz",
+            "ensalada",
+            "jugo",
+            "caramelo"
+          ],
+          "requirements": [
+            "con salsa BBQ"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, gracias por contactar a Sabor Casero. 🌞\n\nCon mucho gusto te puedo ofrecer el **Lomo de cerdo asado a la plancha con salsa BBQ**. Este plato está disponible en dos tamaños:\n- **Corriente:** $13,500 COP\n- **Mini:** $12,000 COP\n\n¿Cuál tamaño prefieres?",
+    "processing_time_ms": 16598.450422286987,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:43:51.476273"
+  },
+  {
+    "log_id": "log_9658ebed",
+    "session_id": "sess_d4528429cc39",
+    "timestamp": "2026-03-06T17:44:40.000484",
+    "user_message": "Regalemelo corriente",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Regalemelo corriente",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el lomo BBQ de la orden actual a la versión corriente",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar el lomo BBQ de la orden actual a la versión 'corriente'. Según el menú extraído (info_extracted), el 'Lomo de cerdo asado a la plancha' tiene dos tamaños: 'Corriente' y 'mini'. La versión 'corriente' es válida y está disponible. El ítem actual (item-b8ede516) ya tiene la proteína 'Lomo de cerdo asado a la plancha' y la salsa BBQ está indicada en los 'requirements'. El cliente no especifica cambiar la salsa, solo el tamaño. Por lo tanto, se debe actualizar el campo 'size' a 'corriente' para este ítem, manteniendo todos los demás campos (proteína, acompañamientos, salsa) sin cambios.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-b8ede516",
+          "size": "corriente"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-31B81D",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b8ede516",
+          "quantity": 1,
+          "protein": "Lomo de cerdo asado a la plancha",
+          "principle": null,
+          "sides": [
+            "Yuca al vapor",
+            "arroz",
+            "ensalada",
+            "jugo",
+            "caramelo"
+          ],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [
+            "con salsa BBQ"
+          ],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-06T17:44:40.015763",
+      "total_amount": 0.0
+    },
+    "order_after": {
+      "id": "ORD-31B81D",
+      "customer_id": null,
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b8ede516",
+          "quantity": 1,
+          "protein": "Lomo de cerdo asado a la plancha",
+          "principle": null,
+          "sides": [
+            "Yuca al vapor",
+            "arroz",
+            "ensalada",
+            "jugo",
+            "caramelo"
+          ],
+          "size": "corriente",
+          "unit_price": 0.0,
+          "requirements": [
+            "con salsa BBQ"
+          ],
+          "subtotal": 0.0
+        }
+      ],
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0,
+      "payment_method": null,
+      "observations": [],
+      "created_at": "2026-03-06T17:44:50.025165",
+      "total_amount": 0.0
+    },
+    "assistant_response": "¡Con gusto! Para preparar tu pedido, necesito confirmar: ¿qué proteína te gustaría en la versión corriente?",
+    "processing_time_ms": 11995.85247039795,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:44:52.058040"
+  },
+  {
+    "log_id": "log_7b8c2f85",
+    "session_id": "sess_d4528429cc39",
+    "timestamp": "2026-03-06T17:45:19.410317",
+    "user_message": "no, mejor ese mini, porfa\nY aparte regaleme una carne pero que esté bien asada",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "no, mejor ese mini, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el lomo de cerdo BBQ actual a tamaño mini",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "Y aparte regaleme una carne pero que esté bien asada",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar un plato de carne bien asada a la orden actual",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:45:53.268700"
+  },
+  {
+    "log_id": "log_7acb0e12",
+    "session_id": "sess_d795c79b3e68",
+    "timestamp": "2026-03-06T17:52:44.813122",
+    "user_message": "Hola,   buenos días, me regala un lom BBQ mini",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola,   buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando al inicio de la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      },
+      {
+        "segment": "me regala un lom BBQ mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar un lomito BBQ en tamaño mini",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere ordenar un lomito BBQ en tamaño mini. Según la información extraída del menú, el ítem 'Lomo de cerdo asado a la plancha' está disponible con la opción 'con salsa BBQ' y tiene precio para tamaño mini (12000 COP). El cliente no tiene un pedido activo, por lo que primero se debe crear la orden. Se creará un ítem con proteína 'lomo de cerdo asado a la plancha', tamaño 'mini' y se añadirá el requerimiento 'con salsa BBQ' para especificar la salsa. Los acompañamientos (sides) y principio (principle) no se especifican en la solicitud, por lo que se dejan vacíos para que el cliente los especifique después.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "size": "mini",
+          "requirements": [
+            "con salsa BBQ"
+          ],
+          "sides": [],
+          "principle": null
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, gracias por contactar a Sabor Casero. 🌟\n\nCon gusto te tomo el pedido de un **Lomo de cerdo asado a la plancha con salsa BBQ en tamaño mini** por **$12.000 COP**.\n\nPara completar tu almuerzo, ¿con cuál de estos principios lo deseas?\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\nQuedo atenta a tu respuesta.",
+    "processing_time_ms": 19242.651224136353,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:53:04.154849"
+  },
+  {
+    "log_id": "log_2b779f71",
+    "session_id": "sess_d795c79b3e68",
+    "timestamp": "2026-03-06T17:54:01.610935",
+    "user_message": "Ese con macarrón\n\ny porfa deme otro con Bocachico frito, mini también",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Ese con macarrón",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el lomo de cerdo existente para que incluya macarrón como acompañante",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "porfa deme otro con Bocachico frito, mini también",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar un nuevo plato de bocachico frito en tamaño mini a la orden",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T17:54:32.966556"
+  },
+  {
+    "log_id": "log_e30ff9fa",
+    "session_id": "sess_34e69c49509b",
+    "timestamp": "2026-03-06T18:00:49.297118",
+    "user_message": "hola, buenos días, me regala porfa un lomo BBQ",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando al inicio de la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "HORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      },
+      {
+        "segment": "me regala porfa un lomo BBQ",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar un plato de lomo BBQ como primer pedido",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere ordenar un primer plato de lomo BBQ. Según el menú extraído, existe el ítem 'Lomo de cerdo asado a la plancha' con opción 'con salsa BBQ', disponible en tamaños corriente y mini. El cliente no especifica tamaño, por lo que se asume 'corriente' por defecto. No se mencionan principio ni acompañamientos específicos, pero el menú indica que los acompañamientos incluyen yuca al vapor, arroz, ensalada, jugo y caramelo. Como es el primer pedido, primero se debe crear la orden y luego el ítem.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Lomo de cerdo asado a la plancha",
+          "size": "corriente",
+          "requirements": [
+            "con salsa BBQ"
+          ],
+          "sides": [
+            "yuca al vapor",
+            "arroz",
+            "ensalada",
+            "jugo",
+            "caramelo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. Con mucho gusto te tomo el pedido.\n\nPara el **Lomo de cerdo asado a la plancha con salsa BBQ**, ¿lo deseas en presentación **corriente** o **mini**?",
+    "processing_time_ms": 18381.39843940735,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T18:01:07.749037"
+  },
+  {
+    "log_id": "log_3de12c69",
+    "session_id": "sess_34e69c49509b",
+    "timestamp": "2026-03-06T18:02:12.348878",
+    "user_message": "ese que sea mini, y regáleme otro, pero con Bocachico Frito, no sé si tengan mini",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "ese que sea mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el lomo BBQ existente para que sea de tamaño mini",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "y regáleme otro, pero con Bocachico Frito",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar un segundo plato con Bocachico Frito como proteína",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "no sé si tengan mini",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar disponibilidad de tamaño mini para Bocachico Frito",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-03-06T18:02:53.317536"
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "log_id": "log_1e74f427",
+    "session_id": "sess_93e0c9d9564c",
+    "timestamp": "2026-04-03T17:18:09.117110",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "general",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "service_info.txt",
+        "info_extracted": "No hay información por el momento"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, precios, horarios de atención, servicio a domicilio o realizar un pedido.",
+    "processing_time_ms": 6141.6168212890625,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-03T17:18:15.571564"
+  },
+  {
+    "log_id": "log_5b6eea81",
+    "session_id": "sess_93e0c9d9564c",
+    "timestamp": "2026-04-03T17:18:25.743556",
+    "user_message": "Qué tienen disponible para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tienen disponible para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar disponibilidad de platos y ofertas especiales del día",
+        "file_source": "menu.md",
+        "info_extracted": "No hay información por el momento"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Te cuento que hoy en Sabor Casero tenemos disponible nuestro menú completo para que disfrutes de la mejor comida casera. \n\n**Platos principales disponibles:**\n- Carne asada a la plancha\n- Pechuga a la plancha\n- Pollo sudado\n- Chuleta de cerdo\n- Pescado frito\n- Higado encebollado\n- Costilla de cerdo\n- Pollo apanado\n- Carne desmechada\n- Pollo asado\n\n**Principios disponibles:**\n- Arroz\n- Papa salada\n- Ensalada\n- Patacón\n- Plátano maduro\n- Yuca\n\n**Bebidas disponibles:**\n- Gaseosa\n- Jugo natural\n- Limonada\n\n¿Te gustaría ordenar algo en particular? Con gusto quedo atenta para tomarte el pedido con lo que desees.",
+    "processing_time_ms": 8345.417261123657,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-03T17:18:34.309669"
+  }
+]

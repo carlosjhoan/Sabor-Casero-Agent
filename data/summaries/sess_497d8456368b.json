@@ -1,0 +1,134 @@
+[
+  {
+    "summary_id": "summary_cd0e48",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 1,
+    "created_at": "2026-05-27T17:52:29.201449",
+    "summary_text": "El usuario saluda y solicita la carta. Luz Stella saluda y entrega el menú completo de Sabor Casero: sopa del día (crema de verdura), principios (guiso de yota con huevo, macarrón con carne molida, mixto), acompañamientos incluidos (yuca, arroz, ensalada, jugo, caramelo), proteínas con",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 286
+  },
+  {
+    "summary_id": "summary_e3d706",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 2,
+    "created_at": "2026-05-27T17:53:02.711557",
+    "summary_text": "Luz Stella saludó y entregó menú de Sabor Casero. Usuario pide pechuga mini. Asistente pregunta por principio: guiso de yota con huevo, macarrón con carne molida o mixto.",
+    "previous_summary": "El usuario saluda y solicita la carta. Luz Stella saluda y entrega el menú completo de Sabor Casero: sopa del día (crema de verdura), principios (guiso de yota con huevo, macarrón con carne molida, mixto), acompañamientos incluidos (yuca, arroz, ensalada, jugo, caramelo), proteínas con",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 170
+  },
+  {
+    "summary_id": "summary_e520f8",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 3,
+    "created_at": "2026-05-27T17:54:20.581207",
+    "summary_text": "",
+    "previous_summary": "Luz Stella saludó y entregó menú de Sabor Casero. Usuario pide pechuga mini. Asistente pregunta por principio: guiso de yota con huevo, macarrón con carne molida o mixto.",
+    "current_order_state": "item_id:item-99033809 --> 1x pechuga | (mini) | [Con todo]",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_30e714",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 4,
+    "created_at": "2026-05-27T17:55:03.936488",
+    "summary_text": "",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-99033809 --> 1x pechuga | principio: macarrón con carne molida | (mini) | [sin arroz, más principio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tokens_estimated": 0
+  },
+  {
+    "summary_id": "summary_3d550b",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 5,
+    "created_at": "2026-05-27T17:55:26.003833",
+    "summary_text": "Usuario confirmó ítem 1 (pechuga mini con macarrón, sin arroz, más principio) para entrega a",
+    "previous_summary": "",
+    "current_order_state": "item_id:item-99033809 --> 1x pechuga | principio: macarrón con carne molida | (mini) | [sin arroz, más principio] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "tokens_estimated": 92
+  },
+  {
+    "summary_id": "summary_0fd0f2",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 6,
+    "created_at": "2026-05-27T17:56:03.540084",
+    "summary_text": "Usuario confirmó ítem 1 (pechuga mini con macarrón, sin arroz, más principio) para entrega a domicilio. Solicitó número Nequi; asistente proporcionó 310 6728 007 (Luz Stella Galvis) y preguntó si envía comprobante o paga en efectivo.",
+    "previous_summary": "Usuario confirmó ítem 1 (pechuga mini con macarrón, sin arroz, más principio) para entrega a",
+    "current_order_state": "item_id:item-99033809 --> 1x pechuga | principio: macarrón con carne molida | (mini) | [sin arroz, más principio] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tokens_estimated": 233
+  },
+  {
+    "summary_id": "summary_aac181",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 7,
+    "created_at": "2026-05-27T17:56:37.541865",
+    "summary_text": "Usuario preguntó el total; asistente confirmó $14,000 para 1 pechuga mini con macarrón, sin arroz y más principio a domicilio. Pago pendiente: Nequi (310 6728 007) o efectivo.",
+    "previous_summary": "Usuario confirmó ítem 1 (pechuga mini con macarrón, sin arroz, más principio) para entrega a domicilio. Solicitó número Nequi; asistente proporcionó 310 6728 007 (Luz Stella Galvis) y preguntó si envía comprobante o paga en efectivo.",
+    "current_order_state": "item_id:item-99033809 --> 1x pechuga | principio: macarrón con carne molida | (mini) | [sin arroz, más principio] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tokens_estimated": 175
+  },
+  {
+    "summary_id": "summary_5713da",
+    "session_id": "sess_497d8456368b",
+    "turn_number": 8,
+    "created_at": "2026-05-27T17:57:19.688156",
+    "summary_text": "",
+    "previous_summary": "Usuario preguntó el total; asistente confirmó $14,000 para 1 pechuga mini con macarrón, sin arroz y más principio a domicilio. Pago pendiente: Nequi (310 6728 007) o efectivo.",
+    "current_order_state": "item_id:item-99033809 --> 1x pechuga | principio: macarrón con carne molida | (mini) | [sin arroz, más principio] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tokens_estimated": 0
+  }
+]

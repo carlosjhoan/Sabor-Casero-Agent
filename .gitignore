@@ -1,0 +1,53 @@
+
+# ── ChromaDB ──────────────────────────────────────────────────
+# ── Datos generados por el asistente ──────────────────────────
+# ── Documentos generados (PDFs de sesion) ──────────────────────
+# ── Entorno virtual ────────────────────────────────────────────
+# ── Entorno y secretos ───────────────────────────────────────
+# ── Gradio ─────────────────────────────────────────────────────
+# ── IDE ────────────────────────────────────────────────────────
+# ── Logs ───────────────────────────────────────────────────────
+# ── OpenSpec / SDD artifacts (decision) ────────────────────────
+# ── Python ────────────────────────────────────────────────────
+# ── TTL / OWL generados ────────────────────────────────────────
+*.egg
+*.egg-info/
+*.log
+*.owl
+*.pdf
+*.py[cod]
+*.pyo
+*.so
+*.swo
+*.swp
+*.ttl
+*.whl
+*~
+.coverage
+.eggs/
+.env
+.gradio/
+.idea/
+.mypy_cache/
+.pytest_cache/
+.venv/
+.vscode/
+STATE_OF_ART.md
+__pycache__/
+build/
+chroma_db_storage/
+configs/*.yaml
+configs/*.yml
+conversation_states.json
+coverage/
+data/cache/
+data/embeddings/
+data/orders/
+data/persistence/
+data/summaries/
+dist/
+env/
+htmlcov/
+logs/
+openspec/
+venv/

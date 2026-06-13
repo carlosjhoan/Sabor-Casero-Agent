@@ -1,0 +1,1013 @@
+{
+  "sessions": {
+    "sess_a06bcf9dd871": {
+      "session_id": "sess_a06bcf9dd871",
+      "customer_id": "default_user",
+      "order_id": "ORD-E99342",
+      "created_at": "2026-03-09T17:36:26.157866",
+      "last_activity": "2026-03-09T17:39:26.961996",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_0395a6f7a5cc": {
+      "session_id": "sess_0395a6f7a5cc",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-10T11:26:26.664380",
+      "last_activity": "2026-03-10T11:27:11.609877",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_2043799c47a7": {
+      "session_id": "sess_2043799c47a7",
+      "customer_id": "default_user",
+      "order_id": "ORD-E42ED3",
+      "created_at": "2026-03-10T11:35:22.434781",
+      "last_activity": "2026-03-10T11:52:43.011963",
+      "metadata": {},
+      "turn_number": 9
+    },
+    "sess_2dc49144bab1": {
+      "session_id": "sess_2dc49144bab1",
+      "customer_id": "default_user",
+      "order_id": "ORD-754285",
+      "created_at": "2026-03-11T17:21:19.461631",
+      "last_activity": "2026-03-11T17:26:10.991310",
+      "metadata": {},
+      "turn_number": 5
+    },
+    "sess_3dd7b4e1ce90": {
+      "session_id": "sess_3dd7b4e1ce90",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-13T15:30:58.368190",
+      "last_activity": "2026-03-13T15:36:05.980813",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_5891ef9c680a": {
+      "session_id": "sess_5891ef9c680a",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-13T15:43:55.106851",
+      "last_activity": "2026-03-13T15:43:55.133245",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_4adde2954e15": {
+      "session_id": "sess_4adde2954e15",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-13T15:45:12.879983",
+      "last_activity": "2026-03-13T15:46:29.811858",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_0fd82aca2fee": {
+      "session_id": "sess_0fd82aca2fee",
+      "customer_id": "default_user",
+      "order_id": "ORD-190086",
+      "created_at": "2026-03-13T15:58:41.751323",
+      "last_activity": "2026-03-13T16:00:21.095236",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_500602b16a41": {
+      "session_id": "sess_500602b16a41",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-13T16:08:05.012687",
+      "last_activity": "2026-03-13T16:08:39.727634",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_9b26019d726f": {
+      "session_id": "sess_9b26019d726f",
+      "customer_id": "default_user",
+      "order_id": "ORD-7209E6",
+      "created_at": "2026-03-13T16:13:14.055090",
+      "last_activity": "2026-03-13T16:16:22.004648",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_62dd68da6397": {
+      "session_id": "sess_62dd68da6397",
+      "customer_id": "default_user",
+      "order_id": "ORD-5ED374",
+      "created_at": "2026-03-13T16:38:25.847321",
+      "last_activity": "2026-03-13T16:40:18.944903",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_e0d5bbba38a3": {
+      "session_id": "sess_e0d5bbba38a3",
+      "customer_id": "default_user",
+      "order_id": "ORD-6485D0",
+      "created_at": "2026-03-13T16:48:50.193210",
+      "last_activity": "2026-03-13T16:51:49.542543",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_e11c283c5bb0": {
+      "session_id": "sess_e11c283c5bb0",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-13T17:19:24.781097",
+      "last_activity": "2026-03-13T17:19:24.815967",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_2de1b4bdca0e": {
+      "session_id": "sess_2de1b4bdca0e",
+      "customer_id": "default_user",
+      "order_id": "ORD-FDDEDC",
+      "created_at": "2026-03-13T17:22:13.697820",
+      "last_activity": "2026-03-13T17:24:46.970997",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_ed2169df1955": {
+      "session_id": "sess_ed2169df1955",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-17T15:55:47.693909",
+      "last_activity": "2026-03-17T15:57:21.252042",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_f4ceeb20c6be": {
+      "session_id": "sess_f4ceeb20c6be",
+      "customer_id": "default_user",
+      "order_id": "ORD-8AD085",
+      "created_at": "2026-03-17T16:09:56.075098",
+      "last_activity": "2026-03-17T16:12:35.442794",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_0adda892556f": {
+      "session_id": "sess_0adda892556f",
+      "customer_id": "default_user",
+      "order_id": "ORD-565AB8",
+      "created_at": "2026-03-17T16:20:28.902204",
+      "last_activity": "2026-03-17T16:27:05.668506",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "sess_d64464809c5e": {
+      "session_id": "sess_d64464809c5e",
+      "customer_id": "default_user",
+      "order_id": "ORD-F9CC4A",
+      "created_at": "2026-03-17T17:01:48.262667",
+      "last_activity": "2026-03-17T17:15:12.104506",
+      "metadata": {},
+      "turn_number": 9
+    },
+    "sess_2eadec4f82ec": {
+      "session_id": "sess_2eadec4f82ec",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-03-18T11:34:06.710224",
+      "last_activity": "2026-03-18T11:35:23.449912",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_d9e005a21133": {
+      "session_id": "sess_d9e005a21133",
+      "customer_id": "default_user",
+      "order_id": "ORD-F12B84",
+      "created_at": "2026-03-18T11:38:18.313760",
+      "last_activity": "2026-03-18T11:39:57.589169",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_4c584741edc5": {
+      "session_id": "sess_4c584741edc5",
+      "customer_id": "default_user",
+      "order_id": "ORD-68C676",
+      "created_at": "2026-03-18T11:42:08.889678",
+      "last_activity": "2026-03-18T11:44:53.431237",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_29a4b144a6be": {
+      "session_id": "sess_29a4b144a6be",
+      "customer_id": "default_user",
+      "order_id": "ORD-FCE1D0",
+      "created_at": "2026-03-18T11:58:03.422027",
+      "last_activity": "2026-03-18T11:58:52.905058",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_66dfce062ed7": {
+      "session_id": "sess_66dfce062ed7",
+      "customer_id": "default_user",
+      "order_id": "ORD-ECC3EB",
+      "created_at": "2026-03-18T12:01:03.409835",
+      "last_activity": "2026-03-18T12:07:32.201266",
+      "metadata": {},
+      "turn_number": 8
+    },
+    "sess_ad5557c891da": {
+      "session_id": "sess_ad5557c891da",
+      "customer_id": "default_user",
+      "order_id": "ORD-014292",
+      "created_at": "2026-03-19T16:59:54.745246",
+      "last_activity": "2026-03-19T17:10:37.838271",
+      "metadata": {},
+      "turn_number": 8
+    },
+    "sess_8e0ac31becf8": {
+      "session_id": "sess_8e0ac31becf8",
+      "customer_id": "default_user",
+      "order_id": "ORD-C7E2CC",
+      "created_at": "2026-03-19T17:19:13.573431",
+      "last_activity": "2026-03-19T17:29:48.033277",
+      "metadata": {},
+      "turn_number": 11
+    },
+    "sess_a87aa40f3063": {
+      "session_id": "sess_a87aa40f3063",
+      "customer_id": "default_user",
+      "order_id": "ORD-265AAC",
+      "created_at": "2026-03-20T10:07:55.283627",
+      "last_activity": "2026-03-20T10:28:08.944197",
+      "metadata": {},
+      "turn_number": 11
+    },
+    "sess_fb4f4602bae8": {
+      "session_id": "sess_fb4f4602bae8",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-01T17:58:53.287441",
+      "last_activity": "2026-04-01T17:59:09.195827",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_93e0c9d9564c": {
+      "session_id": "sess_93e0c9d9564c",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-03T17:18:09.082942",
+      "last_activity": "2026-04-03T17:18:25.725370",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_979bf9b35857": {
+      "session_id": "sess_979bf9b35857",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T10:58:50.174811",
+      "last_activity": "2026-04-09T10:59:14.752997",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_5767b7c81d06": {
+      "session_id": "sess_5767b7c81d06",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T11:34:14.193104",
+      "last_activity": "2026-04-09T11:34:14.229287",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_0b435752c021": {
+      "session_id": "sess_0b435752c021",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T11:37:18.899399",
+      "last_activity": "2026-04-09T11:37:18.947029",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_7b5749949e77": {
+      "session_id": "sess_7b5749949e77",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T11:40:42.367733",
+      "last_activity": "2026-04-09T11:40:42.403760",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_417deafdf6d2": {
+      "session_id": "sess_417deafdf6d2",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T11:48:18.183705",
+      "last_activity": "2026-04-09T11:48:18.224480",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_7fc7ba5d8fcb": {
+      "session_id": "sess_7fc7ba5d8fcb",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T11:53:46.686143",
+      "last_activity": "2026-04-09T11:54:03.921303",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_f59bfad1f272": {
+      "session_id": "sess_f59bfad1f272",
+      "customer_id": "default_user",
+      "order_id": "ORD-B030C5",
+      "created_at": "2026-04-09T11:54:45.989230",
+      "last_activity": "2026-04-09T11:58:56.276987",
+      "metadata": {},
+      "turn_number": 5
+    },
+    "sess_0e325d948aba": {
+      "session_id": "sess_0e325d948aba",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T16:10:23.928962",
+      "last_activity": "2026-04-09T16:10:23.963459",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_6978ca2e0fa0": {
+      "session_id": "sess_6978ca2e0fa0",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T16:14:56.796425",
+      "last_activity": "2026-04-09T16:15:21.834732",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_179d142c135b": {
+      "session_id": "sess_179d142c135b",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-09T16:42:08.825519",
+      "last_activity": "2026-04-09T16:43:32.253575",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_fb3dad513f29": {
+      "session_id": "sess_fb3dad513f29",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-10T17:31:28.714211",
+      "last_activity": "2026-04-10T17:33:44.551345",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_d20fea5917db": {
+      "session_id": "sess_d20fea5917db",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-10T17:41:28.663695",
+      "last_activity": "2026-04-10T17:41:28.689032",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_14c196640002": {
+      "session_id": "sess_14c196640002",
+      "customer_id": "default_user",
+      "order_id": "ORD-4EABEF",
+      "created_at": "2026-04-12T11:16:15.121686",
+      "last_activity": "2026-04-12T11:17:38.548519",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_378fb0655bbc": {
+      "session_id": "sess_378fb0655bbc",
+      "customer_id": "default_user",
+      "order_id": "ORD-AD2E89",
+      "created_at": "2026-04-12T12:04:47.689492",
+      "last_activity": "2026-04-12T12:10:26.633873",
+      "metadata": {},
+      "turn_number": 11
+    },
+    "sess_4526e93d22e5": {
+      "session_id": "sess_4526e93d22e5",
+      "customer_id": "default_user",
+      "order_id": "ORD-CC7198",
+      "created_at": "2026-04-12T16:34:14.384183",
+      "last_activity": "2026-04-12T16:35:36.344024",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_fe2d975971bd": {
+      "session_id": "sess_fe2d975971bd",
+      "customer_id": "default_user",
+      "order_id": "ORD-55F399",
+      "created_at": "2026-04-12T17:13:16.005511",
+      "last_activity": "2026-04-12T17:19:07.016624",
+      "metadata": {},
+      "turn_number": 10
+    },
+    "sess_a2f494522672": {
+      "session_id": "sess_a2f494522672",
+      "customer_id": "default_user",
+      "order_id": "ORD-DA71FF",
+      "created_at": "2026-04-15T16:16:46.603098",
+      "last_activity": "2026-04-15T16:19:51.135107",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "sess_88920ebb6bea": {
+      "session_id": "sess_88920ebb6bea",
+      "customer_id": "default_user",
+      "order_id": "ORD-EAF4E2",
+      "created_at": "2026-04-15T16:29:21.178662",
+      "last_activity": "2026-04-15T16:31:34.383791",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "sess_39dbbe2da3b0": {
+      "session_id": "sess_39dbbe2da3b0",
+      "customer_id": "default_user",
+      "order_id": "ORD-FEDC7A",
+      "created_at": "2026-04-15T16:44:00.165147",
+      "last_activity": "2026-04-15T16:51:13.288287",
+      "metadata": {},
+      "turn_number": 11
+    },
+    "sess_4cc6a04e7475": {
+      "session_id": "sess_4cc6a04e7475",
+      "customer_id": "default_user",
+      "order_id": "ORD-963A24",
+      "created_at": "2026-04-17T17:31:45.576552",
+      "last_activity": "2026-04-17T17:35:00.334512",
+      "metadata": {},
+      "turn_number": 5
+    },
+    "sess_ef55757365b5": {
+      "session_id": "sess_ef55757365b5",
+      "customer_id": "default_user",
+      "order_id": "ORD-42C8D9",
+      "created_at": "2026-04-20T23:13:35.600243",
+      "last_activity": "2026-04-20T23:17:42.082276",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_a0d929e16e8f": {
+      "session_id": "sess_a0d929e16e8f",
+      "customer_id": "default_user",
+      "order_id": "ORD-934D04",
+      "created_at": "2026-04-20T23:55:26.146900",
+      "last_activity": "2026-04-21T00:00:09.968928",
+      "metadata": {},
+      "turn_number": 7
+    },
+    "sess_c3b7cd0f0c0b": {
+      "session_id": "sess_c3b7cd0f0c0b",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-21T17:26:36.375257",
+      "last_activity": "2026-04-21T17:26:36.419631",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_7f63b2332ff5": {
+      "session_id": "sess_7f63b2332ff5",
+      "customer_id": "default_user",
+      "order_id": "ORD-73E92E",
+      "created_at": "2026-04-21T17:31:39.724896",
+      "last_activity": "2026-04-21T17:33:41.442544",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_98d7a2c669d8": {
+      "session_id": "sess_98d7a2c669d8",
+      "customer_id": "default_user",
+      "order_id": "ORD-981156",
+      "created_at": "2026-04-21T17:47:51.639029",
+      "last_activity": "2026-04-21T17:49:39.785799",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_415c5a1fa6b1": {
+      "session_id": "sess_415c5a1fa6b1",
+      "customer_id": "default_user",
+      "order_id": "ORD-F7DC0E",
+      "created_at": "2026-04-22T17:14:54.485379",
+      "last_activity": "2026-04-22T17:15:57.095293",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_cf82401ddd3c": {
+      "session_id": "sess_cf82401ddd3c",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-22T17:20:08.913348",
+      "last_activity": "2026-04-22T17:21:05.056503",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_5e4334287ec7": {
+      "session_id": "sess_5e4334287ec7",
+      "customer_id": "default_user",
+      "order_id": "ORD-8A4E17",
+      "created_at": "2026-04-22T17:24:17.860864",
+      "last_activity": "2026-04-22T17:24:37.295498",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_2618f618b468": {
+      "session_id": "sess_2618f618b468",
+      "customer_id": "default_user",
+      "order_id": "ORD-F08444",
+      "created_at": "2026-04-22T17:28:47.926593",
+      "last_activity": "2026-04-22T17:30:22.583425",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_17e35f5e466a": {
+      "session_id": "sess_17e35f5e466a",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-22T17:49:00.128914",
+      "last_activity": "2026-04-22T17:49:00.157411",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_84267b2158eb": {
+      "session_id": "sess_84267b2158eb",
+      "customer_id": "default_user",
+      "order_id": "ORD-DD40E7",
+      "created_at": "2026-04-22T18:03:40.157013",
+      "last_activity": "2026-04-22T18:04:14.904917",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_e42d00b33340": {
+      "session_id": "sess_e42d00b33340",
+      "customer_id": "default_user",
+      "order_id": "ORD-FE295F",
+      "created_at": "2026-04-23T16:48:19.535453",
+      "last_activity": "2026-04-23T16:48:29.806643",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_e4e3533e0226": {
+      "session_id": "sess_e4e3533e0226",
+      "customer_id": "default_user",
+      "order_id": "ORD-2DA5A4",
+      "created_at": "2026-04-23T16:52:59.853351",
+      "last_activity": "2026-04-23T16:53:09.035210",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_cf6668f9e50d": {
+      "session_id": "sess_cf6668f9e50d",
+      "customer_id": "default_user",
+      "order_id": "ORD-172DEF",
+      "created_at": "2026-04-23T16:54:55.844729",
+      "last_activity": "2026-04-23T16:55:05.180242",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_56560b7bf890": {
+      "session_id": "sess_56560b7bf890",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-23T17:06:49.398135",
+      "last_activity": "2026-04-23T17:06:49.435670",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_821d0bba159a": {
+      "session_id": "sess_821d0bba159a",
+      "customer_id": "default_user",
+      "order_id": "ORD-7B2B3C",
+      "created_at": "2026-04-23T17:13:01.479289",
+      "last_activity": "2026-04-23T17:13:10.099510",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_3675d737eaaa": {
+      "session_id": "sess_3675d737eaaa",
+      "customer_id": "default_user",
+      "order_id": "ORD-CE8207",
+      "created_at": "2026-04-23T17:15:24.460219",
+      "last_activity": "2026-04-23T17:16:16.405317",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_d27b9061a933": {
+      "session_id": "sess_d27b9061a933",
+      "customer_id": "default_user",
+      "order_id": "ORD-212950",
+      "created_at": "2026-04-23T17:27:55.571891",
+      "last_activity": "2026-04-23T17:28:04.994577",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_a14c7452713b": {
+      "session_id": "sess_a14c7452713b",
+      "customer_id": "default_user",
+      "order_id": "ORD-A5B5E6",
+      "created_at": "2026-04-23T17:31:27.717134",
+      "last_activity": "2026-04-23T17:31:37.370893",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_9da96a2a7b92": {
+      "session_id": "sess_9da96a2a7b92",
+      "customer_id": "default_user",
+      "order_id": "ORD-032C43",
+      "created_at": "2026-04-23T17:33:04.902198",
+      "last_activity": "2026-04-23T17:33:14.074573",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_b9dacd3f3efa": {
+      "session_id": "sess_b9dacd3f3efa",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-24T17:33:28.927542",
+      "last_activity": "2026-04-24T17:33:28.950970",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_bfcec75604f7": {
+      "session_id": "sess_bfcec75604f7",
+      "customer_id": "default_user",
+      "order_id": "ORD-8ABE08",
+      "created_at": "2026-04-24T17:48:23.816124",
+      "last_activity": "2026-04-24T17:49:48.758411",
+      "metadata": {},
+      "turn_number": 5
+    },
+    "sess_32117ff32a12": {
+      "session_id": "sess_32117ff32a12",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-25T17:20:44.917298",
+      "last_activity": "2026-04-25T17:20:44.917298",
+      "metadata": {}
+    },
+    "sess_ffdeff5ca387": {
+      "session_id": "sess_ffdeff5ca387",
+      "customer_id": "default_user",
+      "order_id": "ORD-000242",
+      "created_at": "2026-04-25T17:27:29.483871",
+      "last_activity": "2026-04-25T17:32:44.760420",
+      "metadata": {},
+      "turn_number": 8
+    },
+    "sess_8a46b1eb0703": {
+      "session_id": "sess_8a46b1eb0703",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-26T15:26:49.202945",
+      "last_activity": "2026-04-26T15:27:34.161500",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_f7eb35050913": {
+      "session_id": "sess_f7eb35050913",
+      "customer_id": "default_user",
+      "order_id": "ORD-3E673D",
+      "created_at": "2026-04-26T15:28:32.004048",
+      "last_activity": "2026-04-26T15:29:12.723111",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_6542bc0b154b": {
+      "session_id": "sess_6542bc0b154b",
+      "customer_id": "default_user",
+      "order_id": "ORD-3F41E6",
+      "created_at": "2026-04-26T15:40:31.418396",
+      "last_activity": "2026-04-26T15:44:20.771826",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "sess_a8441bdc437f": {
+      "session_id": "sess_a8441bdc437f",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-26T16:20:00.861290",
+      "last_activity": "2026-04-26T16:20:00.912884",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_02f7f3281888": {
+      "session_id": "sess_02f7f3281888",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-26T16:27:49.993587",
+      "last_activity": "2026-04-26T16:40:44.748911",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "sess_8757e198f0e9": {
+      "session_id": "sess_8757e198f0e9",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-29T19:11:04.656140",
+      "last_activity": "2026-04-29T19:12:30.169684",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_0f218703714e": {
+      "session_id": "sess_0f218703714e",
+      "customer_id": "default_user",
+      "order_id": "ORD-2AC81F",
+      "created_at": "2026-04-29T19:43:44.207525",
+      "last_activity": "2026-04-29T19:45:42.188083",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_98bab276cc0f": {
+      "session_id": "sess_98bab276cc0f",
+      "customer_id": "default_user",
+      "order_id": "ORD-9C5FDF",
+      "created_at": "2026-04-29T20:00:37.676702",
+      "last_activity": "2026-04-29T20:05:30.465683",
+      "metadata": {},
+      "turn_number": 9
+    },
+    "sess_92b00096c9de": {
+      "session_id": "sess_92b00096c9de",
+      "customer_id": "default_user",
+      "order_id": "ORD-6918C5",
+      "created_at": "2026-04-29T20:30:54.199219",
+      "last_activity": "2026-04-29T20:35:10.799623",
+      "metadata": {},
+      "turn_number": 8
+    },
+    "sess_614829a23635": {
+      "session_id": "sess_614829a23635",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-29T20:42:42.887304",
+      "last_activity": "2026-04-29T20:42:42.934530",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_bc25e3c9f969": {
+      "session_id": "sess_bc25e3c9f969",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-04-29T21:47:53.868635",
+      "last_activity": "2026-04-29T21:47:53.868635",
+      "metadata": {}
+    },
+    "sess_93457777810d": {
+      "session_id": "sess_93457777810d",
+      "customer_id": "default_user",
+      "order_id": "ORD-B8BCCD",
+      "created_at": "2026-04-29T22:08:38.211335",
+      "last_activity": "2026-04-29T22:16:25.682223",
+      "metadata": {},
+      "turn_number": 12
+    },
+    "sess_a2fd460d5263": {
+      "session_id": "sess_a2fd460d5263",
+      "customer_id": "default_user",
+      "order_id": "ORD-48C297",
+      "created_at": "2026-05-21T10:54:50.236424",
+      "last_activity": "2026-05-21T10:58:54.490143",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "sess_a3e50e3ae91d": {
+      "session_id": "sess_a3e50e3ae91d",
+      "customer_id": "default_user",
+      "order_id": "ORD-3F5503",
+      "created_at": "2026-05-21T15:34:40.568318",
+      "last_activity": "2026-05-21T15:35:34.370107",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_ddb7804e52ea": {
+      "session_id": "sess_ddb7804e52ea",
+      "customer_id": "default_user",
+      "order_id": "ORD-AB311F",
+      "created_at": "2026-05-22T10:48:00.370466",
+      "last_activity": "2026-05-22T10:51:16.395378",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_6bc1aaae7159": {
+      "session_id": "sess_6bc1aaae7159",
+      "customer_id": "default_user",
+      "order_id": "ORD-46EFDD",
+      "created_at": "2026-05-22T11:04:38.535694",
+      "last_activity": "2026-05-22T11:19:12.270878",
+      "metadata": {},
+      "turn_number": 19
+    },
+    "sess_9ec25d316cb1": {
+      "session_id": "sess_9ec25d316cb1",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-22T15:02:08.488601",
+      "last_activity": "2026-05-22T15:02:55.964880",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_5bbdf318ad2e": {
+      "session_id": "sess_5bbdf318ad2e",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-25T11:21:54.311605",
+      "last_activity": "2026-05-25T11:23:25.711034",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_9dc3413ffcbc": {
+      "session_id": "sess_9dc3413ffcbc",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-25T12:09:12.203529",
+      "last_activity": "2026-05-25T12:13:30.910143",
+      "metadata": {},
+      "turn_number": 9
+    },
+    "sess_f7dbeb2b36e4": {
+      "session_id": "sess_f7dbeb2b36e4",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-25T14:27:48.913416",
+      "last_activity": "2026-05-25T14:29:29.217207",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_2bf19e31ae82": {
+      "session_id": "sess_2bf19e31ae82",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-25T14:52:28.296602",
+      "last_activity": "2026-05-25T14:52:48.207687",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_c8780fd2b32f": {
+      "session_id": "sess_c8780fd2b32f",
+      "customer_id": "default_user",
+      "order_id": "ORD-3B2A5B",
+      "created_at": "2026-05-27T16:46:18.765071",
+      "last_activity": "2026-05-27T16:54:28.339055",
+      "metadata": {},
+      "turn_number": 11
+    },
+    "sess_81487b654295": {
+      "session_id": "sess_81487b654295",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-27T17:01:03.561942",
+      "last_activity": "2026-05-27T17:02:37.415307",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_06fe2a93c037": {
+      "session_id": "sess_06fe2a93c037",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-27T17:23:20.335257",
+      "last_activity": "2026-05-27T17:23:20.381293",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_6ac7d93c9276": {
+      "session_id": "sess_6ac7d93c9276",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-27T17:28:27.962370",
+      "last_activity": "2026-05-27T17:28:28.034781",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_86fdb1daf4d1": {
+      "session_id": "sess_86fdb1daf4d1",
+      "customer_id": "default_user",
+      "order_id": "ORD-B7B897",
+      "created_at": "2026-05-27T17:33:58.535826",
+      "last_activity": "2026-05-27T17:34:33.923564",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_23d671cd10c4": {
+      "session_id": "sess_23d671cd10c4",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-27T17:45:06.061555",
+      "last_activity": "2026-05-27T17:45:06.118678",
+      "metadata": {},
+      "turn_number": 1
+    },
+    "sess_497d8456368b": {
+      "session_id": "sess_497d8456368b",
+      "customer_id": "default_user",
+      "order_id": "ORD-EFFD0C",
+      "created_at": "2026-05-27T17:52:12.349664",
+      "last_activity": "2026-05-27T17:56:56.109680",
+      "metadata": {},
+      "turn_number": 8
+    },
+    "sess_262273b19f82": {
+      "session_id": "sess_262273b19f82",
+      "customer_id": "test_tools",
+      "order_id": null,
+      "created_at": "2026-05-28T16:30:29.969639",
+      "last_activity": "2026-05-28T16:30:29.969639",
+      "metadata": {}
+    },
+    "sess_37f846d88795": {
+      "session_id": "sess_37f846d88795",
+      "customer_id": "test_e2e",
+      "order_id": null,
+      "created_at": "2026-05-28T16:31:02.198472",
+      "last_activity": "2026-05-28T16:31:02.198472",
+      "metadata": {}
+    },
+    "sess_9add63e72f57": {
+      "session_id": "sess_9add63e72f57",
+      "customer_id": "default_user",
+      "order_id": "ORD-72E792",
+      "created_at": "2026-05-28T16:33:39.492099",
+      "last_activity": "2026-05-28T16:36:26.526359",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "sess_a7ec5f229a0c": {
+      "session_id": "sess_a7ec5f229a0c",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-28T17:20:12.353471",
+      "last_activity": "2026-05-28T17:21:45.857605",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "sess_03be2b29ca05": {
+      "session_id": "sess_03be2b29ca05",
+      "customer_id": "default_user",
+      "order_id": null,
+      "created_at": "2026-05-29T10:57:44.019402",
+      "last_activity": "2026-05-29T10:58:14.983805",
+      "metadata": {},
+      "turn_number": 2
+    },
+    "sess_2160b8360c7c": {
+      "session_id": "sess_2160b8360c7c",
+      "customer_id": "default_user",
+      "order_id": "ORD-B9434A",
+      "created_at": "2026-05-29T11:02:26.762980",
+      "last_activity": "2026-05-29T11:15:42.957136",
+      "metadata": {},
+      "turn_number": 10
+    },
+    "sess_15386e899bd9": {
+      "session_id": "sess_15386e899bd9",
+      "customer_id": "default_user",
+      "order_id": "ORD-035C78",
+      "created_at": "2026-05-30T16:39:25.341709",
+      "last_activity": "2026-05-30T17:04:53.296212",
+      "metadata": {},
+      "turn_number": 10
+    },
+    "cli_cli_user_1781197312": {
+      "session_id": "cli_cli_user_1781197312",
+      "customer_id": null,
+      "order_id": null,
+      "created_at": "2026-06-11T12:01:59.830673",
+      "last_activity": "2026-06-11T12:02:30.232945",
+      "metadata": {},
+      "turn_number": 3
+    },
+    "cli_cli_user_1781215079": {
+      "session_id": "cli_cli_user_1781215079",
+      "customer_id": null,
+      "order_id": "ORD-EB058A",
+      "created_at": "2026-06-11T16:58:11.632341",
+      "last_activity": "2026-06-11T17:00:31.274518",
+      "metadata": {},
+      "turn_number": 4
+    },
+    "cli_cli_user_1781217103": {
+      "session_id": "cli_cli_user_1781217103",
+      "customer_id": null,
+      "order_id": null,
+      "created_at": "2026-06-11T17:32:27.904154",
+      "last_activity": "2026-06-11T17:38:47.088054",
+      "metadata": {},
+      "turn_number": 7
+    },
+    "cli_cli_user_1781218357": {
+      "session_id": "cli_cli_user_1781218357",
+      "customer_id": null,
+      "order_id": "ORD-9AA56D",
+      "created_at": "2026-06-11T17:53:11.731150",
+      "last_activity": "2026-06-11T17:57:11.093949",
+      "metadata": {},
+      "turn_number": 6
+    },
+    "cli_cli_user_1781306726": {
+      "session_id": "cli_cli_user_1781306726",
+      "customer_id": null,
+      "order_id": "ORD-E811F2",
+      "created_at": "2026-06-12T18:25:36.842524",
+      "last_activity": "2026-06-12T18:30:45.492499",
+      "metadata": {},
+      "turn_number": 9
+    }
+  },
+  "customer_index": {
+    "default_user": "sess_15386e899bd9",
+    "test_tools": "sess_262273b19f82",
+    "test_e2e": "sess_37f846d88795"
+  }
+}

@@ -1,0 +1,330 @@
+[
+  {
+    "log_id": "log_3584ebc4",
+    "session_id": "sess_9add63e72f57",
+    "timestamp": "2026-05-28T16:33:39.566550",
+    "user_message": "hola, buenos días\nme reglan la carta",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "saludo inicial del cliente",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "me reglan la carta",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar la carta del menú para ver opciones",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! 😊 Soy Luz Stella, tu asistente de Sabor Casero. ¡Con gusto te comparto nuestra carta para hoy!\n\n**🥣 Sopa**\n- Crema de verdura\n\n**🥘 Principio**\n- Guiso de yota con huevo\n- Macarrón con carne molida\n- Principio mixto (ambos principios)\n\n**🥗 Acompañamientos**\nYuca al vapor, arroz, ensalada, jugo y caramelo\n\n**🍗 Proteínas**\n| Plato | Precio |\n|-------|--------|\n| Bandeja mixta (opciones: carne, lomo de cerdo BBQ, pechuga) | $15.000 |\n| Bocachico criollo frito / sudado | $13.500 |\n| Carne a la plancha | $12.000 (mini) / $13.500 (corriente) |\n| Carnes mixtas en vegetales | $12.000 (mini) / $13.500 (corriente) |\n| Lomo de cerdo asado a la plancha (con o sin salsa) | $12.000 (mini) / $13.500 (corriente) |\n| Pechuga a la plancha | $12.000 (mini) / $13.500 (corriente) |\n| Pechuga gratinada | $12.000 (mini) / $13.500 (corriente) |\n\n¿Te gustaría hacer tu pedido? ¡Cuéntame qué se te antoja hoy! 😋",
+    "processing_time_ms": 16258.114337921143,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T16:33:56.192596"
+  },
+  {
+    "log_id": "log_a7d3a35c",
+    "session_id": "sess_9add63e72f57",
+    "timestamp": "2026-05-28T16:34:16.754451",
+    "user_message": "Me regala una pechuga, porfa ",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Me regala una pechuga, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "ordenar un plato con pechuga como proteína principal",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "La pechuga SÍ está disponible en el menú en dos presentaciones: **Pechuga a la plancha** y **Pechuga gratinada**, ambas con precios de $12.000 (mini) y $13.500 (corriente). El usuario solicita \"una pechuga\" pero no especifica cuál de las dos variedades ni el tamaño deseado (corriente o mini). Tampoco ha mencionado el principio ni modificaciones a los acompañamientos, por lo que por defecto se asumirían los principios disponibles del menú del día (guiso de yota con huevo, macarrón con carne molida o mixto) y requirements [\"Con todo\"]. Sin embargo, se necesita clarificar el tipo de pechuga y el tamaño antes de proceder.\n\nAmbigüedad: Sí — El usuario no especificó si quiere pechuga a la plancha o gratinada, ni el tamaño (corriente o mini). Preguntar al cliente.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Claro, qué rica elección! 😊 Tenemos dos opciones de pechuga:\n\n- **Pechuga a la plancha**: $12.000 (mini) / $13.500 (corriente)\n- **Pechuga gratinada**: $12.000 (mini) / $13.500 (corriente)\n\n¿Cuál de las dos te gustaría?",
+    "processing_time_ms": 42601.55272483826,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T16:34:59.732198"
+  },
+  {
+    "log_id": "log_04795ea5",
+    "session_id": "sess_9add63e72f57",
+    "timestamp": "2026-05-28T16:35:11.730019",
+    "user_message": "una gratinada,. mini, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "una gratinada, mini, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar una gratinada de tamaño mini",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El cliente solicita una \"gratinada\" en tamaño mini. Según la información del menú, \"gratinada\" corresponde a **Pechuga gratinada**, la cual SÍ está disponible en tamaño mini (12.000 COP). Como es un pedido nuevo (el cliente no tiene pedidos previos), se debe crear una orden con un item de pechuga gratinada tamaño mini, con los requirements por defecto [\"Con todo\"]. El cliente no ha especificado principio, modificaciones, ni tipo de servicio, por lo que se procede con los valores estándar.\n\n**Ambigüedad: No.** Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Pechuga gratinada",
+          "size": "mini",
+          "unit_price": 12000,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-72E792",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0829cd7",
+          "quantity": 1,
+          "protein": "Pechuga gratinada",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-28T16:35:37.314402",
+      "updated_at": "2026-05-28T16:35:37.377995",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Anotado: una pechuga gratinada en tamaño mini. 😊  \nAhora, ¿qué principio te gustaría llevar? Tenemos estas opciones:  \n- Guiso de yota con huevo  \n- Macarrón con carne molida  \n- Principio mixto (ambos)  \n\n¿Cuál prefieres?",
+    "processing_time_ms": 46017.16375350952,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T16:35:58.078430"
+  },
+  {
+    "log_id": "log_7e451daa",
+    "session_id": "sess_9add63e72f57",
+    "timestamp": "2026-05-28T16:36:26.547223",
+    "user_message": "Fríjol no tienen?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Fríjol no tienen?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar disponibilidad de frijol para pedido actual",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-72E792",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0829cd7",
+          "quantity": 1,
+          "protein": "Pechuga gratinada",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-28T16:35:37.314402",
+      "updated_at": "2026-05-28T16:36:26.595491",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-72E792",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0829cd7",
+          "quantity": 1,
+          "protein": "Pechuga gratinada",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-28T16:35:37.314402",
+      "updated_at": "2026-05-28T16:36:39.143634",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Hola! Hoy no tenemos fríjol disponible, lo lamento 😊. Pero podemos ofrecerte otras opciones deliciosas como principio: **lentejas**, **guiso de yota** o **principio mixto** (lentejas con guiso). \n\nComo tu pedido lleva \"con todo\", ¿quieres cambiar alguno de esos acompañamientos por uno de estos principios? O si prefieres, lo dejamos como está. Dime, ¿qué te parece?",
+    "processing_time_ms": 19223.700523376465,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T16:36:46.102708"
+  },
+  {
+    "log_id": "log_6cd551d4",
+    "session_id": "sess_a7ec5f229a0c",
+    "timestamp": "2026-05-28T17:20:12.421775",
+    "user_message": "Hola, buenos días\nme regalas el menú, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "saludar al restaurante",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "me regalas el menú, porfa",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "solicitar el menú completo del restaurante",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\n¡Claro! Con gusto te comparto el menú de hoy:\n\n**🥣 Sopa**  \n- Crema de verdura\n\n**🥘 Principio**  \n- Guiso de yota con huevo  \n- Macarrón con carne molida  \n- Principio mixto (ambos principios)\n\n**🍚 Acompañamientos**  \nYuca al vapor, arroz, ensalada, jugo y caramelo\n\n**🍗 Proteínas**  \n- Bandeja mixta – $15.000 (elige carne, pechuga o lomo de cerdo BBQ)  \n- Bocachico criollo frito/sudado – $13.500  \n- Carne a la plancha – $12.000 (mini) / $13.500 (corriente)  \n- Carnes mixtas en vegetales – $12.000 / $13.500  \n- Lomo de cerdo asado a la plancha – $12.000 / $13.500 (con salsa BBQ, miel-mostaza o sin salsa)  \n- Pechuga a la plancha – $12.000 / $13.500  \n- Pechuga gratinada – $12.000 / $13.500  \n\n¿Te gustaría armar tu pedido? ¡Dime qué proteína prefieres y con gusto te ayudo! 😊",
+    "processing_time_ms": 17253.913402557373,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T17:20:30.056763"
+  },
+  {
+    "log_id": "log_5ad53eb6",
+    "session_id": "sess_a7ec5f229a0c",
+    "timestamp": "2026-05-28T17:20:45.173616",
+    "user_message": "una pechuga, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "una pechuga, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar una pechuga de pollo como proteína",
+        "file_source": "menu.md",
+        "info_extracted": "- Bandeja mixta\n  Precios: $15000\n  Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n- Bocachico criollo frito / sudado\n  Precios: $13500\n- Carne a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Carnes mixtas en vegetales\n  Precios: $12000 (mini), $13500 (Corriente)\n- Lomo de cerdo asado a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n  Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n- Pechuga a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Pechuga gratinada\n  Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "El usuario solicita \"una pechuga\", lo cual corresponde a una proteína de pollo (pechuga). Según la información del menú, hay dos opciones disponibles: **Pechuga a la plancha** ($12.000 mini / $13.500 corriente) y **Pechuga gratinada** ($12.000 mini / $13.500 corriente). Ambas son válidas en el menú. Sin embargo, el usuario no ha especificado cuál de las dos variantes prefiere (a la plancha o gratinada), ni el tamaño (mini o corriente), ni el principio (frijoles, lentejas, garbanzos, verdura) que desea. Como no hay pedido previo, se trata de un nuevo pedido. Por defecto, los requirements serían [\"Con todo\"] a menos que el usuario indique lo contrario. Se necesita clarificar con el cliente cuál tipo de pechuga desea, el tamaño, y el principio para poder proceder con el armado del pedido.\n\nAmbigüedad: Sí — El usuario no especificó si quiere pechuga a la plancha o gratinada, ni el tamaño (mini o corriente), ni el principio. Se necesita preguntar al cliente estos detalles.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Entendido! Me pides una pechuga 😊. Tenemos estas opciones con pechuga en el menú. ¿Cuál prefieres?\n\n- **Pechuga a la plancha** — $12.000 (mini) / $13.500 (corriente)\n- **Pechuga gratinada** — $12.000 (mini) / $13.500 (corriente)\n- **Bandeja mixta** — $15.000 (puede llevar pechuga combinada con carne o lomo de cerdo)\n\n¿Cuál de estas te gustaría?",
+    "processing_time_ms": 43929.598808288574,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T17:21:29.468973"
+  },
+  {
+    "log_id": "log_8d1e213d",
+    "session_id": "sess_a7ec5f229a0c",
+    "timestamp": "2026-05-28T17:21:45.876817",
+    "user_message": "a la plancha, que sea mini, y porfa sin arroz",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "a la plancha",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "especificar que el plato sea a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "- Bandeja mixta\n  Precios: $15000\n  Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n- Bocachico criollo frito / sudado\n  Precios: $13500\n- Carne a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Carnes mixtas en vegetales\n  Precios: $12000 (mini), $13500 (Corriente)\n- Lomo de cerdo asado a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n  Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n- Pechuga a la plancha\n  Precios: $12000 (mini), $13500 (Corriente)\n- Pechuga gratinada\n  Precios: $12000 (mini), $13500 (Corriente)"
+      },
+      {
+        "segment": "que sea mini",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "especificar tamaño mini del plato",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      },
+      {
+        "segment": "porfa sin arroz",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar que el plato no incluya arroz",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario desea iniciar un pedido nuevo con un plato que cumpla tres condiciones: (1) que sea **a la plancha**, (2) en tamaño **mini**, y (3) **sin arroz**. Según la validación del menú, los platos \"a la plancha\" disponibles en tamaño mini son: **Carne a la plancha** ($12.000), **Lomo de cerdo asado a la plancha** ($12.000 con opciones de salsa: sin salsa, BBQ o miel-mostaza), **Pechuga a la plancha** ($12.000) y **Carnes mixtas en vegetales** ($12.000). Todos son válidos y tienen precio mini de $12.000. La solicitud de \"sin arroz\" modificaría los `requirements` del plato de `[\"Con todo\"]` a `[\"sin arroz\"]`, manteniendo el resto de acompañamientos por defecto. Sin embargo, el usuario **no ha especificado cuál de estos platos a la plancha desea** (si es carne, lomo, pechuga o carnes mixtas), lo cual es necesario para poder crear el item correctamente.\n\n**Ambigüedad: Sí** — El usuario indicó que quiere un plato \"a la plancha\" en tamaño mini y sin arroz, pero no especificó **cuál proteína** desea exactamente (Carne a la plancha, Lomo de cerdo asado a la plancha, Pechuga a la plancha o Carnes mixtas en vegetales). Se necesita preguntar al cliente qué plato concreto prefiere.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Soy Luz Stella de Sabor Casero. 😊 Entiendo que quieres algo a la plancha, en tamaño mini y sin arroz. ¿De qué proteína te gustaría? Tenemos estas opciones:\n\n- **Pechuga a la plancha**\n- **Carne a la plancha**\n- *¿O prefieres otra proteína?*\n\nDime cuál deseas para armar tu pedido. 🙏",
+    "processing_time_ms": 64084.02180671692,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-28T17:22:50.295713"
+  }
+]

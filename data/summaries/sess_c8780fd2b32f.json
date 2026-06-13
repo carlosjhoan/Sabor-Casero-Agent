@@ -1,0 +1,200 @@
+[
+  {
+    "summary_id": "summary_1b355c",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 1,
+    "created_at": "2026-05-27T16:46:25.841073",
+    "summary_text": "El usuario saludó (\"hola, buenas tardes\") y Luz Stella respondió ofreciendo ayuda con pedidos o consultas sobre el menú. No hay pedido realizado.",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 145
+  },
+  {
+    "summary_id": "summary_89251a",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 2,
+    "created_at": "2026-05-27T16:47:29.123733",
+    "summary_text": "El usuario preguntó por el menú del día. Luz Stella respondió detallando el menú del jueves: sopa crema de verdura, principios (macarrón con carne molida, guiso de yota con huevo, mixto), acompañamientos (yuca, arroz, ensalada, jugo, caramelo) y proteínas (pechuga a la plancha, carne a la plancha, lomo de cerdo asado, bandeja mixta, bocachico, carnes mixtas en vegetales, pechuga gratinada) con precios ($12.000-$15.000). No hay pedido realizado.",
+    "previous_summary": "El usuario saludó (\"hola, buenas tardes\") y Luz Stella respondió ofreciendo ayuda con pedidos o consultas sobre el menú. No hay pedido realizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 448
+  },
+  {
+    "summary_id": "summary_524edd",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 3,
+    "created_at": "2026-05-27T16:48:45.510432",
+    "summary_text": "El usuario pidió \"uno con pechuga\". Luz Stella confirmó la elección y preguntó qué principio desea (macarrón con carne molida, guiso de yota con huevo o mixto). No hay pedido realizado.",
+    "previous_summary": "El usuario preguntó por el menú del día. Luz Stella respondió detallando el menú del jueves: sopa crema de verdura, principios (macarrón con carne molida, guiso de yota con huevo, mixto), acompañamientos (yuca, arroz, ensalada, jugo, caramelo) y proteínas (pechuga a la plancha, carne a la plancha, lomo de cerdo asado, bandeja mixta, bocachico, carnes mixtas en vegetales, pechuga gratinada) con precios ($12.000-$15.000). No hay pedido realizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 185
+  },
+  {
+    "summary_id": "summary_4c72eb",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 4,
+    "created_at": "2026-05-27T16:51:30.561589",
+    "summary_text": "El usuario pidió pechuga a la plancha con macarrones con carne molida como principio, sin arroz y con porción extra de principio. Luz Stella confirmó el pedido y preguntó si es para domicilio o recogida en el restaurante.",
+    "previous_summary": "El usuario pidió \"uno con pechuga\". Luz Stella confirmó la elección y preguntó qué principio desea (macarrón con carne molida, guiso de yota con huevo o mixto). No hay pedido realizado.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | [Con todo]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tokens_estimated": 221
+  },
+  {
+    "summary_id": "summary_1d98d5",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 5,
+    "created_at": "2026-05-27T16:51:48.073323",
+    "summary_text": "El usuario pidió pechuga a la plancha con macarrón con carne molida como principio, sin arroz y con porción extra de principio. Luz Stella confirmó el pedido y el usuario indicó que es para domicilio. El asistente solicitó la dirección de entrega, limitada al área metropolitana de Bucaramanga.",
+    "previous_summary": "El usuario pidió pechuga a la plancha con macarrones con carne molida como principio, sin arroz y con porción extra de principio. Luz Stella confirmó el pedido y preguntó si es para domicilio o recogida en el restaurante.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [Con todo]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "tokens_estimated": 294
+  },
+  {
+    "summary_id": "summary_ee6d94",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 6,
+    "created_at": "2026-05-27T16:52:28.044910",
+    "summary_text": "El usuario pidió pechuga a la plancha con macarrón con carne molida como principio, sin arroz y con porción extra de principio, para domicilio. Luz Stella confirmó el pedido. El usuario proporcionó la dirección: Cll 157A #47-36, Prados del Sur (antes de la iglesia). El asistente confirmó la dirección y preguntó la hora de entrega (disponible de 11:30 am a 2:00 pm, lunes a sábado).",
+    "previous_summary": "El usuario pidió pechuga a la plancha con macarrón con carne molida como principio, sin arroz y con porción extra de principio. Luz Stella confirmó el pedido y el usuario indicó que es para domicilio. El asistente solicitó la dirección de entrega, limitada al área metropolitana de Bucaramanga.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tokens_estimated": 383
+  },
+  {
+    "summary_id": "summary_401d1a",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 7,
+    "created_at": "2026-05-27T16:52:48.480087",
+    "summary_text": "El usuario confirmó la hora de entrega para las 12:30 pm. El asistente preguntó el método de pago (efectivo o transferencia NEQUI al 310 6728 007). Pedido: 1x pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio, a domicilio en Cll 157A #47-36, Prados del Sur.",
+    "previous_summary": "El usuario pidió pechuga a la plancha con macarrón con carne molida como principio, sin arroz y con porción extra de principio, para domicilio. Luz Stella confirmó el pedido. El usuario proporcionó la dirección: Cll 157A #47-36, Prados del Sur (antes de la iglesia). El asistente confirmó la dirección y preguntó la hora de entrega (disponible de 11:30 am a 2:00 pm, lunes a sábado).",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tokens_estimated": 302
+  },
+  {
+    "summary_id": "summary_8b77c4",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 8,
+    "created_at": "2026-05-27T16:53:17.593349",
+    "summary_text": "El usuario confirmó pago en efectivo con billete de $100. Preguntó el precio total del pedido. El asistente informó que el total es $13.500 y el vuelto sería $86.500. Pedido: 1x pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio, a domicilio en Cll 157A #47-36, Prados del Sur. Hora de entrega: 12:30 pm. El asistente preguntó si hay observaciones adicionales.",
+    "previous_summary": "El usuario confirmó la hora de entrega para las 12:30 pm. El asistente preguntó el método de pago (efectivo o transferencia NEQUI al 310 6728 007). Pedido: 1x pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio, a domicilio en Cll 157A #47-36, Prados del Sur.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tokens_estimated": 404
+  },
+  {
+    "summary_id": "summary_3d0b1b",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 9,
+    "created_at": "2026-05-27T16:53:51.826750",
+    "summary_text": "El usuario pidió que la pechuga a la plancha esté bien asada. Pedido: 1x pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio, a domicilio en Cll 157A #47-36, Prados del Sur. Hora de entrega: 12:30 pm. Pago en efectivo con $100. Total: $13.500, vuelto: $86.500. El asistente preguntó si hay más observaciones.",
+    "previous_summary": "El usuario confirmó pago en efectivo con billete de $100. Preguntó el precio total del pedido. El asistente informó que el total es $13.500 y el vuelto sería $86.500. Pedido: 1x pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio, a domicilio en Cll 157A #47-36, Prados del Sur. Hora de entrega: 12:30 pm. El asistente preguntó si hay observaciones adicionales.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [Con todo] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tokens_estimated": 351
+  },
+  {
+    "summary_id": "summary_9cc4c3",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 10,
+    "created_at": "2026-05-27T16:54:15.134894",
+    "summary_text": "El usuario solicitó doble jugo adicional sin costo. Pedido: 1x pechuga a la plancha bien asada, macarrón con carne molida, sin arroz, más principio, doble jugo, a domicilio en Cll 157A #47-36, Prados del Sur, entrega 12:30 pm, pago efectivo $100.000 (vuelto $86.500). Asistente preguntó si hay más observaciones.",
+    "previous_summary": "El usuario pidió que la pechuga a la plancha esté bien asada. Pedido: 1x pechuga a la plancha con macarrón con carne molida, sin arroz y con porción extra de principio, a domicilio en Cll 157A #47-36, Prados del Sur. Hora de entrega: 12:30 pm. Pago en efectivo con $100. Total: $13.500, vuelto: $86.500. El asistente preguntó si hay más observaciones.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [sin arroz, más principio] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "tokens_estimated": 312
+  },
+  {
+    "summary_id": "summary_9c6d1b",
+    "session_id": "sess_c8780fd2b32f",
+    "turn_number": 11,
+    "created_at": "2026-05-27T16:54:40.268258",
+    "summary_text": "El usuario confirmó que el pedido está completo (\"estaría perfecto\"). Pedido final: 1x pechuga a la plancha bien asada, macarrón con carne molida, sin arroz, más principio, doble jugo sin costo, a domicilio en Cll 157A #47-36, Prados del Sur, entrega 12:30 pm, pago efectivo $100.000 (vuelto $86.500). Asistente preguntó si hay observaciones adicionales.",
+    "previous_summary": "El usuario solicitó doble jugo adicional sin costo. Pedido: 1x pechuga a la plancha bien asada, macarrón con carne molida, sin arroz, más principio, doble jugo, a domicilio en Cll 157A #47-36, Prados del Sur, entrega 12:30 pm, pago efectivo $100.000 (vuelto $86.500). Asistente preguntó si hay más observaciones.",
+    "current_order_state": "item_id:item-f2361170 --> 1x pechuga a la plancha | principio: Macarrón con carne molida | [sin arroz, más principio] [A domicilio]",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "tokens_estimated": 354
+  }
+]

@@ -1,0 +1,208 @@
+You are an expert restaurant conversation analyst. Analyze this customer message step by step.
+
+MESSAGE TO ANALYZE:
+"{message}"
+
+THINKING PROCESS (follow these steps internally before responding):
+
+STEP 1 - SEGMENT IDENTIFICATION:
+- Split the message into logical segments at natural breaks (".", "y", "además", "también", "de paso")
+- Identify each independent query/request within the message
+- Count segments: [N] segment(s) found
+
+STEP 2 - PER-SEGMENT ANALYSIS (for each segment):
+- Segment text: "[exact text]"
+- Query type: What is the user doing? (consulting, ordering, action, etc.)
+- Topic: What is this about? (menu, payment, ingredients, etc.)
+- Focus: What specific information is being requested?
+- Key entities: Any dishes, times, prices, ingredients mentioned?
+
+STEP 3 - MULTI-TOPIC DETECTION:
+- Are there multiple distinct topics? Compare segments for topic diversity
+- Does this require separate handling? (different documents, different responses)
+
+STEP 4 - SELF-VERIFICATION:
+- Have I captured ALL parts of the message?
+- Are my classifications consistent with restaurant context?
+- Is my confidence appropriate given clarity/complexity?
+
+STEP 5 - SYNTHESIS:
+- Compile all query_types from segments
+- Compile all primary_topics from segments
+- Determine if has_multiple_topics = true
+
+NOW, APPLY THIS THINKING TO CONCRETE EXAMPLES:
+
+EXAMPLE 1 - Complex multi-topic message:
+Message: "Disculpen, de qué es la sopa. Y de paso para saber si puedo pagar por NEQUI o solo se puede en efectivo?"
+
+My thinking (hidden from output):
+1. Segments: ["Disculpen, de qué es la sopa", "Y de paso para saber si puedo pagar por NEQUI o solo se puede en efectivo"]
+2. Segment 1: consulting about ingredients of soup → query_type: "consulting", topic: "ingredients", focus: "soup composition"
+3. Segment 2: consulting about payment methods → query_type: "consulting", topic: "payment", focus: "Nequi vs cash"
+4. Multiple topics? Yes → has_multiple_topics: true
+
+JSON Output:
+{{
+  "query_type": ["consulting", "consulting"],
+  "primary_topics": ["ingredients", "payment"],
+  "secondary_topics": [],
+  "topic_details": [
+    {{
+      "segment": "Disculpen, de qué es la sopa",
+      "query_type": "consulting",
+      "topic": "ingredients",
+      "focus": "ingredients composition of soup"
+    }},
+    {{
+      "segment": "para saber si puedo pagar por NEQUI o solo se puede en efectivo",
+      "query_type": "consulting",
+      "topic": "payment",
+      "focus": "payment methods availability (Nequi vs cash)"
+    }}
+  ],
+  "is_question": true,
+  "is_statement": false,
+  "is_command": false,
+  "mentioned_dishes": ["sopa"],
+  "mentioned_prices": false,
+  "mentioned_ingredients": [],
+  "mentioned_times": [],
+  "requires_response": true,
+  "is_follow_up": false,
+  "needs_clarification": false,
+  "confidence_score": 0.95,
+  "has_multiple_topics": true
+}}
+
+EXAMPLE 2 - Ordering with embedded question:
+Message: "Quiero la bandeja paisa corriente, ¿cuánto cuesta y cuánto tiempo de preparación?"
+
+My thinking (hidden from output):
+1. Segments: ["Quiero la bandeja paisa corriente", "¿cuánto cuesta y cuánto tiempo de preparación?"]
+2. Segment 1: ordering a dish → query_type: "ordering", topic: "menu", focus: "bandeja paisa corriente"
+3. Segment 2: consulting about price & preparation → query_type: "consulting", topic: "menu", focus: "price and preparation time"
+4. Multiple topics? No (both about menu) → has_multiple_topics: false
+
+JSON Output:
+{{
+  "query_type": ["ordering", "consulting"],
+  "primary_topics": ["menu", "menu"],
+  "secondary_topics": [],
+  "topic_details": [
+    {{
+      "segment": "Quiero la bandeja paisa corriente",
+      "query_type": "ordering",
+      "topic": "menu",
+      "focus": "ordering bandeja paisa corriente size"
+    }},
+    {{
+      "segment": "¿cuánto cuesta y cuánto tiempo de preparación?",
+      "query_type": "consulting",
+      "topic": "menu",
+      "focus": "price and preparation time of mentioned dish"
+    }}
+  ],
+  "is_question": true,
+  "is_statement": false,
+  "is_command": false,
+  "mentioned_dishes": ["bandeja paisa"],
+  "mentioned_prices": true,
+  "mentioned_ingredients": [],
+  "mentioned_times": [],
+  "requires_response": true,
+  "is_follow_up": false,
+  "needs_clarification": false,
+  "confidence_score": 0.98,
+  "has_multiple_topics": false
+}}
+
+EXAMPLE 3 - Time-sensitive reservation with delivery question:
+Message: "Reservo mesa para 8pm, 4 personas. También ¿hacen delivery de postres?"
+
+My thinking (hidden from output):
+1. Segments: ["Reservo mesa para 8pm, 4 personas", "También ¿hacen delivery de postres?"]
+2. Segment 1: action to reserve table → query_type: "action", topic: "reservation", focus: "table for 4 at 8pm"
+3. Segment 2: consulting about dessert delivery → query_type: "consulting", topic: "delivery", focus: "dessert delivery service"
+4. Multiple topics? Yes (reservation + delivery) → has_multiple_topics: true
+
+JSON Output:
+{{
+  "query_type": ["action", "consulting"],
+  "primary_topics": ["reservation", "delivery"],
+  "secondary_topics": ["menu"],
+  "topic_details": [
+    {{
+      "segment": "Reservo mesa para 8pm, 4 personas",
+      "query_type": "action",
+      "topic": "reservation",
+      "focus": "reserving table for 4 people at 8pm"
+    }},
+    {{
+      "segment": "También ¿hacen delivery de postres?",
+      "query_type": "consulting",
+      "topic": "delivery",
+      "focus": "dessert delivery availability"
+    }}
+  ],
+  "is_question": true,
+  "is_statement": false,
+  "is_command": true,
+  "mentioned_dishes": ["postres"],
+  "mentioned_prices": false,
+  "mentioned_ingredients": [],
+  "mentioned_times": ["8pm"],
+  "requires_response": true,
+  "is_follow_up": false,
+  "needs_clarification": false,
+  "confidence_score": 0.97,
+  "has_multiple_topics": true
+}}
+
+EXAMPLE 4 - Simple single-topic question with ambiguity:
+Message: "A cómo los minis?"
+
+My thinking (hidden from output):
+1. Segments: ["A cómo los minis?"] (single segment)
+2. Consulting about mini portion prices → query_type: "consulting", topic: "menu", focus: "price of mini portions"
+3. Needs clarification: "minis" could refer to various dishes
+4. Multiple topics? No → has_multiple_topics: false
+
+JSON Output:
+{{
+  "query_type": ["consulting"],
+  "primary_topics": ["menu"],
+  "secondary_topics": [],
+  "topic_details": [
+    {{
+      "segment": "A cómo los minis?",
+      "query_type": "consulting",
+      "topic": "menu",
+      "focus": "price of mini-sized portions"
+    }}
+  ],
+  "is_question": true,
+  "is_statement": false,
+  "is_command": false,
+  "mentioned_dishes": [],
+  "mentioned_prices": true,
+  "mentioned_ingredients": [],
+  "mentioned_times": [],
+  "requires_response": true,
+  "is_follow_up": false,
+  "needs_clarification": true,
+  "confidence_score": 0.85,
+  "has_multiple_topics": false
+}}
+
+CRITICAL OUTPUT REQUIREMENTS:
+1. **topic_details MUST be filled** with one entry per logical segment
+2. Each segment in topic_details should have: "segment" (exact text or close paraphrase), "query_type", "topic", "focus" (specific sub-topic)
+3. **confidence_score MUST reflect** confidence in segment analysis AND topic separation
+4. **has_multiple_topics = true** ONLY if segments have DIFFERENT primary topics
+5. **needs_clarification = true** if ANY segment is ambiguous or incomplete
+
+NOW ANALYZE THIS MESSAGE:
+"{message}"
+
+Provide ONLY the JSON output following the exact structure above. No additional text.

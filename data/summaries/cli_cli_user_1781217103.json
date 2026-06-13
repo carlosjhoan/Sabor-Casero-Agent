@@ -1,0 +1,184 @@
+[
+  {
+    "summary_id": "summary_c9c54d",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 1,
+    "created_at": "2026-06-11T17:32:37.113347",
+    "summary_text": "Turno 1: Hola, me regalas la carta | Asistente: ¡Aquí tienes nuestro menú del día! 🎉\n\n## 🥣 **Sopa**\n- Crema de verdura\n\n## 🍝 **Principios** (elige uno)\n- Macarrón con c | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_5c89b6",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 1,
+    "created_at": "2026-06-11T17:33:36.546964",
+    "summary_text": "Turno 1: Hola, me regalas la carta... | Asistente: ¡Aquí tienes nuestro menú del día! 🎉\n\n## 🥣 **Sopa**\n- Crema de verdura\n\n## 🍝 **P...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_817a62",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 2,
+    "created_at": "2026-06-11T17:33:41.825831",
+    "summary_text": "Turno 2: Gracias. | Asistente: ¡De nada! 😊 Estoy aquí para ayudarte con lo que necesites.\n\n¿Te gustaría que te muestre el **menú completo** con todos l | Intento: ",
+    "previous_summary": "Turno 1: Hola, me regalas la carta | Asistente: ¡Aquí tienes nuestro menú del día! 🎉\n\n## 🥣 **Sopa**\n- Crema de verdura\n\n## 🍝 **Principios** (elige uno)\n- Macarrón con c | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_d4d958",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 2,
+    "created_at": "2026-06-11T17:34:09.870842",
+    "summary_text": "Turno 2: Gracias.... | Asistente: ¡De nada! 😊 Estoy aquí para ayudarte con lo que necesites.\n\n¿Te gustaría que te ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_143aa5",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 3,
+    "created_at": "2026-06-11T17:34:22.206474",
+    "summary_text": "Turno 3: porfa una pechuga, qué pena que no les había respondido | Asistente: ¡Qué bien! Tenemos **dos opciones de pechuga** disponibles hoy 😊\n\n1. 🧀 **Pechuga gratinada** — $13,500 (corriente) / $12 | Intento: ",
+    "previous_summary": "Turno 2: Gracias. | Asistente: ¡De nada! 😊 Estoy aquí para ayudarte con lo que necesites.\n\n¿Te gustaría que te muestre el **menú completo** con todos l | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_043f8c",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 3,
+    "created_at": "2026-06-11T17:35:18.847744",
+    "summary_text": "Turno 3: porfa una pechuga, qué pena que no les había respondido... | Asistente: ¡Qué bien! Tenemos **dos opciones de pechuga** disponibles hoy 😊\n\n1. 🧀 **Pechuga...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_e07889",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 4,
+    "created_at": "2026-06-11T17:35:29.871791",
+    "summary_text": "Turno 4: a la plancha | Asistente: ¡Excelente! La **Pechuga a la plancha** está disponible 😊 Te cuento los detalles:\n\n**Pechuga a la plancha 🍗**\n- Corrient | Intento: ",
+    "previous_summary": "Turno 3: porfa una pechuga, qué pena que no les había respondido | Asistente: ¡Qué bien! Tenemos **dos opciones de pechuga** disponibles hoy 😊\n\n1. 🧀 **Pechuga gratinada** — $13,500 (corriente) / $12 | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_d0567c",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 4,
+    "created_at": "2026-06-11T17:36:07.071799",
+    "summary_text": "Turno 4: a la plancha... | Asistente: ¡Excelente! La **Pechuga a la plancha** está disponible 😊 Te cuento los detalles...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_4ab3c6",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 5,
+    "created_at": "2026-06-11T17:36:20.238846",
+    "summary_text": "Turno 5: una mini está bien | Asistente: ¡Qué buen gusto! 🎉 Aquí te cuento cómo está el menú de hoy (jueves) para tu **Pechuga a la plancha mini ($12,000)**:\n\n** | Intento: ",
+    "previous_summary": "Turno 4: a la plancha | Asistente: ¡Excelente! La **Pechuga a la plancha** está disponible 😊 Te cuento los detalles:\n\n**Pechuga a la plancha 🍗**\n- Corrient | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      5
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_aa64e9",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 5,
+    "created_at": "2026-06-11T17:36:35.398442",
+    "summary_text": "Turno 5: una mini está bien... | Asistente: ¡Qué buen gusto! 🎉 Aquí te cuento cómo está el menú de hoy (jueves) para tu **Pe...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      5
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_ae0b17",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 6,
+    "created_at": "2026-06-11T17:36:49.108122",
+    "summary_text": "Turno 6: uy macarrones, esos me encantan | Asistente: ¡Qué casualidad! 😄 Hoy es **jueves** y en el menú tenemos como **principio**:\n\n## 🍝 Macarrón con carne molida\n\n¡Justo lo | Intento: ",
+    "previous_summary": "Turno 5: una mini está bien | Asistente: ¡Qué buen gusto! 🎉 Aquí te cuento cómo está el menú de hoy (jueves) para tu **Pechuga a la plancha mini ($12,000)**:\n\n** | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      6
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_1e44a5",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 6,
+    "created_at": "2026-06-11T17:38:47.110423",
+    "summary_text": "Turno 6: uy macarrones, esos me encantan... | Asistente: ¡Qué casualidad! 😄 Hoy es **jueves** y en el menú tenemos como **principio**:\n\n#...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      6
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_25b3e3",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 7,
+    "created_at": "2026-06-11T17:39:03.074956",
+    "summary_text": "Turno 7: sí, eso es lo que pedí | Asistente: ¡Aquí está el menú completo del jueves! 🎉\n\nEntonces, confirmando: ya tenemos el **Principio: Macarrón con carne molida** | Intento: ",
+    "previous_summary": "Turno 6: uy macarrones, esos me encantan | Asistente: ¡Qué casualidad! 😄 Hoy es **jueves** y en el menú tenemos como **principio**:\n\n## 🍝 Macarrón con carne molida\n\n¡Justo lo | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      7
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_18990d",
+    "session_id": "cli_cli_user_1781217103",
+    "turn_number": 7,
+    "created_at": "2026-06-11T17:51:34.496395",
+    "summary_text": "Turno 7: sí, eso es lo que pedí... | Asistente: ¡Aquí está el menú completo del jueves! 🎉\n\nEntonces, confirmando: ya tenemos el ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      7
+    ],
+    "tokens_estimated": 10
+  }
+]

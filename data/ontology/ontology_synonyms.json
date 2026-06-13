@@ -1,0 +1,70 @@
+{
+  "marrano": {
+    "related_ingredients": ["cerdo"],
+    "items": ["Lomo de cerdo asado a la plancha"]
+  },
+  "pollo": {
+    "related_ingredients": ["pollo"],
+    "items": ["Pechuga a la plancha", "Pechuga gratinada"]
+  },
+  "pescado": {
+    "related_ingredients": ["pescado"],
+    "items": ["Bocachico criollo frito / sudado"]
+  },
+  "carne": {
+    "related_ingredients": ["res"],
+    "items": ["Carne a la plancha", "Carnes mixtas en vegetales"]
+  },
+  "sudado": {
+    "cooking_method": "sudado",
+    "items": ["Bocachico criollo frito / sudado"]
+  },
+  "frito": {
+    "cooking_method": "frito",
+    "items": ["Bocachico criollo frito / sudado"]
+  },
+  "plancha": {
+    "cooking_method": "a_plancha",
+    "items": ["Pechuga a la plancha", "Carne a la plancha", "Lomo de cerdo asado a la plancha"]
+  },
+  "gratinado": {
+    "cooking_method": "gratinado",
+    "items": ["Pechuga gratinada"]
+  },
+  "asado": {
+    "cooking_method": "asado",
+    "items": ["Lomo de cerdo asado a la plancha"]
+  },
+  "cerdo": {
+    "related_ingredients": ["cerdo"],
+    "items": ["Lomo de cerdo asado a la plancha", "Carnes mixtas en vegetales"]
+  },
+  "res": {
+    "related_ingredients": ["res"],
+    "items": ["Carne a la plancha", "Carnes mixtas en vegetales"]
+  },
+  "mixto": {
+    "items": ["Carnes mixtas en vegetales"],
+    "section": "Proteínas"
+  },
+  "vegetales": {
+    "related_ingredients": ["verdura"],
+    "items": ["Carnes mixtas en vegetales"]
+  },
+  "pechuga": {
+    "related_ingredients": ["pollo"],
+    "items": ["Pechuga a la plancha", "Pechuga gratinada"]
+  },
+  "lomo": {
+    "related_ingredients": ["cerdo"],
+    "items": ["Lomo de cerdo asado a la plancha"]
+  },
+  "bocachico": {
+    "related_ingredients": ["pescado"],
+    "items": ["Bocachico criollo frito / sudado"]
+  },
+  "verdura": {
+    "related_ingredients": ["verdura"],
+    "items": ["Crema de verdura"]
+  }
+}

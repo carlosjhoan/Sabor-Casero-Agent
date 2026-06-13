@@ -1,0 +1,1834 @@
+[
+  {
+    "log_id": "log_ca370550",
+    "session_id": "sess_a2f494522672",
+    "timestamp": "2026-04-15T16:16:46.636481",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. ¿En qué puedo ayudarte hoy?",
+    "processing_time_ms": 6168.681383132935,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:16:53.288987"
+  },
+  {
+    "log_id": "log_af822a9d",
+    "session_id": "sess_a2f494522672",
+    "timestamp": "2026-04-15T16:17:13.233126",
+    "user_message": "Qué tiene para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tiene para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú o las ofertas especiales disponibles para el día de hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te cuento que hoy tenemos un **Jueves Caserito** delicioso 😊\n\n**Menú para hoy:**\n🍲 **Sopa:** Crema de verdura  \n🥘 **Principio:** Puedes elegir entre:\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n🍽️ **Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo\n\n🥩 **Proteínas disponibles:**\n- **Bandeja mixta** (Pechuga - Carne / Pechuga - Lomo de cerdo a la BBQ / Carne - Lomo de cerdo a la BBQ) - $15,000\n- **Bocachico criollo frito/sudado** - $13,500\n- **Carnes mixtas en vegetales** - $13,500 (corriente) / $12,000 (mini)\n- **Pechuga gratinada** - $13,500 (corriente) / $12,000 (mini)\n- **Pechuga a la plancha** - $13,500 (corriente) / $12,000 (mini)\n- **Carne a la plancha** - $13,500 (corriente) / $12,000 (mini)\n- **Lomo de cerdo asado a la plancha** (con salsa BBQ, con salsa miel-mostaza, o sin salsa) - $13,500 (corriente) / $12,000 (mini)\n\n¿Te gustaría ordenar algo de nuestro menú de hoy? Con gusto quedo atenta para tomarte el pedido con lo que desees 🍽️",
+    "processing_time_ms": 14783.223390579224,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:17:28.312472"
+  },
+  {
+    "log_id": "log_6df4204f",
+    "session_id": "sess_a2f494522672",
+    "timestamp": "2026-04-15T16:17:46.991160",
+    "user_message": "Regáleme una carnes mixtas, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Regáleme una carnes mixtas, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario inicia un pedido de carnes mixtas sin orden previa",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "{\n  \"thought\": \"El cliente inicia un pedido solicitando 'una carnes mixtas'. Según el menú extraído, existe el ítem 'Carnes mixtas en vegetales' con precios para tamaños 'Corriente' y 'mini'. El cliente no especifica tamaño, por lo que se asume el predeterminado 'corriente'. No se menciona un principio específico, pero el menú incluye secciones de 'Principio' y 'Acompañamientos'. Como es un nuevo pedido, primero se debe crear la orden y luego el ítem. Se valida que el ítem solicitado existe en el menú.\",\n  \"actions\": [\n    {\n      \"action\": \"CREATE_ORDER\",\n      \"params\": {\n        \"customer_id\": \"current_user\",\n        \"service_type\": \"delivery\"\n      }\n    },\n    {\n      \"action\": \"CREATE_ITEM\",\n      \"params\": {\n        \"quantity\": 1,\n        \"protein\": \"Carnes mixtas en vegetales\",\n        \"size\": \"corriente\",\n        \"sides\": [],\n        \"requirements\": []\n      }\n    }\n  ]\n}",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te ayudo con tu pedido de carnes mixtas. \n\nSegún nuestro menú, tenemos disponible **Carnes mixtas en vegetales** en dos presentaciones:\n- **Corriente**: $13.500 COP\n- **Mini**: $12.000 COP\n\n¿Te gustaría la porción corriente o mini?",
+    "processing_time_ms": 18091.956615447998,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:18:05.357580"
+  },
+  {
+    "log_id": "log_6f187fd5",
+    "session_id": "sess_a2f494522672",
+    "timestamp": "2026-04-15T16:18:48.759294",
+    "user_message": "Que sea mini, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Que sea mini, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el tamaño de la carnes mixtas existente a mini",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "{\n  \"thought\": \"Cliente solicita modificar el tamaño de la 'Carnes mixtas en vegetales' existente a 'mini'. Según la información del menú extraída, el ítem 'Carnes mixtas en vegetales' tiene precios para 'Corriente' (13.500 COP) y 'mini' (12.000 COP), por lo que el tamaño solicitado es válido. El pedido actual solo tiene un ítem, por lo que la referencia es clara. Se procede a actualizar el campo 'size' del ítem existente.\",\n  \"actions\": [\n    {\n      \"action\": \"UPDATE_ITEM\",\n      \"params\": {\n        \"item_id\": \"item-952ea096\",\n        \"size\": \"mini\"\n      }\n    }\n  ]\n}",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-952ea096",
+          "size": "mini",
+          "unit_price": 12000
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-DA71FF",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-952ea096",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:18:02.177183",
+      "updated_at": "2026-04-15T16:18:48.804581",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-DA71FF",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-952ea096",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:18:02.177183",
+      "updated_at": "2026-04-15T16:19:00.343465",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces tu pedido queda así:\n\n**1x Carnes mixtas en vegetales (mini)**  \n*Con todo*\n\n¿Es correcto?",
+    "processing_time_ms": 13565.95230102539,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:19:02.599064"
+  },
+  {
+    "log_id": "log_4c22253a",
+    "session_id": "sess_a2f494522672",
+    "timestamp": "2026-04-15T16:19:21.058552",
+    "user_message": "Qué tienen de principio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tienen de principio",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar qué opciones de entradas o platos de inicio tienen disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-DA71FF",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-952ea096",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:18:02.177183",
+      "updated_at": "2026-04-15T16:19:21.101720",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-DA71FF",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-952ea096",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:18:02.177183",
+      "updated_at": "2026-04-15T16:19:24.988824",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Hola! En Sabor Casero, para este jueves caserito tenemos las siguientes opciones de principio:\n\n🍽️ **Principios disponibles:**\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n¿Te gustaría ordenar alguno de estos principios o prefieres ver el menú completo para elegir tu almuerzo? 😊",
+    "processing_time_ms": 6974.121332168579,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:19:28.277425"
+  },
+  {
+    "log_id": "log_74e9bcb2",
+    "session_id": "sess_a2f494522672",
+    "timestamp": "2026-04-15T16:19:51.151920",
+    "user_message": "Regáleme con guiso de yota",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Regáleme con guiso de yota",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar guiso de yota como entrada al pedido actual de carnes mixtas",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "{\n  \"thought\": \"Cliente solicita agregar 'guiso de yota' como entrada al pedido actual. Según el menú proporcionado, 'Guiso de yota con huevo' está listado en la sección 'Principio'. El cliente ya tiene un ítem principal (Carnes mixtas en vegetales). La solicitud es agregar un nuevo ítem de entrada, no modificar el ítem existente. Por lo tanto, se debe crear un nuevo ítem con 'principle' establecido como 'guiso de yota con huevo'. No se especifica cantidad, por defecto se asume 1. No se especifica tamaño, por defecto se asume 'corriente'. Se verifica que el 'guiso de yota' sea un ítem válido en el menú, y lo es.\",\n  \"actions\": [\n    {\n      \"action\": \"CREATE_ITEM\",\n      \"params\": {\n        \"quantity\": 1,\n        \"principle\": \"guiso de yota con huevo\",\n        \"size\": \"corriente\"\n      }\n    }\n  ]\n}",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-DA71FF",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-952ea096",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:18:02.177183",
+      "updated_at": "2026-04-15T16:19:51.196142",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-DA71FF",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-952ea096",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        },
+        {
+          "id": "item-f2a0fe1c",
+          "quantity": 1,
+          "protein": null,
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:18:02.177183",
+      "updated_at": "2026-04-15T16:20:04.750251",
+      "subtotal": 25500.0,
+      "total_amount": 25500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Con gusto! El guiso de yota con huevo está disponible como principio hoy. \n\nPara agregarlo a tu pedido actual de **Carnes mixtas en vegetales (mini)**, necesito confirmar: ¿deseas cambiar el principio actual por el guiso de yota, o prefieres el **principio mixto** (que incluye tanto el guiso de yota como el macarrón con carne molida)?",
+    "processing_time_ms": 17736.679792404175,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:20:09.120279"
+  },
+  {
+    "log_id": "log_027d0245",
+    "session_id": "sess_88920ebb6bea",
+    "timestamp": "2026-04-15T16:29:21.244116",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando para iniciar la conversación",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. ¿En qué puedo ayudarte hoy?",
+    "processing_time_ms": 6488.797187805176,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:29:27.989245"
+  },
+  {
+    "log_id": "log_b7da53ff",
+    "session_id": "sess_88920ebb6bea",
+    "timestamp": "2026-04-15T16:29:35.415616",
+    "user_message": "Qué tiene para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tiene para hoy?",
+        "query_type": "consulting",
+        "topic": "special_offers",
+        "focus": "consultar las ofertas especiales o platos del día disponibles hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te cuento lo que tenemos disponible hoy, jueves caserito 😊\n\n**Menú del día:**\n- **Sopa:** Crema de verdura\n- **Principio:** Macarrón con carne molida, Guiso de yota con huevo o Principio mixto (ambos)\n- **Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo\n\n**Proteínas disponibles:**\n- **Bandeja mixta** (Pechuga-Carne, Pechuga-Lomo de cerdo BBQ, Carne-Lomo de cerdo BBQ) - $15,000\n- **Bocachico criollo** frito o sudado - $13,500\n- **Carnes mixtas en vegetales** - $13,500 (corriente) / $12,000 (mini)\n- **Pechuga gratinada** - $13,500 (corriente) / $12,000 (mini)\n- **Pechuga a la plancha** - $13,500 (corriente) / $12,000 (mini)\n- **Carne a la plancha** - $13,500 (corriente) / $12,000 (mini)\n- **Lomo de cerdo asado a la plancha** (con salsa BBQ, miel-mostaza o sin salsa) - $13,500 (corriente) / $12,000 (mini)\n\n¿Te gustaría ordenar algo de nuestro menú? Con gusto quedo atenta para tomarte el pedido con lo que desees 🍽️",
+    "processing_time_ms": 12041.59951210022,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:29:47.727416"
+  },
+  {
+    "log_id": "log_cb1d47fc",
+    "session_id": "sess_88920ebb6bea",
+    "timestamp": "2026-04-15T16:30:13.757774",
+    "user_message": "Regáleme unas carnes mixtas, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Regáleme unas carnes mixtas, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario inicia un pedido de carnes mixtas sin orden previa",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "{\n  \"thought\": \"El cliente inicia un pedido solicitando 'unas carnes mixtas'. Según el menú extraído, existe el ítem 'Carnes mixtas en vegetales' con precios para tamaños corriente y mini. No se especifica tamaño, por lo que se asume 'corriente' por defecto. El cliente no tiene un pedido previo, por lo que primero se debe crear la orden. La solicitud es clara y el ítem existe en el menú, por lo que se procede a crear la orden y el ítem.\",\n  \"actions\": [\n    {\n      \"action\": \"CREATE_ORDER\",\n      \"params\": {\n        \"customer_id\": \"current_user\",\n        \"service_type\": \"delivery\"\n      }\n    },\n    {\n      \"action\": \"CREATE_ITEM\",\n      \"params\": {\n        \"quantity\": 1,\n        \"protein\": \"Carnes mixtas en vegetales\",\n        \"size\": \"corriente\",\n        \"sides\": [],\n        \"requirements\": []\n      }\n    }\n  ]\n}",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te ayudo con tu pedido de carnes mixtas. \n\nPara las carnes mixtas en vegetales, tenemos dos tamaños disponibles:\n- **Corriente**: $13.500\n- **Mini**: $12.000\n\n¿Cuál de estos tamaños te gustaría ordenar?",
+    "processing_time_ms": 17646.405935287476,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:30:31.652561"
+  },
+  {
+    "log_id": "log_f7e733c2",
+    "session_id": "sess_88920ebb6bea",
+    "timestamp": "2026-04-15T16:30:38.804540",
+    "user_message": "Uno mini, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Uno mini, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el tamaño de las carnes mixtas existentes a porción mini",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "{\n  \"thought\": \"Cliente solicita modificar el tamaño de las 'Carnes mixtas en vegetales' existentes a porción 'mini'. Según la información del menú extraída, el ítem 'Carnes mixtas en vegetales' sí está disponible en tamaño mini (PRICE: 12000). El pedido actual solo tiene un ítem, por lo que la referencia es clara. Se procede a actualizar el campo 'size' del ítem existente.\",\n  \"actions\": [\n    {\n      \"action\": \"UPDATE_ITEM\",\n      \"params\": {\n        \"item_id\": \"item-234d0e34\",\n        \"size\": \"mini\"\n      }\n    }\n  ]\n}",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-234d0e34",
+          "size": "mini",
+          "unit_price": 12000
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-EAF4E2",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-234d0e34",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:30:28.558361",
+      "updated_at": "2026-04-15T16:30:38.858751",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EAF4E2",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-234d0e34",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:30:28.558361",
+      "updated_at": "2026-04-15T16:30:52.047655",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Con gusto! Veo que tienes un pedido activo de **Carnes mixtas en vegetales** [Con todo].  \n\nPara cambiar el tamaño a **mini**, necesito confirmar:  \n¿Deseas modificar **solo el tamaño** de tu pedido actual a mini, o prefieres hacer un **nuevo pedido** desde cero?",
+    "processing_time_ms": 16375.146865844727,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:30:55.484919"
+  },
+  {
+    "log_id": "log_1b2bd2c1",
+    "session_id": "sess_88920ebb6bea",
+    "timestamp": "2026-04-15T16:31:17.314042",
+    "user_message": "qué tienen de principio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "qué tienen de principio",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar opciones de platos de entrada o primeros platos disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-EAF4E2",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-234d0e34",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:30:28.558361",
+      "updated_at": "2026-04-15T16:31:17.364022",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EAF4E2",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-234d0e34",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:30:28.558361",
+      "updated_at": "2026-04-15T16:31:21.070535",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Hola! En Sabor Casero hoy tenemos disponibles los siguientes principios para acompañar tu almuerzo:\n\n- **Macarrón con carne molida**\n- **Guiso de yota con huevo**\n- **Principio mixto** (que incluye ambos principios)\n\n¿Te gustaría que te cuente también sobre las proteínas y acompañamientos disponibles, o prefieres que te ayude a armar tu pedido con alguno de estos principios? 😊",
+    "processing_time_ms": 7019.401788711548,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:31:24.583818"
+  },
+  {
+    "log_id": "log_800da144",
+    "session_id": "sess_88920ebb6bea",
+    "timestamp": "2026-04-15T16:31:34.408526",
+    "user_message": "con guiso de yota, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "con guiso de yota, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el plato de carnes mixtas en vegetales para que incluya guiso de yota",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "{\n  \"thought\": \"El cliente solicita modificar su plato de 'Carnes mixtas en vegetales' para que incluya 'guiso de yota'. Según el menú proporcionado, 'Guiso de yota con huevo' es un ítem válido en la sección 'Principio'. El término 'guiso de yota' se mapea correctamente al campo 'principle' según el GLOSARIO. El pedido actual es 1x Carnes mixtas en vegetales (mini) con todo, por lo que se debe actualizar el principio de ese ítem específico. No hay ambigüedad, ya que solo hay un ítem en el pedido. La solicitud es válida y está dentro del menú.\",\n  \"actions\": [\n    {\n      \"action\": \"UPDATE_ITEM\",\n      \"params\": {\n        \"item_id\": \"item-234d0e34\",\n        \"principle\": \"guiso de yota con huevo\"\n      }\n    }\n  ]\n}",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-234d0e34",
+          "principle": "guiso de yota con huevo"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-EAF4E2",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-234d0e34",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:30:28.558361",
+      "updated_at": "2026-04-15T16:31:34.449371",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-EAF4E2",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-234d0e34",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": "guiso de yota con huevo",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:30:28.558361",
+      "updated_at": "2026-04-15T16:31:47.972520",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Con gusto! Veo que quieres modificar tu plato de Carnes mixtas en vegetales para que incluya guiso de yota. \n\nPara confirmar tu pedido:\n- **Plato principal:** Carnes mixtas en vegetales\n- **Modificación:** Incluir guiso de yota\n- **Tamaño:** Mini (ya que tu pedido actual es mini)\n\n¿Confirmas que quieres el plato de Carnes mixtas en vegetales mini con guiso de yota?",
+    "processing_time_ms": 17406.774520874023,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:31:52.069378"
+  },
+  {
+    "log_id": "log_ed7dc917",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:44:00.244845",
+    "user_message": "hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando al inicio de la conversación",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Buenos días, bienvenido/a a Sabor Casero. \n\n¿En qué puedo ayudarte hoy? Puedes consultar nuestro menú, hacer un pedido o preguntar sobre nuestros servicios.",
+    "processing_time_ms": 7191.298723220825,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:44:07.735625"
+  },
+  {
+    "log_id": "log_4abcf6ce",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:44:44.740992",
+    "user_message": "qué tienen para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "qué tienen para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar las opciones del menú disponibles para el día de hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Con mucho gusto te comparto el menú de hoy, jueves caserito en Sabor Casero 🍽️\n\n**Menú para un Jueves Caserito**\n\n**Sopa:**\n• Crema de verdura\n\n**Principio (elige uno):**\n• Macarrón con carne molida\n• Guiso de yota con huevo\n• Principio mixto (ambos principios)\n\n**Proteínas principales:**\n• Pechuga a la plancha\n• Carne a la plancha\n• Lomo de cerdo asado a la plancha (disponible con salsa BBQ, salsa miel-mostaza o sin salsa)\n\n**Acompañamientos incluidos:**\nYuca al vapor, arroz, ensalada, jugo y caramelo\n\n**Precios:**\n• **Corriente:** $13.500 COP\n• **Mini:** $12.000 COP\n\n¿Te gustaría ordenar algo del menú de hoy? Con gusto quedo atenta para tomarte el pedido con lo que desees 😊",
+    "processing_time_ms": 12271.198034286499,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:44:57.311335"
+  },
+  {
+    "log_id": "log_6f8fb96b",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:45:11.897464",
+    "user_message": "regáleme una pechuga a la plancha",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "regáleme una pechuga a la plancha",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario inicia un pedido de pechuga a la plancha",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente está iniciando un pedido solicitando una pechuga a la plancha. Según la información del menú proporcionada, la \"Pechuga a la plancha\" es un item válido y está disponible en dos tamaños: corriente (13.500 COP) y mini (12.000 COP). Como el cliente no especifica el tamaño, se requiere clarificación para determinar si desea la porción corriente o mini. Tampoco especifica el principio (macarrón con carne molida o guiso de yota con huevo) ni hace modificaciones a los acompañamientos, por lo que el item se configuraría con el principio por definir y los requirements por defecto [\"Con todo\"], que incluyen yuca al vapor, arroz, ensalada, jugo y caramelo.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Con gusto! ¿La deseas corriente o mini?",
+    "processing_time_ms": 16928.799152374268,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:45:29.133204"
+  },
+  {
+    "log_id": "log_5e913611",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:46:03.387342",
+    "user_message": "corriente, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "corriente, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar la pechuga a la plancha de 'con todo' a 'corriente'",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar el item existente de \"pechuga a la plancha\", que actualmente tiene el tamaño por defecto y los requirements [\"Con todo\"], para que sea de tamaño \"corriente\". Según la información del menú, la pechuga a la plancha SÍ está disponible en el tamaño \"corriente\" por 13.500 COP, por lo que la solicitud es válida. Esto implica que solo se debe actualizar el campo `size` del item a \"corriente\", manteniendo la proteína y los requirements [\"Con todo\"] sin cambios, ya que el cliente no ha mencionado ninguna modificación a los acompañamientos. La solicitud es clara y no presenta ambigüedades.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-4c48c0f6",
+          "size": "corriente",
+          "unit_price": 13500
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": null,
+          "size": "",
+          "unit_price": 0.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 0.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:46:03.436879",
+      "subtotal": 0.0,
+      "total_amount": 0.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:46:16.009402",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces tu pedido queda así:\n\n**1x Pechuga a la plancha corriente**\n\n¿Con qué principio lo deseas?  \nTenemos disponibles:  \n- Macarrón con carne molida  \n- Guiso de yota con huevo  \n- Principio mixto (ambos)",
+    "processing_time_ms": 15453.152894973755,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:46:19.099626"
+  },
+  {
+    "log_id": "log_10b63e90",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:46:33.359053",
+    "user_message": "con guiso de yota",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "con guiso de yota",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar la pechuga a la plancha para que venga con guiso de yuca",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar el item existente de pechuga a la plancha. Según la información del menú, el \"guiso de yota con huevo\" es un principio válido, pero el cliente menciona \"guiso de yuca\", lo cual no aparece en el menú; esto podría ser un error o una confusión entre \"yota\" y \"yuca\". Además, la conversación previa indica que el cliente ya había cambiado el item a 'corriente', lo que se refiere al tamaño, no a los acompañamientos. Por lo tanto, la solicitud principal es cambiar el *principle* del item a \"guiso de yota\", manteniendo el tamaño corriente y actualizando los *requirements* para reflejar que ya no es \"Con todo\", sino que incluye específicamente este principio. Sin embargo, la mención de \"yuca\" requiere clarificación, ya que podría ser un acompañamiento adicional (yuca al vapor) que debería añadirse a los *requirements* como \"extra yuca\", pero primero debemos confirmar si el cliente se refiere al principio o al acompañamiento.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-4c48c0f6",
+          "principle": "guiso de yota con huevo",
+          "add_requirements": [
+            "sin arroz",
+            "sin ensalada",
+            "sin maduro",
+            "sin patacón",
+            "sin jugo"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:46:33.409620",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "sin ensalada",
+            "sin maduro",
+            "sin patacón",
+            "sin jugo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:46:48.912742",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Con gusto! Veo que deseas modificar tu pechuga a la plancha para que venga con guiso de yota. \n\nPara confirmar, ¿quieres cambiar el acompañamiento de tu pechuga a la plancha para que incluya el guiso de yota con huevo en lugar de lo que tenía antes?",
+    "processing_time_ms": 18551.263093948364,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:46:52.152113"
+  },
+  {
+    "log_id": "log_65ff1aa5",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:47:53.275658",
+    "user_message": "no, pero, lo quiero con todo",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "no, pero, lo quiero con todo",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar la pechuga a la plancha para que venga con todos los acompañamientos estándar",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar la pechuga a la plancha que ya tiene en el pedido, la cual actualmente tiene el principio \"guiso de yota con huevo\" y una lista de requirements que excluyen varios acompañamientos. Su solicitud específica es que este item ahora venga \"con todo\", es decir, con todos los acompañamientos estándar. Según la información del menú, la pechuga a la plancha es un item válido y los acompañamientos estándar listados son \"Yuca al vapor arroz, ensalada, jugo y caramelo\". Por lo tanto, para cumplir con la petición del cliente, se debe actualizar el campo `requirements` del item existente, cambiándolo de la lista actual de exclusiones a simplemente `[\"Con todo\"]`, lo que indica que el plato incluirá todos los acompañamientos por defecto. El principio \"guiso de yota con huevo\" y la proteína (pechuga) deben mantenerse sin cambios.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-4c48c0f6",
+          "add_requirements": [
+            "Con todo"
+          ],
+          "remove_requirements": [
+            "sin arroz",
+            "sin ensalada",
+            "sin maduro",
+            "sin patacón",
+            "sin jugo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin arroz",
+            "sin ensalada",
+            "sin maduro",
+            "sin patacón",
+            "sin jugo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:47:53.327902",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:48:07.523547",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces confirmo que tu **Pechuga a la plancha corriente** vendrá con todos los acompañamientos estándar: arroz, ensalada, jugo y caramelo, junto con el principio de **Guiso de yota con huevo** que ya habías elegido.\n\n¿Alguna otra modificación o deseas proceder con el pedido?",
+    "processing_time_ms": 17464.484453201294,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:48:11.010999"
+  },
+  {
+    "log_id": "log_ada2887c",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:48:37.355760",
+    "user_message": "sopa de qué me dijho qué tenia, de paso para pedir otro",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "sopa de qué me dijho qué tenia",
+        "query_type": "clarification",
+        "topic": "menu",
+        "focus": "confirmar qué tipo de sopa tiene el guiso de yota con huevo de la orden actual",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "de paso para pedir otro",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar otro plato o principio a la orden actual existente",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El cliente tiene dos solicitudes claras en su mensaje. Primero, quiere confirmar qué tipo de sopa acompaña al principio \"guiso de yota con huevo\" que ya tiene en su orden. Según la información del menú proporcionada, la sopa del día es \"Crema de verdura\", por lo que esa es la respuesta a su consulta. Segundo, el cliente expresa su intención de agregar otro plato a la orden actual, pero su mensaje es ambiguo: dice \"de paso para pedir otro\" sin especificar qué proteína, tamaño o principio desea. Para proceder, necesito que el cliente aclare exactamente qué item del menú quiere agregar (por ejemplo, una bandeja mixta, bocachico, etc.) y con qué especificaciones.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:48:37.404928",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:48:52.062445",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro que sí! La sopa que acompaña el guiso de yota con huevo es **crema de verdura**, como parte de nuestro menú caserito de hoy.\n\n¿Qué otro plato o principio te gustaría agregar a tu orden?",
+    "processing_time_ms": 17614.9001121521,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:48:55.222800"
+  },
+  {
+    "log_id": "log_f69ac7a7",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:49:13.236088",
+    "user_message": "sin sopa el de pechuga, y regáleme otro con carnes mixtas",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "sin sopa el de pechuga",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el plato de pechuga a la plancha en la orden actual para que no incluya sopa",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      },
+      {
+        "segment": "regáleme otro con carnes mixtas",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar un nuevo plato con carnes mixtas a la orden actual",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El cliente solicita dos acciones claras sobre la orden actual. Primero, quiere modificar el plato existente de \"pechuga a la plancha\" para que no incluya sopa. Según el menú, la sopa es un acompañamiento separado (Crema de verdura), por lo que esta petición se traduce en actualizar los `requirements` del item de [\"Con todo\"] a [\"sin sopa\"], manteniendo el resto de la configuración (proteína, principio, tamaño). Segundo, pide agregar un nuevo plato de \"carnes mixtas\", el cual está validado en el menú como \"Carnes mixtas en vegetales\", disponible en tamaños corriente y mini. Para este nuevo item, al no especificar tamaño ni modificaciones, se debe crear con los `requirements` por defecto [\"Con todo\"] y se necesita preguntar al cliente si lo desea en tamaño corriente o mini.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-4c48c0f6",
+          "add_requirements": [
+            "sin sopa"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:49:13.282301",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:49:30.778077",
+      "subtotal": 27000.0,
+      "total_amount": 27000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces, para tu orden actual:\n\n1. **Modifico el plato de pechuga a la plancha** para que no incluya sopa. Queda como:  \n   - Pechuga a la plancha corriente (sin sopa)  \n   - Principio: guiso de yota con huevo  \n   - Acompañamientos: yuca al vapor, arroz, ensalada, jugo y caramelo  \n\n2. **Agrego un nuevo plato con carnes mixtas**. Para este, necesito confirmar:  \n   - ¿Lo deseas corriente o mini?  \n   - ¿Con qué principio lo prefieres? (macarrón con carne molida, guiso de yota con huevo o principio mixto)  \n\n¿Me confirmas esas opciones para el plato de carnes mixtas?",
+    "processing_time_ms": 22935.11700630188,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:49:36.445475"
+  },
+  {
+    "log_id": "log_d980049a",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:49:47.019303",
+    "user_message": "mejor que sean dos con pechuga, no una",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "mejor que sean dos con pechuga, no una",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar la orden actual para tener dos platos de pechuga a la plancha en lugar de uno",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar su orden actual para tener dos platos de pechuga a la plancha en lugar de uno solo. Según la información del menú, la pechuga a la plancha es un ítem válido y está disponible en tamaños corriente y mini. El ítem existente ya tiene el principio \"guiso de yota con huevo\" y el requirement [\"sin sopa\"], por lo que el nuevo ítem idéntico debe heredar estas mismas especificaciones. Esto significa que la orden final tendrá dos unidades de pechuga a la plancha con el mismo principio y sin sopa, manteniendo el ítem de carnes mixtas sin cambios. No hay ambigüedad en la solicitud, ya que el cliente especifica claramente duplicar el plato de pechuga.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "sin sopa"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:49:47.061725",
+      "subtotal": 27000.0,
+      "total_amount": 27000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-a46e143f",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:49:59.963621",
+      "subtotal": 40500.0,
+      "total_amount": 40500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces modifico tu orden para que sean **2 platos de Pechuga a la plancha** en lugar de 1.\n\nPara confirmar, ¿cada pechuga la deseas corriente o mini?",
+    "processing_time_ms": 15442.370176315308,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:50:02.690937"
+  },
+  {
+    "log_id": "log_4d7077ee",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:50:32.786611",
+    "user_message": "el de carnes mixtas, regálemelo sin ensalada y mejor me regala más principio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "el de carnes mixtas, regálemelo sin ensalada",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el plato de carnes mixtas en vegetales de la orden actual para que no lleve ensalada",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      },
+      {
+        "segment": "mejor me regala más principio",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar más cantidad de principio en lugar de la ensalada en el plato de carnes mixtas",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar el plato de \"Carnes mixtas en vegetales\" que actualmente tiene en su orden. Primero solicita que este plato no lleve ensalada, lo cual es una modificación válida según el menú, ya que la ensalada es uno de los acompañamientos listados. Luego, en lugar de simplemente quitar la ensalada, pide específicamente \"más principio\" como compensación, lo que significa que desea una porción extra del principio (en este caso, el guiso de yota con huevo que ya viene con el plato) en lugar de la ensalada. Por lo tanto, los requirements del item deben actualizarse de [\"Con todo\"] a [\"sin ensalada\", \"más principio\"], manteniendo todos los demás componentes del plato sin cambios. No hay ambigüedad en la solicitud, ya que se refiere claramente al único item de carnes mixtas en la orden actual.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-56c050cc",
+          "add_requirements": [
+            "sin ensalada",
+            "más principio"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-a46e143f",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:50:32.833450",
+      "subtotal": 40500.0,
+      "total_amount": 40500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin ensalada",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-a46e143f",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:50:48.802612",
+      "subtotal": 40500.0,
+      "total_amount": 40500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entiendo que quieres modificar el plato de **Carnes mixtas en vegetales** que ya tienes en tu pedido.\n\nTe confirmo el cambio:\n- **Sin ensalada**\n- **Con más principio en lugar de la ensalada**\n\nPara poder procesar tu modificación, necesito que me confirmes:\n**¿Con qué principio específico quieres que te sirvamos más cantidad?**  \nPuedes elegir entre:\n- Macarrón con carne molida\n- Guiso de yota con huevo\n- Principio mixto (ambos principios)\n\n¿Cuál prefieres?",
+    "processing_time_ms": 21379.037380218506,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:50:54.406126"
+  },
+  {
+    "log_id": "log_ebe5ccca",
+    "session_id": "sess_39dbbe2da3b0",
+    "timestamp": "2026-04-15T16:51:13.304096",
+    "user_message": "con ambops principios, puede ser",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "con ambops principios, puede ser",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "especificar que el plato de carnes mixtas debe llevar ambos principios en lugar de ensalada",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar el plato de carnes mixtas en vegetales (item-56c050cc) para que, en lugar de ensalada, incluya ambos principios disponibles. Según la información del menú, existe la opción \"Principio mixto (Ambos principios)\", lo cual valida la solicitud del cliente. Esto significa que el campo `principle` de ese ítem debe actualizarse a \"Principio mixto\", y los `requirements` deben reflejar la eliminación de la ensalada y la petición de más cantidad de principio, quedando como [\"sin ensalada\", \"más principio\"]. Los otros ítems de pechuga a la plancha en la orden permanecen sin cambios.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-56c050cc",
+          "principle": "Principio mixto",
+          "add_requirements": [
+            "más principio"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin ensalada",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-a46e143f",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:51:13.360383",
+      "subtotal": 40500.0,
+      "total_amount": 40500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-FEDC7A",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-4c48c0f6",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-56c050cc",
+          "quantity": 1,
+          "protein": "Carnes mixtas en vegetales",
+          "principle": "Principio mixto",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin ensalada",
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        },
+        {
+          "id": "item-a46e143f",
+          "quantity": 1,
+          "protein": "pechuga a la plancha",
+          "principle": "guiso de yota con huevo",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "sin sopa"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-15T16:45:26.938005",
+      "updated_at": "2026-04-15T16:51:27.625050",
+      "subtotal": 40500.0,
+      "total_amount": 40500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces para el plato de **Carnes mixtas en vegetales**, ¿quieres confirmar que lo deseas con **ambos principios** (macarrón con carne molida y guiso de yota con huevo) en lugar de ensalada?",
+    "processing_time_ms": 16928.171396255493,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-15T16:51:30.472849"
+  }
+]

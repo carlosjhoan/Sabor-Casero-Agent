@@ -1,0 +1,44 @@
+[
+  {
+    "summary_id": "summary_d9ac54",
+    "session_id": "sess_9ec25d316cb1",
+    "turn_number": 1,
+    "created_at": "2026-05-22T15:02:15.142680",
+    "summary_text": "El usuario saluda e inicia la consulta. No hay pedido registrado.",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 65
+  },
+  {
+    "summary_id": "summary_f7a9fe",
+    "session_id": "sess_9ec25d316cb1",
+    "turn_number": 2,
+    "created_at": "2026-05-22T15:02:31.834522",
+    "summary_text": "El usuario pregunta por el menú del día o especiales disponibles. No hay pedido registrado.",
+    "previous_summary": "El usuario saluda e inicia la consulta. No hay pedido registrado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 91
+  },
+  {
+    "summary_id": "summary_683cd8",
+    "session_id": "sess_9ec25d316cb1",
+    "turn_number": 3,
+    "created_at": "2026-05-22T15:03:06.958567",
+    "summary_text": "El usuario solicita una pechuga como plato principal. No hay pedido registrado.",
+    "previous_summary": "El usuario pregunta por el menú del día o especiales disponibles. No hay pedido registrado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 79
+  }
+]

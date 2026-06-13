@@ -1,0 +1,16 @@
+# Mapeo de topicos (QueryTopic) a documentos en data/documents/
+# Cada entrada asocia un valor del enum QueryTopic al nombre de archivo
+# que contiene la informacion relevante.
+topic_to_doc:
+  menu: menu.md
+  ingredients: menu.md
+  special_offers: menu.md
+  hours: service_info.txt
+  delivery: service_info.txt
+  payment: service_info.txt
+  complaint: service_info.txt
+  general: service_info.txt
+  cutley_request: waiter_guide.txt
+  adicional_juice: waiter_guide.txt
+  disrespectful_customer: waiter_guide.txt
+  about: about_us.txt

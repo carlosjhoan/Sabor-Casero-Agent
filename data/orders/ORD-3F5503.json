@@ -1,0 +1,25 @@
+{
+  "id": "ORD-3F5503",
+  "customer_id": "default_user",
+  "status": "draft",
+  "items": [
+    {
+      "id": "item-8d4c4d15",
+      "quantity": 1,
+      "protein": "pechuga a la plancha",
+      "principle": null,
+      "size": "corriente",
+      "unit_price": 13500.0,
+      "requirements": [
+        "Con todo"
+      ],
+      "subtotal": 13500.0
+    }
+  ],
+  "service": null,
+  "payment_method": null,
+  "subtotal": 13500.0,
+  "total": 13500.0,
+  "created_at": "2026-05-21T15:35:34.361703",
+  "observations": []
+}

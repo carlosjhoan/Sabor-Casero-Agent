@@ -1,0 +1,106 @@
+[
+  {
+    "summary_id": "summary_d3f8b7",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 1,
+    "created_at": "2026-06-11T16:58:20.489050",
+    "summary_text": "Turno 1: hola, me pasas la carta, porfa a ver que se me antoja | Asistente: ¡Aquí está nuestro menú del día de hoy! 🎉\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principio**\n- Macarrón con ca | Intento: ",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_2e40ca",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 1,
+    "created_at": "2026-06-11T16:59:35.485147",
+    "summary_text": "Turno 1: hola, me pasas la carta, porfa a ver que se me antoja... | Asistente: ¡Aquí está nuestro menú del día de hoy! 🎉\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdur...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_620f5e",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 2,
+    "created_at": "2026-06-11T16:59:45.252196",
+    "summary_text": "Turno 2: una pechuga, porfa | Asistente: ¡Genial! Aquí tienes las opciones de **pechuga** que tenemos hoy 🍗\n\n- **Pechuga a la plancha** — $13.500 (corriente) / $ | Intento: ",
+    "previous_summary": "Turno 1: hola, me pasas la carta, porfa a ver que se me antoja | Asistente: ¡Aquí está nuestro menú del día de hoy! 🎉\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Principio**\n- Macarrón con ca | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_537e5a",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 2,
+    "created_at": "2026-06-11T17:00:00.309765",
+    "summary_text": "Turno 2: una pechuga, porfa... | Asistente: ¡Genial! Aquí tienes las opciones de **pechuga** que tenemos hoy 🍗\n\n- **Pechuga ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      2
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_65dc59",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 3,
+    "created_at": "2026-06-11T17:00:12.169226",
+    "summary_text": "Turno 3: a la plancha | Asistente: ¡Aquí tienes los detalles de la **Pechuga a la plancha**! 🍗\n\n**Precios:**\n- **Corriente** — $13.500\n- **Mini** — $12.000 | Intento: ",
+    "previous_summary": "Turno 2: una pechuga, porfa | Asistente: ¡Genial! Aquí tienes las opciones de **pechuga** que tenemos hoy 🍗\n\n- **Pechuga a la plancha** — $13.500 (corriente) / $ | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_15445d",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 3,
+    "created_at": "2026-06-11T17:00:24.799159",
+    "summary_text": "Turno 3: a la plancha... | Asistente: ¡Aquí tienes los detalles de la **Pechuga a la plancha**! 🍗\n\n**Precios:**\n- **Co...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      3
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_f2bb2f",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 4,
+    "created_at": "2026-06-11T17:00:38.911484",
+    "summary_text": "Turno 4: mini, porfa | Asistente: Genial, el pedido está en proceso. Llevamos:\n\n- ✅ **Proteína:** Pechuga a la plancha\n- ✅ **Tamaño:** Mini ($12.000)\n\nAho | Intento: ",
+    "previous_summary": "Turno 3: a la plancha | Asistente: ¡Aquí tienes los detalles de la **Pechuga a la plancha**! 🍗\n\n**Precios:**\n- **Corriente** — $13.500\n- **Mini** — $12.000 | Intento: ",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_6befa5",
+    "session_id": "cli_cli_user_1781215079",
+    "turn_number": 4,
+    "created_at": "2026-06-11T17:01:40.231876",
+    "summary_text": "Turno 4: mini, porfa... | Asistente: Genial, el pedido está en proceso. Llevamos:\n\n- ✅ **Proteína:** Pechuga a la pla...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      4
+    ],
+    "tokens_estimated": 10
+  }
+]

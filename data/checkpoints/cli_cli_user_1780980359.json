@@ -1,0 +1,30 @@
+[
+  {
+    "stage_name": "menu-query",
+    "stage_index": 1,
+    "trace_id": "d7ec4d6c-1b14-4860-a6a3-8d2cf75a02d4",
+    "input_data": {
+      "skill": "menu-query",
+      "message": "Hola, buenos días. Me regalas porfa la carta"
+    },
+    "output_data": {
+      "success": false
+    },
+    "created_at": "2026-06-08T23:46:07.925589",
+    "validated": true
+  },
+  {
+    "stage_name": "rag-retrieve",
+    "stage_index": 2,
+    "trace_id": "d7ec4d6c-1b14-4860-a6a3-8d2cf75a02d4",
+    "input_data": {
+      "skill": "rag-retrieve",
+      "message": "Hola, buenos días. Me regalas porfa la carta"
+    },
+    "output_data": {
+      "success": true
+    },
+    "created_at": "2026-06-08T23:46:07.929421",
+    "validated": true
+  }
+]

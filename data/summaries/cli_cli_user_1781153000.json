@@ -1,0 +1,80 @@
+[
+  {
+    "summary_id": "summary_6b932d",
+    "session_id": "cli_cli_user_1781153000",
+    "turn_number": 0,
+    "created_at": "2026-06-10T23:48:01.049101",
+    "summary_text": "Turno 0: hola, me regalas la carta | Asistente: ¡Aquí tienes nuestra carta completa! 😊\n\n---\n\n## 🥣 **Sopa**\n- Crema de verdura\n\n## 🍝 **Principio**\n- Guiso de yota con hu | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_bcb6da",
+    "session_id": "cli_cli_user_1781153000",
+    "turn_number": 0,
+    "created_at": "2026-06-10T23:48:23.930102",
+    "summary_text": "Turno 0: hola, me regalas la carta... | Asistente: ¡Aquí tienes nuestra carta completa! 😊\n\n---\n\n## 🥣 **Sopa**\n- Crema de verdura\n\n#...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_a8af09",
+    "session_id": "cli_cli_user_1781153000",
+    "turn_number": 0,
+    "created_at": "2026-06-10T23:48:45.634709",
+    "summary_text": "Turno 0: MUna pechuga, porfa | Asistente: ¡Aquí está la información! Tenemos dos opciones de pechuga:\n\n1. **Pechuga a la plancha** — $13.500 (corriente) / $12.000 | Intento: ordering",
+    "previous_summary": "Turno 0: hola, me regalas la carta | Asistente: ¡Aquí tienes nuestra carta completa! 😊\n\n---\n\n## 🥣 **Sopa**\n- Crema de verdura\n\n## 🍝 **Principio**\n- Guiso de yota con hu | Intento: consulting",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_e38080",
+    "session_id": "cli_cli_user_1781153000",
+    "turn_number": 0,
+    "created_at": "2026-06-10T23:49:03.011932",
+    "summary_text": "Turno 0: MUna pechuga, porfa... | Asistente: ¡Aquí está la información! Tenemos dos opciones de pechuga:\n\n1. **Pechuga a la p...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_1dfd12",
+    "session_id": "cli_cli_user_1781153000",
+    "turn_number": 0,
+    "created_at": "2026-06-10T23:49:39.458388",
+    "summary_text": "Turno 0: a la plancha, porfa y que sea mini | Asistente: ¡Claro que sí! Entonces te apunto una **Pechuga a la plancha tamaño mini** por **$12.000** 🍗\n\nLamento informarte que el  | Intento: ordering",
+    "previous_summary": "Turno 0: MUna pechuga, porfa | Asistente: ¡Aquí está la información! Tenemos dos opciones de pechuga:\n\n1. **Pechuga a la plancha** — $13.500 (corriente) / $12.000 | Intento: ordering",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_9be2a5",
+    "session_id": "cli_cli_user_1781153000",
+    "turn_number": 0,
+    "created_at": "2026-06-10T23:50:07.235314",
+    "summary_text": "Turno 0: a la plancha, porfa y que sea mini... | Asistente: ¡Claro que sí! Entonces te apunto una **Pechuga a la plancha tamaño mini** por *...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

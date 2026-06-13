@@ -1,0 +1,1875 @@
+[
+  {
+    "log_id": "log_89f0288a",
+    "session_id": "sess_ddb7804e52ea",
+    "timestamp": "2026-05-22T10:48:00.434141",
+    "user_message": "Holoa, buenos días, qué tenemos para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Holoa, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "qué tenemos para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú disponible para hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "",
+    "processing_time_ms": 8984.007835388184,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T10:48:10.083340"
+  },
+  {
+    "log_id": "log_54418f12",
+    "session_id": "sess_ddb7804e52ea",
+    "timestamp": "2026-05-22T10:48:40.940876",
+    "user_message": "regáleme porfa un lomo de cerdo asado, puede ser con BBQ, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "regáleme porfa un lomo de cerdo asado, puede ser con BBQ, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario desea ordenar un lomo de cerdo asado con salsa BBQ",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente desea iniciar su pedido con un lomo de cerdo asado a la plancha con salsa BBQ. Según la información del menú, el \"Lomo de cerdo asado a la plancha\" es un ítem válido y la opción \"con salsa BBQ\" está disponible. El cliente no ha especificado el tamaño, por lo que se asumirá el tamaño \"Corriente\" (13.500 COP) a menos que el cliente indique lo contrario. Como no hay modificaciones en los acompañamientos, los requirements del ítem se mantienen por defecto como [\"Con todo\"], y tampoco se ha especificado un principio, por lo que se le debe preguntar al cliente cuál de los principios disponibles (Macarrón con carne molida o Guiso de yota con huevo) desea para su plato.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-AB311F",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b92319f6",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T10:48:49.408088",
+      "updated_at": "2026-05-22T10:48:49.485998",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 11268.9528465271,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T10:48:52.580135"
+  },
+  {
+    "log_id": "log_e766f507",
+    "session_id": "sess_ddb7804e52ea",
+    "timestamp": "2026-05-22T10:51:16.412682",
+    "user_message": "me encantan los macarrones. \nSerá que me puedes dar sin arroz y en lugar me regala más macarrones",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_e4c2bee5",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:04:38.589465",
+    "user_message": "Hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "",
+    "processing_time_ms": 4920.87984085083,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:04:43.853183"
+  },
+  {
+    "log_id": "log_6530cbf2",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:06:08.546554",
+    "user_message": "qué tiene para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "qué tiene para hoy?",
+        "query_type": "consulting",
+        "topic": "special_offers",
+        "focus": "consultar los platos especiales disponibles hoy",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "",
+    "processing_time_ms": 6801.41806602478,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:06:15.665262"
+  },
+  {
+    "log_id": "log_791c7908",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:08:32.921516",
+    "user_message": "Me regalas porfa un lomo de cerdo",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Me regalas porfa un lomo de cerdo",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario solicita un plato de lomo de cerdo",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El cliente solicita un plato de lomo de cerdo, pero no especifica si se refiere al \"Lomo de cerdo asado a la plancha\" (disponible en corriente a 13.500 COP o mini a 12.000 COP) o a la opción \"Lomo de cerdo a la BBQ\" que viene dentro de la \"Bandeja mixta\" (a 15.000 COP). Como no hay un pedido previo, se debe iniciar uno nuevo, pero la solicitud es ambigua porque no indica el tamaño (corriente o mini) ni el plato exacto. Además, para el \"Lomo de cerdo asado a la plancha\" el menú ofrece opciones de salsa (BBQ, miel-mostaza o sin salsa) que el cliente no ha mencionado. Por defecto, los requirements serían [\"Con todo\"] (incluyendo arroz, yuca, ensalada, jugo y caramelo), a menos que el cliente especifique lo contrario. Se necesita clarificar si quiere la bandeja mixta con lomo BBQ o el lomo asado a la plancha, y en qué tamaño y con qué salsa.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:08:42.520388",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 11458.59670639038,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:08:44.696005"
+  },
+  {
+    "log_id": "log_d3e2685c",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:08:56.800474",
+    "user_message": "no mini está bien",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "no mini está bien",
+        "query_type": "confirmation",
+        "topic": "menu",
+        "focus": "confirmar que el tamaño mini está bien para el lomo de cerdo",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El usuario confirma que el tamaño \"mini\" está bien para el lomo de cerdo asado a la plancha. Según la información del menú, el lomo de cerdo asado a la plancha sí está disponible en tamaño mini (12.000 COP), por lo que la solicitud es válida. El pedido actual ya tiene registrado 1x lomo de cerdo asado a la plancha con requirements [\"Con todo\"], por lo que solo se debe actualizar el tamaño del item de \"corriente\" (asumido por defecto) a \"mini\". No hay ambigüedad ni necesidad de modificar los requirements, ya que el cliente no ha hecho ninguna petición especial sobre acompañamientos.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-dd8bb4ce",
+          "size": "mini",
+          "unit_price": 12000
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:08:56.847967",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:09:03.922001",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 9488.365411758423,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:09:06.620507"
+  },
+  {
+    "log_id": "log_a5f93f5d",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:12:40.394516",
+    "user_message": "a domicilio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "a domicilio",
+        "query_type": "ordering",
+        "topic": "delivery",
+        "focus": "solicitar entrega a domicilio del pedido actual de lomo de cerdo",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "El cliente solicita que el pedido actual (1x lomo de cerdo asado a la plancha mini con todo) sea enviado a domicilio. Esto es una actualización a nivel de la orden (order metadata), por lo que el item en sí no se modifica; el service_type debe cambiarse a \"delivery\". Como el cliente no ha proporcionado una dirección de entrega, es necesario preguntarle a qué lugar desea que se envíe el pedido para poder determinar el costo del domicilio según las zonas indicadas (Barrio La Cumbre gratis, aledaños COP 2.500, o fuera de la Cumbre con costo variable). Además, se debe consultar el método de pago, ya que la información indica que si es pago electrónico, se requiere enviar el comprobante por WhatsApp.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:12:40.450544",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:12:48.589415",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 10685.090780258179,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:12:51.416680"
+  },
+  {
+    "log_id": "log_7f9c4a78",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:13:12.326535",
+    "user_message": "Es aquí para Villalcazar, cobran domicilio?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Es aquí para Villalcazar, cobran domicilio?",
+        "query_type": "consulting",
+        "topic": "delivery",
+        "focus": "consultar si hacen envíos a Villalcázar y el costo de domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:13:12.378078",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:13:15.557393",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 5077.215194702148,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:13:17.733304"
+  },
+  {
+    "log_id": "log_d8173f73",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:13:50.019160",
+    "user_message": "Transv 147a #57a-47, es la primera peatonal entrando al barrio a mano derecha",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Transv 147a #57a-47, es la primera peatonal entrando al barrio a mano derecha",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "proporcionar dirección exacta para el envío a domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": "El cliente ha proporcionado la dirección exacta para la entrega a domicilio: Transv 147a #57a-47, indicando que es la primera peatonal entrando al barrio a mano derecha. Según la información de costos de envío, esta dirección parece estar fuera del Barrio La Cumbre y sus sectores aledaños (Prados del sur, Cendas, García Echeverry), por lo que el costo del domicilio no es fijo y debe calcularse según la ubicación específica. El pedido actual (1x lomo de cerdo asado a la plancha mini con todo) no requiere modificaciones en sus items, solo se debe actualizar la dirección de entrega en los metadatos de la orden. Es necesario preguntar al cliente el método de pago (efectivo o Nequi) y, si elige Nequi, recordarle que debe enviar el comprobante de pago al WhatsApp del restaurante para que el pedido pueda ser despachado.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery",
+          "address": "Transv 147a #57a-47"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:13:50.080000",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:13:59.343407",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 12171.152114868164,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:14:02.534177"
+  },
+  {
+    "log_id": "log_614bdf1e",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:14:19.885238",
+    "user_message": "Uy antes de las 12, porque tengo que salior",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Uy antes de las 12, porque tengo que salior",
+        "query_type": "consulting",
+        "topic": "delivery",
+        "focus": "solicitar entrega antes de las 12 por salida del usuario",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:14:19.954467",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:14:22.970781",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 5762.9640102386475,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:14:25.999786"
+  },
+  {
+    "log_id": "log_4e4d4106",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:14:41.370334",
+    "user_message": "pago por nequi",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "pago por nequi",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "consultar si se puede pagar con Nequi para el pedido actual a domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "MÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:14:41.439882",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:14:44.554190",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 6793.587684631348,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:14:48.526057"
+  },
+  {
+    "log_id": "log_318e8ceb",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:15:01.735600",
+    "user_message": "por bancolombia se puede?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "por bancolombia se puede?",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "consultar si se puede pagar con Bancolombia para el pedido actual a domicilio",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:15:01.782910",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:15:04.709020",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 5563.345193862915,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:15:07.632249"
+  },
+  {
+    "log_id": "log_491558ea",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:15:22.150998",
+    "user_message": "o mejor efectivo. QUé vale todo?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "o mejor efectivo",
+        "query_type": "ordering",
+        "topic": "payment",
+        "focus": "cambiar método de pago de Bancolombia a efectivo para el pedido actual",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      },
+      {
+        "segment": "QUé vale todo?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el precio total del pedido actual de lomo de cerdo asado",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El usuario ha solicitado dos cosas: primero, cambiar el método de pago de Bancolombia a efectivo para el pedido actual, y segundo, preguntar cuánto vale todo el pedido. En cuanto al método de pago, esto es una actualización a nivel de orden (order metadata), por lo que el `payment_method` debe cambiarse a \"efectivo\", y el resto de la orden (1x lomo de cerdo asado a la plancha mini, con todo, a domicilio, dirección Transv 147a #57a-47, entrega antes de las 12:00) se mantiene sin cambios. Respecto a la consulta del precio, según el menú extraído, el lomo de cerdo asado a la plancha en tamaño mini tiene un precio de 12.000 COP, que es el costo total del pedido actual. No hay ambigüedad en la solicitud, ya que el cliente se refiere claramente al único item en la orden.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "payment_method": "efectivo"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:15:22.199204",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:15:30.756879",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 11644.12808418274,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:15:34.231363"
+  },
+  {
+    "log_id": "log_d5d41d5b",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:15:59.676629",
+    "user_message": "uy con macarrones, porfa, me encantan y mejor sin arroz y me echan mejor más macarrones",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "uy con macarrones, porfa, me encantan",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar agregar macarrones al lomo de cerdo actual",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "mejor sin arroz",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar quitar el arroz del lomo de cerdo actual",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      },
+      {
+        "segment": "me echan mejor más macarrones",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar aumentar la porción de macarrones en lugar del arroz",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "El usuario quiere modificar el item actual de lomo de cerdo asado a la plancha (mini) que ya tiene confirmado el envío a domicilio (Transv 147a #57a-47) con pago en efectivo y entrega antes de las 12:00. Primero, solicita agregar macarrones, lo cual según el menú es válido como principio (\"Macarrón con carne molida\"), por lo que se debe actualizar el campo `principle` del item a \"Macarrón con carne molida\". Luego pide quitar el arroz, lo que implica modificar los `requirements` de [\"Con todo\"] a [\"sin arroz\"]. Finalmente, pide aumentar la porción de macarrones en lugar del arroz, lo que se traduce en añadir \"extra principio\" a los `requirements`, quedando finalmente como [\"sin arroz\", \"extra principio\"]. El resto de los campos (proteína, tamaño, service_type, dirección, pago y hora) se mantienen sin cambios.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-dd8bb4ce",
+          "principle": "Macarrón con carne molida",
+          "add_requirements": [
+            "sin arroz",
+            "extra principio"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:15:59.723508",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:16:09.917805",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 13044.82913017273,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:16:13.049493"
+  },
+  {
+    "log_id": "log_c9f58778",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:16:49.848990",
+    "user_message": "Aguante Chaca la concha de la lora",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_fcb90801",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:17:00.493170",
+    "user_message": "Oye, el lom,o de cerdo bien nasado",
+    "user_id": "default_user",
+    "topic_details": null,
+    "processor_thought": null,
+    "proposed_actions": null,
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": null,
+    "processing_time_ms": null,
+    "success": true,
+    "error_message": null,
+    "metadata": {}
+  },
+  {
+    "log_id": "log_69d5c37d",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:17:08.863368",
+    "user_message": "que el lomo de cerdo bien asado",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "que el lomo de cerdo bien asado",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar que el lomo de cerdo de la orden actual esté bien asado",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo"
+      }
+    ],
+    "processor_thought": "El usuario solicita que el lomo de cerdo asado a la plancha (mini) de su pedido actual esté \"bien asado\". Esto es una instrucción de preparación que debe registrarse como una observación a nivel del ítem, no una modificación de los campos existentes. Validando contra el menú, el \"Lomo de cerdo asado a la plancha\" sí está disponible en tamaño mini (12.000 COP) y el principio \"Macarrón con carne molida\" es válido. Los requirements actuales del ítem son [\"sin arroz\", \"extra principio\"], lo cual es correcto según la conversación previa donde el usuario pidió eliminar el arroz y aumentar la porción de macarrones. A nivel de orden, ya se tiene registrado el service_type como \"delivery\", la dirección \"Transv 147a #57a-47\", el payment_method \"efectivo\", y una observación de entrega \"antes de las 12:00 del mediodía\". La solicitud actual es clara y no presenta ambigüedades; solo se debe añadir la nota de cocción al ítem.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-dd8bb4ce",
+          "add_requirements": [
+            "bien asado"
+          ],
+          "remove_requirements": []
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:17:08.904044",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:17:17.821518",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 12032.470226287842,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:17:21.216854"
+  },
+  {
+    "log_id": "log_b336f056",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:17:36.183070",
+    "user_message": "no, así está bien",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "no, así está bien",
+        "query_type": "confirmation",
+        "topic": "general",
+        "focus": "confirmar que el pedido actual está correcto sin cambios",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes.\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      }
+    ],
+    "processor_thought": "El usuario confirma que el pedido actual está correcto y no desea realizar ningún cambio. El pedido consiste en 1x lomo de cerdo asado a la plancha en tamaño mini, con principio de macarrón con carne molida y los requirements actuales de [\"sin arroz\", \"extra principio\", \"bien asado\"]. A nivel de orden, el cliente ya había indicado pago en efectivo, dirección de entrega (Transv 147a #57a-47) y solicitud de entrega antes de las 12:00 del mediodía. La información adicional sobre el envío del comprobante de pago es una nota informativa, pero como el método de pago es efectivo, no aplica. No hay ambigüedades ni cambios que realizar en los items o en los metadatos de la orden.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:17:36.248849",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:17:44.511589",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 11199.048280715942,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:17:47.736916"
+  },
+  {
+    "log_id": "log_7bc5f11f",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:18:05.285597",
+    "user_message": "sí, todo ok",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "sí, todo ok",
+        "query_type": "confirmation",
+        "topic": "general",
+        "focus": "confirmar que el pedido actual está correcto",
+        "file_source": "service_info.txt",
+        "info_extracted": "ATENCIÓN A SUGERENCIAS Y RECLAMOS\n- Todas las solicitudes con motivo personales o empresariales, reclamos o sugerencias serán atendidas a través de WHATSAPP por uno\n  de nuestros asistentes.\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido."
+      }
+    ],
+    "processor_thought": "El cliente confirma que el pedido actual está correcto, por lo que no se requieren modificaciones en los items. El pedido consiste en 1 lomo de cerdo asado a la plancha tamaño mini, con principio de macarrón con carne molida, y requirements actualizados a [\"sin arroz\", \"extra principio\", \"bien asado\"]. A nivel de orden, el servicio es a domicilio con dirección en Transv 147a #57a-47, pago en efectivo, y se debe entregar antes de las 12:00 del mediodía. Como el pago es en efectivo, no se necesita enviar comprobante de pago. La dirección está fuera del Barrio La Cumbre, por lo que el costo del domicilio dependerá del sector específico, pero el cliente ya aceptó las condiciones. No hay ambigüedades ni cambios pendientes.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery",
+          "address": "Transv 147a #57a-47",
+          "payment_method": "efectivo"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:18:05.332170",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:18:13.176168",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 10730.859279632568,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:18:16.338953"
+  },
+  {
+    "log_id": "log_49a8ff36",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:18:45.618129",
+    "user_message": "a dónde los puedo cotactar en caso de una queja, por acá mismo contigo?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "a dónde los puedo cotactar en caso de una queja, por acá mismo contigo?",
+        "query_type": "consulting",
+        "topic": "complaint",
+        "focus": "consultar el canal de contacto para presentar una queja",
+        "file_source": "service_info.txt",
+        "info_extracted": "MÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido."
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:18:45.664900",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:18:49.329147",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 6206.455707550049,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:18:52.148529"
+  },
+  {
+    "log_id": "log_51775f2c",
+    "session_id": "sess_6bc1aaae7159",
+    "timestamp": "2026-05-22T11:19:12.290250",
+    "user_message": "vale, muchas gracias. Buen servicio",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "vale, muchas gracias. Buen servicio",
+        "query_type": "confirmation",
+        "topic": "general",
+        "focus": "el cliente agradece y confirma el buen servicio recibido",
+        "file_source": "service_info.txt",
+        "info_extracted": "# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web.\n---\nZONAS DE ENTREGA\n- Bucaramanga\n- Floridablanca\n- Girón\n- Piedecuesta\n** NOTA: Solamente entegamos pedidos dentro del ÁREA METROPOLITANA DE BUCARAMANGA"
+      }
+    ],
+    "processor_thought": "El cliente simplemente está agradeciendo por el buen servicio recibido y confirmando su satisfacción. No hay ninguna solicitud de modificación al pedido actual, el cual ya está completamente definido: 1 lomo de cerdo asado a la plancha (mini), bien asado, con principio de macarrón con carne molida, sin arroz y extra principio, con pago en efectivo y entrega a domicilio en la dirección indicada. La información de servicio que se proporciona es solo de referencia para que el cliente conozca los canales de contacto, pero no implica un cambio en la orden. Por lo tanto, el pedido se mantiene exactamente como está, sin necesidad de realizar ninguna acción adicional.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:19:12.342377",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-46EFDD",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-dd8bb4ce",
+          "quantity": 1,
+          "protein": "lomo de cerdo asado a la plancha",
+          "principle": "Macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz",
+            "extra principio",
+            "bien asado"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Transv 147a #57a-47",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-22T11:08:42.452427",
+      "updated_at": "2026-05-22T11:19:20.278382",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Transv 147a #57a-47",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "",
+    "processing_time_ms": 10623.993396759033,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T11:19:23.255386"
+  },
+  {
+    "log_id": "log_03a5baf6",
+    "session_id": "sess_9ec25d316cb1",
+    "timestamp": "2026-05-22T15:02:08.565620",
+    "user_message": "hola, buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊 ¿En qué puedo ayudarte hoy? ¿Te gustaría conocer nuestro menú del día o deseas hacer un pedido?",
+    "processing_time_ms": 4814.691543579102,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T15:02:14.069968"
+  },
+  {
+    "log_id": "log_90211934",
+    "session_id": "sess_9ec25d316cb1",
+    "timestamp": "2026-05-22T15:02:23.877328",
+    "user_message": "Qué tienen para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tienen para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú del día o especiales disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nHoy es un **Jueves Caserito** y tenemos un menú delicioso para ti:\n\n**Sopa:** Crema de verdura 🥣\n\n**Principios (acompañante principal):**\n- Macarrón con carne molida 🍝\n- Guiso de yota con huevo 🥚\n- Principio mixto (ambos principios)\n\n**Proteínas:**\n- Pechuga a la plancha ($13.500 corriente / $12.000 mini)\n- Carne a la plancha ($13.500 corriente / $12.000 mini)\n- Lomo de cerdo asado a la plancha ($13.500 corriente / $12.000 mini) - con salsa BBQ, salsa miel-mostaza o sin salsa\n\n**Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo 🥗🍚\n\n¿Qué te gustaría pedir hoy? ¡Cuéntame y con gusto te tomo el pedido! 🙏",
+    "processing_time_ms": 6367.80571937561,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T15:02:30.619935"
+  },
+  {
+    "log_id": "log_794648ce",
+    "session_id": "sess_9ec25d316cb1",
+    "timestamp": "2026-05-22T15:02:55.988073",
+    "user_message": "Una pechuga, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Una pechuga, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario quiere ordenar una pechuga como plato principal",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El cliente quiere ordenar una pechuga, pero no especifica cuál de las opciones disponibles en el menú. Según la información extraída, hay dos platos principales que incluyen pechuga: la \"Bandeja mixta\" (que ofrece pechuga como opción de proteína, a 15.000 COP) y los items individuales \"Pechuga gratinada\" y \"Pechuga a la plancha\" (ambos disponibles en tamaño corriente a 13.500 COP o mini a 12.000 COP). Como el cliente no ha indicado si quiere la pechuga como parte de la bandeja mixta o como un plato individual, ni ha especificado el tamaño o el tipo de preparación (gratinada o a la plancha), la solicitud es ambigua. Se necesita preguntar al cliente si se refiere a la pechuga de la bandeja mixta, o si prefiere una pechuga gratinada o a la plancha, y en qué tamaño. Por defecto, el item se registraría con requirements [\"Con todo\"] hasta que el cliente especifique modificaciones en los acompañamientos.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! 😊 Claro, tenemos pechuga gratinada en el menú de hoy. ¿La prefieres en tamaño **corriente ($13.500)** o **mini ($12.000)**?",
+    "processing_time_ms": 9514.581441879272,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-22T15:03:05.819437"
+  }
+]

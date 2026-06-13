@@ -1,0 +1,100 @@
+# SDD Config — sabor_casero_agent
+# Generated: 2026-05-31
+# Mode: hybrid (openspec + engram)
+
+project: sabor_casero_agent
+description: >
+  LLM-powered restaurant assistant ("Luz Stella") for Sabor Casero, a Mexican
+  restaurant. Multi-stage LLM pipeline with Gradio UI, Clean Architecture
+  (domain/application/infrastructure), ChromaDB RAG, OWL ontology for menu,
+  and JSON-based persistence for orders/sessions/user-preferences.
+
+stack:
+  language: Python 3.13.5
+  framework: Gradio 6.x (via gradio_app.py)
+  package_manager: pip (requirements.txt)
+  config: pydantic-settings (src/config/environment.py), legacy YAML
+  architecture: Clean Architecture (domain/application/infrastructure)
+  key_technologies:
+    - ChromaDB (vector store for RAG)
+    - OWL/RDF via rdflib (menu ontology)
+    - JSON persistence (orders, sessions, conversation logs, user preferences)
+    - LLM providers: deepseek, openai, anthropic, gemini, groq, minimax
+  pipeline_stages:
+    - Classification: HybridClassifier (rules + LLM)
+    - RAG retrieval: ChromaDB vector store (conditional)
+    - Order processing: OrderOrchestrator + ActionPlanner
+    - Response generation: ResponseBuilder (structured + LLM)
+    - Summarization: background task to JSON
+
+conventions:
+  code_comments: Spanish
+  identifiers: English
+  naming: PascalCase classes, snake_case functions/vars
+  docstrings: Google style in Spanish
+
+strict_tdd: true
+
+testing:
+  runner:
+    command: pytest
+    framework: pytest 9.0.3
+    config_source: pyproject.toml [tool.pytest.ini_options]
+  layers:
+    unit: true
+    integration: true
+    e2e: false
+  coverage:
+    available: true
+    tool: pytest-cov 7.1.0
+    config_source: pyproject.toml [tool.coverage.run]
+    fail_under: 70
+  quality:
+    linter: black 26.5.1
+    formatter: isort 8.0.1
+    type_checker: mypy 2.1.0
+
+phases:
+  propose: true
+  spec: true
+  design: true
+  tasks: true
+  apply: true
+  verify: true
+  archive: true
+
+changes:
+  - id: order-flow-tracker
+    status: active
+    phases_completed: [propose, spec, design, tasks, apply]
+    path: openspec/changes/order-flow-tracker/
+  - id: circuit-breakers
+    status: proposed
+    phases_completed: [propose]
+    path: openspec/changes/circuit-breakers/
+  - id: single-stage-thought-generator
+    status: designed
+    phases_completed: [propose, design]
+    path: openspec/changes/single-stage-thought-generator/
+  - id: bootstrap-testing
+    status: archived
+    path: openspec/changes/archive/2026-05-19-bootstrap-testing/
+  - id: owl-menu-retrieval
+    status: archived
+    path: openspec/changes/archive/2026-05-25-owl-menu-retrieval/
+  - id: agent-memory-and-pipeline
+    status: archived
+    phases_completed: [propose, spec, design, tasks, apply, verify, archive]
+    path: openspec/changes/archive/2026-06-06-agent-memory-and-pipeline/
+  - id: dynamic-document-index
+    status: archived
+    phases_completed: [propose, spec, design, tasks, apply, verify, archive]
+    path: openspec/changes/archive/2026-06-08-dynamic-document-index/
+  - id: redesign-core-orchestration
+    status: archived
+    phases_completed: [propose, spec, design, tasks, apply, archive]
+    path: openspec/changes/archive/2026-06-09-redesign-core-orchestration/
+  - id: granular-order-tools
+    status: archived
+    phases_completed: [propose, spec, design, tasks, apply, verify, archive]
+    path: openspec/changes/archive/2026-06-11-granular-order-tools/

@@ -1,0 +1,67 @@
+[
+  {
+    "summary_id": "summary_88f74b",
+    "session_id": "cli_cli_user_1781162001",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:13:57.369336",
+    "summary_text": "Turno 0: Hola, la carta | Asistente: ¡Aquí tienes nuestro menú del día para este **Jueves Caserito**! 🎉\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🍝 **Prin | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_a0d16b",
+    "session_id": "cli_cli_user_1781162001",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:14:07.580444",
+    "summary_text": "Turno 0: Hola, la carta... | Asistente: ¡Aquí tienes nuestro menú del día para este **Jueves Caserito**! 🎉\n\n---\n\n### 🥣 *...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_d7d229",
+    "session_id": "cli_cli_user_1781162001",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:14:24.258002",
+    "summary_text": "Turno 0: una pechuga | Asistente: ¡Claro! Veo que tenemos dos opciones deliciosas de pechuga disponibles hoy:\n\n1. 🧀 **Pechuga gratinada** — $13,500 (corri | Intento: ordering",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_05cdb8",
+    "session_id": "cli_cli_user_1781162001",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:14:29.728490",
+    "summary_text": "Turno 0: una pechuga... | Asistente: ¡Claro! Veo que tenemos dos opciones deliciosas de pechuga disponibles hoy:\n\n1. ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_29b941",
+    "session_id": "cli_cli_user_1781162001",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:14:53.081662",
+    "summary_text": "Turno 0: a la plancha | Asistente: ¡Claro! 😊 En nuestro restaurante **Sabor Casero** tenemos varias opciones **a la plancha**:\n\n1. 🥩 **Carne a la plancha** | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

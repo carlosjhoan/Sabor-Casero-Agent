@@ -1,0 +1,106 @@
+[
+  {
+    "summary_id": "summary_7cca52",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:31:57.840628",
+    "summary_text": "Turno 0: hola, la carta porfa | Asistente: ¡Aquí tienes el menú completo de **Sabor Casero**! 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🥘 **Principio**\n- Gui | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_5ec1c2",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:32:13.397736",
+    "summary_text": "Turno 0: hola, la carta porfa... | Asistente: ¡Aquí tienes el menú completo de **Sabor Casero**! 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Cre...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_45b5c6",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:32:40.748789",
+    "summary_text": "Turno 0: una pechuga, sin sopa porfa | Asistente: ¡Encontremos qué pechuga prefieres! 🐔 Tengo dos opciones disponibles en el menú:\n\n1. **Pechuga a la plancha**\n2. **Pechu | Intento: ordering",
+    "previous_summary": "Turno 0: hola, la carta porfa | Asistente: ¡Aquí tienes el menú completo de **Sabor Casero**! 🍽️\n\n---\n\n### 🥣 **Sopa**\n- Crema de verdura\n\n### 🥘 **Principio**\n- Gui | Intento: consulting",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_6b8311",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:32:52.830003",
+    "summary_text": "Turno 0: una pechuga, sin sopa porfa... | Asistente: ¡Encontremos qué pechuga prefieres! 🐔 Tengo dos opciones disponibles en el menú:...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_807309",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:33:18.255683",
+    "summary_text": "Turno 0: a la plancha | Asistente: ¡Perfecto! La **Pechuga a la plancha** está confirmada ✅ — una opción deliciosa y saludable.\n\nLamento informarte que el  | Intento: ordering",
+    "previous_summary": "Turno 0: una pechuga, sin sopa porfa | Asistente: ¡Encontremos qué pechuga prefieres! 🐔 Tengo dos opciones disponibles en el menú:\n\n1. **Pechuga a la plancha**\n2. **Pechu | Intento: ordering",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_ec2e90",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:33:39.240960",
+    "summary_text": "Turno 0: a la plancha... | Asistente: ¡Perfecto! La **Pechuga a la plancha** está confirmada ✅ — una opción deliciosa ...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_77f893",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:33:56.717932",
+    "summary_text": "Turno 0: qué hay de principio | Asistente: ¡Aquí te muestro los **Principios** que tenemos disponibles! 🍽️\n\n---\n\n### Principios:\n\n1. **Guiso de yota con huevo** 🥘\n | Intento: consulting",
+    "previous_summary": "Turno 0: a la plancha | Asistente: ¡Perfecto! La **Pechuga a la plancha** está confirmada ✅ — una opción deliciosa y saludable.\n\nLamento informarte que el  | Intento: ordering",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_da8e6b",
+    "session_id": "cli_cli_user_1781159482",
+    "turn_number": 0,
+    "created_at": "2026-06-11T01:40:37.676020",
+    "summary_text": "Turno 0: qué hay de principio... | Asistente: ¡Aquí te muestro los **Principios** que tenemos disponibles! 🍽️\n\n---\n\n### Princi...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

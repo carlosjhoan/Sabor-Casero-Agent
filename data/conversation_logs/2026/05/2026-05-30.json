@@ -1,0 +1,896 @@
+[
+  {
+    "log_id": "log_da6e7277",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T16:39:25.433811",
+    "user_message": "hola, buenos días\n\nQué tiene para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "hola, buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario saluda cordialmente",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      },
+      {
+        "segment": "Qué tiene para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú disponible para el día de hoy",
+        "file_source": "menu.md",
+        "info_extracted": "## Sopa\n  - Crema de verdura\n\n## Principio\n  - Guiso de yota con huevo\n  - Macarrón con carne molida\n  - Principio mixto (Ambos principios)\n\n## Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n\n## Proteínas\n  - Bandeja mixta\n    Precios: $15000\n    Opciones: Carne - Lomo de cerdo a la BBQ, Pechuga - Carne, Pechuga - Lomo de cerdo a la BBQ\n  - Bocachico criollo frito / sudado\n    Precios: $13500\n  - Carne a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Carnes mixtas en vegetales\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Lomo de cerdo asado a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n    Opciones: Sin ninguna salsa, con salsa BBQ, con salsa miel-mostaza\n  - Pechuga a la plancha\n    Precios: $12000 (mini), $13500 (Corriente)\n  - Pechuga gratinada\n    Precios: $12000 (mini), $13500 (Corriente)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! 😊 Soy Luz Stella, tu asistente de Sabor Casero. ¡Claro, con gusto te cuento lo que tenemos hoy!\n\nNuestra entrada es **Crema de verdura**.\n\n**Principios:**\n- Guiso de yota con huevo\n- Macarrón con carne molida\n- Principio mixto (ambos)\n\n**Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo.\n\n**Proteínas:**\n- Bandeja mixta ($15.000)\n- Bocachico criollo frito o sudado ($13.500)\n- Carne a la plancha ($12.000 mini / $13.500 corriente)\n- Carnes mixtas en vegetales ($12.000 mini / $13.500 corriente)\n- Lomo de cerdo asado a la plancha ($12.000 mini / $13.500 corriente)\n- Pechuga a la plancha ($12.000 mini / $13.500 corriente)\n- Pechuga gratinada ($12.000 mini / $13.500 corriente)\n\n¿Qué se te antoja hoy? ¿Te ayudo a armar tu pedido? 🥘😊",
+    "processing_time_ms": 14779.53553199768,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T16:39:41.013379"
+  },
+  {
+    "log_id": "log_5525d7f3",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T16:39:52.462577",
+    "user_message": "una pechuga, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "una pechuga, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "ordenar una pechuga del menú del día",
+        "file_source": "menu.md",
+        "info_extracted": "(No se encontraron opciones para 'Pechuga')"
+      }
+    ],
+    "processor_thought": "El cliente solicita **\"una pechuga\"** del menú del día para iniciar su pedido. Según la validación en el menú, sí existen dos opciones de pechuga: **pechuga a la plancha** y **pechuga gratinada**, ambas disponibles en tamaño corriente ($13.500) y mini ($12.000). Sin embargo, el usuario no ha especificado cuál de las dos variedades prefiere (plancha o gratinada), ni el tamaño deseado (corriente o mini). Al ser un pedido nuevo, se crearía con la proteína correspondiente, el principio por defecto sería el que el cliente elija (en la conversación anterior se mencionaron: guiso de yota con huevo, macarrón con carne molida, mixto), y los requirements iniciarían como [\"Con todo\"] (con todos los acompañamientos: yuca, arroz, ensalada, jugo, caramelo). Se necesita clarificar tanto el tipo de pechuga como el tamaño antes de proceder.\n\nAmbigüedad: Sí — El cliente no especificó si quiere pechuga a la plancha o gratinada, ni el tamaño (corriente o mini). Se debe preguntar al cliente cuál de las dos opciones prefiere y en qué tamaño.",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Claro! Tenemos dos opciones de pechuga: **a la plancha** o **gratinada**. ¿Cuál prefieres? 😊\n\nAmbas vienen en tamaño **mini ($12.000)** o **corriente ($13.500)**.",
+    "processing_time_ms": 43827.03733444214,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T16:40:36.693016"
+  },
+  {
+    "log_id": "log_e62559f1",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T16:40:49.920993",
+    "user_message": "una gratinada, mini, porfa\nEsa es deliciosa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "una gratinada, mini, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "especificar que desea la pechuga gratinada en tamaño mini",
+        "file_source": "menu.md",
+        "info_extracted": "(No se encontraron opciones para 'Pechuga gratinada')"
+      },
+      {
+        "segment": "Esa es deliciosa",
+        "query_type": "confirmation",
+        "topic": "menu",
+        "focus": "expresar que la pechuga gratinada es deliciosa, confirmando la elección",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El cliente, luego de ser consultado por el asistente sobre las opciones disponibles, ha elegido específicamente una **pechuga gratinada en tamaño mini** (12.000 COP), confirmando su decisión al decir \"Esa es deliciosa\". Según la información del menú, la pechuga gratinada SÍ está disponible en ambos tamaños (corriente 13.500 COP y mini 12.000 COP), por lo que la solicitud es válida. Al no especificar modificaciones en los acompañamientos, los requirements se mantienen por defecto como **[\"Con todo\"]**. Tampoco se ha indicado tipo de servicio, dirección, método de pago ni otros metadatos de la orden. La solicitud es clara y completa para proceder.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "size": "mini",
+          "unit_price": 12000,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:41:30.628337",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Qué buena elección! La pechuga gratinada es súper sabrosa, y en tamaño mini queda perfecta 😋\n\n✅ Anotado: pechuga gratinada mini ($12.000).\n\nAhora, ¿qué principio te gustaría acompañarle? Tenemos estas opciones:\n\n- Guiso de yota con huevo\n- Macarrón con carne molida\n- Principio mixto (ambos principios)\n\n¿Cuál prefieres?",
+    "processing_time_ms": 54191.214084625244,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T16:41:44.482786"
+  },
+  {
+    "log_id": "log_0337788a",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T16:54:55.999844",
+    "user_message": "con macarronmes, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "con macarronmes, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "agregar macarrón con carne molida como principio a la pechuga gratinada mini",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El usuario confirma que desea el principio **\"macarrón con carne molida\"** para acompañar su pechuga gratinada mini, respondiendo directamente a la pregunta que Luz Stella le hizo anteriormente. Según la información obtenida del menú, esta opción de principio sí está disponible entre las opciones ofrecidas (guiso de yota con huevo, macarrón con carne molida, o principio mixto). La pechuga gratinada mini ($12.000) también existe en el menú y ya estaba previamente seleccionada en el pedido. Por lo tanto, lo que corresponde es actualizar el campo `principle` del item `item-266ece62` a **\"macarrón con carne molida\"**, manteniendo sus `requirements` como `[\"Con todo\"]` ya que el cliente no ha solicitado modificaciones en los acompañamientos.\n\n**Ambigüedad: No. Se puede proceder con la planificación de acciones.**",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-266ece62",
+          "principle": "macarrón con carne molida"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": null,
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:54:56.083623",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:55:20.517087",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "✅ ¡Macarrón con carne molida anotado! Tu pedido queda así: **pechuga gratinada mini con macarrón y con todo** 😊\n\nAhora solo faltan unos detalles. ¿Tu pedido es para **delivery** o prefieres **pasar a recogerlo**? 🥘",
+    "processing_time_ms": 29364.993572235107,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T16:55:25.851735"
+  },
+  {
+    "log_id": "log_56e833fc",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T16:55:39.589852",
+    "user_message": "delivery",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "delivery",
+        "query_type": "ordering",
+        "topic": "delivery",
+        "focus": "solicitar entrega a domicilio del pedido actual",
+        "file_source": "service_info.txt",
+        "info_extracted": "# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "La pechuga gratinada está confirmada en el menú en tamaño mini (12.000 COP) y tamaño corriente (13.500 COP), por lo que el item actual es válido. El cliente solicita cambiar el tipo de servicio a \"delivery\" para que el pedido sea entregado a domicilio. Esto implica actualizar el `service_type` de la orden a \"delivery\". Como es una entrega a domicilio, se requiere obtener del cliente la dirección completa de entrega. Adicionalmente, según las políticas del restaurante, se debe consultar al cliente el método de pago: puede ser en efectivo al recibir el pedido o mediante transferencia bancaria por NEQUI (310 6728 007, nombre: Luz Stella Galvis). Si elige transferencia, deberá enviar el comprobante de pago vía WhatsApp. Los detalles del item (pechuga gratinada mini, principio macarrón con carne molida, requirements [\"Con todo\"]) permanecen sin cambios.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "service_type": "delivery"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:55:39.659995",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:56:02.061684",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces lo llevamos a domicilio. 😊\n\n¿Cuál es la dirección donde recibirás tu pedido de **pechuga gratinada** con **macarrón con carne molida** en tamaño mini? Solamente entregamos en el área metropolitana de Bucaramanga: **Bucaramanga, Floridablanca, Girón o Piedecuesta**. ¿En qué zona te encuentras?",
+    "processing_time_ms": 26844.844818115234,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T16:56:06.946673"
+  },
+  {
+    "log_id": "log_b9716968",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T16:57:23.792468",
+    "user_message": "es aquí mismo para La cumbre",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "es aquí mismo para La cumbre",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "confirmar que la dirección de entrega es La cumbre",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": "El usuario confirma que la dirección de entrega es en el Barrio La Cumbre (\"es aquí mismo para La cumbre\"). Esto es una actualización a nivel de metadatos de la orden (order metadata), específicamente el campo `address`. El pedido actual ya tiene service_type configurado como \"delivery\" (a domicilio), y el cliente está proporcionando la dirección que el asistente había solicitado previamente. Según la información de referencia, el domicilio dentro del Barrio La Cumbre es **gratis** (sin costo adicional). No hay modificaciones a los items del pedido — la pechuga gratinada con macarrón con carne molida en tamaño mini con requirements [\"Con todo\"] se mantiene igual. El usuario no ha mencionado aún el método de pago, por lo que ese dato queda pendiente para consultar más adelante.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "address": "Barrio La Cumbre"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:57:23.855599",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T16:57:39.579669",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto, anotado! Entonces te llevamos el pedido a la dirección en La Cumbre. 😊\n\nAhora, ¿a qué hora te gustaría recibir tu almuerzo? Ten en cuenta que nuestro horario de despacho es de **11:30 am a 2:00 pm**, de lunes a sábado. Dime la hora que más te convenga. 🥘",
+    "processing_time_ms": 22385.114431381226,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T16:57:46.592715"
+  },
+  {
+    "log_id": "log_0610581f",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T17:01:22.128169",
+    "user_message": "para antes de las 12, les agradezco",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "para antes de las 12, les agradezco",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "confirmar hora de entrega antes de las 12:00",
+        "file_source": "service_info.txt",
+        "info_extracted": "MÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\n# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa"
+      }
+    ],
+    "processor_thought": "La pechuga gratinada en tamaño mini ($12.000 COP) está confirmada en el menú, al igual que el principio \"macarrón con carne molida\" como opción válida. El pedido actual ya tiene todo listo: 1 pechuga gratinada mini con principio macarrón con carne molida y requirements [\"Con todo\"], servicio a domicilio en La Cumbre (domicilio gratis). El usuario ahora ha indicado claramente que desea la entrega **antes de las 12 del mediodía**, lo cual está dentro del horario de servicio (11:30am - 2pm). Solo falta registrar esta hora en la orden como la programación de entrega. No hay modificaciones a los items ni ambigüedad en la solicitud.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "scheduled_time": "12:00"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:01:22.190797",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:01:44.250630",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Entonces lo programamos para antes de las 12 del mediodía. 🕛✅\n\nSolo me falta un dato para dejar todo listo: ¿cómo vas a pagar? Puedes elegir entre:\n\n- **Efectivo** (pagas cuando recibas el pedido)\n- **Transferencia por NEQUI** (al número 310 6728 007, a nombre de Luz Stella Galvis). Si eliges esta opción, por favor envíanos el comprobante al mismo número vía WhatsApp para poder despachar tu pedido.\n\n¿Cuál de las dos opciones prefieres? 😊",
+    "processing_time_ms": 27281.221628189087,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T17:01:49.798337"
+  },
+  {
+    "log_id": "log_907176d7",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T17:02:07.361644",
+    "user_message": "en efectivo. Tengo un billete de . Cuánto es?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "en efectivo",
+        "query_type": "confirmation",
+        "topic": "payment",
+        "focus": "confirmar pago en efectivo para el pedido actual",
+        "file_source": "service_info.txt",
+        "info_extracted": "MÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nHORARIOS DE ATENCIÓN\n- Lunes a Sábado: 7:30 am --> 2:00 pm\n  NOTA: EN los días designados como festivos en Colombia, no se presta servicio.\n\nHORARIOS DE DESPACHO DE PEDIDOS\n- Lunes a Sábado: 11:30 am --> 2:00 pm\n\nCONTACTO\n- WHATSAPP : 310 6728 007\n\nNosotros te tomamos directamente el pedido desde nuestro sitio web."
+      },
+      {
+        "segment": "Tengo un billete de ",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "informar que tiene un billete de denominación no especificada",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa"
+      },
+      {
+        "segment": "Cuánto es?",
+        "query_type": "consulting",
+        "topic": "payment",
+        "focus": "preguntar el costo total del pedido actual",
+        "file_source": "service_info.txt",
+        "info_extracted": "- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo.\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos"
+      }
+    ],
+    "processor_thought": "El usuario está realizando tres acciones en su mensaje. Primero, confirma que pagará **en efectivo** (método de pago), lo cual es un cambio a nivel de metadatos de la orden — actualmente el pedido tenía pendiente definir entre efectivo o NEQUI, y el usuario está resolviendo esa pendiente eligiendo efectivo. Segundo, informa que tiene un billete (sin especificar denominación), lo cual es simplemente una aclaración adicional de que pagará con billete y probablemente necesitará vueltas. Tercero, pregunta **\"Cuánto es?\"**, solicitando el costo total del pedido. Según la validación del menú, la pechuga gratinada en tamaño mini tiene un precio de **$12.000 COP**, y el domicilio al barrio La Cumbre es **gratis**, por lo que el total del pedido es de **$12.000 COP**. No hay modificaciones a los items existentes, solo actualización del método de pago a efectivo y responder la consulta de precio.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ORDER",
+        "params": {
+          "payment_method": "efectivo"
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:02:07.431721",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:02:34.871770",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Perfecto! Pagas en efectivo cuando recibas tu pedido. 😊\n\nTu pedido es: **1 pechuga gratinada mini ($12.000)** con macarrón con carne molida, con todo, a domicilio en La Cumbre.\n\nComo el domicilio es gratis dentro de La Cumbre, el total es **$12.000**.\n\n¿Tienes alguna observación para tu pedido? (ej: sin algo, más de algo, o si todo está bien solo dime \"sin novedad\")",
+    "processing_time_ms": 31656.480312347412,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T17:02:39.428144"
+  },
+  {
+    "log_id": "log_50fdfb83",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T17:03:26.658211",
+    "user_message": "ah, sin arroz, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "ah, sin arroz, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "modificar el pedido actual retirando el arroz del plato",
+        "file_source": "menu.md",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El cliente quiere modificar el item actual (1x pechuga gratinada mini, principio: macarrón con carne molida) para que no incluya arroz. El plato actualmente tiene `requirements: [\"Con todo\"]`, lo que significa que viene con todos los acompañamientos estándar. La petición \"sin arroz\" implica que se debe actualizar el campo `requirements` para reflejar la exclusión del arroz, manteniendo los demás acompañamientos. La forma correcta de representar esto es actualizar `requirements` de `[\"Con todo\"]` a `[\"sin arroz\"]`, indicando que el plato se sirve con todos los acompañamientos excepto el arroz. No hay ambigüedad y el item es válido en el menú.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-266ece62",
+          "add_requirements": [
+            "sin arroz"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:03:26.699053",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:03:49.016764",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Listo! Anotado: sin arroz para tu pechuga gratinada de Sabor Casero. 😊 ¿Tienes alguna otra observación o está todo bien?",
+    "processing_time_ms": 33601.89771652222,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T17:04:00.600487"
+  },
+  {
+    "log_id": "log_93b41fed",
+    "session_id": "sess_15386e899bd9",
+    "timestamp": "2026-05-30T17:04:53.312949",
+    "user_message": "Me regala el resumen de mi pedido para ver si coincide con lo que pedí",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Me regala el resumen de mi pedido para ver si coincide con lo que pedí",
+        "query_type": "confirmation",
+        "topic": "order_status",
+        "focus": "solicitar resumen del pedido actual para verificar coincidencia",
+        "file_source": "no-file",
+        "info_extracted": ""
+      }
+    ],
+    "processor_thought": "El cliente solicita un resumen de su pedido actual para verificar que coincida con lo que pidió. Validando contra el menú: la **pechuga gratinada** está disponible en tamaño **mini** ($12,000 COP) ✅, el principio **macarrón con carne molida** es una opción válida dentro de los principios disponibles ✅, y el requirement **sin arroz** es una modificación válida de los acompañamientos. El pedido actual tiene: **1x Pechuga gratinada (mini)**, con **principio: macarrón con carne molida**, **requirements: [\"sin arroz\"]**, y **servicio a domicilio**. No hay ambigüedad, se puede proceder a mostrarle el resumen al cliente para que confirme si coincide con lo que pidió.\n\nAmbigüedad: No. Se puede proceder con la planificación de acciones.",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:04:53.370087",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-035C78",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-266ece62",
+          "quantity": 1,
+          "protein": "pechuga gratinada",
+          "principle": "macarrón con carne molida",
+          "size": "mini",
+          "unit_price": 12000.0,
+          "requirements": [
+            "sin arroz"
+          ],
+          "subtotal": 12000.0
+        }
+      ],
+      "service": {
+        "category": "delivery",
+        "details": {
+          "address": "Barrio La Cumbre",
+          "fee": 0.0,
+          "estimated_time": null,
+          "instructions": null
+        }
+      },
+      "payment_method": "efectivo",
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-05-30T16:41:30.475999",
+      "updated_at": "2026-05-30T17:05:13.710115",
+      "subtotal": 12000.0,
+      "total_amount": 12000.0,
+      "service_type": "A domicilio",
+      "address": "Barrio La Cumbre",
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro! Aquí te va el resumen de tu pedido actual 😊:\n\n**1x Pechuga gratinada**  \n- Principio: Macarrón con carne molida  \n- Tamaño: Mini  \n- Sin arroz  \n- A domicilio  \n\n¿Todo coincide con lo que pediste? Por cierto, ¿tienes alguna observación adicional que quieras agregar? 🙏",
+    "processing_time_ms": 29371.883630752563,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-05-30T17:05:23.105661"
+  }
+]

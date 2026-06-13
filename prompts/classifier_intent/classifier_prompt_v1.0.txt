@@ -1,0 +1,101 @@
+prompt = f"""Analyze this restaurant customer message:
+
+                "{message}"
+
+                Return JSON with this exact structure:
+                {{
+                "query_type": ["type1", "type2"],
+                "primary_topics": ["topic1", "topic2"],
+                "secondary_topics": ["topic1", "topic2"],
+                "is_question": true/false,
+                "is_statement": true/false,
+                "is_command": true/false,
+                "mentioned_dishes": ["dish1", "dish2"],
+                "mentioned_prices": true/false,
+                "mentioned_ingredients": ["ing1", "ing2"],
+                "mentioned_times": ["time1", "time2"],
+                "requires_response": true/false,
+                "is_follow_up": true/false,
+                "needs_clarification": true/false,
+                "confidence_score": 0.0-1.0,
+                "has_multiple_topics": true/false
+                }}
+
+                QUERY TYPES (choose all that apply):
+                - "consulting": Asking for information about menu, prices, hours, etc.
+                - "ordering": Expressing desire to order food/drinks
+                - "action": Requesting an action (reserve, cancel, modify)
+                - "complaint": Expressing dissatisfaction
+                - "greeting": Hello, hi, good day
+                - "farewell": Goodbye, thanks, see you
+                - "confirmation": Yes, no, confirm, agree
+                - "clarification": Asking for explanation
+
+                TOPICS (choose all that apply):
+                - "menu": Food, drinks, dishes, carta, prices, availability, specials, mini, corriente
+                - "hours": Opening/closing times, schedule
+                - "delivery": Delivery service, takeout
+                - "payment": Payment methods, cash, card, Nequi
+                - "reservation": Table booking, reservations
+                - "about": Restaurant info, history
+                - "complaint": Problems, issues
+                - "ingredients": What's in a dish, allergens
+                - "special_offers": Promotions, discounts, deals
+                - "order_status": Order tracking, status
+                - "general": Other topics about the restaurant
+                - "unknown": Can't determine or is no topic related to restaurant
+
+                CRITICAL INSTRUCTIONS:
+                1. **query_type**: Must be a LIST with one or more items from: ["consulting", "ordering", "action", "complaint", "greeting", "farewell", "confirmation", "clarification"]
+                - If message contains multiple types (e.g., question + request), include ALL relevant types
+                - Example for "Quiero ordenar sopa y ¿cuánto cuesta?": ["ordering", "consulting"]
+
+                2. **primary_topics**: Must be a LIST with one or more items from: ["menu", "hours", "delivery", "payment", "reservation", "about", "complaint", "ingredients", "special_offers", "general", "unknown"]
+                - Include ALL main topics mentioned in the message
+                - Example for "de qué es la sopa y cómo pago": ["ingredients", "payment"]
+
+                3. **has_multiple_topics**: Set to TRUE if message contains multiple distinct topics/questions
+                - This helps the system know to handle each topic separately
+
+                4. For complex messages like "Disculpen, de qué es la sopa. Y de paso para saber si puedo pagar por NEQUI":
+                - query_type: ["consulting", "consulting"] (both parts are questions)
+                - primary_topics: ["ingredients", "payment"]
+                - has_multiple_topics: true
+
+                5. For simple single-topic messages like "¿A qué hora abren?":
+                - query_type: ["consulting"]
+                - primary_topics: ["hours"]
+                - has_multiple_topics: false
+
+                6. **confidence_score**: Reflect your confidence in correctly identifying ALL query types and topics
+
+                IMPORTANT EXAMPLES:
+                Example 1: "Quiero la bandeja paisa y ¿aceptan tarjeta?"
+                - query_type: ["ordering", "consulting"]
+                - primary_topics: ["menu", "payment"]
+                - has_multiple_topics: true
+
+                Example 2: "Hola, ¿tienen menú vegetariano?"
+                - query_type: ["consulting"]
+                - primary_topics: ["menu"]
+                - has_multiple_topics: false
+
+                Example 3: "Reservo una mesa para 4 personas y también quiero saber si hacen delivery"
+                - query_type: ["action", "consulting"]
+                - primary_topics: ["reservation", "delivery"]
+                - has_multiple_topics: true
+
+                Example 4: "Gracias, adiós"
+                - query_type: ["farewell"]
+                - primary_topics: ["general"]
+                - has_multiple_topics: false
+
+                Example 5: "A cómo los minis?"
+                - primary_topics: ["menu"]
+                - query_type: ["consulting"]
+                - has_multiple_topics: false
+
+                Example 6: "Ustedes me pueden traer un almuerzos antes de las 11:30?"
+                - primary_topics: ["menu"]
+                - query_type: ["consulting"]
+            """

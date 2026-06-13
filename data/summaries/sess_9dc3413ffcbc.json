@@ -1,0 +1,155 @@
+[
+  {
+    "summary_id": "summary_cd5f3a",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 1,
+    "created_at": "2026-05-25T12:09:22.893460",
+    "summary_text": "El usuario saludó y solicitó el menú. Luz Stella lo saludó y presentó el menú del día jueves (sopa, principio, proteínas y acompañamientos). El usuario aún no ha realizado ningún pedido.",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 186
+  },
+  {
+    "summary_id": "summary_5103d7",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 2,
+    "created_at": "2026-05-25T12:09:47.895604",
+    "summary_text": "El usuario pidió \"carne bien asada\". Luz Stella ofreció opciones: Bandeja mixta ($15.000) y Carnes mixtas en vegetales ($13.500 corriente / $12.000 mini). El usuario aún no ha elegido ni realizado el pedido.",
+    "previous_summary": "El usuario saludó y solicitó el menú. Luz Stella lo saludó y presentó el menú del día jueves (sopa, principio, proteínas y acompañamientos). El usuario aún no ha realizado ningún pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2
+    ],
+    "tokens_estimated": 207
+  },
+  {
+    "summary_id": "summary_ca50fa",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 3,
+    "created_at": "2026-05-25T12:10:15.521846",
+    "summary_text": "El usuario mencionó haber visto \"carne a la plancha\", posible alternativa a las opciones ofrecidas. Luz Stella aclaró que las opciones con carne son Bandeja mixta ($15.000, con Carne-Lomo de cerdo a la BBQ o Carne-Pechuga) y Carnes mixtas en vegetales ($13.500 corriente / $12.000 mini). El usuario aún no ha elegido ni realizado el pedido.",
+    "previous_summary": "El usuario pidió \"carne bien asada\". Luz Stella ofreció opciones: Bandeja mixta ($15.000) y Carnes mixtas en vegetales ($13.500 corriente / $12.000 mini). El usuario aún no ha elegido ni realizado el pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3
+    ],
+    "tokens_estimated": 340
+  },
+  {
+    "summary_id": "summary_afa51e",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 4,
+    "created_at": "2026-05-25T12:11:12.878123",
+    "summary_text": "El usuario corrigió a Luz Stella, afirmando que en el menú sí hay \"Carne a la plancha\" ($13.500 corriente / $12.000 mini) y ordenó una en tamaño mini ($12.000). Luz Stella confirmó el pedido y preguntó qué principio desea: Macarrón con carne molida, Guiso de yota con huevo o Principio mixto. El usuario aún no ha elegido el principio ni completado el pedido.",
+    "previous_summary": "El usuario mencionó haber visto \"carne a la plancha\", posible alternativa a las opciones ofrecidas. Luz Stella aclaró que las opciones con carne son Bandeja mixta ($15.000, con Carne-Lomo de cerdo a la BBQ o Carne-Pechuga) y Carnes mixtas en vegetales ($13.500 corriente / $12.000 mini). El usuario aún no ha elegido ni realizado el pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "tokens_estimated": 359
+  },
+  {
+    "summary_id": "summary_6459b9",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 5,
+    "created_at": "2026-05-25T12:12:10.701964",
+    "summary_text": "El usuario eligió macarrón con carne molida como principio para la carne a la plancha mini ($12.000), pidió explícitamente que no le incluyan ensalada y que le den más macarrones porque le encantan. Luz Stella confirmó el pedido y preguntó el nombre del cliente para completarlo. El pedido aún no está finalizado.",
+    "previous_summary": "El usuario corrigió a Luz Stella, afirmando que en el menú sí hay \"Carne a la plancha\" ($13.500 corriente / $12.000 mini) y ordenó una en tamaño mini ($12.000). Luz Stella confirmó el pedido y preguntó qué principio desea: Macarrón con carne molida, Guiso de yota con huevo o Principio mixto. El usuario aún no ha elegido el principio ni completado el pedido.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "tokens_estimated": 313
+  },
+  {
+    "summary_id": "summary_1e0556",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 6,
+    "created_at": "2026-05-25T12:12:29.994313",
+    "summary_text": "El usuario eligió macarrón con carne molida como principio para la carne a la plancha mini ($12.000), pidió explícitamente que no le incluyan ensalada y que le den más macarrones. Luz Stella confirmó el pedido, preguntó el nombre del cliente, y el usuario respondió \"Carlos Aguilar\". El asistente agradeció a Carlos y preguntó si el pedido es para llevar (domicilio) o para consumir aquí. El pedido aún no está finalizado.",
+    "previous_summary": "El usuario eligió macarrón con carne molida como principio para la carne a la plancha mini ($12.000), pidió explícitamente que no le incluyan ensalada y que le den más macarrones porque le encantan. Luz Stella confirmó el pedido y preguntó el nombre del cliente para completarlo. El pedido aún no está finalizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "tokens_estimated": 422
+  },
+  {
+    "summary_id": "summary_771cc9",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 7,
+    "created_at": "2026-05-25T12:12:56.741626",
+    "summary_text": "El usuario (Carlos Aguilar) preguntó si puede comer en el local. El asistente informó que no hay servicio en el restaurante, solo domicilio o recogida. El pedido es Carne a la plancha mini ($12.000) con macarrón con carne molida y sin ensalada. El asistente preguntó si prefiere domicilio o recoger. El pedido no está finalizado.",
+    "previous_summary": "El usuario eligió macarrón con carne molida como principio para la carne a la plancha mini ($12.000), pidió explícitamente que no le incluyan ensalada y que le den más macarrones. Luz Stella confirmó el pedido, preguntó el nombre del cliente, y el usuario respondió \"Carlos Aguilar\". El asistente agradeció a Carlos y preguntó si el pedido es para llevar (domicilio) o para consumir aquí. El pedido aún no está finalizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "tokens_estimated": 329
+  },
+  {
+    "summary_id": "summary_8316cd",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 8,
+    "created_at": "2026-05-25T12:13:23.187576",
+    "summary_text": "El usuario (Carlos Aguilar) confirmó que prefiere entrega a domicilio. El asistente preguntó a nombre de quién hacer el pedido. El pedido es Carne a la plancha mini ($12.000) con macarrón con carne molida y sin ensalada. El pedido no está finalizado.",
+    "previous_summary": "El usuario (Carlos Aguilar) preguntó si puede comer en el local. El asistente informó que no hay servicio en el restaurante, solo domicilio o recogida. El pedido es Carne a la plancha mini ($12.000) con macarrón con carne molida y sin ensalada. El asistente preguntó si prefiere domicilio o recoger. El pedido no está finalizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "tokens_estimated": 250
+  },
+  {
+    "summary_id": "summary_28a32a",
+    "session_id": "sess_9dc3413ffcbc",
+    "turn_number": 9,
+    "created_at": "2026-05-25T12:13:39.347249",
+    "summary_text": "El usuario (Carlos Aguilar) confirmó que el pedido va a su nombre. Prefiere entrega a domicilio. Pedido: Carne a la plancha mini ($12.000) con macarrón con carne molida y sin ensalada. Pedido no finalizado.",
+    "previous_summary": "El usuario (Carlos Aguilar) confirmó que prefiere entrega a domicilio. El asistente preguntó a nombre de quién hacer el pedido. El pedido es Carne a la plancha mini ($12.000) con macarrón con carne molida y sin ensalada. El pedido no está finalizado.",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "tokens_estimated": 206
+  }
+]

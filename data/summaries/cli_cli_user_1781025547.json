@@ -1,0 +1,28 @@
+[
+  {
+    "summary_id": "summary_45bcb2",
+    "session_id": "cli_cli_user_1781025547",
+    "turn_number": 0,
+    "created_at": "2026-06-09T14:23:44.184914",
+    "summary_text": "Turno 0: Buenas, qué menú tienen para hoy?... | Asistente: ¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nHoy tenemos nuest...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_df224c",
+    "session_id": "cli_cli_user_1781025547",
+    "turn_number": 0,
+    "created_at": "2026-06-09T14:55:22.151990",
+    "summary_text": "Turno 0: algo con pollo tiene?... | Asistente: ¡Hola! Soy Luz Stella, tu asistente de Sabor Casero. ¡Claro que tenemos opciones...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

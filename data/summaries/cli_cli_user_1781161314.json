@@ -1,0 +1,80 @@
+[
+  {
+    "summary_id": "summary_8eff7e",
+    "session_id": "cli_cli_user_1781161314",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:02:38.402944",
+    "summary_text": "Turno 0: Hola, buenas. La carta, porfa | Asistente: ¡Aquí te comparto nuestra carta, amigo/a! 🍽️\n\nEn **Sabor Casero** tenemos una variedad de platos deliciosos. Basado en l | Intento: consulting",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_bcd8f9",
+    "session_id": "cli_cli_user_1781161314",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:02:56.252978",
+    "summary_text": "Turno 0: Hola, buenas. La carta, porfa... | Asistente: ¡Aquí te comparto nuestra carta, amigo/a! 🍽️\n\nEn **Sabor Casero** tenemos una va...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_6b378e",
+    "session_id": "cli_cli_user_1781161314",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:03:20.181922",
+    "summary_text": "Turno 0: una pechuga | Asistente: ¡Aquí tenemos! En nuestro **Sabor Casero** contamos con estas opciones de pechuga:\n\n1. 🍗 **Pechuga a la plancha**\n2. 🧀 * | Intento: ordering",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_417934",
+    "session_id": "cli_cli_user_1781161314",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:03:29.636994",
+    "summary_text": "Turno 0: una pechuga... | Asistente: ¡Aquí tenemos! En nuestro **Sabor Casero** contamos con estas opciones de pechug...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_51887e",
+    "session_id": "cli_cli_user_1781161314",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:03:55.599139",
+    "summary_text": "Turno 0: a la plancha | Asistente: ¡Claro! En el **Restaurante Sabor Casero** tenemos varias opciones preparadas **a la plancha** para ti 🍳:\n\n1. **🥩 Carne  | Intento: ordering",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  },
+  {
+    "summary_id": "summary_e291da",
+    "session_id": "cli_cli_user_1781161314",
+    "turn_number": 0,
+    "created_at": "2026-06-11T02:09:19.081782",
+    "summary_text": "Turno 0: a la plancha... | Asistente: ¡Claro! En el **Restaurante Sabor Casero** tenemos varias opciones preparadas **...",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      0
+    ],
+    "tokens_estimated": 10
+  }
+]

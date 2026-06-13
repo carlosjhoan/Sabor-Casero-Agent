@@ -1,0 +1,15 @@
+[
+  {
+    "summary_id": "summary_1d4141",
+    "session_id": "sess_23d671cd10c4",
+    "turn_number": 1,
+    "created_at": "2026-05-27T17:45:19.396594",
+    "summary_text": "El cliente saludó y solicitó la carta; el asistente respondió el saludo. Sin pedido aún.",
+    "previous_summary": "",
+    "current_order_state": "El cliente no ha realizado pedido",
+    "source_turns": [
+      1
+    ],
+    "tokens_estimated": 88
+  }
+]

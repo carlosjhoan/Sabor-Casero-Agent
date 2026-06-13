@@ -1,0 +1,551 @@
+[
+  {
+    "log_id": "log_6e9c96d1",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:27:29.549762",
+    "user_message": "Buenos días",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Buenos días",
+        "query_type": "consulting",
+        "topic": "greeting",
+        "focus": "el usuario está saludando",
+        "file_source": "no-file",
+        "info_extracted": "El usuario está saludando"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊 ¿En qué puedo ayudarte hoy? ¿Te gustaría hacer un pedido o consultar algo en especial?",
+    "processing_time_ms": 17976.728916168213,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:27:48.107031"
+  },
+  {
+    "log_id": "log_4113b0f1",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:28:06.981444",
+    "user_message": "Qué tienen para hoy?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué tienen para hoy?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar el menú del día o especiales disponibles",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola, buenos días! Soy Luz Stella, tu asistente de Sabor Casero. 😊\n\nHoy tenemos un menú bien caserito. Te cuento:\n\n**Sopa:** Crema de verdura\n\n**Principios:** Macarrón con carne molida, Guiso de yota con huevo o Principio mixto (ambos).\n\n**Acompañamientos:** Yuca al vapor, arroz, ensalada, jugo y caramelo.\n\nY para la proteína, tenemos:\n- **Pechuga a la plancha** 💪\n- **Carne a la plancha** 🥩\n- **Lomo de cerdo asado a la plancha** (con salsa BBQ, miel-mostaza o sin salsa) 🍖\n\nLos precios son: **Corriente $13.500** y **Mini $12.000**.\n\n¿Qué se te antoja hoy? ¿Te ayudo a armar tu pedido? 😊",
+    "processing_time_ms": 7189.393520355225,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:28:14.478105"
+  },
+  {
+    "log_id": "log_a4c6d650",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:28:34.041861",
+    "user_message": "QUé tienen con pescado?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "QUé tienen con pescado?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar opciones del menú que incluyan pescado",
+        "file_source": "menu.md",
+        "info_extracted": "### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": null,
+    "order_after": null,
+    "assistant_response": "¡Hola! Te cuento que para hoy tenemos **Bocachico criollo frito o sudado** por $13.500, ¡es nuestra opción con pescado del día! 😊 Viene con sopa, principio, yuca al vapor, arroz, ensalada, jugo y caramelo. ¿Te gustaría pedirlo?",
+    "processing_time_ms": 4117.786407470703,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:28:38.434689"
+  },
+  {
+    "log_id": "log_2343d5a6",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:28:57.406956",
+    "user_message": "regáleme uno frito, porfa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "regáleme uno frito, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "el usuario ordena un plato de pescado frito",
+        "file_source": "menu.md",
+        "info_extracted": "## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El cliente, tras preguntar por opciones de pescado, solicita \"uno frito\", lo que se interpreta como una orden de **Bocachico criollo frito** (13.500 COP), ya que es el único ítem de pescado frito disponible en el menú. Según la información extraída, este plato no especifica tamaños (corriente/mini), por lo que se asume que viene en una única presentación. Al ser un pedido nuevo, el plato se crea con los valores por defecto: sin principio específico (ya que el menú no lo asigna directamente a este ítem) y con `requirements: [\"Con todo\"]`, que incluye los acompañamientos estándar (yuca al vapor, arroz, ensalada, jugo y caramelo). No hay ambigüedad en la solicitud, ya que el contexto de la conversación previa (búsqueda de pescado) y la oferta del menú validan claramente el ítem.",
+    "proposed_actions": [
+      {
+        "action": "CREATE_ORDER",
+        "params": {
+          "customer_id": "current_user",
+          "service_type": "delivery"
+        }
+      },
+      {
+        "action": "CREATE_ITEM",
+        "params": {
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "size": "corriente",
+          "unit_price": 13500,
+          "requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": null,
+    "order_after": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:29:06.017546",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro que sí! Anotado tu **Bocachico criollo frito** por $13.500. 😊\n\nEste plato viene con sus acompañamientos estándar (yuca al vapor, arroz, ensalada, jugo y caramelo). ¿Te gustaría agregar algún principio en especial o lo dejamos así con lo que trae por defecto?",
+    "processing_time_ms": 10545.636177062988,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:29:08.237515"
+  },
+  {
+    "log_id": "log_ab1236aa",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:29:42.578463",
+    "user_message": "Qué principio tienen?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Qué principio tienen?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "consultar los principios disponibles para acompañar el bocachico criollo frito",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)"
+      }
+    ],
+    "processor_thought": "No thoughts provided",
+    "proposed_actions": [],
+    "order_before": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:29:42.635849",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:29:57.153952",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Hola! 😊 Para acompañar tu bocachico criollo frito, hoy tenemos estos principios bien caseros:\n\n- **Macarrón con carne molida** 🍝\n- **Guiso de yota con huevo** 🥘\n- **Principio mixto** (ambos principios)\n\n¿Cuál te gustaría llevar?",
+    "processing_time_ms": 29341.665506362915,
+    "success": false,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:30:12.197373"
+  },
+  {
+    "log_id": "log_11b5093c",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:31:04.638812",
+    "user_message": "Principio mixto, porfa, pero entonces será que por la sopa, me puede más principio?",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Principio mixto, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "solicitar principio mixto para el bocachico criollo frito",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      },
+      {
+        "segment": "pero entonces será que por la sopa, me puede más principio?",
+        "query_type": "consulting",
+        "topic": "menu",
+        "focus": "preguntar si puede obtener más principio al pedir sopa",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n## SECTION: Proteínas\n### ITEM: Bandeja mixta\n#### OPTION: Pechuga - Carne\n#### OPTION: Pechuga - Lomo de cerdo a la BBQ\n#### OPTION: Carne - Lomo de cerdo a la BBQ\nPRICE: 15000\n\n\n### ITEM: Bocachico criollo frito / sudado\nPRICE: 13500\n\n### ITEM: Carnes mixtas en vegetales\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Pechuga gratinada\nPRICES: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      }
+    ],
+    "processor_thought": "El usuario primero solicita \"principio mixto\" para su bocachico criollo frito, lo cual es válido según el menú que incluye \"Principio mixto (Ambos principios)\" dentro de la sección de principios. Luego pregunta si al pedir sopa (crema de verdura) puede obtener más principio, lo que sugiere que quiere una porción extra de principio sin costo adicional. Esto debe reflejarse en los `requirements` del item, actualizándolos de `[\"Con todo\"]` a `[\"más principio\"]`, indicando que desea una cantidad mayor de principio de la estándar. No hay ambigüedad en la solicitud, ya que el cliente especifica claramente el principio mixto y la petición de más cantidad.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-b0b9c7f2",
+          "principle": "Principio mixto (Ambos principios)",
+          "add_requirements": [
+            "más principio"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": null,
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "Con todo"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:31:04.698455",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": "Principio mixto (Ambos principios)",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:31:12.784234",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Claro que sí! Anotado tu **bocachico criollo frito con principio mixto** y te apunto eso de **más principio** en las observaciones para que te sirvan una buena porción extra 😊.\n\nY con gusto te agregamos la **crema de verdura** como sopa. ¿Quieres que te la incluyamos en el mismo pedido?\n\nAhora solo me falta saber: **¿Delivery o pasas a recoger?** 🚗🏠",
+    "processing_time_ms": 10711.092948913574,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:31:15.619701"
+  },
+  {
+    "log_id": "log_04f0cd8a",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:31:49.165891",
+    "user_message": "Sin sopa, porfa, sería para que me lo trajeran a mi casa",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Sin sopa, porfa",
+        "query_type": "ordering",
+        "topic": "menu",
+        "focus": "rechazar la sopa ofrecida anteriormente para el pedido actual",
+        "file_source": "menu.md",
+        "info_extracted": "# Menu del restaurante\n\n# MENU_EXTRACTION\n\n## METADATA\n- Source: menu.png\n- Currency: COP\n- Language: es\n\n## HEADER\nMenú para un Jueves Caserito\n\n## SECTION: Sopa\n- Crema de verdura\n\n## SECTION: Principio\n### ITEM: Macarrón con carne molida\n### ITEM: Guiso de yota con huevo\n### ITEM: Principio mixto (Ambos principios)\n\n## SECTION: Acompañamientos\nYuca al vapor arroz, ensalada, jugo y caramelo\n---\n### ITEM: Pechuga a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Carne a la plancha\nPRICES: 13500 (Corriente), 12000 (mini)\n\n### ITEM: Lomo de cerdo asado a la plancha\n#### OPTION: con salsa BBQ \n#### OPTION: con salsa miel-mostaza\n#### OPTION: Sin ninguna salsa\nPRICE: 13500 (Corriente), 12000 (mini)\n---\n## CONTACT\nNEQUI - WHATSAPP: 3106728007\n\n## NOTES\n- Prices in Colombian pesos\n- \"Bandeja mixta\" includes multiple protein options"
+      },
+      {
+        "segment": "sería para que me lo trajeran a mi casa",
+        "query_type": "ordering",
+        "topic": "delivery",
+        "focus": "solicitar entrega a domicilio del pedido actual de bocachico criollo frito",
+        "file_source": "service_info.txt",
+        "info_extracted": "# Información de servicio\n\nTIPO DE SERVICIO:\n- Delivery hasta el lugar donde el cliente lo solicite\n- Ordenar para recoger en el lugar\n- No tenemos servicio para comer en el restaurante/lugar/mesa\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\nCOSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido."
+      }
+    ],
+    "processor_thought": "El cliente rechaza la sopa ofrecida anteriormente, por lo que no se añade ningún ítem de sopa al pedido. Además, solicita que el pedido actual (1x Bocachico criollo frito con principio mixto y la anotación de \"más principio\" en requirements) sea entregado a domicilio. Según la información de servicio, el delivery es posible, pero se necesita la dirección del cliente para determinar si aplica un costo de envío (gratis dentro del Barrio La Cumbre, COP 2.500 para sectores aledaños, o un valor variable para otros barrios). El pedido en sí no requiere modificaciones en los campos de proteína, principio o tamaño, solo se debe gestionar la logística de entrega y preguntar la dirección para calcular el costo del domicilio.",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-b0b9c7f2",
+          "add_requirements": [],
+          "remove_requirements": []
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": "Principio mixto (Ambos principios)",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:31:49.217896",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": "Principio mixto (Ambos principios)",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:31:59.246670",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Entendido! Sin sopa, no hay problema. 😊\n\nMe alegra que quieras que te llevemos el pedido a casa. **Sí, hacemos delivery.** Para poder calcular el costo del envío, necesito que me des tu dirección, por favor.\n\nEl domicilio es **gratis** si estás dentro del **Barrio La Cumbre**, tiene un costo de **$2.500** para sectores aledaños, o te confirmamos el valor si es otro barrio. ¿Cuál es tu dirección? 🏠",
+    "processing_time_ms": 12566.88141822815,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:32:02.002645"
+  },
+  {
+    "log_id": "log_c34fad52",
+    "session_id": "sess_ffdeff5ca387",
+    "timestamp": "2026-04-25T17:32:44.776785",
+    "user_message": "Yo vivo aquí en cendas",
+    "user_id": "default_user",
+    "topic_details": [
+      {
+        "segment": "Yo vivo aquí en cendas",
+        "query_type": "confirmation",
+        "topic": "delivery",
+        "focus": "confirmar que la dirección de entrega es en Cendas",
+        "file_source": "service_info.txt",
+        "info_extracted": "COSTO DE ENVÍO/DOMICILIO\n- Dentro del Barrio La Cumbre el domicilio es gratis\n- Para los siguientes sectores Aledaños al barrio La Cumbre el costo del domicilio es de COP 2.500:\n    ** Prados del sur\n    ** Cendas\n    ** García Echeverry\n- Para barrios fuera de la Cumbre, el domicilio tiene un valor que está directamente relacionado con el lugar\n  para donde debe ser entregado el pedido.\n---\nMÉTODOS DE PAGO:\n- El cliente puede pagar en efectivo cuando reciba su pedido.\n- El cliente puede pagar mediante transferencia bancaria usando NEQUI como entidad financiera y plataforma de envío.\n  NOTA: Para los clientes que decidan pagar su pedido vía trasnferencia usando NEQUI como entidad bancaria:\n  * NEQUI : 310 6728 007 --> Nombre : Luz Stella Galvis solicitamos\n---\n- Solicitamos hacer llegar el comprobante de pago vía whatsapp, al número que se referencia como WHATSAPP del restaurante.\n- Si el comprobante no es enviado por parte del cliente, el pedido no puede salir con motivo de entrega. Esto, hasta que\n  el cliente envíe el respectivo comprobante, o confirma que cambia el método de pago, es decir pagando en efectivo."
+      }
+    ],
+    "processor_thought": "El usuario confirma que vive en Cendas, un sector aledaño al Barrio La Cumbre. Según la información de referencia, el costo de envío para Cendas es de COP 2.500. El pedido actual es 1x Bocachico criollo frito con principio mixto y la modificación de \"más principio\" en los requirements, y no hay cambios en los items del menú que validar. La solicitud es clara: se debe registrar la dirección de entrega en Cendas y aplicar el costo de envío de COP 2.500. No hay ambigüedad en la petición, solo se necesita proceder con la configuración del domicilio y, posteriormente, preguntar al cliente su método de pago (efectivo o NEQUI).",
+    "proposed_actions": [
+      {
+        "action": "UPDATE_ITEM",
+        "params": {
+          "item_id": "item-b0b9c7f2",
+          "add_requirements": [
+            "más principio"
+          ],
+          "remove_requirements": [
+            "Con todo"
+          ]
+        }
+      }
+    ],
+    "order_before": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": "Principio mixto (Ambos principios)",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:32:44.823724",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "order_after": {
+      "id": "ORD-000242",
+      "customer_id": "default_user",
+      "status": "draft",
+      "items": [
+        {
+          "id": "item-b0b9c7f2",
+          "quantity": 1,
+          "protein": "Bocachico criollo frito",
+          "principle": "Principio mixto (Ambos principios)",
+          "size": "corriente",
+          "unit_price": 13500.0,
+          "requirements": [
+            "más principio"
+          ],
+          "subtotal": 13500.0
+        }
+      ],
+      "service": null,
+      "payment_method": null,
+      "payment_status": "pending",
+      "observations": [],
+      "created_at": "2026-04-25T17:29:05.943390",
+      "updated_at": "2026-04-25T17:32:52.665788",
+      "subtotal": 13500.0,
+      "total_amount": 13500.0,
+      "service_type": null,
+      "address": null,
+      "delivery_fee": 0.0
+    },
+    "assistant_response": "¡Ah, qué bien que vives cerca! 😊 Entonces, para tu pedido de **1x Bocachico criollo frito (corriente) con principio mixto** por **$13.500**, ¿prefieres que te lo llevemos a domicilio o pasas a recogerlo por el local?",
+    "processing_time_ms": 9732.043743133545,
+    "success": true,
+    "error_message": null,
+    "metadata": {},
+    "updated_at": "2026-04-25T17:32:54.787820"
+  }
+]
