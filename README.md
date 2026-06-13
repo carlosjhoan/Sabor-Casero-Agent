@@ -195,6 +195,40 @@ Langfuse is not an add-on — it is woven into the system:
 src/
 ├── main.py                         # Entry point
 ├── config/environment.py           # pydantic-settings (.env → config)
+├── engine/                         # Orchestration framework
+│   ├── pipeline.py                 #   Framework stages: Guard → Session → Guard
+│   ├── orchestrator.py             #   SkillOrchestrator
+│   ├── planner.py                  #   Planner loop
+│   ├── skill_base.py               #   BaseSkill abstract class
+│   ├── skill_registry.py           #   Skill discovery & metadata
+│   ├── skill_tools.py              #   Tool schemas & dispatch
+│   ├── checkpoint.py               #   Per-skill checkpoint/restore
+│   ├── stage_result.py             #   StageResult, SessionContext
+│   ├── trace_context.py            #   OpenTelemetry-style tracing
+│   ├── exceptions.py               #   PipelineError, StageExecutionError
+│   └── validation_gates.py         #   Gate error types
+├── core/                           # Domain logic
+│   ├── assistant.py                #   Orchestrator entry point
+│   ├── classifier/                 #   HybridClassifier (rules + LLM)
+│   ├── order/
+│   │   ├── domain/                 #   Order, OrderItem, field states
+│   │   ├── application/            #   Orchestrator, ActionPlanner
+│   │   └── infrastructure/         #   JSON repositories
+│   ├── response/                   #   ResponseBuilder
+│   ├── extractor/                  #   Retriever + RAG v2 pipeline
+│   ├── memory/                     #   MemoryHub + entity extraction
+│   ├── conversation_log/           #   Interaction persistence
+│   ├── evaluation/                 #   LLM-as-judge evaluator
+│   └── knowledge/                  #   Registry
+├── infrastructure/                 # LiteLLM client, prompt manager
+├── ui/gradio_app.py                # Gradio 6.x chat
+├── _deprecated/                    # Legacy code (for reference)
+├── prompts/                        # All prompt templates (versioned)
+└── tests/                          # pytest (70% coverage floor)
+```
+src/
+├── main.py                         # Entry point
+├── config/environment.py           # pydantic-settings (.env → config)
 ├── core/
 │   ├── assistant.py                # Orchestrator entry point
 │   ├── classifier/                 # HybridClassifier (rules + LLM)
