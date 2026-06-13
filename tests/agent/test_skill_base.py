@@ -12,19 +12,19 @@ class TestBaseSkill:
 
     def test_baseskill_importable(self):
         """BaseSkill can be imported from agent.skill_base."""
-        from src.core.agent.skill_base import BaseSkill
+        from src.engine.skill_base import BaseSkill
         assert BaseSkill is not None
 
     def test_baseskill_is_abstract_cannot_instantiate(self):
         """BaseSkill cannot be instantiated directly — missing abstract run()."""
-        from src.core.agent.skill_base import BaseSkill
+        from src.engine.skill_base import BaseSkill
         with pytest.raises(TypeError):
             BaseSkill()
 
     def test_concrete_skill_can_instantiate(self):
         """A concrete subclass with run() implemented can be instantiated."""
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class TestSkill(BaseSkill):
             name = "test_skill"
@@ -41,8 +41,8 @@ class TestBaseSkill:
 
     def test_load_sets_up_context(self):
         """load() receives orchestration context and stores it."""
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class LoadAwareSkill(BaseSkill):
             name = "load_test"
@@ -63,8 +63,8 @@ class TestBaseSkill:
 
     def test_run_returns_skill_result_with_correct_metadata(self):
         """run() returns a SkillResult populated with skill name and version."""
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
         import asyncio
 
         class EchoSkill(BaseSkill):
@@ -85,8 +85,8 @@ class TestBaseSkill:
 
     def test_unload_cleans_resources(self):
         """unload() releases resources held by the skill."""
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class ResourceSkill(BaseSkill):
             name = "resource_test"
@@ -111,8 +111,8 @@ class TestBaseSkill:
 
     def test_version_defaults_to_zero_zero_zero_when_not_set(self):
         """Subclass without version attr gets default '0.0.0'."""
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class NoVersionSkill(BaseSkill):
             name = "noversion"
@@ -127,9 +127,9 @@ class TestBaseSkill:
 
     def test_skill_fail_returns_proper_failure(self):
         """A skill that fails returns SkillResult with error, not exception."""
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
+        from src.engine.exceptions import StageExecutionError
         import asyncio
 
         class FailingSkill(BaseSkill):

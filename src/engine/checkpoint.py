@@ -102,7 +102,7 @@ class CheckpointManager:
             CheckpointError: If the file cannot be written (permissions,
                 invalid path, etc.).
         """
-        from src.core.agent.exceptions import CheckpointError
+        from src.engine.exceptions import CheckpointError
 
         path = self.checkpoint_path(session_id)
         try:

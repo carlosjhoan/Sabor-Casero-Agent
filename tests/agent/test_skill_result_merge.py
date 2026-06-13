@@ -12,7 +12,7 @@ class TestSkillResultMerge:
 
     def test_merge_combines_results(self):
         """merge() combines multiple SkillResults into one aggregated result."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         r1 = SkillResult.ok(value={"menu": ["tacos"]}, skill_name="menu-query", skill_version="1.0.0")
         r2 = SkillResult.ok(value={"order": "confirmed"}, skill_name="order-flow", skill_version="1.0.0")
@@ -25,8 +25,8 @@ class TestSkillResultMerge:
 
     def test_merge_with_one_failure(self):
         """merge() fails overall if any result is a failure."""
-        from src.core.agent.stage_result import SkillResult
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.stage_result import SkillResult
+        from src.engine.exceptions import StageExecutionError
 
         r1 = SkillResult.ok(value={"menu": ["tacos"]}, skill_name="menu-query", skill_version="1.0.0")
         r2 = SkillResult.fail(
@@ -42,7 +42,7 @@ class TestSkillResultMerge:
 
     def test_merge_empty_list_returns_failure(self):
         """merge() with empty list returns a failed result."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         merged = SkillResult.merge([])
         assert merged.success is False
@@ -50,7 +50,7 @@ class TestSkillResultMerge:
 
     def test_merge_all_success_multiple(self):
         """merge() groups 3+ successful results."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         results = [
             SkillResult.ok(value={"a": 1}, skill_name="s1", skill_version="1.0"),

@@ -5,7 +5,7 @@ import pytest
 from unittest.mock import MagicMock, AsyncMock
 from pathlib import Path
 
-from src.core.agent.stage_result import SkillResult
+from src.engine.stage_result import SkillResult
 
 
 class TestMenuQuerySkill:

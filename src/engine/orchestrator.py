@@ -24,8 +24,8 @@ from __future__ import annotations
 
 from typing import Any, Optional
 
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.skill_registry import SkillRegistry
+from src.engine.skill_base import BaseSkill
+from src.engine.skill_registry import SkillRegistry
 
 
 class SkillOrchestrator:

@@ -8,7 +8,7 @@ el formato de retorno de {success, data, error} a {success, result, error}.
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
 
-from src.core.agent.skill_tools import (
+from src.engine.skill_tools import (
     SkillToolAdapter,
     _SYNTHETIC_ORDER_TOOL_MAP,
 )

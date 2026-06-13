@@ -193,7 +193,7 @@ class SkillResult(BaseModel, Generic[T]):
             error encountered.
         """
         if not results:
-            from src.core.agent.exceptions import StageExecutionError
+            from src.engine.exceptions import StageExecutionError
             return cls(
                 success=False,
                 skill_name="merged",

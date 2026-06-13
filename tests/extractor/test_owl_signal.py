@@ -187,7 +187,7 @@ class TestValidateCandidates:
 
     def test_all_rejected_raises_error(self, signal):
         """ALL candidates rejected → OntologyGateError (S-P4-02 hallucination)."""
-        from src.core.agent.exceptions import OntologyGateError
+        from src.engine.exceptions import OntologyGateError
         with pytest.raises(OntologyGateError):
             signal.validate_candidates(
                 ["Chuleta de cerdo inventada", "Pollo guisado falso"],
@@ -195,7 +195,7 @@ class TestValidateCandidates:
 
     def test_empty_candidates_list(self, signal):
         """Empty candidates list raises OntologyGateError."""
-        from src.core.agent.exceptions import OntologyGateError
+        from src.engine.exceptions import OntologyGateError
         with pytest.raises(OntologyGateError):
             signal.validate_candidates([])
 

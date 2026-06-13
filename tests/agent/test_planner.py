@@ -14,7 +14,7 @@ import asyncio
 import pytest
 from unittest.mock import ANY, AsyncMock, MagicMock, patch
 
-from src.core.agent.planner import (
+from src.engine.planner import (
     FALLBACK_ERROR,
     MAX_TOOL_CALLS,
     RESPOND_TOOL,
@@ -118,7 +118,7 @@ class TestBasicDispatch:
         mock_llm.chat_completion.return_value = _RESPOND_CALL
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[],
         ):
             context = PlannerContext()
@@ -149,7 +149,7 @@ class TestBasicDispatch:
         ]
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.execute_tool",
+            "src.engine.planner.SkillToolAdapter.execute_tool",
             new_callable=AsyncMock,
         ) as mock_exec:
             mock_exec.return_value = {
@@ -157,7 +157,7 @@ class TestBasicDispatch:
                 "result": {"intent": "greeting"},
             }
             with patch(
-                "src.core.agent.planner.SkillToolAdapter.list_tools",
+                "src.engine.planner.SkillToolAdapter.list_tools",
                 return_value=[_CLASSIFY_TOOL],
             ):
                 context = PlannerContext()
@@ -183,12 +183,12 @@ class TestBasicDispatch:
         }
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.execute_tool",
+            "src.engine.planner.SkillToolAdapter.execute_tool",
             new_callable=AsyncMock,
         ) as mock_exec:
             mock_exec.return_value = {"success": True, "result": {"ok": True}}
             with patch(
-                "src.core.agent.planner.SkillToolAdapter.list_tools",
+                "src.engine.planner.SkillToolAdapter.list_tools",
                 return_value=[_CLASSIFY_TOOL],
             ):
                 context = PlannerContext()
@@ -220,7 +220,7 @@ class TestBasicDispatch:
         ]
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.execute_tool",
+            "src.engine.planner.SkillToolAdapter.execute_tool",
             new_callable=AsyncMock,
         ) as mock_exec:
             mock_exec.return_value = {
@@ -228,7 +228,7 @@ class TestBasicDispatch:
                 "error": "LLM API timeout",
             }
             with patch(
-                "src.core.agent.planner.SkillToolAdapter.list_tools",
+                "src.engine.planner.SkillToolAdapter.list_tools",
                 return_value=[_CLASSIFY_TOOL],
             ):
                 context = PlannerContext()
@@ -248,7 +248,7 @@ class TestBasicDispatch:
         mock_llm.chat_completion.return_value = _RESPOND_CALL
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[],
         ):
             context = PlannerContext()
@@ -299,12 +299,12 @@ class TestStateTransitions:
             return wrapper
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.execute_tool",
+            "src.engine.planner.SkillToolAdapter.execute_tool",
             new_callable=AsyncMock,
         ) as mock_exec:
             mock_exec.return_value = {"success": True, "result": {"intent": "greeting"}}
             with patch(
-                "src.core.agent.planner.SkillToolAdapter.list_tools",
+                "src.engine.planner.SkillToolAdapter.list_tools",
                 return_value=[_CLASSIFY_TOOL],
             ):
                 context = PlannerContext()
@@ -332,7 +332,7 @@ class TestErrorScenarios:
         ]
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[],
         ):
             context = PlannerContext()
@@ -351,7 +351,7 @@ class TestErrorScenarios:
         ]
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[],
         ):
             context = PlannerContext()
@@ -366,7 +366,7 @@ class TestErrorScenarios:
         mock_llm.chat_completion.return_value = ""
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[],
         ):
             context = PlannerContext()
@@ -384,7 +384,7 @@ class TestErrorScenarios:
         }
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[],
         ):
             context = PlannerContext()
@@ -411,7 +411,7 @@ class TestErrorScenarios:
         ]
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.execute_tool",
+            "src.engine.planner.SkillToolAdapter.execute_tool",
             new_callable=AsyncMock,
         ) as mock_exec:
             mock_exec.return_value = {
@@ -419,7 +419,7 @@ class TestErrorScenarios:
                 "error": "KeyError: 'nonexistent-skill'",
             }
             with patch(
-                "src.core.agent.planner.SkillToolAdapter.list_tools",
+                "src.engine.planner.SkillToolAdapter.list_tools",
                 return_value=[_CLASSIFY_TOOL],
             ):
                 context = PlannerContext()
@@ -440,7 +440,7 @@ class TestErrorScenarios:
         )
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.list_tools",
+            "src.engine.planner.SkillToolAdapter.list_tools",
             return_value=[_CLASSIFY_TOOL],
         ):
             context = PlannerContext()
@@ -473,12 +473,12 @@ class TestErrorScenarios:
         ]
 
         with patch(
-            "src.core.agent.planner.SkillToolAdapter.execute_tool",
+            "src.engine.planner.SkillToolAdapter.execute_tool",
             new_callable=AsyncMock,
         ) as mock_exec:
             mock_exec.return_value = {"success": True, "result": {"ok": True}}
             with patch(
-                "src.core.agent.planner.SkillToolAdapter.list_tools",
+                "src.engine.planner.SkillToolAdapter.list_tools",
                 return_value=[_CLASSIFY_TOOL],
             ):
                 context = PlannerContext()
@@ -506,10 +506,10 @@ class TestRegression:
         installed — the existing tests already cover the classic path.
         """
         # Verify new modules are importable (Planner, SkillToolAdapter)
-        from src.core.agent.planner import Planner, PlannerContext
-        from src.core.agent.skill_tools import SkillToolAdapter
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.planner import Planner, PlannerContext
+        from src.engine.skill_tools import SkillToolAdapter
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
 
         # Verify classic modules still import
         try:
@@ -532,7 +532,7 @@ class TestRegression:
 
         # Default should be whatever the env sets — but most importantly
         # importing Planner doesn't change this flag
-        from src.core.agent.planner import Planner
+        from src.engine.planner import Planner
 
         assert hasattr(settings, "skills_enabled")
 
@@ -542,7 +542,7 @@ class TestPlannerModule:
 
     def test_planner_importable(self):
         """Planner class can be imported."""
-        from src.core.agent.planner import Planner
+        from src.engine.planner import Planner
         assert Planner is not None
 
     def test_planner_context_defaults(self):

@@ -10,7 +10,7 @@ from unittest.mock import AsyncMock, MagicMock, patch, PropertyMock
 from typing import Dict, Any
 
 from src.core.assistant import SaborCaseroAssistant
-from src.core.agent.stage_result import StageResult, SessionContext
+from src.engine.stage_result import StageResult, SessionContext
 from src.utils.retry import retry_with_backoff, STAGE_RETRY_CONFIG
 from src.core.classifier.input_guard import GuardResult, FALLBACK_ERROR
 from src.core.classifier.intent import UserQueryClassifier, Detail, QueryTopic, QueryType

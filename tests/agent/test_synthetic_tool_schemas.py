@@ -23,7 +23,7 @@ class TestToolSchemasExist:
     @pytest.mark.parametrize("tool_name", TOOL_NAMES)
     def test_tool_schema_constant_exists(self, tool_name):
         """Cada tool tiene una constante _<NAME>_TOOL en SkillToolAdapter."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         constant_name = f"_{tool_name.upper().replace('-', '_')}_TOOL"
         assert hasattr(SkillToolAdapter, constant_name), (
@@ -33,7 +33,7 @@ class TestToolSchemasExist:
     @pytest.mark.parametrize("tool_name", TOOL_NAMES)
     def test_tool_schema_structure(self, tool_name):
         """Cada schema tiene la estructura esperada: type, function.name, function.parameters."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         constant_name = f"_{tool_name.upper().replace('-', '_')}_TOOL"
         schema = getattr(SkillToolAdapter, constant_name)
@@ -61,14 +61,14 @@ class TestToolRequiredFields:
 
     def test_add_item_no_required_fields(self):
         """add-item no tiene campos obligatorios — se puede crear parcialmente."""
-        from src.core.agent.skill_tools import _ADD_ITEM_TOOL
+        from src.engine.skill_tools import _ADD_ITEM_TOOL
 
         required = _ADD_ITEM_TOOL["function"]["parameters"].get("required", [])
         assert len(required) == 0, "add-item no debe requerir ningún campo — se completa con update-item"
 
     def test_add_item_has_all_params(self):
         """add-item tiene protein, quantity, size, principle, requirements, unit_price."""
-        from src.core.agent.skill_tools import _ADD_ITEM_TOOL
+        from src.engine.skill_tools import _ADD_ITEM_TOOL
 
         props = _ADD_ITEM_TOOL["function"]["parameters"].get("properties", {})
         expected = {"protein", "quantity", "size", "principle", "requirements", "unit_price"}
@@ -77,35 +77,35 @@ class TestToolRequiredFields:
 
     def test_remove_item_requires_item_id(self):
         """remove-item requiere item_id."""
-        from src.core.agent.skill_tools import _REMOVE_ITEM_TOOL
+        from src.engine.skill_tools import _REMOVE_ITEM_TOOL
 
         required = _REMOVE_ITEM_TOOL["function"]["parameters"].get("required", [])
         assert "item_id" in required
 
     def test_update_item_requires_item_id(self):
         """update-item requiere item_id."""
-        from src.core.agent.skill_tools import _UPDATE_ITEM_TOOL
+        from src.engine.skill_tools import _UPDATE_ITEM_TOOL
 
         required = _UPDATE_ITEM_TOOL["function"]["parameters"].get("required", [])
         assert "item_id" in required
 
     def test_get_order_no_required_params(self):
         """get-order no requiere parámetros."""
-        from src.core.agent.skill_tools import _GET_ORDER_TOOL
+        from src.engine.skill_tools import _GET_ORDER_TOOL
 
         required = _GET_ORDER_TOOL["function"]["parameters"].get("required", [])
         assert required == []
 
     def test_confirm_order_no_required_params(self):
         """confirm-order no requiere parámetros."""
-        from src.core.agent.skill_tools import _CONFIRM_ORDER_TOOL
+        from src.engine.skill_tools import _CONFIRM_ORDER_TOOL
 
         required = _CONFIRM_ORDER_TOOL["function"]["parameters"].get("required", [])
         assert required == []
 
     def test_cancel_order_no_required_params(self):
         """cancel-order no requiere parámetros."""
-        from src.core.agent.skill_tools import _CANCEL_ORDER_TOOL
+        from src.engine.skill_tools import _CANCEL_ORDER_TOOL
 
         required = _CANCEL_ORDER_TOOL["function"]["parameters"].get("required", [])
         assert required == []
@@ -116,8 +116,8 @@ class TestListToolsExcludesOrderFlow:
 
     def test_list_tools_excludes_order_flow(self):
         """list_tools() no incluye order-flow en la lista."""
-        from src.core.agent.skill_tools import SkillToolAdapter
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_tools import SkillToolAdapter
+        from src.engine.skill_registry import SkillRegistry
 
         registry = SkillRegistry()
         registry.discover("skills")
@@ -130,8 +130,8 @@ class TestListToolsExcludesOrderFlow:
 
     def test_list_tools_includes_synthetic_order_tools(self):
         """list_tools() incluye los 6 synthetic order tools."""
-        from src.core.agent.skill_tools import SkillToolAdapter
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_tools import SkillToolAdapter
+        from src.engine.skill_registry import SkillRegistry
 
         registry = SkillRegistry()
         registry.discover("skills")
@@ -145,7 +145,7 @@ class TestListToolsExcludesOrderFlow:
 
     def test_list_tools_does_not_include_automatic_skills(self):
         """list_tools() no incluye automatic skills como order-flow."""
-        from src.core.agent.skill_tools import SkillToolAdapter, _AUTOMATIC_SKILLS
+        from src.engine.skill_tools import SkillToolAdapter, _AUTOMATIC_SKILLS
 
         assert "order-flow" in _AUTOMATIC_SKILLS, (
             "order-flow debe estar en _AUTOMATIC_SKILLS"

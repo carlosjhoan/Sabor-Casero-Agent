@@ -30,13 +30,13 @@ from src.core.memory.application.context_summarizer import ContextSummarizer
 from src.utils.utils import print_section
 from src.utils.pipeline_streamer import PipelineStreamer, Style, wprint
 
-from .agent.stage_result import StageResult, SkillResult, SessionContext
-from .agent.orchestrator import SkillOrchestrator
-from .agent.skill_registry import SkillRegistry
-from .agent.checkpoint import CheckpointManager, Checkpoint
-from .agent.trace_context import new_trace_id, span
-from .agent.exceptions import PipelineError
-from .agent.planner import Planner, PlannerContext
+from src.engine.stage_result import StageResult, SkillResult, SessionContext
+from src.engine.orchestrator import SkillOrchestrator
+from src.engine.skill_registry import SkillRegistry
+from src.engine.checkpoint import CheckpointManager, Checkpoint
+from src.engine.trace_context import new_trace_id, span
+from src.engine.exceptions import PipelineError
+from src.engine.planner import Planner, PlannerContext
 from src.core.memory.domain.memory_hub import MemoryHub
 from .evaluation.evaluator import Evaluator
 

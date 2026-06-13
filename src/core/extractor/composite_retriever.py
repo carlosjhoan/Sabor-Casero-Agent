@@ -317,7 +317,7 @@ class CompositeRetriever(RetrieverInterface):
                 return results
 
             except Exception as e:
-                from src.core.agent.exceptions import OntologyGateError
+                from src.engine.exceptions import OntologyGateError
                 if isinstance(e, OntologyGateError):
                     raise
                 logger.warning("Ontology validation gate failed: %s", e)

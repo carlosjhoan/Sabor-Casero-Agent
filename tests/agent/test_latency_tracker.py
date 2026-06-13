@@ -12,7 +12,7 @@ class TestLatencyTracker:
 
     def test_record_and_mean(self):
         """record() stores a latency and mean() returns correct average."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         tracker.record("classify", 10.0)
@@ -24,7 +24,7 @@ class TestLatencyTracker:
 
     def test_stats_all_fields(self):
         """stats() returns mean, p50, p95, p99, count."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         # Insert a range of values
@@ -40,7 +40,7 @@ class TestLatencyTracker:
 
     def test_p50_p95_p99_accuracy(self):
         """p50/p95/p99 are correctly computed for known distributions."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
         import math
 
         tracker = LatencyTracker(window=100)
@@ -55,7 +55,7 @@ class TestLatencyTracker:
 
     def test_nonexistent_skill(self):
         """stats() for a skill with no recordings returns zeros."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         stats = tracker.stats("nonexistent")
@@ -67,7 +67,7 @@ class TestLatencyTracker:
 
     def test_window_sliding(self):
         """Only the last N records are kept (sliding window)."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=10)
         # Insert 20 records
@@ -81,7 +81,7 @@ class TestLatencyTracker:
 
     def test_multiple_skills_independent(self):
         """Latencies for different skills are tracked independently."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         tracker.record("classify", 10.0)
@@ -95,7 +95,7 @@ class TestLatencyTracker:
 
     def test_snapshot_all_skills(self):
         """snapshot() returns stats for all recorded skills."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=50)
         tracker.record("classify", 5.0)
@@ -109,7 +109,7 @@ class TestLatencyTracker:
 
     def test_single_record(self):
         """A single record produces correct stats (p50==p95==p99==value)."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         tracker.record("fast", 42.0)
@@ -123,7 +123,7 @@ class TestLatencyTracker:
 
     def test_custom_window(self):
         """Custom window size is respected."""
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=5)
         for v in range(1, 11):

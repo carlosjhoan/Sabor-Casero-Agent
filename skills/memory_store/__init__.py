@@ -6,8 +6,8 @@ entities (dietary restrictions, preferences, etc.) via MemoryHub.
 """
 from typing import Any, Optional
 
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.stage_result import SkillResult
+from src.engine.skill_base import BaseSkill
+from src.engine.stage_result import SkillResult
 from src.core.memory.domain.models_memory import ConversationTurn
 
 
@@ -39,7 +39,7 @@ class Skill(BaseSkill):
                 "episode_id": str | None,    # Episode identifier
             }
         """
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.exceptions import StageExecutionError
 
         try:
             user_id = input_data.get("user_id", "")

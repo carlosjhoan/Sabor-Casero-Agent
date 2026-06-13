@@ -105,7 +105,7 @@ class TestSP402OwlHallucinationGate:
         assert result["Pechuga a la plancha"].score >= 0.7
 
         # Validate: "Pollo guisado inventado" should be rejected
-        from src.core.agent.exceptions import OntologyGateError
+        from src.engine.exceptions import OntologyGateError
         with pytest.raises(OntologyGateError):
             signal.validate_candidates(["Pollo guisado inventado"])
 

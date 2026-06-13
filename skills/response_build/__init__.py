@@ -6,8 +6,8 @@ and brand voice via the ResponseBuilder.
 """
 from typing import Any, Optional
 
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.stage_result import SkillResult
+from src.engine.skill_base import BaseSkill
+from src.engine.stage_result import SkillResult
 
 FALLBACK_ERROR = "Lo siento, no pude generar una respuesta. Por favor intenta de nuevo."
 
@@ -41,7 +41,7 @@ class Skill(BaseSkill):
                 "response": str,  # Final assistant response
             }
         """
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.exceptions import StageExecutionError
 
         try:
             if self._builder is None:

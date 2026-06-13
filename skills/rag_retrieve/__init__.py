@@ -6,8 +6,8 @@ cross-encoder → ontology gate) for the skill-based architecture.
 """
 from typing import Any, Optional
 
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.stage_result import SkillResult
+from src.engine.skill_base import BaseSkill
+from src.engine.stage_result import SkillResult
 
 
 class Skill(BaseSkill):

@@ -13,14 +13,14 @@ class TestTraceId:
 
     def test_get_trace_id_returns_string(self):
         """get_trace_id() returns a string."""
-        from src.core.agent.trace_context import get_trace_id
+        from src.engine.trace_context import get_trace_id
         tid = get_trace_id()
         assert isinstance(tid, str)
         assert len(tid) > 0
 
     def test_get_trace_id_stable_in_same_context(self):
         """get_trace_id() returns the same ID within the same trace context."""
-        from src.core.agent.trace_context import get_trace_id, new_trace_id
+        from src.engine.trace_context import get_trace_id, new_trace_id
         new_trace_id()
         first = get_trace_id()
         second = get_trace_id()
@@ -28,7 +28,7 @@ class TestTraceId:
 
     def test_new_trace_id_generates_different_id(self):
         """new_trace_id() resets to a new value."""
-        from src.core.agent.trace_context import get_trace_id, new_trace_id
+        from src.engine.trace_context import get_trace_id, new_trace_id
         new_trace_id()
         first = get_trace_id()
         new_trace_id()
@@ -37,7 +37,7 @@ class TestTraceId:
 
     def test_new_trace_id_returns_uuid_string(self):
         """new_trace_id() returns the new UUID as a string."""
-        from src.core.agent.trace_context import new_trace_id
+        from src.engine.trace_context import new_trace_id
         tid = new_trace_id()
         assert isinstance(tid, str)
         assert len(tid) == 36  # UUID v4 format
@@ -45,7 +45,7 @@ class TestTraceId:
 
     def test_trace_id_propagated_via_contextvars(self):
         """trace_id set in one context is isolated from another."""
-        from src.core.agent.trace_context import new_trace_id, get_trace_id
+        from src.engine.trace_context import new_trace_id, get_trace_id
         import asyncio
 
         new_trace_id()
@@ -65,7 +65,7 @@ class TestSpanContextManager:
 
     def test_span_context_manager_records_event(self):
         """A span context manager adds a structured event to the log."""
-        from src.core.agent.trace_context import span, get_event_log, new_trace_id, get_trace_id
+        from src.engine.trace_context import span, get_event_log, new_trace_id, get_trace_id
 
         new_trace_id()
         tid = get_trace_id()
@@ -84,7 +84,7 @@ class TestSpanContextManager:
 
     def test_span_timing_is_accurate(self):
         """Span duration_ms approximates real wall-clock time."""
-        from src.core.agent.trace_context import span, get_event_log, new_trace_id
+        from src.engine.trace_context import span, get_event_log, new_trace_id
 
         new_trace_id()
         with span("timing-test"):
@@ -98,7 +98,7 @@ class TestSpanContextManager:
 
     def test_span_records_failure(self):
         """Span captures failure when the body raises."""
-        from src.core.agent.trace_context import span, get_event_log, new_trace_id
+        from src.engine.trace_context import span, get_event_log, new_trace_id
 
         new_trace_id()
         try:
@@ -115,7 +115,7 @@ class TestSpanContextManager:
 
     def test_span_nesting(self):
         """Nested spans produce ordered event log entries."""
-        from src.core.agent.trace_context import span, get_event_log, new_trace_id
+        from src.engine.trace_context import span, get_event_log, new_trace_id
 
         new_trace_id()
         with span("outer"):
@@ -131,7 +131,7 @@ class TestSpanContextManager:
 
     def test_multiple_traces_isolated_events(self):
         """Events from different traces are isolated."""
-        from src.core.agent.trace_context import span, get_event_log, new_trace_id, clear_event_log
+        from src.engine.trace_context import span, get_event_log, new_trace_id, clear_event_log
 
         new_trace_id()
         with span("trace-a-span"):
@@ -152,7 +152,7 @@ class TestSpanContextManager:
 
     def test_clear_event_log(self):
         """clear_event_log() empties the event log."""
-        from src.core.agent.trace_context import span, get_event_log, clear_event_log, new_trace_id
+        from src.engine.trace_context import span, get_event_log, clear_event_log, new_trace_id
 
         new_trace_id()
         with span("ephemeral"):
@@ -168,7 +168,7 @@ class TestSpanDecorator:
 
     def test_span_decorator_records_event(self):
         """@span decorator records a structured event for the function call."""
-        from src.core.agent.trace_context import span_decorator, get_event_log, new_trace_id
+        from src.engine.trace_context import span_decorator, get_event_log, new_trace_id
 
         new_trace_id()
 
@@ -186,7 +186,7 @@ class TestSpanDecorator:
 
     def test_span_decorator_records_failure(self):
         """@span decorator captures failure when the function raises."""
-        from src.core.agent.trace_context import span_decorator, get_event_log, new_trace_id
+        from src.engine.trace_context import span_decorator, get_event_log, new_trace_id
 
         new_trace_id()
 
@@ -204,7 +204,7 @@ class TestSpanDecorator:
 
     def test_span_decorator_async(self):
         """@span decorator works on async functions."""
-        from src.core.agent.trace_context import span_decorator, get_event_log, new_trace_id
+        from src.engine.trace_context import span_decorator, get_event_log, new_trace_id
 
         new_trace_id()
 

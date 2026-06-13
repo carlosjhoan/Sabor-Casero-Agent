@@ -9,8 +9,8 @@ import asyncio
 import logging
 from typing import Any, Optional
 
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.stage_result import SkillResult
+from src.engine.skill_base import BaseSkill
+from src.engine.stage_result import SkillResult
 
 logger = logging.getLogger(__name__)
 
@@ -48,7 +48,7 @@ class Skill(BaseSkill):
                 "fallback_used": bool,    # Whether sync fallback was used
             }
         """
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.exceptions import StageExecutionError
 
         try:
             session_id = input_data.get("session_id", "")

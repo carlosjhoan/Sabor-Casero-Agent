@@ -112,11 +112,11 @@ class TestSkillMetadata:
     """Verify SkillMetadata dataclass/model."""
 
     def test_skill_metadata_importable(self):
-        from src.core.agent.skill_registry import SkillMetadata
+        from src.engine.skill_registry import SkillMetadata
         assert SkillMetadata is not None
 
     def test_skill_metadata_holds_all_fields(self):
-        from src.core.agent.skill_registry import SkillMetadata
+        from src.engine.skill_registry import SkillMetadata
         meta = SkillMetadata(
             name="test",
             display="Test Skill",
@@ -137,7 +137,7 @@ class TestSkillMetadata:
 
     def test_skill_metadata_default_version(self):
         """Version defaults to '0.0.0' when not provided."""
-        from src.core.agent.skill_registry import SkillMetadata
+        from src.engine.skill_registry import SkillMetadata
         from pathlib import Path
         meta = SkillMetadata(
             name="test",
@@ -155,36 +155,36 @@ class TestFrontmatterParsing:
     """Verify YAML frontmatter extraction from SKILL.md."""
 
     def test_parse_frontmatter_extracts_name(self):
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         meta = parse_skill_frontmatter(SAMPLE_FRONTMATTER)
         assert meta.name == "classify"
 
     def test_parse_frontmatter_extracts_intents(self):
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         meta = parse_skill_frontmatter(SAMPLE_FRONTMATTER)
         assert "greeting" in meta.intents
         assert "menu_query" in meta.intents
         assert "farewell" in meta.intents
 
     def test_parse_frontmatter_extracts_version(self):
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         meta = parse_skill_frontmatter(SAMPLE_WITH_VERSION)
         assert meta.version == "1.2.0"
 
     def test_parse_frontmatter_defaults_version(self):
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         meta = parse_skill_frontmatter(SAMPLE_MINIMAL)
         assert meta.version == "0.0.0"
 
     def test_parse_frontmatter_extracts_deterministic_flag(self):
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         meta = parse_skill_frontmatter(SAMPLE_FRONTMATTER)
         assert meta.deterministic is False
         meta2 = parse_skill_frontmatter(SAMPLE_WITH_VERSION)
         assert meta2.deterministic is True
 
     def test_parse_frontmatter_extracts_dependencies(self):
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         meta = parse_skill_frontmatter(SAMPLE_FRONTMATTER)
         assert "llm_client" in meta.dependencies
         meta2 = parse_skill_frontmatter(SAMPLE_WITH_VERSION)
@@ -193,7 +193,7 @@ class TestFrontmatterParsing:
 
     def test_parse_invalid_frontmatter_raises(self):
         """Malformed YAML frontmatter raises ValueError."""
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         bad = """---
 name: broken
 intents: not_a_list
@@ -205,7 +205,7 @@ intents: not_a_list
 
     def test_parse_frontmatter_no_frontmatter_raises(self):
         """Content without frontmatter delimiters raises ValueError."""
-        from src.core.agent.skill_registry import parse_skill_frontmatter
+        from src.engine.skill_registry import parse_skill_frontmatter
         with pytest.raises(ValueError, match="frontmatter"):
             parse_skill_frontmatter("# Just a heading\nNo frontmatter here")
 
@@ -214,19 +214,19 @@ class TestSkillRegistry:
     """Verify SkillRegistry discovery, indexing, and lookup."""
 
     def test_registry_importable(self):
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         assert SkillRegistry is not None
 
     def test_registry_discover_finds_skills(self, skill_dir: Path):
         """discover() scans skills/ directory and indexes SKILL.md files."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         count = registry.discover(str(skill_dir))
         assert count == 3  # classify, menu-query, echo
 
     def test_registry_get_by_name(self, skill_dir: Path):
         """get(name) returns the SkillMetadata for that skill."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         meta = registry.get("classify")
@@ -236,14 +236,14 @@ class TestSkillRegistry:
 
     def test_registry_get_unknown_returns_none(self, skill_dir: Path):
         """get() for unregistered name returns None."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         assert registry.get("nonexistent") is None
 
     def test_registry_find_by_intent(self, skill_dir: Path):
         """find_by_intent() returns skills matching a given intent."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         results = registry.find_by_intent("menu_query")
@@ -253,7 +253,7 @@ class TestSkillRegistry:
 
     def test_registry_find_by_intent_returns_empty_list_for_unknown(self, skill_dir: Path):
         """find_by_intent() returns empty list when no skill handles the intent."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         results = registry.find_by_intent("unknown_intent_xyz")
@@ -261,7 +261,7 @@ class TestSkillRegistry:
 
     def test_registry_list_skills(self, skill_dir: Path):
         """list_skills() returns all registered skill metadata."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         skills = registry.list_skills()
@@ -271,7 +271,7 @@ class TestSkillRegistry:
 
     def test_registry_resolve_path(self, skill_dir: Path):
         """resolve_path() returns the filesystem path for a skill."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         path = registry.resolve_path("classify")
@@ -281,14 +281,14 @@ class TestSkillRegistry:
 
     def test_registry_resolve_path_unknown_returns_none(self, skill_dir: Path):
         """resolve_path() returns None for unregistered skill."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir))
         assert registry.resolve_path("nonexistent") is None
 
     def test_registry_discover_skips_dirs_without_skill_md(self, skill_dir: Path):
         """Directories without SKILL.md are skipped."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         (skill_dir / "no-skill-md").mkdir()
         (skill_dir / "no-skill-md" / "__init__.py").write_text("", encoding="utf-8")
         registry = SkillRegistry()
@@ -319,7 +319,7 @@ class TestGetToolDefinitions:
 
     def test_get_tool_definitions_returns_list(self, contract_skill_dir: Path):
         """get_tool_definitions() returns a list of tool definitions."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(contract_skill_dir))
         tools = registry.get_tool_definitions()
@@ -327,7 +327,7 @@ class TestGetToolDefinitions:
 
     def test_get_tool_definitions_has_correct_structure(self, contract_skill_dir: Path):
         """Each tool definition has type 'function' and function.name/description/parameters."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(contract_skill_dir))
         tools = registry.get_tool_definitions()
@@ -345,7 +345,7 @@ class TestGetToolDefinitions:
 
     def test_tool_from_skill_with_contract_has_parameters(self, contract_skill_dir: Path):
         """A skill with a Contract section gets input params extracted as properties."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(contract_skill_dir))
         tools = registry.get_tool_definitions()
@@ -362,7 +362,7 @@ class TestGetToolDefinitions:
 
     def test_tool_from_skill_without_contract_has_empty_params(self, contract_skill_dir: Path):
         """A skill without a Contract section gets an empty parameters schema."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(contract_skill_dir))
         tools = registry.get_tool_definitions()
@@ -373,7 +373,7 @@ class TestGetToolDefinitions:
 
     def test_tool_description_includes_trigger_and_behavior(self, contract_skill_dir: Path):
         """Tool description combines trigger from frontmatter and Behavior from Contract."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(contract_skill_dir))
         tools = registry.get_tool_definitions()

@@ -14,7 +14,7 @@ class TestTypedStageErrors:
     @pytest.mark.asyncio
     async def test_rag_timeout_wraps_as_stage_execution_error(self, assistant):
         """RAG ChromaDB timeout wraps as StageExecutionError, not bare Exception."""
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.exceptions import StageExecutionError
         from src.core.classifier.intent import UserQueryClassifier, Detail, QueryTopic, QueryType
         from src.core.classifier.input_guard import FALLBACK_ERROR
 

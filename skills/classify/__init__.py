@@ -6,8 +6,8 @@ Wraps HybridClassifier.classify() with error isolation and SkillResult.
 """
 from typing import Any, Optional
 
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.stage_result import SkillResult
+from src.engine.skill_base import BaseSkill
+from src.engine.stage_result import SkillResult
 
 
 class Skill(BaseSkill):
@@ -37,7 +37,7 @@ class Skill(BaseSkill):
                 "requires_reconcilier": bool,
             }
         """
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.exceptions import StageExecutionError
 
         try:
             message = input_data.get("message", "")

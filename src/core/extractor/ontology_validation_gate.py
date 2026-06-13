@@ -13,7 +13,7 @@ import logging
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
-from src.core.agent.exceptions import OntologyGateError
+from src.engine.exceptions import OntologyGateError
 
 logger = logging.getLogger(__name__)
 

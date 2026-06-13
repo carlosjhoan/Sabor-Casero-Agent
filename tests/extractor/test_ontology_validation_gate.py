@@ -10,7 +10,7 @@ Covers S-P4-02 through S-P4-05 gate outcomes:
 import pytest
 from unittest.mock import MagicMock
 
-from src.core.agent.exceptions import OntologyGateError
+from src.engine.exceptions import OntologyGateError
 from src.core.extractor.ontology_validation_gate import (
     OntologyValidationGate,
     RankedItem,

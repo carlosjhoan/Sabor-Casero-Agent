@@ -12,12 +12,12 @@ class TestListTools:
 
     def test_list_tools_importable(self):
         """SkillToolAdapter can be imported."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
         assert SkillToolAdapter is not None
 
     def test_list_tools_returns_list(self):
         """list_tools() returns a list."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
         registry = MagicMock()
         registry.get_tool_definitions.return_value = [
             {"type": "function", "function": {"name": "classify", "description": "test"}},
@@ -28,7 +28,7 @@ class TestListTools:
 
     def test_list_tools_filters_automatic_skills(self):
         """list_tools() filters out memory-store, summarize, response-build."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
         registry = MagicMock()
         registry.get_tool_definitions.return_value = [
             {"type": "function", "function": {"name": "classify", "description": "test"}},
@@ -42,8 +42,8 @@ class TestListTools:
 
     def test_list_tools_excludes_order_flow_includes_synthetic(self):
         """list_tools() excludes order-flow (now automatic) and includes synthetic order tools."""
-        from src.core.agent.skill_tools import SkillToolAdapter
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_tools import SkillToolAdapter
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover("skills")
         tools = SkillToolAdapter.list_tools(registry)
@@ -56,8 +56,8 @@ class TestListTools:
 
     def test_list_tools_includes_owl_skills_when_enabled(self):
         """When USE_OWL=True, OWL-dependent skills should be present."""
-        from src.core.agent.skill_tools import SkillToolAdapter
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_tools import SkillToolAdapter
+        from src.engine.skill_registry import SkillRegistry
         from src.config.environment import settings
         # Only assert OWL skills exist if OWL is enabled in this env
         if settings.use_owl:
@@ -71,8 +71,8 @@ class TestListTools:
 
     def test_list_tools_descriptions_are_non_empty(self):
         """Each tool definition has a non-empty description."""
-        from src.core.agent.skill_tools import SkillToolAdapter
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_tools import SkillToolAdapter
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover("skills")
         tools = SkillToolAdapter.list_tools(registry)
@@ -125,7 +125,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_calls_orchestrator_load_skill(self, tool_context):
         """execute_tool() loads the skill via orchestrator.load_skill()."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         mock_skill = AsyncMock()
         mock_skill.execute.return_value = self._make_skill_result(True, {"result": "ok"})
@@ -141,7 +141,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_runs_skill(self, tool_context):
         """execute_tool() calls skill.execute() with input_data."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         mock_skill = AsyncMock()
         mock_skill.execute.return_value = self._make_skill_result(
@@ -157,7 +157,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_returns_success_dict(self, tool_context):
         """execute_tool() returns a dict with success=True on normal execution."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         mock_skill = AsyncMock()
         mock_skill.execute.return_value = self._make_skill_result(True, {"result": "data"})
@@ -172,7 +172,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_returns_error_on_load_failure(self, tool_context):
         """execute_tool() returns {'success': False, 'error': ...} when load_skill fails."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         tool_context["skill_orchestrator"].load_skill.side_effect = KeyError("skill not found")
 
@@ -184,7 +184,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_returns_error_on_skill_failure(self, tool_context):
         """execute_tool() returns error dict when skill execution fails."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         mock_skill = AsyncMock()
         mock_skill.execute.return_value = self._make_skill_result(
@@ -199,7 +199,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_injects_context_for_classify(self, tool_context):
         """execute_tool() auto-injects summary_conversation + summary_order for classify."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         tool_context["summary_conversation"] = "Previous conversation summary"
         tool_context["summary_order"] = "2 tacos al pastor"
@@ -217,7 +217,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_injects_candidates_for_menu_query(self, tool_context):
         """execute_tool() auto-injects candidates for menu-query."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         tool_context["candidates"] = ["tacos", "burritos"]
 
@@ -233,7 +233,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_injects_candidates_for_rag_retrieve(self, tool_context):
         """execute_tool() auto-injects candidates for rag-retrieve."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         tool_context["candidates"] = ["tacos", "burritos", "enchiladas"]
 
@@ -251,7 +251,7 @@ class TestExecuteTool:
 
     async def test_execute_tool_injects_summary_for_order_flow(self, tool_context):
         """execute_tool() auto-injects summary_conversation for order-flow."""
-        from src.core.agent.skill_tools import SkillToolAdapter
+        from src.engine.skill_tools import SkillToolAdapter
 
         tool_context["summary_conversation"] = "El cliente quiere dos tacos"
         tool_context["summary_order"] = "2x tacos al pastor"

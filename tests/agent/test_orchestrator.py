@@ -65,20 +65,20 @@ class TestSkillOrchestrator:
     """Verify SkillOrchestrator lifecycle and decision engine."""
 
     def test_orchestrator_importable(self):
-        from src.core.agent.orchestrator import SkillOrchestrator
+        from src.engine.orchestrator import SkillOrchestrator
         assert SkillOrchestrator is not None
 
     def test_orchestrator_initialized_with_registry(self):
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         orch = SkillOrchestrator(registry)
         assert orch.registry is registry
 
     def test_decide_skills_returns_relevant_skills(self, skill_dir_with_skills: Path):
         """decide_skills('menu_query') returns menu-query and classify."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir_with_skills))
         orch = SkillOrchestrator(registry)
@@ -88,8 +88,8 @@ class TestSkillOrchestrator:
 
     def test_decide_skills_returns_classify_for_greeting(self, skill_dir_with_skills: Path):
         """decide_skills('greeting') returns classify (only match)."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir_with_skills))
         orch = SkillOrchestrator(registry)
@@ -99,8 +99,8 @@ class TestSkillOrchestrator:
 
     def test_decide_skills_returns_empty_for_unknown_intent(self, skill_dir_with_skills: Path):
         """decide_skills for unknown intent returns empty list."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir_with_skills))
         orch = SkillOrchestrator(registry)
@@ -109,10 +109,10 @@ class TestSkillOrchestrator:
 
     def test_load_skill_loads_and_calls_load(self, skill_dir_with_skills: Path):
         """load_skill() instantiates the skill class and calls load()."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         # Register a mock skill module
         registry = SkillRegistry()
@@ -147,10 +147,10 @@ class TestSkillOrchestrator:
 
     def test_unload_skill_calls_unload(self, skill_dir_with_skills: Path):
         """unload_skill() calls unload() on the loaded skill."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         registry = SkillRegistry()
         registry.register_inline(
@@ -176,8 +176,8 @@ class TestSkillOrchestrator:
 
     def test_load_skill_raises_for_unknown(self, skill_dir_with_skills: Path):
         """load_skill for unregistered skill raises KeyError."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir_with_skills))
         orch = SkillOrchestrator(registry)
@@ -186,10 +186,10 @@ class TestSkillOrchestrator:
 
     def test_is_loaded_checks_loaded_state(self, skill_dir_with_skills: Path):
         """is_loaded() reflects whether a skill is currently loaded."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         registry = SkillRegistry()
         registry.register_inline(
@@ -216,8 +216,8 @@ class TestSkillOrchestrator:
 
     def test_decide_skills_deduplicates(self, skill_dir_with_skills: Path):
         """decide_skills() returns unique skill names (no duplicates)."""
-        from src.core.agent.orchestrator import SkillOrchestrator
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.orchestrator import SkillOrchestrator
+        from src.engine.skill_registry import SkillRegistry
         registry = SkillRegistry()
         registry.discover(str(skill_dir_with_skills))
         orch = SkillOrchestrator(registry)

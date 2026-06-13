@@ -10,8 +10,8 @@ When disabled, gates are no-ops that always return True.
 """
 from typing import Any, Optional
 
-from src.core.agent.exceptions import ValidationGateError
-from src.core.agent.stage_result import StageResult
+from src.engine.exceptions import ValidationGateError
+from src.engine.stage_result import StageResult
 
 
 class ValidationGates:

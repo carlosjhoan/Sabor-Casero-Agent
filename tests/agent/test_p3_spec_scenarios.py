@@ -30,7 +30,7 @@ class TestCrashResumeGolden:
         AND resumes at stage 4 without redoing stages 1-3
         AND final output is identical to full re-execution (golden test).
         """
-        from src.core.agent.checkpoint import CheckpointManager, Checkpoint
+        from src.engine.checkpoint import CheckpointManager, Checkpoint
 
         session_id = "golden-test"
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))
@@ -60,7 +60,7 @@ class TestCrashResumeGolden:
         WHEN resume runs from stage 4,
         THEN it does NOT re-execute stage 1's side effects.
         """
-        from src.core.agent.checkpoint import CheckpointManager, Checkpoint
+        from src.engine.checkpoint import CheckpointManager, Checkpoint
 
         session_id = "skip-test-2"
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))
@@ -101,7 +101,7 @@ class TestCrashResumeGolden:
         WHEN resume is attempted,
         THEN pipeline starts from stage 1 (full re-execution).
         """
-        from src.core.agent.checkpoint import CheckpointManager
+        from src.engine.checkpoint import CheckpointManager
 
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))
         loaded = mgr.load_latest("no-such-session")
@@ -116,7 +116,7 @@ def _run_pipeline(
     resume_from: int = 0,
 ) -> list[dict]:
     """Simulate a multi-stage pipeline returning ordered output dicts."""
-    from src.core.agent.checkpoint import Checkpoint
+    from src.engine.checkpoint import Checkpoint
 
     start = resume_from + 1 if resume_from else 1
     outputs = []
@@ -157,7 +157,7 @@ class TestTraceIdPropagation:
         AND message passes through stages,
         THEN every stage span includes trace_id="abc-123".
         """
-        from src.core.agent.trace_context import (
+        from src.engine.trace_context import (
             new_trace_id, get_trace_id, span, get_event_log,
         )
 
@@ -179,9 +179,9 @@ class TestTraceIdPropagation:
         GIVEN a skill executes with trace context,
         THEN SkillResult.metadata contains the trace_id.
         """
-        from src.core.agent.trace_context import new_trace_id
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.trace_context import new_trace_id
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class PropagatingSkill(BaseSkill):
             name = "propagate"
@@ -204,8 +204,8 @@ class TestTraceIdPropagation:
         GIVEN a checkpoint is saved with trace context,
         THEN the checkpoint file contains the trace_id.
         """
-        from src.core.agent.checkpoint import CheckpointManager, Checkpoint
-        from src.core.agent.trace_context import new_trace_id
+        from src.engine.checkpoint import CheckpointManager, Checkpoint
+        from src.engine.trace_context import new_trace_id
 
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))
         trace_id = new_trace_id()
@@ -230,7 +230,7 @@ class TestTraceIdPropagation:
         WHEN a subtask runs in a separate coroutine with the same context,
         THEN the trace_id is preserved.
         """
-        from src.core.agent.trace_context import new_trace_id, get_trace_id, span, get_event_log
+        from src.engine.trace_context import new_trace_id, get_trace_id, span, get_event_log
 
         trace_id = new_trace_id()
 
@@ -265,7 +265,7 @@ class TestLatencyAccuracy:
         WHEN stats() is called,
         THEN mean, p50, p95, p99 match expected values.
         """
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         for v in range(1, 101):
@@ -284,7 +284,7 @@ class TestLatencyAccuracy:
         WHEN durations are recorded,
         THEN the tracker records non-zero durations and correct order.
         """
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=10)
         # Simulate 5 skills with increasing latency
@@ -306,10 +306,10 @@ class TestLatencyAccuracy:
         GIVEN skills run via BaseSkill.execute() with the tracker,
         THEN durations are recorded and stats accurate.
         """
-        from src.core.agent.latency_tracker import LatencyTracker
-        from src.core.agent.trace_context import new_trace_id
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.latency_tracker import LatencyTracker
+        from src.engine.trace_context import new_trace_id
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class MeasuredSkill(BaseSkill):
             name = "measured"
@@ -347,7 +347,7 @@ class TestLatencyAccuracy:
         WHEN snapshot() is called,
         THEN it includes stats for all skills.
         """
-        from src.core.agent.latency_tracker import LatencyTracker
+        from src.engine.latency_tracker import LatencyTracker
 
         tracker = LatencyTracker(window=100)
         for skill in ("classify", "rag", "response"):

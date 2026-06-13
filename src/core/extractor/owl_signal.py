@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
-from src.core.agent.exceptions import OntologyGateError
+from src.engine.exceptions import OntologyGateError
 from src.infrastructure.owl_client import OwlClient, NS
 
 logger = logging.getLogger(__name__)

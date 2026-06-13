@@ -10,54 +10,54 @@ class TestPipelineErrorHierarchy:
 
     def test_pipeline_error_is_base(self):
         """PipelineError is a direct subclass of Exception."""
-        from src.core.agent.exceptions import PipelineError
+        from src.engine.exceptions import PipelineError
         assert issubclass(PipelineError, Exception)
 
     def test_stage_execution_error_inheritance(self):
         """StageExecutionError inherits from PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, StageExecutionError,
         )
         assert issubclass(StageExecutionError, PipelineError)
 
     def test_validation_gate_error_inheritance(self):
         """ValidationGateError inherits from PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, ValidationGateError,
         )
         assert issubclass(ValidationGateError, PipelineError)
 
     def test_checkpoint_error_inheritance(self):
         """CheckpointError inherits from PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, CheckpointError,
         )
         assert issubclass(CheckpointError, PipelineError)
 
     def test_memory_hub_error_inheritance(self):
         """MemoryHubError inherits from PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, MemoryHubError,
         )
         assert issubclass(MemoryHubError, PipelineError)
 
     def test_cache_error_inheritance(self):
         """CacheError inherits from PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, CacheError,
         )
         assert issubclass(CacheError, PipelineError)
 
     def test_ontology_gate_error_inheritance(self):
         """OntologyGateError inherits from PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, OntologyGateError,
         )
         assert issubclass(OntologyGateError, PipelineError)
 
     def test_stage_execution_error_carries_stage_name(self):
         """StageExecutionError stores stage_name and original_exception."""
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.exceptions import StageExecutionError
         cause = ValueError("original error")
         err = StageExecutionError(
             "classification failed",
@@ -70,7 +70,7 @@ class TestPipelineErrorHierarchy:
 
     def test_validation_gate_error_carries_violations(self):
         """ValidationGateError stores stage_name and violations list."""
-        from src.core.agent.exceptions import ValidationGateError
+        from src.engine.exceptions import ValidationGateError
         err = ValidationGateError(
             "validation failed",
             stage_name="rag",
@@ -81,7 +81,7 @@ class TestPipelineErrorHierarchy:
 
     def test_checkpoint_error_carries_operation_and_path(self):
         """CheckpointError stores operation and path."""
-        from src.core.agent.exceptions import CheckpointError
+        from src.engine.exceptions import CheckpointError
         err = CheckpointError(
             "save failed",
             operation="save",
@@ -92,7 +92,7 @@ class TestPipelineErrorHierarchy:
 
     def test_memory_hub_error_carries_type_and_operation(self):
         """MemoryHubError stores memory_type and operation."""
-        from src.core.agent.exceptions import MemoryHubError
+        from src.engine.exceptions import MemoryHubError
         err = MemoryHubError(
             "store failed",
             memory_type="semantic",
@@ -103,7 +103,7 @@ class TestPipelineErrorHierarchy:
 
     def test_cache_error_carries_key_and_operation(self):
         """CacheError stores cache_key and operation."""
-        from src.core.agent.exceptions import CacheError
+        from src.engine.exceptions import CacheError
         err = CacheError(
             "lookup failed",
             cache_key="menu_query:123",
@@ -114,7 +114,7 @@ class TestPipelineErrorHierarchy:
 
     def test_errors_have_timestamp(self):
         """All PipelineError subtypes carry a timestamp."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             StageExecutionError, ValidationGateError, CheckpointError,
             MemoryHubError, CacheError, OntologyGateError,
         )
@@ -135,7 +135,7 @@ class TestPipelineErrorHierarchy:
 
     def test_exception_is_raiseable(self):
         """All exceptions can be raised and caught as PipelineError."""
-        from src.core.agent.exceptions import (
+        from src.engine.exceptions import (
             PipelineError, StageExecutionError, ValidationGateError,
         )
         with pytest.raises(PipelineError):

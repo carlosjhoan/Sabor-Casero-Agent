@@ -24,8 +24,8 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Any, Optional
 
-from src.core.agent.skill_registry import SkillRegistry
-from src.core.agent.skill_tools import SkillToolAdapter
+from src.engine.skill_registry import SkillRegistry
+from src.engine.skill_tools import SkillToolAdapter
 from src.utils.pipeline_streamer import PipelineStreamer
 
 logger = logging.getLogger("Planner")

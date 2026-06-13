@@ -3,7 +3,7 @@ TraceContext — contextvars-based trace_id, span decorator, and structured even
 
 Usage as context manager::
 
-    from src.core.agent.trace_context import span, new_trace_id, get_event_log
+    from src.engine.trace_context import span, new_trace_id, get_event_log
 
     new_trace_id()
     with span("classify"):
@@ -13,7 +13,7 @@ Usage as context manager::
 
 Usage as decorator::
 
-    from src.core.agent.trace_context import span_decorator
+    from src.engine.trace_context import span_decorator
 
     @span_decorator("my-skill")
     async def my_func(x):

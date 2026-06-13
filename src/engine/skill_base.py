@@ -18,7 +18,7 @@ from abc import ABC, abstractmethod
 from typing import Any, TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from src.core.agent.stage_result import SkillResult
+    from src.engine.stage_result import SkillResult
 
 
 class BaseSkill(ABC):
@@ -95,7 +95,7 @@ class BaseSkill(ABC):
             A ``SkillResult`` with trace metadata populated.
         """
         import time
-        from src.core.agent.trace_context import get_trace_id as _get_tid
+        from src.engine.trace_context import get_trace_id as _get_tid
 
         tid = trace_id or _get_tid()
         start = time.perf_counter()
@@ -103,8 +103,8 @@ class BaseSkill(ABC):
             result = await self.run(input_data)
         except BaseException as exc:
             # Wrap unexpected exceptions into a failed SkillResult
-            from src.core.agent.stage_result import SkillResult as _SR
-            from src.core.agent.exceptions import StageExecutionError
+            from src.engine.stage_result import SkillResult as _SR
+            from src.engine.exceptions import StageExecutionError
             elapsed = (time.perf_counter() - start) * 1000
             return _SR.fail(
                 skill_name=self.name,

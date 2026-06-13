@@ -13,7 +13,7 @@ class TestSkillResultMetadata:
 
     def test_ok_accepts_metadata(self):
         """SkillResult.ok() accepts metadata dict."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         result = SkillResult.ok(
             value="hello",
@@ -26,8 +26,8 @@ class TestSkillResultMetadata:
 
     def test_fail_accepts_metadata(self):
         """SkillResult.fail() accepts metadata dict."""
-        from src.core.agent.stage_result import SkillResult
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.stage_result import SkillResult
+        from src.engine.exceptions import StageExecutionError
 
         err = StageExecutionError("failed", stage_name="test")
         result = SkillResult.fail(
@@ -40,7 +40,7 @@ class TestSkillResultMetadata:
 
     def test_with_trace_sets_trace_id(self):
         """with_trace() adds trace_id to metadata."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         result = SkillResult.ok(value="ok", skill_name="test")
         result = result.with_trace(trace_id="trace-999")
@@ -48,7 +48,7 @@ class TestSkillResultMetadata:
 
     def test_with_trace_sets_duration_ms(self):
         """with_trace() adds duration_ms to metadata."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         result = SkillResult.ok(value="ok", skill_name="test")
         result = result.with_trace(trace_id="trace-x", duration_ms=123.456)
@@ -56,7 +56,7 @@ class TestSkillResultMetadata:
 
     def test_with_trace_duration_defaults_to_zero(self):
         """with_trace() defaults duration_ms to 0 if not provided."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         result = SkillResult.ok(value="ok", skill_name="test")
         result = result.with_trace(trace_id="trace-y")
@@ -64,7 +64,7 @@ class TestSkillResultMetadata:
 
     def test_with_checkpoint_sets_checkpoint_id(self):
         """with_checkpoint() adds checkpoint_id to metadata."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         result = SkillResult.ok(value="ok", skill_name="test")
         result = result.with_checkpoint(checkpoint_id="cp-42")
@@ -72,7 +72,7 @@ class TestSkillResultMetadata:
 
     def test_with_checkpoint_and_trace_combined(self):
         """Both with_trace and with_checkpoint can be chained."""
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.stage_result import SkillResult
 
         result = SkillResult.ok(value="ok", skill_name="test")
         result = result.with_trace(trace_id="t1", duration_ms=50.0).with_checkpoint(checkpoint_id="cp-7")
@@ -82,8 +82,8 @@ class TestSkillResultMetadata:
 
     def test_metadata_in_pipeline_error(self):
         """Failed SkillResult carries metadata with error info."""
-        from src.core.agent.stage_result import SkillResult
-        from src.core.agent.exceptions import StageExecutionError
+        from src.engine.stage_result import SkillResult
+        from src.engine.exceptions import StageExecutionError
 
         err = StageExecutionError("fail", stage_name="my-stage")
         result = SkillResult.fail(
@@ -97,9 +97,9 @@ class TestSkillResultMetadata:
 
     def test_base_skill_execute_sets_duration(self):
         """BaseSkill.execute() populates duration_ms in metadata."""
-        from src.core.agent.trace_context import new_trace_id
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.trace_context import new_trace_id
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class TestSkill(BaseSkill):
             name = "test-skill"
@@ -125,9 +125,9 @@ class TestSkillResultMetadata:
 
     def test_base_skill_execute_successful_result_value(self):
         """BaseSkill.execute() returns the correct value."""
-        from src.core.agent.trace_context import new_trace_id
-        from src.core.agent.skill_base import BaseSkill
-        from src.core.agent.stage_result import SkillResult
+        from src.engine.trace_context import new_trace_id
+        from src.engine.skill_base import BaseSkill
+        from src.engine.stage_result import SkillResult
 
         class TestSkill(BaseSkill):
             name = "math"

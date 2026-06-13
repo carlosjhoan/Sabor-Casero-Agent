@@ -16,8 +16,8 @@ class TestSP101NullFieldDetection:
 
     def test_validation_gate_rejects_none_classification(self):
         """ValidationGates.validate_classification rejects None with NULL_FIELDS."""
-        from src.core.agent.exceptions import ValidationGateError
-        from src.core.agent.validation_gates import ValidationGates
+        from src.engine.exceptions import ValidationGateError
+        from src.engine.validation_gates import ValidationGates
 
         with pytest.raises(ValidationGateError) as exc:
             ValidationGates.validate_classification(None)
@@ -26,8 +26,8 @@ class TestSP101NullFieldDetection:
 
     def test_validation_gate_rejects_dict_with_all_nulls(self):
         """ValidationGate rejects dict with all null fields."""
-        from src.core.agent.exceptions import ValidationGateError
-        from src.core.agent.validation_gates import ValidationGates
+        from src.engine.exceptions import ValidationGateError
+        from src.engine.validation_gates import ValidationGates
 
         null_classification = {
             "topic_details": None,
@@ -40,7 +40,7 @@ class TestSP101NullFieldDetection:
 
     def test_validation_gate_accepts_valid_dict(self):
         """ValidationGate accepts valid classification dict."""
-        from src.core.agent.validation_gates import ValidationGates
+        from src.engine.validation_gates import ValidationGates
 
         valid = {
             "topic_details": [{"segment": "test"}],
@@ -52,7 +52,7 @@ class TestSP101NullFieldDetection:
 
     def test_validation_gate_passes_when_disabled(self):
         """When pipeline_validation_enabled=False, gate is a no-op."""
-        from src.core.agent.validation_gates import ValidationGates
+        from src.engine.validation_gates import ValidationGates
 
         result = ValidationGates.validate_classification(None, enabled=False)
         assert result is True
@@ -62,8 +62,8 @@ class TestSP101NullFieldDetection:
 
     def test_validation_gate_rejects_empty_response(self):
         """ValidationGate rejects empty string response."""
-        from src.core.agent.exceptions import ValidationGateError
-        from src.core.agent.validation_gates import ValidationGates
+        from src.engine.exceptions import ValidationGateError
+        from src.engine.validation_gates import ValidationGates
 
         with pytest.raises(ValidationGateError) as exc:
             ValidationGates.validate_response("")

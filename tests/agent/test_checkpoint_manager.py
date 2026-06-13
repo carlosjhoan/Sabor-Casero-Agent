@@ -20,7 +20,7 @@ class TestCheckpoint:
 
     def test_checkpoint_fields(self):
         """Checkpoint has all required fields and defaults."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         now = datetime.now()
         cp = Checkpoint(
@@ -42,7 +42,7 @@ class TestCheckpoint:
 
     def test_checkpoint_default_validated(self):
         """Checkpoint defaults validated=True."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         cp = Checkpoint(
             stage_name="rag",
@@ -61,7 +61,7 @@ class TestCheckpointManager:
     @pytest.fixture
     def manager(self, tmp_path):
         """CheckpointManager using a temp directory."""
-        from src.core.agent.checkpoint import CheckpointManager
+        from src.engine.checkpoint import CheckpointManager
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))
         return mgr
 
@@ -72,7 +72,7 @@ class TestCheckpointManager:
 
     def test_save_checkpoint(self, manager):
         """save() persists a checkpoint to disk."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         cp = Checkpoint(
             stage_name="classify",
@@ -93,7 +93,7 @@ class TestCheckpointManager:
 
     def test_load_latest_returns_last_checkpoint(self, manager):
         """load_latest() returns the most recent checkpoint for a session."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         cp1 = Checkpoint(
             stage_name="classify", stage_index=1, trace_id="trace-1",
@@ -120,7 +120,7 @@ class TestCheckpointManager:
 
     def test_clear_removes_checkpoint_file(self, manager):
         """clear() removes the checkpoint file for a session."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         cp = Checkpoint(
             stage_name="classify", stage_index=1, trace_id="trace-3",
@@ -138,7 +138,7 @@ class TestCheckpointManager:
 
     def test_load_latest_returns_checkpoint_dataclass(self, manager):
         """load_latest() deserializes back to a Checkpoint dataclass."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         now = datetime.now()
         cp = Checkpoint(
@@ -157,7 +157,7 @@ class TestCheckpointManager:
 
     def test_save_overwrites_previous_checkpoint(self, manager):
         """save() with same stage_index overwrites the previous entry."""
-        from src.core.agent.checkpoint import Checkpoint
+        from src.engine.checkpoint import Checkpoint
 
         cp1 = Checkpoint(
             stage_name="classify", stage_index=1, trace_id="t1",
@@ -185,8 +185,8 @@ class TestCheckpointManagerErrors:
 
     def test_save_to_bad_path_raises_checkpoint_error(self, tmp_path):
         """save() when write fails raises CheckpointError."""
-        from src.core.agent.checkpoint import CheckpointManager, Checkpoint
-        from src.core.agent.exceptions import CheckpointError
+        from src.engine.checkpoint import CheckpointManager, Checkpoint
+        from src.engine.exceptions import CheckpointError
         from datetime import datetime
         from unittest.mock import patch
 
@@ -202,7 +202,7 @@ class TestCheckpointManagerErrors:
 
     def test_load_from_bad_path_returns_none_gracefully(self, tmp_path, monkeypatch):
         """load_latest() when read fails returns None (no crash)."""
-        from src.core.agent.checkpoint import CheckpointManager
+        from src.engine.checkpoint import CheckpointManager
 
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))
         # Create a checkpoint file
@@ -228,7 +228,7 @@ class TestCrashResume:
         And the pipeline restarts,
         Then it resumes at stage 4 without redoing stages 1-3.
         """
-        from src.core.agent.checkpoint import CheckpointManager, Checkpoint
+        from src.engine.checkpoint import CheckpointManager, Checkpoint
         from datetime import datetime
 
         mgr = CheckpointManager(checkpoint_dir=str(tmp_path))

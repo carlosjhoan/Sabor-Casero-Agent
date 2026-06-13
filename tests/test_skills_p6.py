@@ -12,9 +12,9 @@ import pytest
 from unittest.mock import MagicMock, AsyncMock, patch
 from typing import Any, Dict
 
-from src.core.agent.stage_result import SkillResult
-from src.core.agent.skill_base import BaseSkill
-from src.core.agent.exceptions import StageExecutionError
+from src.engine.stage_result import SkillResult
+from src.engine.skill_base import BaseSkill
+from src.engine.exceptions import StageExecutionError
 
 
 # =========================================================================
@@ -462,7 +462,7 @@ class TestConcurrentSemaphore:
     @pytest.mark.asyncio
     async def test_semaphore_limits_concurrency(self):
         """Semaphore limits to N concurrent executions."""
-        from src.core.agent.orchestrator import SkillOrchestrator
+        from src.engine.orchestrator import SkillOrchestrator
         # SkillOrchestrator should handle concurrent requests
         # The semaphore is in the assistant, but the orchestrator
         # should be reentrant
@@ -503,7 +503,7 @@ class TestFullE2EWithSkills:
     @pytest.fixture
     def skill_registry(self):
         """Discover all 7 skills from the skills/ directory."""
-        from src.core.agent.skill_registry import SkillRegistry
+        from src.engine.skill_registry import SkillRegistry
         reg = SkillRegistry()
         reg.discover("skills/")
         return reg
@@ -521,7 +521,7 @@ class TestFullE2EWithSkills:
 
     def test_orchestrator_loads_classify_skill(self, skill_registry):
         """Orchestrator can load the classify skill by name."""
-        from src.core.agent.orchestrator import SkillOrchestrator
+        from src.engine.orchestrator import SkillOrchestrator
         orch = SkillOrchestrator(skill_registry)
         skill = orch.load_skill("classify", context={"classifier": MagicMock()})
         assert skill.name == "classify"
@@ -530,7 +530,7 @@ class TestFullE2EWithSkills:
 
     def test_orchestrator_decide_skills_by_intent(self, skill_registry):
         """decide_skills returns correct domain skills for known intents."""
-        from src.core.agent.orchestrator import SkillOrchestrator
+        from src.engine.orchestrator import SkillOrchestrator
         orch = SkillOrchestrator(skill_registry)
 
         # menu_query intent → menu-query + rag-retrieve (domain skills)
@@ -541,7 +541,7 @@ class TestFullE2EWithSkills:
 
     def test_orchestrator_loads_all_7_skills(self, skill_registry):
         """All 7 skills can be loaded and provide correct names."""
-        from src.core.agent.orchestrator import SkillOrchestrator
+        from src.engine.orchestrator import SkillOrchestrator
         orch = SkillOrchestrator(skill_registry)
 
         skill_names = [
