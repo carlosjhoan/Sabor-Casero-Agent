@@ -1,0 +1,205 @@
+<div align="center">
+
+# Sabor Casero AI
+
+**Multi-stage LLM pipeline for restaurant order management**
+
+Intent classification, RAG retrieval, order orchestration, and response generation — with hybrid provider routing across six LLM backends.
+
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue?logo=python)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](#)
+[![pytest](https://img.shields.io/badge/tests-pytest_9.0-%230A9EDC?logo=pytest)](#)
+[![LiteLLM](https://img.shields.io/badge/llm-litellm-%23FF6F00)](#)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](#)
+
+<!--
+  TODO: Add a screenshot of the Gradio interface here.
+  Recommended: 800px wide, show a conversation with menu query + order flow.
+  Example:
+  <img src="docs/demo.png" width="700" alt="Sabor Casero AI chat interface"/>
+-->
+
+One API key. One pipeline. Six providers. A restaurant assistant that takes orders, answers menu questions, and remembers every customer.
+
+</div>
+
+---
+
+## Why this exists
+
+Restaurant chatbots fail for the same reason: they hardcode business rules into prompts. Menu items change, prices shift, and every "just tweak the prompt" request piles onto technical debt.
+
+Sabor Casero flips that. **Business semantics live in the data** — the menu, the order model, the ontology. The LLM reads the menu and understands it independently. When the menu changes, you update a markdown file, not a system prompt.
+
+---
+
+## Pipeline
+
+```
+message
+  │
+  ├─ Input Guard ────── quality checks (no LLM)
+  ├─ Session Prep ───── load / create session  
+  ├─ LLM Guard ──────── context-aware validation
+  │
+  ├─ Skill Orchestration (loaded per request)
+  │   ├─ classify ───── hybrid: rules + LLM intent detection
+  │   ├─ menu-query ─── OWL ontology routing
+  │   ├─ rag-retrieve ─ ChromaDB + BM25 multi-signal RRF
+  │   ├─ order-flow ─── add / update / confirm / cancel items
+  │   └─ response-build ─ brand voice + order state + RAG results
+  │
+  ├─ Memory Store ───── entity extraction → semantic memory
+  └─ Summarize ──────── fire-and-forget background task
+```
+
+---
+
+## Features
+
+| Capability | Detail |
+|---|---|
+| **Multi-provider routing** | Each pipeline stage uses a different provider/model via `.env` — classifier on DeepSeek, response on Claude, summarizer on GPT-4o-mini |
+| **Hybrid classification** | Rule-based fast-path + LLM fallback for intent and topic detection |
+| **RAG with OWL semantics** | ChromaDB vector retrieval fused with BM25 keyword scoring and ontology-based menu routing |
+| **Order lifecycle** | `add-item` → `update-item` → `confirm` / `cancel` — partial items allowed, field-level state tracking |
+| **Structured grounding** | Field states (`asked`, `answered`, `confirmed`), cross-turn planner history, entity memory injection |
+| **Memory hub** | Three memory types: semantic (ChromaDB), episodic (session), procedural (preferences) |
+| **Checkpointing** | Per-skill save/restore with crash resume — survive mid-turn failures |
+| **Evaluation** | Fire-and-forget LLM-as-judge scoring after each interaction |
+| **Two interfaces** | Gradio chat UI (port 7860) + CLI mode |
+
+---
+
+## Quick start
+
+```bash
+# Clone and enter
+git clone https://github.com/your-username/sabor-casero-agent.git
+cd sabor-casero-agent
+
+# Install dependencies
+uv sync
+
+# Configure your API key
+cp .env.example .env
+# Edit .env — set at least DEEPSEEK_API_KEY
+
+# Run the interface  
+uv run python src/main.py --mode gradio
+# → http://localhost:7860
+```
+
+> [!NOTE]
+> The first run triggers menu ingestion into the ChromaDB vector store. Subsequent runs load from cache.
+
+---
+
+## Architecture
+
+Clean Architecture with three strict layers. Dependencies point inward: infrastructure → application → domain.
+
+```
+┌─────────────────────────────────────────────────────────┐
+│                     Interface (Gradio / CLI)              │
+├─────────────────────────────────────────────────────────┤
+│                    Skill Orchestration                    │
+│   classify → menu-query → rag-retrieve → order-flow →    │
+│                    response-build                         │
+├─────────────────────────────────────────────────────────┤
+│        Domain              │       Application            │
+│   Order, OrderItem,       │   OrderOrchestrator,         │
+│   Session, FieldStates    │   ActionPlanner, FlowTracker │
+│   Menu (OWL ontology)    │   ResponseBuilder, Evaluator │
+├──────────────────────────┴──────────────────────────────┤
+│                  Infrastructure                           │
+│   LiteLLM Client ──── 6 providers                        │
+│   ChromaDB ─────────── semantic + BM25 retrieval         │
+│   JSON Repositories ── orders, sessions, logs            │
+│   Langfuse ─────────── full LLM trace via @observe()    │
+└──────────────────────────────────────────────────────────┘
+```
+
+### Project structure
+
+```
+src/
+├── main.py                         # Entry point
+├── config/environment.py           # pydantic-settings (.env → config)
+├── core/
+│   ├── assistant.py                # Pipeline orchestrator
+│   ├── classifier/                 # HybridClassifier (rules + LLM)
+│   ├── order/
+│   │   ├── domain/                 # Order, OrderItem, field states
+│   │   ├── application/            # Orchestrator, ActionPlanner, FlowTracker
+│   │   └── infrastructure/         # JSON repositories
+│   ├── response/                   # ResponseBuilder
+│   ├── extractor/                  # Retriever + RAG v2 (multi-signal)
+│   ├── memory/                     # MemoryHub + entity extraction
+│   ├── agent/                      # SkillOrchestrator, Planner, checkpointing
+│   ├── conversation_log/           # Interaction persistence
+│   ├── evaluation/                 # LLM-as-judge
+│   └── knowledge/                  # Registry
+├── infrastructure/                 # LiteLLM client, prompt manager
+├── ui/gradio_app.py                # Gradio 6.x chat
+├── prompts/                        # All prompts (versioned)
+└── tests/                          # pytest (70% coverage floor)
+```
+
+---
+
+## Configuration
+
+Every pipeline stage maps to a `.env` variable. Mix providers freely:
+
+```ini
+# Stage-specific models (LiteLLM format: "provider/model_name")
+LLM_MODEL_CLASSIFIER=deepseek/deepseek-v4-flash
+LLM_MODEL_RESPONSE=anthropic/claude-3-5-sonnet-20241022
+LLM_MODEL_SUMMARIZER=openai/gpt-4o-mini
+
+# Feature flags
+USE_LLM_PLANNER=false
+USE_OWL=true
+EVALUATION_ENABLED=true
+```
+
+See `.env.example` for the complete reference with all supported provider formats and optional services (Langfuse, Pushover, SendGrid, Resend).
+
+---
+
+## Development
+
+```bash
+# Run tests
+uv run pytest
+
+# Run with coverage
+uv run pytest --cov
+
+# Watch mode (auto-reload on file changes)
+uv run python src/main.py --mode gradio --reload
+
+# CLI mode (for debugging without the browser)
+uv run python src/main.py --mode cli
+```
+
+---
+
+## Contributing
+
+PRs welcome. This project follows **strict TDD** — tests must pass before merging.
+
+1. Fork the repo
+2. Branch: `git checkout -b feature/your-feature`
+3. Write the test first, then the implementation
+4. Verify: `uv run pytest && uv run black . && uv run isort .`
+5. Open a PR
+
+Toolchain: `black` (line-length 100), `isort` (black profile), `mypy`, `pytest-cov` (70% minimum).
+
+---
+
+## License
+
+MIT
