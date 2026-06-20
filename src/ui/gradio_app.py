@@ -36,7 +36,7 @@ class GradioAssistantApp:
         
         # 1. Crear sesión si no existe
         if not session_id:
-            session: SessionData = self.assistant.orchestrator.action_planner.session_repository.create_session(customer_id=user_id)
+            session: SessionData = self.assistant.orchestrator.session_repository.create_session(customer_id=user_id)
             session_id = session.session_id
             print_section(head="Nueva sesión creada", msg=session_id)
 

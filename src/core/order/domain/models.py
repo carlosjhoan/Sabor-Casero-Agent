@@ -122,6 +122,16 @@ class OrderItem(BaseModel):
             "subtotal": self.subtotal  # Incluimos el computed_field
         }
 
+class FieldStatus(BaseModel):
+    """Estado completo de un campo del pedido.
+
+    Reemplaza los antiguos field_states + field_notes en un solo objeto.
+    """
+    state: str = "pending"
+    notes: List[str] = Field(default_factory=list)
+    created_at: datetime = Field(default_factory=datetime.now)
+
+
 class Order(BaseModel):
     id: str = Field(default_factory=lambda: f"ORD-{uuid.uuid4().hex[:6].upper()}")
     customer_id: Optional[str] = None
@@ -135,12 +145,6 @@ class Order(BaseModel):
     con_todo: Optional[str] = Field(
         default=None,
         description="None=no preguntado, 'sí'=confirmado con todo el acompañamiento"
-    )
-    
-    # Estados de cada campo (para el checklist)
-    field_states: Dict[str, str] = Field(
-        default_factory=dict,
-        description="Mapa de field_name → estado ('answered', 'pending', etc.)"
     )
     
     # Pago
@@ -211,7 +215,6 @@ class Order(BaseModel):
             "service": self.service.model_dump() if self.service else None,
             "payment_method": self.payment_method,
             "con_todo": self.con_todo,
-            "field_states": self.field_states,
             "subtotal": self.subtotal,
             "total": self.total_amount,
             "created_at": self.created_at.isoformat(),

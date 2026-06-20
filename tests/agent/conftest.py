@@ -83,18 +83,6 @@ def mock_logger():
     return logger
 
 
-@pytest.fixture(autouse=True)
-def _disable_skills_for_legacy_tests(monkeypatch):
-    """Disable skill-based orchestration for legacy pipeline tests.
-
-    These tests mock individual stage components (classifier, response_builder)
-    and expect the hardcoded 9-stage pipeline. The P6 skill-based path uses
-    real skill module loading which is not compatible with these mocks.
-    """
-    from src.config.environment import settings
-    monkeypatch.setattr(settings, "skills_enabled", False)
-
-
 @pytest.fixture
 def assistant(mock_classifier, mock_orchestrator, mock_response_builder, mock_summary_repo, mock_logger):
     """Builds a SaborCaseroAssistant with all mocked components."""
