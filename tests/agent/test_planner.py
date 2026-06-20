@@ -517,25 +517,10 @@ class TestRegression:
         except ImportError as e:
             pytest.skip(f"Classic assistant not importable (missing dep): {e}")
 
-        # ResponseBuilder is a core classic module — should import cleanly
-        from src.core.response.response_builder import ResponseBuilder
-
-        # All imports succeed = coexistence works
+        # All imports succeed = new architecture works
         assert Planner is not None
         assert SkillToolAdapter is not None
         assert SaborCaseroAssistant is not None
-        assert ResponseBuilder is not None
-
-    def test_planner_does_not_affect_skills_enabled_flag(self):
-        """The ``skills_enabled`` setting is unaffected by Planner imports."""
-        from src.config.environment import settings
-
-        # Default should be whatever the env sets — but most importantly
-        # importing Planner doesn't change this flag
-        from src.engine.planner import Planner
-
-        assert hasattr(settings, "skills_enabled")
-
 
 class TestPlannerModule:
     """Planner module import and basic instantiation."""

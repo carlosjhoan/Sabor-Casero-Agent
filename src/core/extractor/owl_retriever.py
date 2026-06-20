@@ -51,38 +51,7 @@ class OwlRetriever(RetrieverInterface):
     def __init__(self, owl_client: OwlClient | None = None):
         self._client = owl_client or OwlClient(settings.owl_ontology_path)
         self._router_mapper = OwlRouterMapper(self._client)
-        self._orchestrator = None
-        self._init_tool_orchestrator()
-
-    def _init_tool_orchestrator(self) -> None:
-        """
-        Inicializa el ToolOrchestrator con menu tools para el router.
-
-        Si falla la carga de OwlClient o la creación del orchestrator,
-        se deja en None y se usa el fallback a menú completo.
-        """
-        from src.core.tools import ToolRegistry, register_menu_tools, ToolOrchestrator
-
-        try:
-            llm = get_llm_client_for_stage("retriever")
-            registry = ToolRegistry()
-            register_menu_tools(registry, self._client)
-            self._orchestrator = ToolOrchestrator(
-                llm_client=llm,
-                registry=registry,
-                max_turns=3,
-                model=get_model_for_stage("retriever", settings),
-                temperature=0.1,
-            )
-            logger.info(
-                "Router con %d menu tools",
-                len(registry),
-            )
-        except Exception as e:
-            logger.warning(
-                "Router: no se pudo inicializar ToolOrchestrator: %s — "
-                "usando fallback a menú completo", e
-            )
+        self._orchestrator = None  # legacy ToolOrchestrator — always None in Agentic Loop
 
     async def retrieve(
         self, group_by_doc: Dict[str, List[Detail]]

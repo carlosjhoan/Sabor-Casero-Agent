@@ -82,7 +82,8 @@ class JsonSessionRepository(SessionRepository):
             "order_id": None,
             "created_at": now,
             "last_activity": now,
-            "metadata": {}
+            "metadata": {},
+            "field_status": {},
         }
         
         data["sessions"][session_id] = session
@@ -258,7 +259,8 @@ class JsonSessionRepository(SessionRepository):
                 order_id=session.get("order_id"),
                 created_at=datetime.fromisoformat(session["created_at"]),
                 last_activity=datetime.fromisoformat(session["last_activity"]),
-                metadata=session.get("metadata", {})
+                metadata=session.get("metadata", {}),
+                field_status=session.get("field_status", {}),
             )
         return None
     

@@ -5,7 +5,7 @@ Converts the ``SkillRegistry`` index into OpenAI-compatible tool definitions
 and provides an async dispatcher that loads a skill, injects orchestration
 context, executes it, and returns a serializable result dict.
 
-Also provides built-in synthetic tools (``respond``, ``get-full-menu``) that
+Also provides built-in synthetic tools (``respond``, ``get-full-menu``, ``business-info``) that
 are not backed by a skill but are available to the Planner.
 
 Usage::
@@ -21,7 +21,26 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 
-# Built-in synthetic tool: full menu (not backed by a skill)
+# Built-in synthetic tool: business info (not backed by a skill)
+_BUSINESS_INFO_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "business-info",
+        "description": (
+            "Returns restaurant information: history, mission, values, delivery "
+            "zones, delivery costs, hours, payment methods, and contact info. "
+            "Use this when the user asks about who we are, our history, "
+            "delivery areas, hours, payment options, contact, or service policies. "
+            "Do NOT use menu-query or rag-retrieve for these questions."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+        },
+    },
+}
+
 _FULL_MENU_TOOL = {
     "type": "function",
     "function": {
@@ -43,7 +62,7 @@ _FULL_MENU_TOOL = {
 }
 
 # --- Synthetic order tools (granular-order-tools) ---
-# These replace the order-flow skill when use_llm_planner=True.
+# These replace the order-flow skill.
 # Each maps to a CRUD method on OrderOrchestrator.
 
 _ADD_ITEM_TOOL = {
@@ -155,6 +174,34 @@ _UPDATE_ORDER_TOOL = {
     },
 }
 
+_SET_FIELD_NOTE_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "set-field-note",
+        "description": "Registra que preguntaste por un campo pero el usuario no respondió. "
+                       "Úsala cuando preguntes por un campo (protein, size, principle, etc.) "
+                       "y el usuario se desvíe a otro tema. La nota queda visible en el checklist "
+                       "para que no preguntes lo mismo dos veces.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "field": {
+                    "type": "string",
+                    "enum": ["protein", "size", "principle", "con_todo", "customer_name",
+                             "service_type", "address", "scheduled_time", "payment_method",
+                             "observations"],
+                    "description": "Nombre del campo que preguntaste y el usuario no respondió"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "Qué hizo el usuario en vez de responder (ej: 'preguntó por precios', 'pidió cambiar de plato')"
+                },
+            },
+            "required": ["field", "note"],
+        },
+    },
+}
+
 # All synthetic order tools in a list for iteration
 _SYNTHETIC_ORDER_TOOLS = [
     _ADD_ITEM_TOOL,
@@ -164,6 +211,7 @@ _SYNTHETIC_ORDER_TOOLS = [
     _CONFIRM_ORDER_TOOL,
     _CANCEL_ORDER_TOOL,
     _UPDATE_ORDER_TOOL,
+    _SET_FIELD_NOTE_TOOL,
 ]
 
 # Mapping from tool name to constant for dispatch
@@ -233,8 +281,12 @@ class SkillToolAdapter:
         # when OwlClient is not available (USE_OWL=false).
         skill_tools.append(_FULL_MENU_TOOL)
 
+        # Always add business-info — reads about_us.txt and service_info.txt
+        # directly from disk, no OWL dependency.
+        skill_tools.append(_BUSINESS_INFO_TOOL)
+
         # Add synthetic order tools (granular-order-tools) — these replace
-        # the order-flow skill when use_llm_planner=True.
+        # the order-flow skill.
         skill_tools.extend(_SYNTHETIC_ORDER_TOOLS)
 
         return skill_tools
@@ -255,8 +307,8 @@ class SkillToolAdapter:
         Loads the skill via ``SkillOrchestrator.load_skill()``, injects relevant
         context fields into the input data, and calls ``skill.execute()``.
 
-        Also handles built-in synthetic tools (``get-full-menu``) that are not
-        backed by a skill module.
+        Also handles built-in synthetic tools (``get-full-menu``, ``business-info``)
+        that are not backed by a skill module.
 
         Args:
             name: Registered skill name (e.g. ``"classify"``, ``"menu-query"``).
@@ -292,6 +344,24 @@ class SkillToolAdapter:
                     logger.debug("Full menu fallback failed: %s", e)
                 return {"success": False, "error": "Full menu not available"}
 
+            # ── Built-in: business-info (not backed by a skill) ──────────
+            if name == "business-info":
+                try:
+                    from src.config.environment import settings
+                    doc_path = getattr(settings, "documents_path", "data/documents") or "data/documents"
+                    import os
+                    result = {}
+                    for fname in ("about_us.txt", "service_info.txt"):
+                        fpath = os.path.join(doc_path, fname)
+                        if os.path.exists(fpath):
+                            with open(fpath, "r", encoding="utf-8") as f:
+                                result[fname.replace(".txt", "")] = f.read()
+                    if result:
+                        return {"success": True, "result": result}
+                except Exception as e:
+                    logger.debug("Business info fallback failed: %s", e)
+                return {"success": False, "error": "Business information not available"}
+
             # ── Synthetic order tools ──────────────────────────────
             if name in _SYNTHETIC_ORDER_TOOL_MAP:
                 order_orchestrator = context.get("order_orchestrator")
@@ -317,6 +387,10 @@ class SkillToolAdapter:
                     result = await order_orchestrator.cancel_order(session_id)
                 elif name == "update-order":
                     result = await order_orchestrator.update_order(session_id, args)
+                elif name == "set-field-note":
+                    result = await order_orchestrator.set_field_note(
+                        session_id, args.get("field", ""), args.get("note", "")
+                    )
                 else:
                     return {"success": False, "error": f"Unknown synthetic order tool: {name}"}
 
@@ -398,6 +472,8 @@ SkillToolAdapter._GET_ORDER_TOOL = _GET_ORDER_TOOL
 SkillToolAdapter._CONFIRM_ORDER_TOOL = _CONFIRM_ORDER_TOOL
 SkillToolAdapter._CANCEL_ORDER_TOOL = _CANCEL_ORDER_TOOL
 SkillToolAdapter._UPDATE_ORDER_TOOL = _UPDATE_ORDER_TOOL
+SkillToolAdapter._SET_FIELD_NOTE_TOOL = _SET_FIELD_NOTE_TOOL
+SkillToolAdapter._BUSINESS_INFO_TOOL = _BUSINESS_INFO_TOOL
 SkillToolAdapter._SYNTHETIC_ORDER_TOOLS = _SYNTHETIC_ORDER_TOOLS
 SkillToolAdapter._SYNTHETIC_ORDER_TOOL_MAP = _SYNTHETIC_ORDER_TOOL_MAP
 
