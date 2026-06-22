@@ -1,4 +1,7 @@
 
+# ── Deprecated (moved here for reference, not part of the repo) ─
+_deprecated/
+
 # ── ChromaDB ──────────────────────────────────────────────────
 data/vector_db/
 chroma_db_storage/
