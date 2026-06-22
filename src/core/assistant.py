@@ -111,6 +111,14 @@ class SaborCaseroAssistant:
         # Inject MemoryHub into summarizer for entity extraction
         self.summarizer.set_memory_hub(self._memory_hub)
 
+        # ── Summary Index (document routing for doc-query) ─────────────
+        try:
+            from src.core.knowledge.summary_index import SummaryIndex
+            self._summary_index = SummaryIndex()
+        except Exception as exc:
+            logger.warning("SummaryIndex init failed (non-critical): %s", exc)
+            self._summary_index = None
+
         # ── Evaluation (observer mode, fire-and-forget) ────────────────
         self.evaluator = Evaluator(llm_client=self.llm_client)
 
@@ -283,6 +291,7 @@ class SaborCaseroAssistant:
                     "memory_hub": self._memory_hub,
                     "summarizer": self.summarizer,
                     "checkpoint_manager": self._checkpoint_manager,
+                    "summary_index": self._summary_index,
                 },
             )
             response_text = await planner.run(

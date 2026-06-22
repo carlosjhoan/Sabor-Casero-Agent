@@ -212,6 +212,40 @@ class HybridRetriever(RetrieverInterface):
 
         return scores
 
+    def query_document(self, query: str, doc_name: Optional[str] = None) -> str:
+        """Public API: busca chunks relevantes en un documento específico.
+
+        Args:
+            query: Texto de búsqueda del usuario.
+            doc_name: Nombre del documento (ej: "waiter_guide.txt").
+                      Si es None, busca en TODOS los documentos.
+
+        Returns:
+            Chunks más relevantes concatenados, o cadena vacía si no hay.
+        """
+        if doc_name:
+            return self._get_context(query, doc_name)
+
+        # Sin doc_name: busca en todos los documentos
+        try:
+            query_vector = self.embedder.encode(query).tolist()
+            results = self.collection.query(
+                query_embeddings=[query_vector],
+                n_results=10,
+            )
+            candidate_chunks = results['documents'][0] if results['documents'] else []
+            if not candidate_chunks:
+                return ""
+
+            pairs = [[query, chunk] for chunk in candidate_chunks]
+            scores = self.reranker.predict(pairs)
+            scored = sorted(zip(scores, candidate_chunks), key=lambda x: x[0], reverse=True)
+            top_3 = [chunk for _, chunk in scored[:3]]
+            return "\n---\n".join(top_3)
+        except Exception as e:
+            logger.error("query_document (all docs) failed: %s", e)
+            return ""
+
     def ingest_all_documents(self, folder_save_docs: str):
         """Ingest multiple documents given their names and a loading function"""
         print("\n", 30*" - = - ")

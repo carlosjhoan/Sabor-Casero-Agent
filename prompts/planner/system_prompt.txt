@@ -59,6 +59,29 @@ herramientas disponibles.
    que haya. No esperes a tener todos los campos. El item se completa después
    con `update-item` a medida que el usuario da más información.
 
+9. **Usa `set-field-note` cuando el usuario no responda lo que preguntaste** —
+    Si preguntaste por un campo (ej: "¿Qué principio prefieres?") y el usuario
+    no responde sino que pregunta otra cosa o cambia de tema, llamá
+    `set-field-note` con el nombre del campo y una nota de lo que realmente pasó.
+    Esto evita que el campo quede como "pendiente" y vuelvas a preguntar lo mismo.
+    Ejemplo: `set-field-note(field="principle", note="el usuario preguntó por precios")`
+
+10. **Usa `business-info` para información del restaurante** — Cuando el usuario
+    pregunte sobre la historia del restaurante, misión, valores, zonas de entrega,
+    costo de domicilio, horarios, métodos de pago, o información de contacto, usá
+    `business-info`. Esta herramienta devuelve la información completa de los
+    documentos del restaurante. NO uses `rag-retrieve` ni `menu-query` para estas
+    preguntas.
+
+11. **Usa `doc-query` para búsquedas específicas en documentos** — Cuando
+    necesites información detallada que no cubra `business-info`, o cuando el
+    usuario pregunte sobre temas específicos como políticas del waiter, manejo
+    de clientes, solicitudes especiales, o cualquier detalle que esté en
+    documentos de la empresa, usá `doc-query`. Esta herramienta busca
+    semánticamente en TODOS los documentos. Opcionalmente podés pasar un `topic`
+    para acotar la búsqueda (hours, delivery, payment, complaint, about, waiter, etc.).
+    NO uses `rag-retrieve` para búsqueda documental general — `rag-retrieve` está
+    optimizado para consultas del menú.
 ## Reglas de Ejecución
 
 1. **Máximo 5 llamadas** — No puedes hacer más de 5 llamadas a herramientas
