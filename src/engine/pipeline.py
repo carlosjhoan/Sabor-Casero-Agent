@@ -5,7 +5,7 @@ Each stage is a method on ``Pipeline``, a stateless container that takes
 its dependencies explicitly in ``__init__``. Stages return ``StageResult``
 and are designed to be individually testable.
 """
-from typing import Dict, Optional
+from typing import Optional
 import json
 import time
 import logging
@@ -22,7 +22,6 @@ from src.core.classifier.input_guard import (
 from src.core.classifier.hybrid import HybridClassifier
 from src.core.order.domain.session_repository_interface import SessionData
 from src.core.order.domain.models import Order
-from src.core.order.application.order_flow_tracker import OrderFlowTracker
 from src.core.conversation_log.application.conversation_logger import ConversationLogger
 from src.core.memory.infrastructure.json_summary_repository import JsonSummaryRepository
 from src.core.order.application.orchestrator import OrderOrchestrator
@@ -47,14 +46,12 @@ class Pipeline:
         conversation_logger: ConversationLogger,
         llm_client: LLMClient,
         summary_repo: JsonSummaryRepository,
-        tracker_cache: Dict[str, OrderFlowTracker],
     ):
         self.classifier = classifier
         self.orchestrator = orchestrator
         self.logger = conversation_logger
         self.llm_client = llm_client
         self.summary_repo = summary_repo
-        self._tracker_cache = tracker_cache
 
     # ------------------------------------------------------------------
     # Stage 0: Input Guard
@@ -104,7 +101,7 @@ class Pipeline:
         stage_start = time.time()
         try:
             if self.orchestrator:
-                session_repo = self.orchestrator.action_planner.session_repository
+                session_repo = self.orchestrator.session_repository
 
                 session = session_repo.get_session(session_id=session_id)
                 if session is None:
@@ -133,7 +130,7 @@ class Pipeline:
             )
 
             if order_id and self.orchestrator:
-                order = self.orchestrator.action_planner.order_repository.get_order_by_id(
+                order = self.orchestrator.order_repository.get_order_by_id(
                     order_id=order_id
                 )
                 summary_order = order.to_summary()
@@ -173,7 +170,6 @@ class Pipeline:
         message: str,
         summary_conversation: str,
         summary_order: str,
-        tracker: Optional[OrderFlowTracker] = None,
     ) -> StageResult[str]:
         """
         NON-CRITICAL: LLM-based context-aware validation.
@@ -190,10 +186,6 @@ class Pipeline:
                 context_parts.append(f"Resumen de la conversación: {summary_conversation}")
             if summary_order and summary_order != "El cliente no ha realizado pedido":
                 context_parts.append(f"Estado del pedido: {summary_order}")
-            if tracker and tracker.last_asked:
-                context_parts.append(
-                    f"Último campo solicitado al cliente: {tracker.last_asked}"
-                )
             if (
                 summary_conversation
                 and "no ha realizado pedido" in summary_conversation.lower()

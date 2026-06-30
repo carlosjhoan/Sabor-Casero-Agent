@@ -23,8 +23,6 @@ class Settings(BaseSettings):
     # LLM Models by stage (LiteLLM format: "provider/model_name")
     llm_model_classifier: str = Field(default="deepseek/deepseek-v4-flash", alias="LLM_MODEL_CLASSIFIER")
     llm_model_retriever: str = Field(default="deepseek/deepseek-v4-flash", alias="LLM_MODEL_RETRIEVER")
-    llm_model_thought_generator: str = Field(default="deepseek/deepseek-v4-flash", alias="LLM_MODEL_THOUGHT_GENERATOR")
-    llm_model_action_planner: str = Field(default="deepseek/deepseek-v4-flash", alias="LLM_MODEL_ACTION_PLANNER")
     llm_model_summarizer: str = Field(default="deepseek/deepseek-v4-flash", alias="LLM_MODEL_SUMMARIZER")
     llm_model_response: str = Field(default="deepseek/deepseek-v4-flash", alias="LLM_MODEL_RESPONSE")
 
@@ -38,9 +36,6 @@ class Settings(BaseSettings):
     classifier_prompt_path:str = "prompts/classifier_intent/classifier_prompt_v4.0.txt"
     response_generation_prompt_path: str = "prompts/response/response_generator_prompt_v3.0.txt"
     reconcilier_prompt_path: str = "prompts/reconcilier_intent/reconcilier_prompt_v5.0.txt"
-    # reconcilier_bypass_prompt_path: str = "prompts/reconcilier_intent/reconcilier_bypass_prompt_v1.0.txt"
-    thought_generator_prompt_path: str = "prompts/thought_generator/thought_generator_prompt_v3.0.txt"
-    action_planner_prompt_path: str = "prompts/action_planner/action_planner_prompt_v1.1.txt"
     sessions_path: str = "data/persistence/sessions.json"
     orders_path: str = "data/orders/"
     conversation_logs_path: str = "data/conversation_logs/"
@@ -62,7 +57,6 @@ class Settings(BaseSettings):
 
     # Feature flags
     use_order_flow_tracker: bool = True
-    use_llm_planner: bool = False
     use_owl: bool = Field(default=True, alias="USE_OWL")
 
     # Evaluation
@@ -76,8 +70,6 @@ class Settings(BaseSettings):
             "classifier": self.classifier_prompt_path,
             "response": self.response_generation_prompt_path,
             "reconcilier": self.reconcilier_prompt_path,
-            "thought-generator": self.thought_generator_prompt_path,
-            "action-planner": self.action_planner_prompt_path,
             "summary": self.summary_prompt_path,
             "router": self.router_prompt_path,
             "judge": self.judge_prompt_path,
@@ -101,9 +93,6 @@ class Settings(BaseSettings):
 
     # P5 — RAG v2 (multi-signal RRF pipeline with OWL, BM25, cross-encoder)
     rag_v2_enabled: bool = True
-
-    # P6 — Skill orchestration (SkillOrchestrator loop replacing hardcoded pipeline)
-    skills_enabled: bool = True
 
     # Models & Logic
     retriever_type: str = Field(default="vector_db", alias="RETRIEVER_WAY")

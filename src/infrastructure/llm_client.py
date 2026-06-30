@@ -28,8 +28,6 @@ def get_model_for_stage(stage: str, settings) -> str:
     stage_model_map = {
         "classifier": settings.llm_model_classifier,
         "retriever": settings.llm_model_retriever,
-        "thought_generator": settings.llm_model_thought_generator,
-        "action_planner": settings.llm_model_action_planner,
         "summarizer": settings.llm_model_summarizer,
         "response": settings.llm_model_response,
     }

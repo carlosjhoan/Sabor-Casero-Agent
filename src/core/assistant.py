@@ -10,14 +10,11 @@ import logging
 
 from .classifier.hybrid import HybridClassifier
 from .classifier.input_guard import FALLBACK_ERROR
-from .response.response_builder import ResponseBuilder
 from ..infrastructure.llm_client import LLMClient, get_llm_client_for_stage
-from .classifier.intent import QueryType
 from .extractor.retriever_interface import RetrieverInterface
 from src.config.environment import settings
 
 from src.core.order.application.orchestrator import OrderOrchestrator
-from src.core.order.application.order_flow_tracker import OrderFlowTracker
 
 from src.core.conversation_log.application.conversation_logger import ConversationLogger
 from src.core.memory.infrastructure.json_summary_repository import JsonSummaryRepository
@@ -82,19 +79,12 @@ class SaborCaseroAssistant:
             from src.core.extractor.llm_extractor import InformationLlmExtractor
             extractor = InformationLlmExtractor(client=llm_client)
         self.extractor = extractor
-        self.response_builder = ResponseBuilder(
-            llm_client=self.llm_client,
-            extractor=extractor,
-        )
         self.orchestrator = order_orchestrator
         self.logger = logger_conversation
 
         # Summarization (injected into memory-store + summarize skills)
         self.summary_repo = JsonSummaryRepository(base_path=settings.summaries_path)
         self.summarizer = ContextSummarizer(summary_repo=self.summary_repo)
-
-        # Tracker cache (per-user_id OrderFlowTracker instances)
-        self._tracker_cache: Dict[str, OrderFlowTracker] = {}
 
         # ── Skill-based architecture ────────────────────────────────────
         self._skill_registry = skill_registry or SkillRegistry()
@@ -129,7 +119,6 @@ class SaborCaseroAssistant:
             conversation_logger=self.logger,
             llm_client=self.llm_client,
             summary_repo=self.summary_repo,
-            tracker_cache=self._tracker_cache,
         )
 
     # =========================================================================
@@ -141,10 +130,9 @@ class SaborCaseroAssistant:
 
     async def _stage_llm_guard(
         self, message: str, summary_conversation: str, summary_order: str,
-        tracker: Optional[OrderFlowTracker] = None,
     ) -> StageResult[str]:
         return await self._pipeline.llm_guard(
-            message, summary_conversation, summary_order, tracker=tracker
+            message, summary_conversation, summary_order
         )
 
     async def _stage_prepare_session(
@@ -189,16 +177,12 @@ class SaborCaseroAssistant:
 
         # ── Load UserPreferences (shared: classify + Planner) ──
         user_preferences_context = ""
-        if settings.use_order_flow_tracker:
-            try:
-                if user_id in self._tracker_cache:
-                    prefs = self._tracker_cache[user_id]._user_prefs
-                else:
-                    prefs = UserPreferences.load(user_id)
-                if prefs:
-                    user_preferences_context = prefs.to_prompt_context()
-            except Exception as e:
-                logger.debug("Could not load user preferences: %s", e)
+        try:
+            prefs = UserPreferences.load(user_id)
+            if prefs:
+                user_preferences_context = prefs.to_prompt_context()
+        except Exception as e:
+            logger.debug("Could not load user preferences: %s", e)
 
         # ── Derive candidate item names from the extractor ──────────────
         candidates: list = []
@@ -222,53 +206,29 @@ class SaborCaseroAssistant:
         classification_data: dict = {}
         extracted_info: list = []
         domain_results: dict = {}
-        tracker: Optional[OrderFlowTracker] = None
 
         # ════════════════════════════════════════════════════════════════
-        # FORK: LLM Planner vs classic skill pipeline
+        # LLM Planner — decides which tools to invoke
+        # (classify, order tools, skills) in a loop.
         # ════════════════════════════════════════════════════════════════
-        if settings.use_llm_planner:
-            # Planner path — NO mandatory classify.
-            # classify is available as an optional tool the Planner can call
-            # when the message is complex or has multiple intents.
-            # For simple queries (greetings, menu requests, single items),
-            # the Planner resolves them directly without classify overhead.
 
-            # ── Stateless order checklist for Planner context ─────
-            # Computes what order fields have values and what's pending,
-            # so the Planner can decide what to ask next.
-            order_checklist_status = "No hay pedido activo."
-            if self.orchestrator and session_id:
-                try:
-                    order_checklist_status = await self.orchestrator.get_order_checklist(session_id)
-                except Exception:
-                    logger.warning("Failed to compute order checklist", exc_info=True)
-
-            # ── Memory entities for Planner context ────────────────
-            # Query semantic memory for entities related to this user.
-            memory_entities = ""
+        # ── Stateless order checklist for Planner context ─────
+        # Computes what order fields have values and what's pending,
+        # so the Planner can decide what to ask next.
+        order_checklist_status = "No hay pedido activo."
+        if self.orchestrator and session_id:
             try:
-                from src.core.memory.domain.models_memory import RecallContext
-                recall = self._memory_hub.recall(RecallContext(
-                    query=message,
-                    user_id=user_id,
-                    top_k=5,
-                ))
-                if recall.semantic_results:
-                    items = []
-                    for e in recall.semantic_results:
-                        label = e.get("entity_type", "dato").replace("_", " ")
-                        value = e.get("value", "")
-                        conf = e.get("confidence", 0)
-                        items.append(f"- {label}: {value} (confianza: {conf:.1f})")
-                    memory_entities = "**Datos recordados del cliente:**\n" + "\n".join(items)
+                order_checklist_status = await self.orchestrator.get_order_checklist(session_id)
             except Exception:
-                logger.debug("Memory recall failed (non-critical)", exc_info=True)
+                logger.warning("Failed to compute order checklist", exc_info=True)
 
-            planner_context = PlannerContext(
-                summary_conversation=summary_conversation,
-                summary_order=summary_order,
-                user_preferences_context=user_preferences_context,
+        # ── Memory entities for Planner context ────────────────
+        # Query semantic memory for entities related to this user.
+        memory_entities = ""
+        try:
+            from src.core.memory.domain.models_memory import RecallContext
+            recall = self._memory_hub.recall(RecallContext(
+                query=message,
                 user_id=user_id,
                 session_id=session_id,
                 candidates=candidates,
@@ -483,94 +443,67 @@ class SaborCaseroAssistant:
                             created_at=__import__("datetime").datetime.now(),
                         ),
                     )
+                top_k=5,
+            ))
+            if recall.semantic_results:
+                items = []
+                for e in recall.semantic_results:
+                    label = e.get("entity_type", "dato").replace("_", " ")
+                    value = e.get("value", "")
+                    conf = e.get("confidence", 0)
+                    items.append(f"- {label}: {value} (confianza: {conf:.1f})")
+                memory_entities = "**Datos recordados del cliente:**\n" + "\n".join(items)
+        except Exception:
+            logger.debug("Memory recall failed (non-critical)", exc_info=True)
 
-            if domain_skill_names and streamer:
-                phase_domain.__exit__(None, None, None)
+        planner_context = PlannerContext(
+            summary_conversation=summary_conversation,
+            summary_order=summary_order,
+            user_preferences_context=user_preferences_context,
+            user_id=user_id,
+            session_id=session_id,
+            candidates=candidates,
+            topic_details=[],  # Empty — Planner decides if it needs classify
+            order_checklist_status=order_checklist_status,
+            memory_entities=memory_entities,
+        )
+        planner = Planner(
+            llm_client=self.llm_client,
+            skill_orchestrator=self._skill_orchestrator,
+            streamer=streamer,
+            settings=settings,
+            registry=self._skill_orchestrator.registry,
+            trace_id=trace_id,
+            extractor=self.extractor,
+            skill_context={
+                "classifier": self.classifier,
+                "order_orchestrator": self.orchestrator,
+                "memory_hub": self._memory_hub,
+                "summarizer": self.summarizer,
+                "checkpoint_manager": self._checkpoint_manager,
+            },
+        )
+        response_text = await planner.run(
+            message, planner_context,
+            previous_messages=self._last_planner_history,
+        )
+        # Cache this turn's messages for the next turn
+        self._last_planner_history = planner._messages.copy()
+        elapsed_time = time.time() - _pipeline_start
 
-            # ── Fallback: inline RAG if the pipeline returned nothing ───────
-            if requires_RAG and not extracted_info and streamer:
-                phase_fallback = streamer.phase("RAG Fallback", emoji="🔄").__enter__()
-                phase_fallback.step("Pipeline returned empty — falling back to LLM extraction...")
-                extracted_info = await self._run_inline_rag(topic_details)
-                phase_fallback.done(f"{len(extracted_info)} item(s) extracted via LLM")
-                phase_fallback.__exit__(None, None, None)
-            elif requires_RAG and not extracted_info:
-                extracted_info = await self._run_inline_rag(topic_details)
+        # Planner replaces domain skills + response-build.
+        # extracted_info, domain_results are already set to
+        # safe defaults before the fork.
+        _skills_msg = f"Planner: {planner.tool_call_count} tool call(s)"
 
-            # ── Load UserPreferences (always) ─────────────────────────────
-            user_preferences_context = ""
-            if settings.use_order_flow_tracker:
-                try:
-                    if user_id in self._tracker_cache:
-                        prefs = self._tracker_cache[user_id]._user_prefs
-                    else:
-                        prefs = UserPreferences.load(user_id)
-                    if prefs:
-                        user_preferences_context = prefs.to_prompt_context()
-                except Exception as e:
-                    logger.debug("Could not load user preferences: %s", e)
-                    prefs = None
-
-            # ── Create / reuse OrderFlowTracker (only for ordering) ─────────
-            tracker = None
-            if settings.use_order_flow_tracker:
-                if requires_reconcilier:
-                    ordering_segments = self._get_ordering_segments(
-                        topic_details if isinstance(topic_details, list) else []
-                    )
-                    if ordering_segments:
-                        is_new = user_id not in self._tracker_cache
-                        if is_new:
-                            if not prefs:
-                                prefs = UserPreferences.load(user_id)
-                            self._tracker_cache[user_id] = OrderFlowTracker(
-                                user_id=user_id, user_prefs=prefs
-                            )
-                        tracker = self._tracker_cache[user_id]
-
-            # ── Skill: response-build (always) ──────────────────────────────
-            phase_response = streamer.phase("Response Generation", emoji="✍️").__enter__()
-            phase_response.step("Building hybrid response from classification + RAG + order state...")
-
-            response_build_skill = self._load_skill("response-build")
-            with span("response-build"):
-                response_result = await response_build_skill.execute(
-                    {
-                        "classification": classification_data,
-                        "order_state": order,
-                        "orchestrator_result": domain_results.get("order-flow", {}).value
-                        if "order-flow" in domain_results
-                        else {},
-                        "message": message,
-                        "summary_conversation": summary_conversation,
-                        "extracted_info": extracted_info,
-                        "tracker": tracker,
-                        "brand_voice_path": settings.brand_voice_path,
-                        "prompt_template_path": settings.response_generation_prompt_path,
-                        "settings": settings,
-                        "user_preferences_context": user_preferences_context,
-                    },
-                    trace_id=trace_id,
-                )
-
-            elapsed_time = time.time() - _pipeline_start
-            response_text = FALLBACK_ERROR
-
-            if response_result.success:
-                response_text = response_result.value.get("response", FALLBACK_ERROR)
-                phase_response.done(f"Generated {len(response_text)} chars")
-            else:
-                phase_response.result("Failed", str(response_result.error), is_error=True)
-                phase_response.__exit__(None, None, None)
-                return {
-                    "response": FALLBACK_ERROR,
-                    "classification": classification_data,
-                    "extracted_info": extracted_info,
-                    "pipeline_error": str(response_result.error),
-                }
-            phase_response.__exit__(None, None, None)
-
-            _skills_msg = f"Skills: classify + {len(domain_skill_names)} domain + response-build"
+        # On critical failure, return early (consistent with old pipeline)
+        if not response_text or response_text == FALLBACK_ERROR:
+            return {
+                "response": FALLBACK_ERROR,
+                "classification": {},
+                "extracted_info": [],
+                "pipeline_error": "Planner failed to produce response",
+            }
 
         # ── Evaluation (fire-and-forget, observer mode) ──────────────────
         if settings.evaluation_enabled:
@@ -584,17 +517,9 @@ class SaborCaseroAssistant:
                 trace_id=trace_id,
             ))
 
-        # ── Persist preferences after response ──────────────────────────
-        if tracker and tracker._user_prefs:
-            try:
-                tracker._user_prefs.save()
-            except Exception as save_err:
-                logger.warning(f"Failed to save preferences: {save_err}")
-
         # ── Logging (framework) ─────────────────────────────────────────
+        # ponytail: orchestrator_response always {} (classic pipeline removed)
         orchestrator_response = {}
-        if "order-flow" in domain_results and domain_results["order-flow"].success:
-            orchestrator_response = domain_results["order-flow"].value.get("orchestrator_response", {})
 
         # Build topic_details list compatible with the logging interface
         log_topic_details = []
@@ -728,7 +653,6 @@ class SaborCaseroAssistant:
         return self._skill_orchestrator.load_skill(name, context={
             "classifier": self.classifier,
             "order_orchestrator": self.orchestrator,
-            "response_builder": self.response_builder,
             "memory_hub": self._memory_hub,
             "summarizer": self.summarizer,
             "settings": settings,
@@ -781,60 +705,6 @@ class SaborCaseroAssistant:
                 logger.warning(f"Summarization skill failed: {result.error}")
         except Exception as e:
             logger.error(f"Background summarization failed: {e}")
-
-    async def _run_inline_rag(
-        self,
-        topic_details: list,
-    ) -> list:
-        """Run LLM-based RAG extraction for each document referenced in topic_details.
-
-        Groups segments by ``file_source``, reads each document, and uses
-        the ``InformationLlmExtractor`` to extract relevant information.
-        Returns a list of extracted items suitable for ``extracted_info``.
-        """
-        from src.core.classifier.intent import DocumentSource
-
-        # Group segments by file_source, skipping no-file / empty
-        groups: dict = {}
-        for td in topic_details:
-            fs = td.get("file_source", "") if isinstance(td, dict) else getattr(td, "file_source", "")
-            if fs and fs not in ("no-file", DocumentSource.NONE, ""):
-                groups.setdefault(fs, []).append(td)
-
-        if not groups:
-            return []
-
-        if streamer := getattr(self, "_streamer", None):
-            pass  # caller's streamer is passed externally — see _run_orchestration_loop
-
-        results = []
-        for doc_name, segments in groups.items():
-            doc_path = f"{settings.documents_path}/{doc_name}"
-            try:
-                with open(doc_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-            except (FileNotFoundError, IOError):
-                logger.warning("RAG doc not found: %s", doc_path)
-                continue
-
-            # Use InformationLlmExtractor.extract() per segment
-            for segment in segments:
-                seg_text = segment.get("segment", "") if isinstance(segment, dict) else getattr(segment, "segment", "")
-                if not seg_text:
-                    continue
-                try:
-                    extracted = await self.extractor.extract(seg_text, content)
-                    if extracted and "No se encuentra" not in extracted:
-                        results.append({
-                            "item_name": extracted[:500],
-                            "source": doc_name,
-                            "score": 1.0,
-                            "match_type": "extracted",
-                        })
-                except Exception as e:
-                    logger.warning("RAG extract failed for %s: %s", doc_name, e)
-
-        return results
 
     async def _run_evaluation(
         self,
@@ -959,15 +829,10 @@ class SaborCaseroAssistant:
 
                 # ── Framework: LLM Guard ────────────────────────────────
                 with streamer.phase("LLM Guard") as p:
-                    guard_tracker = None
-                    if settings.use_order_flow_tracker and user_id in self._tracker_cache:
-                        guard_tracker = self._tracker_cache[user_id]
-
                     llm_guard_result = await self._stage_llm_guard(
                         message,
                         session_ctx.summary_conversation,
                         session_ctx.summary_order,
-                        tracker=guard_tracker,
                     )
                     if not llm_guard_result.success:
                         p.result("Rejected", str(llm_guard_result.error_message or ""), is_error=True)
@@ -1019,81 +884,6 @@ class SaborCaseroAssistant:
     # =========================================================================
     # HELPERS
     # =========================================================================
-
-    @staticmethod
-    def _is_full_menu_request(topic_details: list) -> bool:
-        """Detect if the user is asking for the full menu (vs. a specific query).
-
-        Checks topic_details for consulting segments with ``topic: menu``
-        and a segment text or focus that indicates a generic "show me the
-        whole menu" request, rather than a specific item/ingredient query.
-
-        Returns:
-            True if the request is for the full menu.
-        """
-        # Patterns that indicate a generic full-menu request
-        full_menu_patterns = [
-            "la carta", "el menú", "menú completo", "todo el menú",
-            "qué hay", "qué tienen", "qué ofrecen",
-            "dame el menú", "regalan la carta", "quiero ver el menú",
-            "muéstrame el menú", "cuál es el menú",
-        ]
-        # Focus phrases from the classifier
-        focus_patterns = [
-            "solicitar el menú", "menú del restaurante",
-            "consultar el menú completo", "ver el menú",
-        ]
-
-        for td in topic_details:
-            seg = (
-                td.get("segment", "")
-                if isinstance(td, dict)
-                else getattr(td, "segment", "")
-            )
-            topic = (
-                td.get("topic", "")
-                if isinstance(td, dict)
-                else getattr(td, "topic", "")
-            )
-            if topic != "menu":
-                continue
-
-            seg_lower = seg.lower().strip()
-            if any(p in seg_lower for p in full_menu_patterns):
-                return True
-
-            # Also check the focus field from the classifier
-            focus = (
-                td.get("focus", "")
-                if isinstance(td, dict)
-                else getattr(td, "focus", "")
-            )
-            focus_lower = focus.lower()
-            if any(p in focus_lower for p in focus_patterns):
-                return True
-
-        return False
-
-    @staticmethod
-    def _get_ordering_segments(topic_details: list) -> list:
-        """Filter segments relevant to ordering flow.
-
-        Returns only segments whose query_type indicates an ordering-related
-        intent (ORDERING, CONFIRMATION, CANCELLATION, CLARIFICATION).
-        Handles both Detail objects (Pydantic) and dicts (from model_dump).
-        """
-        ordering_types = {
-            QueryType.ORDERING, QueryType.CONFIRMATION,
-            QueryType.CANCELLATION, QueryType.CLARIFICATION,
-        }
-
-        def _get_type(d):
-            if hasattr(d, "query_type"):
-                return d.query_type
-            return d.get("query_type")
-
-        return [d for d in topic_details if _get_type(d) in ordering_types]
-
 
 # =============================================================================
 # MODULE-LEVEL HELPERS

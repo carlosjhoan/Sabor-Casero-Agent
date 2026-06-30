@@ -1,24 +1,18 @@
-# order/application/processors/order_orchestrator.py
+# order/application/orchestrator.py
 
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any
 from src.utils.utils import print_section
 from src.core.order.domain.order_repository_interface import OrderRepository
 from src.core.order.domain.session_repository_interface import SessionRepository
-from src.core.order.application.thought_generator import ThoughtGenerator
-from src.core.order.application.action_planner import ActionPlanner
-from src.core.order.application.ambiguity_resolver import AmbiguityResolver
-from src.core.classifier.intent import Detail
 
 
 class OrderOrchestrator:
     """
-    ORQUESTADOR PRINCIPAL de órdenes.
+    ORQUESTADOR PRINCIPAL de órdenes — CRUD methods for the Agentic Loop.
     
-    Coordina el flujo completo:
-    1. ThoughtGenerator → Genera razonamiento
-    2. ActionPlanner → Genera y ejecuta acciones
-    
-    Este es el verdadero OrderProcessor que expones al exterior.
+    Provides atomic order operations called by synthetic tools
+    (add-item, remove-item, update-item, get-order, confirm-order,
+    cancel-order, update-order, set-field-note, get_order_checklist).
     """
     
     def __init__(
@@ -27,242 +21,9 @@ class OrderOrchestrator:
         session_repository: SessionRepository,
         max_retries: int = 2
     ):
-        # Inicializar componentes especializados
-        self.thought_generator = ThoughtGenerator(
-            session_repository=session_repository,
-            order_repository=order_repository,
-        )
-        
-        self.action_planner = ActionPlanner(
-            order_repository=order_repository,
-            session_repository=session_repository
-        )
-
-        self.ambiguity_resolver = AmbiguityResolver()
-        
-        # Referencias directas a repositorios (no via action_planner.*)
         self.order_repository = order_repository
         self.session_repository = session_repository
-        
-        # Configuración
         self.max_retries = max_retries
-        
-        print_section(
-            head="🚀 OrderOrchestrator Inicializado",
-            msg="ThoughtGenerator + ActionPlanner listos",
-            symbol="✅"
-        )
-    
-    async def process_order_intent(
-        self,
-        ordering_segments: list,
-        session_id: str,
-        summary_conversation: Optional[str] = None,
-        skip_actions: bool = False
-    ) -> Dict[str, Any]:
-        """
-        Método principal: procesa intención de orden.
-        
-        Flujo:
-        1. Genera thought (razonamiento)
-        2. Genera y ejecuta acciones basadas en el thought
-        
-        Args:
-            ordering_segments: Segmentos de orden del extractor
-            session_id: ID de sesión
-            summary_conversation: Resumen de conversación previa
-            skip_actions: Si True, solo genera thought y acciones (no ejecuta)
-        
-        Returns:
-            Dict con resultado completo del proceso
-        """
-        print_section(
-            head="📦 OrderOrchestrator procesando orden",
-            msg=f"Session: {session_id} | Segmentos: {len(ordering_segments)}",
-            symbol="🔄"
-        )
-        
-        # PASO 1: Generar thought (razonamiento)
-        thought_result = await self.thought_generator.generate_thought(
-            ordering_segments=ordering_segments,
-            session_id=session_id,
-            summary_conversation=summary_conversation
-        )
-        
-        if not thought_result["success"]:
-            error_msg = thought_result.get("error", "Error desconocido en generación de thought")
-            print_section(
-                head="❌ Error en generación de thought",
-                msg=error_msg,
-                symbol="💥"
-            )
-            return {
-                "success": False,
-                "error": error_msg,
-                "stage": "thought_generation",
-                "thought": None,
-                "actions": [],
-                "execution": None
-            }
-        
-        thought = thought_result["thought"]
-        context = thought_result.get("context", {})
-        
-        print_section(
-            head="🧠 Thought generado",
-            msg=thought,
-            symbol="::"
-        )
-        
-        # PASO 2: Generar acciones desde el thought (SIN ejecutar aún)
-        actions = await self.action_planner.plan_actions(
-            thought=thought,
-            context=context,
-            session_id=session_id,
-            summary_conversation=summary_conversation
-        )
-
-        print_section(
-            head="📋 Acciones planificadas",
-            msg=f"{len(actions)} acciones generadas",
-            symbol="⚡"
-        )
-
-        # PASO 3: Resolver ambigüedades usando declaración estructurada
-        ambiguity_declaration = thought_result.get("ambiguity")
-        ambiguity_result = self.ambiguity_resolver.resolve(
-            thought=thought,
-            actions=actions,
-            context=context,
-            ambiguity_declaration=ambiguity_declaration,
-        )
-
-        if ambiguity_result["is_ambiguous"]:
-            print_section(
-                head="⚠️ AMBIGÜEDAD DETECTADA — No se ejecutarán acciones",
-                msg=f"Señales: {ambiguity_result['signals']} | Confianza: {ambiguity_result['confidence']:.2f}",
-                symbol="🔍"
-            )
-            print_section(
-                head="📝 Contexto de ambigüedad para el response",
-                msg=ambiguity_result["ambiguity_context"][:200],
-                symbol="::"
-            )
-            return {
-                "success": True,
-                "thought": thought,
-                "actions": [],
-                "execution": None,
-                "needs_clarification": True,
-                "ambiguity_context": ambiguity_result["ambiguity_context"],
-                "ambiguity_signals": ambiguity_result["signals"],
-                "context": {
-                    "order_id": context.get("order_id"),
-                    "order_summary": context.get("summary"),
-                },
-                "metadata": {
-                    "thought_generation": {
-                        "attempts": thought_result.get("attempts", 1),
-                        "success": True,
-                    },
-                    "ambiguity_resolution": {
-                        "detected": True,
-                        "confidence": ambiguity_result["confidence"],
-                    },
-                },
-            }
-
-        # PASO 4: Sin ambigüedad — ejecutar acciones normalmente
-        execution_result = await self.action_planner.execute_actions(
-            actions=actions,
-            session_id=session_id,
-            current_order_id=context.get("order_id"),
-        )
-
-        print_section(
-            head="✅ Acciones ejecutadas sin ambigüedad",
-            msg=f"{execution_result.get('successful', 0)}/{len(actions)} exitosas",
-            symbol="📊"
-        )
-
-        # Resultado consolidado
-        return {
-            "success": True,
-            "thought": thought,
-            "actions": actions,
-            "execution": execution_result,
-            "needs_clarification": False,
-            "context": {
-                "order_id": context.get("order_id"),
-                "order_summary": context.get("summary"),
-            },
-            "metadata": {
-                "thought_generation": {
-                    "attempts": thought_result.get("attempts", 1),
-                    "success": True,
-                },
-                "ambiguity_resolution": {
-                    "detected": False,
-                },
-            },
-        }
-    
-    async def preview_actions(
-        self,
-        ordering_segments: List[Detail],
-        session_id: str,
-        summary_conversation: Optional[str] = None
-    ) -> Dict[str, Any]:
-        """
-        Versión de solo preview: genera thought y acciones, pero NO las ejecuta.
-        Útil para testing, debugging o mostrar al usuario antes de confirmar.
-        """
-        return await self.process_order_intent(
-            ordering_segments=ordering_segments,
-            session_id=session_id,
-            summary_conversation=summary_conversation,
-            skip_actions=True
-        )
-
-    async def reprocess_with_thought(
-        self,
-        thought: str,
-        session_id: str,
-        summary_conversation: Optional[str] = None,
-        execute: bool = True
-    ) -> Dict[str, Any]:
-        """
-        Reprocesa usando un think existente (útil para bypass).
-        """
-        context = await self.thought_generator._load_order_context(session_id)
-        
-        if execute:
-            result = await self.action_planner.plan_and_execute(
-                thought=thought,
-                context=context,
-                session_id=session_id,
-                summary_conversation=summary_conversation
-            )
-            return {
-                "success": True,
-                "thought": thought,
-                "actions": result.get("actions", []),
-                "execution": result.get("execution"),
-                "context": context
-            }
-        else:
-            actions = await self.action_planner._generate_actions(
-                thought=thought,
-                context=context,
-                summary_conversation=summary_conversation
-            )
-            return {
-                "success": True,
-                "thought": thought,
-                "actions": actions,
-                "execution": None,
-                "context": context
-            }
 
     # ── CRUD methods for synthetic tools (granular-order-tools) ────
     # Métodos reales de la clase, ya no parcheados desde el módulo.
@@ -344,10 +105,6 @@ class OrderOrchestrator:
                 requirements=params.get("requirements", []) or [],
             )
             order.add_item(item)
-            # Marcar campos del item como respondidos
-            for field in ("protein", "principle", "size"):
-                if params.get(field):
-                    order.field_states[field] = "answered"
             return {
                 "item_id": item.id,
                 "order_summary": order.to_summary(),
@@ -387,10 +144,6 @@ class OrderOrchestrator:
         """
         def _update_item(order):
             order.update_item(item_id, **changes)
-            # Marcar campos del item como respondidos
-            for field in ("protein", "principle", "size"):
-                if changes.get(field):
-                    order.field_states[field] = "answered"
             return {
                 "item_id": item_id,
                 "order_summary": order.to_summary(),
@@ -490,7 +243,7 @@ class OrderOrchestrator:
         if not session or not session.order_id:
             return "No hay pedido activo."
         order = self.order_repository.get_order_by_id(session.order_id)
-        return build_checklist_from_order(order)
+        return build_checklist_from_order(order, field_status=session.field_status or {})
 
     # ── Order metadata (update-order) ─────────────────────────────
 
@@ -569,10 +322,6 @@ class OrderOrchestrator:
                     order.observations.append(obs)
                 updated.append("observations")
 
-            # Marcar campos como respondidos
-            for field in updated:
-                order.field_states[field] = "answered"
-
             self.order_repository.save_order(order)
 
             return {
@@ -581,6 +330,55 @@ class OrderOrchestrator:
                     "updated_fields": updated,
                     "order_summary": order.to_summary(),
                 },
+                "error": None,
+            }
+        except Exception as e:
+            return {"success": False, "data": None, "error": f"{type(e).__name__}: {e}"}
+
+    async def set_field_note(self, session_id: str, field: str, note: str) -> Dict[str, Any]:
+        """Marca un campo como 'asked' y guarda una observación.
+
+        Útil cuando el Planner preguntó por un campo pero el usuario
+        no respondió (preguntó otra cosa, se desvió, etc.).
+
+        Args:
+            session_id: Identificador de la sesión.
+            field: Nombre del campo (protein, size, principle, etc.).
+            note: Observación de lo que realmente pasó.
+
+        Returns:
+            Dict con {success, data: {field, state, note}, error}.
+        """
+        try:
+            session = self.session_repository.get_session(session_id)
+            if not session or not session.order_id:
+                return {"success": False, "data": None, "error": "No hay pedido activo"}
+
+            from datetime import datetime
+            field_status = dict(session.field_status or {})
+            existing = field_status.get(field)
+            if existing:
+                existing["state"] = "asked"
+                if note not in existing.get("notes", []):
+                    existing.setdefault("notes", []).append(note)
+            else:
+                field_status[field] = {
+                    "state": "asked",
+                    "notes": [note],
+                    "created_at": datetime.now().isoformat(),
+                }
+            self.session_repository.update_session(session_id, field_status=field_status)
+
+            from src.utils.utils import print_section
+            print_section(
+                head="📝 field-note",
+                msg=f"{field} → asked | nota: {note}",
+                symbol="→"
+            )
+
+            return {
+                "success": True,
+                "data": {"field": field, "state": "asked", "note": note},
                 "error": None,
             }
         except Exception as e:

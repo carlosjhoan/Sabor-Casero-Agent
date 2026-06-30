@@ -51,7 +51,8 @@ class TestListTools:
         assert "classify" in names
         assert "order-flow" not in names, "order-flow moved to _AUTOMATIC_SKILLS"
         for tool_name in ("add-item", "remove-item", "update-item",
-                          "get-order", "confirm-order", "cancel-order"):
+                          "get-order", "confirm-order", "cancel-order",
+                          "business-info"):
             assert tool_name in names, f"synthetic tool '{tool_name}' should be in list_tools()"
 
     def test_list_tools_includes_owl_skills_when_enabled(self):

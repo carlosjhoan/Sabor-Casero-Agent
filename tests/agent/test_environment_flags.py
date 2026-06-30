@@ -63,13 +63,4 @@ class TestP4EnvironmentFlags:
         assert settings.semantic_memory_enabled is True
 
 
-class TestOrchestrationFlags:
-    """Verify orchestration feature flag exists with correct default."""
 
-    def test_use_llm_planner_exists(self):
-        """use_llm_planner flag exists in Settings."""
-        assert hasattr(settings, "use_llm_planner")
-
-    def test_use_llm_planner_default_false(self):
-        """use_llm_planner defaults to False."""
-        assert settings.use_llm_planner is False

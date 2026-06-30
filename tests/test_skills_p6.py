@@ -97,114 +97,6 @@ class TestClassifySkill:
 # Task 6.2 — skills/order-flow/
 # =========================================================================
 
-class TestOrderFlowSkill:
-    """S-P6-01 (partial): order-flow skill wraps OrderOrchestrator."""
-
-    @pytest.fixture
-    def skill(self):
-        from skills.order_flow import Skill as OrderFlowSkill
-        return OrderFlowSkill()
-
-    def test_name_and_version(self, skill):
-        assert skill.name == "order-flow"
-        assert skill.version == "0.1.0"
-
-    def test_load_accepts_context(self, skill):
-        skill.load(_mock_context())
-        assert hasattr(skill, "_orchestrator")
-
-    def test_run_with_ordering_segments(self, skill):
-        mock_orch = MagicMock()
-        mock_orch.process_order_intent = AsyncMock(return_value={"success": True, "thought": "ok"})
-        skill.load({"order_orchestrator": mock_orch})
-
-        result = asyncio.run(skill.run({
-            "ordering_segments": [{"focus": "quiero pollo"}],
-            "session_id": "test-session",
-            "summary_conversation": "",
-        }))
-        assert result.success
-        assert result.skill_name == "order-flow"
-        assert "orchestrator_response" in result.value
-        mock_orch.process_order_intent.assert_awaited_once()
-
-    def test_run_skipped_when_no_segments(self, skill):
-        mock_orch = MagicMock()
-        mock_orch.process_order_intent = AsyncMock()
-        skill.load({"order_orchestrator": mock_orch})
-
-        result = asyncio.run(skill.run({
-            "ordering_segments": [],
-            "session_id": "test-session",
-            "summary_conversation": "",
-        }))
-        assert result.success
-        assert result.value.get("orchestrator_response") == {}
-        mock_orch.process_order_intent.assert_not_called()
-
-    def test_unload_cleans_up(self, skill):
-        skill.load({"order_orchestrator": "test"})
-        skill.unload()
-        assert skill._orchestrator is None
-
-
-# =========================================================================
-# Task 6.3 — skills/response-build/
-# =========================================================================
-
-class TestResponseBuildSkill:
-    """S-P6-01 (partial): response-build skill wraps ResponseBuilder."""
-
-    @pytest.fixture
-    def skill(self):
-        from skills.response_build import Skill as ResponseBuildSkill
-        return ResponseBuildSkill()
-
-    def test_name_and_version(self, skill):
-        assert skill.name == "response-build"
-        assert skill.version == "0.1.0"
-
-    def test_load_accepts_context(self, skill):
-        skill.load(_mock_context())
-        assert hasattr(skill, "_builder")
-
-    def test_run_returns_response(self, skill):
-        mock_builder = MagicMock()
-        mock_builder.build_hybrid = AsyncMock(return_value="¡claro! tenemos pollo")
-        skill.load({"response_builder": mock_builder})
-
-        result = asyncio.run(skill.run({
-            "classification": MagicMock(),
-            "order_state": None,
-            "orchestrator_result": {},
-            "message": "hola",
-            "summary_conversation": "",
-        }))
-        assert result.success
-        assert result.value.get("response") == "¡claro! tenemos pollo"
-
-    def test_empty_response_guard(self, skill):
-        """Empty/whitespace response triggers fallback."""
-        mock_builder = MagicMock()
-        mock_builder.build_hybrid = AsyncMock(return_value="   ")
-        skill.load({"response_builder": mock_builder})
-
-        result = asyncio.run(skill.run({
-            "classification": MagicMock(),
-            "order_state": None,
-            "orchestrator_result": {},
-            "message": "test",
-            "summary_conversation": "",
-        }))
-        assert result.success
-        assert result.value.get("response") == "Lo siento, no pude generar una respuesta. Por favor intenta de nuevo."
-
-    def test_unload_cleans_up(self, skill):
-        skill.load({"response_builder": "test"})
-        skill.unload()
-        assert skill._builder is None
-
-
 # =========================================================================
 # Task 6.4 — skills/memory-store/
 # =========================================================================
@@ -346,7 +238,6 @@ class TestOrchestrationWiring:
         """Create minimal settings object for testing."""
         import types
         s = types.SimpleNamespace()
-        s.skills_enabled = True
         s.use_order_flow_tracker = False
         s.checkpointing_enabled = False
         s.semantic_memory_enabled = False
@@ -380,11 +271,6 @@ class TestOrchestrationWiring:
             )
             return assistant
 
-    def test_assistant_has_skills_enabled_flag(self, mock_assistant):
-        """skills_enabled flag is checked before orchestration."""
-        from src.config.environment import settings
-        assert hasattr(settings, "skills_enabled")
-
     def test_skill_orchestrator_and_checkpoint_created(self, mock_assistant):
         """Assistant creates SkillOrchestrator, CheckpointManager, MemoryHub."""
         assert hasattr(mock_assistant, "_skill_orchestrator") or hasattr(mock_assistant, "orchestrator")
@@ -407,21 +293,6 @@ class TestOrchestrationWiring:
         args = typing.get_args(hint)
         assert origin is dict or origin is Dict
         assert str in args or args[1] is Any
-
-
-# =========================================================================
-# Task 6.7 — environment.py flag
-# =========================================================================
-
-class TestSkillsEnabledFlag:
-    """skills_enabled flag in environment.py."""
-
-    def test_flag_exists_and_default_true(self):
-        """skills_enabled: bool = True exists."""
-        from src.config.environment import settings
-        assert hasattr(settings, "skills_enabled")
-        # Default should be True (P6 feature enabled by default)
-        assert settings.skills_enabled is True
 
 
 # =========================================================================
@@ -508,16 +379,14 @@ class TestFullE2EWithSkills:
         reg.discover("skills/")
         return reg
 
-    def test_registry_discovers_all_7_skills(self, skill_registry):
-        """Registry finds all 7 P6 skills plus 2 existing = 9 total skills."""
-        # The skills/ dir has: classify, menu_query, rag_retrieve,
-        # order_flow, response_build, memory_store, summarize = 7
+    def test_registry_discovers_all_skills(self, skill_registry):
+        """Registry finds all active skills."""
         names = [m.name for m in skill_registry.list_skills()]
         assert "classify" in names
-        assert "order-flow" in names
-        assert "response-build" in names
         assert "memory-store" in names
         assert "summarize" in names
+        assert "menu-query" in names
+        assert "rag-retrieve" in names
 
     def test_orchestrator_loads_classify_skill(self, skill_registry):
         """Orchestrator can load the classify skill by name."""
@@ -539,14 +408,13 @@ class TestFullE2EWithSkills:
         assert "menu-query" in skills
         assert "rag-retrieve" in skills
 
-    def test_orchestrator_loads_all_7_skills(self, skill_registry):
-        """All 7 skills can be loaded and provide correct names."""
+    def test_orchestrator_loads_all_skills(self, skill_registry):
+        """All active skills can be loaded and provide correct names."""
         from src.engine.orchestrator import SkillOrchestrator
         orch = SkillOrchestrator(skill_registry)
 
         skill_names = [
-            "classify", "order-flow", "response-build",
-            "memory-store", "summarize",
+            "classify", "memory-store", "summarize",
             "menu-query", "rag-retrieve",
         ]
         for name in skill_names:

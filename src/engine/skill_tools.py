@@ -5,7 +5,7 @@ Converts the ``SkillRegistry`` index into OpenAI-compatible tool definitions
 and provides an async dispatcher that loads a skill, injects orchestration
 context, executes it, and returns a serializable result dict.
 
-Also provides built-in synthetic tools (``respond``, ``get-full-menu``) that
+Also provides built-in synthetic tools (``respond``, ``get-full-menu``, ``business-info``) that
 are not backed by a skill but are available to the Planner.
 
 Usage::
@@ -21,7 +21,26 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 
-# Built-in synthetic tool: full menu (not backed by a skill)
+# Built-in synthetic tool: business info (not backed by a skill)
+_BUSINESS_INFO_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "business-info",
+        "description": (
+            "Returns restaurant information: history, mission, values, delivery "
+            "zones, delivery costs, hours, payment methods, and contact info. "
+            "Use this when the user asks about who we are, our history, "
+            "delivery areas, hours, payment options, contact, or service policies. "
+            "Do NOT use menu-query or rag-retrieve for these questions."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+        },
+    },
+}
+
 _FULL_MENU_TOOL = {
     "type": "function",
     "function": {
@@ -43,7 +62,7 @@ _FULL_MENU_TOOL = {
 }
 
 # --- Synthetic order tools (granular-order-tools) ---
-# These replace the order-flow skill when use_llm_planner=True.
+# These replace the order-flow skill.
 # Each maps to a CRUD method on OrderOrchestrator.
 
 _ADD_ITEM_TOOL = {
@@ -228,6 +247,7 @@ _SYNTHETIC_ORDER_TOOLS = [
     _CONFIRM_ORDER_TOOL,
     _CANCEL_ORDER_TOOL,
     _UPDATE_ORDER_TOOL,
+    _SET_FIELD_NOTE_TOOL,
 ]
 
 # Mapping from tool name to constant for dispatch
@@ -306,7 +326,7 @@ class SkillToolAdapter:
         skill_tools.append(_DOC_QUERY_TOOL)
 
         # Add synthetic order tools (granular-order-tools) — these replace
-        # the order-flow skill when use_llm_planner=True.
+        # the order-flow skill.
         skill_tools.extend(_SYNTHETIC_ORDER_TOOLS)
 
         return skill_tools
@@ -327,8 +347,8 @@ class SkillToolAdapter:
         Loads the skill via ``SkillOrchestrator.load_skill()``, injects relevant
         context fields into the input data, and calls ``skill.execute()``.
 
-        Also handles built-in synthetic tools (``get-full-menu``) that are not
-        backed by a skill module.
+        Also handles built-in synthetic tools (``get-full-menu``, ``business-info``)
+        that are not backed by a skill module.
 
         Args:
             name: Registered skill name (e.g. ``"classify"``, ``"menu-query"``).
@@ -411,6 +431,10 @@ class SkillToolAdapter:
                     result = await order_orchestrator.cancel_order(session_id)
                 elif name == "update-order":
                     result = await order_orchestrator.update_order(session_id, args)
+                elif name == "set-field-note":
+                    result = await order_orchestrator.set_field_note(
+                        session_id, args.get("field", ""), args.get("note", "")
+                    )
                 else:
                     return {"success": False, "error": f"Unknown synthetic order tool: {name}"}
 
