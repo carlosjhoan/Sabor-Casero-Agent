@@ -202,6 +202,42 @@ _SET_FIELD_NOTE_TOOL = {
     },
 }
 
+# --- Synthetic doc-query tool ---
+# Exposes the SummaryIndex + lazy RAG pipeline to the Planner.
+_DOC_QUERY_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "doc-query",
+        "description": (
+            "Search restaurant documents for specific information using "
+            "semantic search across ALL documents (service info, waiter guide, "
+            "about us, policies, etc.). "
+            "Use this when business-info doesn't cover what the user needs, "
+            "or when you need specific details from ANY document. "
+            "Optionally narrow by topic for faster results."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query — what information you need",
+                },
+                "topic": {
+                    "type": "string",
+                    "enum": [
+                        "hours", "delivery", "payment", "complaint",
+                        "general", "about", "waiter", "ingredients",
+                        "special_offers", "menu",
+                    ],
+                    "description": "Optional: narrow search to a specific topic",
+                },
+            },
+            "required": ["query"],
+        },
+    },
+}
+
 # All synthetic order tools in a list for iteration
 _SYNTHETIC_ORDER_TOOLS = [
     _ADD_ITEM_TOOL,
@@ -285,6 +321,10 @@ class SkillToolAdapter:
         # directly from disk, no OWL dependency.
         skill_tools.append(_BUSINESS_INFO_TOOL)
 
+        # Always add doc-query — uses SummaryIndex for routing + lazy ChromaDB RAG.
+        # No dependencies on OWL or menu structure.
+        skill_tools.append(_DOC_QUERY_TOOL)
+
         # Add synthetic order tools (granular-order-tools) — these replace
         # the order-flow skill.
         skill_tools.extend(_SYNTHETIC_ORDER_TOOLS)
@@ -343,6 +383,10 @@ class SkillToolAdapter:
                 except Exception as e:
                     logger.debug("Full menu fallback failed: %s", e)
                 return {"success": False, "error": "Full menu not available"}
+
+            # ── Built-in: doc-query (SummaryIndex + lazy ChromaDB RAG) ──
+            if name == "doc-query":
+                return cls._execute_doc_query(args, context)
 
             # ── Built-in: business-info (not backed by a skill) ──────────
             if name == "business-info":
@@ -430,6 +474,94 @@ class SkillToolAdapter:
     # ------------------------------------------------------------------
 
     @classmethod
+    async def _execute_doc_query(
+        cls,
+        args: dict[str, Any],
+        context: dict[str, Any],
+    ) -> dict[str, Any]:
+        """doc-query execution: SummaryIndex routing → lazy ChromaDB RAG.
+
+        Args:
+            args: {"query": str, "topic"?: str} from the LLM tool call.
+            context: Full orchestration context (needs 'summary_index').
+
+        Returns:
+            {"success": True, "result": {"content": ..., "source": ...}}
+            o {"success": False, "error": "..."}
+        """
+        try:
+            query = args.get("query", "").strip()
+            topic = args.get("topic", "").strip()
+            if not query:
+                return {"success": False, "error": "query is required"}
+
+            # 1. Get SummaryIndex from orchestration context
+            summary_index = context.get("summary_index")
+            if not summary_index:
+                return {"success": False, "error": "summary_index not available"}
+
+            # 2. Route query to relevant document(s)
+            # If topic given, incorporate it for better routing
+            search_query = f"{topic}: {query}" if topic else query
+            relevant_docs = summary_index.query(search_query, top_k=2)
+            if not relevant_docs:
+                # Fallback: no summary matched — try direct topic→doc mapping
+                if topic:
+                    mapping = {
+                        "hours": "service_info.txt", "delivery": "service_info.txt",
+                        "payment": "service_info.txt", "complaint": "service_info.txt",
+                        "general": "service_info.txt", "about": "about_us.txt",
+                        "waiter": "waiter_guide.txt", "menu": "menu.md",
+                        "ingredients": "menu.md", "special_offers": "menu.md",
+                    }
+                    doc = mapping.get(topic)
+                    if doc and doc in summary_index.list_documents():
+                        relevant_docs = [doc]
+
+            if not relevant_docs:
+                return {"success": True, "result": {
+                    "content": "", "source": "",
+                    "note": "No relevant documents found for this query.",
+                }}
+
+            # 3. Get retriever for ChromaDB queries
+            retriever = context.get("retriever")
+            if not retriever:
+                return {"success": False, "error": "retriever not available"}
+
+            # Extract HybridRetriever (might be wrapped in CompositeRetriever)
+            hybrid = getattr(retriever, "_fallback", retriever)
+            if not hasattr(hybrid, "query_document"):
+                return {"success": False, "error": "retriever does not support query_document"}
+
+            # 4. Lazy RAG: query each relevant document
+            content_parts = []
+            sources = []
+            for doc in relevant_docs:
+                # Lazy: ensure the doc has a summary (it should if it's in the index)
+                result = hybrid.query_document(query, doc_name=doc)
+                if result:
+                    content_parts.append(f"--- {doc} ---\n{result}")
+                    sources.append(doc)
+
+            if not content_parts:
+                # Fallback: return raw summary as context
+                for doc in relevant_docs:
+                    summary = summary_index.get_summary(doc)
+                    if summary:
+                        content_parts.append(f"--- {doc} ---\n{summary}")
+                        sources.append(doc)
+
+            return {"success": True, "result": {
+                "content": "\n\n".join(content_parts) if content_parts else "",
+                "source": ", ".join(sources) if sources else "",
+            }}
+
+        except Exception as exc:
+            logger.exception("doc-query failed")
+            return {"success": False, "error": f"{type(exc).__name__}: {exc}"}
+
+    @classmethod
     def _inject_context(
         cls,
         input_data: dict[str, Any],
@@ -474,6 +606,7 @@ SkillToolAdapter._CANCEL_ORDER_TOOL = _CANCEL_ORDER_TOOL
 SkillToolAdapter._UPDATE_ORDER_TOOL = _UPDATE_ORDER_TOOL
 SkillToolAdapter._SET_FIELD_NOTE_TOOL = _SET_FIELD_NOTE_TOOL
 SkillToolAdapter._BUSINESS_INFO_TOOL = _BUSINESS_INFO_TOOL
+SkillToolAdapter._DOC_QUERY_TOOL = _DOC_QUERY_TOOL
 SkillToolAdapter._SYNTHETIC_ORDER_TOOLS = _SYNTHETIC_ORDER_TOOLS
 SkillToolAdapter._SYNTHETIC_ORDER_TOOL_MAP = _SYNTHETIC_ORDER_TOOL_MAP
 

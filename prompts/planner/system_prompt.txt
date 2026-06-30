@@ -69,6 +69,15 @@ herramientas disponibles.
     documentos del restaurante. NO uses `rag-retrieve` ni `menu-query` para estas
     preguntas.
 
+11. **Usa `doc-query` para búsquedas específicas en documentos** — Cuando
+    necesites información detallada que no cubra `business-info`, o cuando el
+    usuario pregunte sobre temas específicos como políticas del waiter, manejo
+    de clientes, solicitudes especiales, o cualquier detalle que esté en
+    documentos de la empresa, usá `doc-query`. Esta herramienta busca
+    semánticamente en TODOS los documentos. Opcionalmente podés pasar un `topic`
+    para acotar la búsqueda (hours, delivery, payment, complaint, about, waiter, etc.).
+    NO uses `rag-retrieve` para búsqueda documental general — `rag-retrieve` está
+    optimizado para consultas del menú.
 ## Reglas de Ejecución
 
 1. **Máximo 5 llamadas** — No puedes hacer más de 5 llamadas a herramientas

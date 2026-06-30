@@ -101,6 +101,14 @@ class SaborCaseroAssistant:
         # Inject MemoryHub into summarizer for entity extraction
         self.summarizer.set_memory_hub(self._memory_hub)
 
+        # ── Summary Index (document routing for doc-query) ─────────────
+        try:
+            from src.core.knowledge.summary_index import SummaryIndex
+            self._summary_index = SummaryIndex()
+        except Exception as exc:
+            logger.warning("SummaryIndex init failed (non-critical): %s", exc)
+            self._summary_index = None
+
         # ── Evaluation (observer mode, fire-and-forget) ────────────────
         self.evaluator = Evaluator(llm_client=self.llm_client)
 
@@ -222,6 +230,219 @@ class SaborCaseroAssistant:
             recall = self._memory_hub.recall(RecallContext(
                 query=message,
                 user_id=user_id,
+                session_id=session_id,
+                candidates=candidates,
+                topic_details=[],  # Empty — Planner decides if it needs classify
+                order_checklist_status=order_checklist_status,
+                memory_entities=memory_entities,
+            )
+            planner = Planner(
+                llm_client=self.llm_client,
+                skill_orchestrator=self._skill_orchestrator,
+                streamer=streamer,
+                settings=settings,
+                registry=self._skill_orchestrator.registry,
+                trace_id=trace_id,
+                extractor=self.extractor,
+                skill_context={
+                    "classifier": self.classifier,
+                    "order_orchestrator": self.orchestrator,
+                    "response_builder": self.response_builder,
+                    "memory_hub": self._memory_hub,
+                    "summarizer": self.summarizer,
+                    "checkpoint_manager": self._checkpoint_manager,
+                    "summary_index": self._summary_index,
+                },
+            )
+            response_text = await planner.run(
+                message, planner_context,
+                previous_messages=self._last_planner_history,
+            )
+            # Cache this turn's messages for the next turn
+            self._last_planner_history = planner._messages.copy()
+            elapsed_time = time.time() - _pipeline_start
+
+            # Planner replaces domain skills + response-build.
+            # extracted_info, domain_results, tracker are already set to
+            # safe defaults before the fork.
+            _skills_msg = f"Planner: {planner.tool_call_count} tool call(s)"
+
+            # On critical failure, return early (consistent with old pipeline)
+            if not response_text or response_text == FALLBACK_ERROR:
+                return {
+                    "response": FALLBACK_ERROR,
+                    "classification": {},
+                    "extracted_info": [],
+                    "pipeline_error": "Planner failed to produce response",
+                }
+
+        else:
+            # ── Classic pipeline ─────────────────────────────────────────
+            # classify (mandatory in classic path — gates RAG and order-flow)
+            phase_name = streamer and streamer.phase("Classification", emoji="🔍")
+            if phase_name:
+                phase_classify = phase_name.__enter__()
+                phase_classify.step(f"Analyzing: \"{message[:60]}{'...' if len(message) > 60 else ''}\"")
+
+            classify_skill = self._load_skill("classify")
+            with span("classify"):
+                classify_result = await classify_skill.execute(
+                    {
+                        "message": message,
+                        "summary_order": summary_order,
+                        "summary_conversation": summary_conversation,
+                        "user_preferences_context": user_preferences_context,
+                    },
+                    trace_id=trace_id,
+                )
+
+            if not classify_result.success:
+                elapsed_time = time.time() - _pipeline_start
+                if phase_name:
+                    phase_classify.result("Failed", str(classify_result.error), is_error=True)
+                    phase_name.__exit__(None, None, None)
+                return {
+                    "response": FALLBACK_ERROR,
+                    "classification": None,
+                    "extracted_info": [],
+                    "pipeline_error": str(classify_result.error),
+                }
+
+            classification_data = classify_result.value.get("classification", {})
+            requires_RAG = classify_result.value.get("requires_RAG", False)
+            requires_reconcilier = classify_result.value.get("requires_reconcilier", False)
+
+            # Show classification decisions inline
+            if phase_name:
+                topic_details_raw = classification_data.get("topic_details", [])
+                for td in topic_details_raw[:3]:
+                    seg = td.get("segment", "") if isinstance(td, dict) else getattr(td, "segment", "")
+                    qtype = td.get("query_type", "") if isinstance(td, dict) else str(getattr(td, "query_type", ""))
+                    topic = td.get("topic", "") if isinstance(td, dict) else str(getattr(td, "topic", ""))
+                    if seg:
+                        phase_classify.info(f"Segment", f"\"{seg}\" → {qtype} / {topic}")
+                phase_classify.info("Requires RAG", "yes" if requires_RAG else "no")
+                if requires_reconcilier:
+                    phase_classify.info("Order flow", "active")
+                phase_classify.done(f"{len(topic_details_raw) if isinstance(topic_details_raw, list) else 0} segment(s) classified")
+                phase_name.__exit__(None, None, None)
+
+            topic_details = classification_data.get("topic_details", [])
+            domain_skill_names: list = []
+
+            if requires_reconcilier:
+                domain_skill_names.append("order-flow")
+
+            # ── RAG skills (replaces inline LLM extraction) ─────────────────
+            # menu-query = OWL deterministic fast-path
+            # rag-retrieve = multi-signal pipeline (dense + BM25 + entity + OWL
+            #                → RRF → cross-encoder → ontology gate)
+            if requires_RAG:
+                domain_skill_names.append("menu-query")
+                domain_skill_names.append("rag-retrieve")
+
+            # ── Full-menu request detection ─────────────────────────────────
+            if requires_RAG and owl_client and self._is_full_menu_request(topic_details):
+                try:
+                    full_menu_text = owl_client.get_full_menu()
+                    if full_menu_text:
+                        extracted_info = [{
+                            "_type": "menu_structure",
+                            "text": full_menu_text,
+                        }]
+                        # Remove RAG skills — the menu is already loaded
+                        domain_skill_names = [
+                            s for s in domain_skill_names
+                            if s not in ("menu-query", "rag-retrieve")
+                        ]
+                        requires_RAG = False
+                        logger.info(
+                            "Full-menu request detected — bypassing RAG pipeline "
+                            "(%d chars formatted)", len(full_menu_text)
+                        )
+                except Exception as e:
+                    logger.warning("Full-menu retrieval failed, falling back to RAG pipeline: %s", e)
+
+            # ── Domain Skills ───────────────────────────────────────────────
+            if domain_skill_names:
+                phase_domain = streamer.phase("Domain Skills", emoji="⚙️").__enter__()
+                phase_domain.step(f"Skills to run: {', '.join(sorted(domain_skill_names))}")
+
+            for skill_name in domain_skill_names:
+                skill_instance = self._load_skill(skill_name)
+                if skill_name == "order-flow":
+                    ordering_segments = self._get_ordering_segments(
+                        topic_details if isinstance(topic_details, list) else []
+                    )
+                    if not ordering_segments:
+                        if streamer:
+                            phase_domain.result("Skipped", "order-flow — no ordering segments")
+                        continue
+                    with span(skill_name):
+                        skill_result = await skill_instance.execute(
+                            {
+                                "ordering_segments": ordering_segments,
+                                "session_id": session_id,
+                                "summary_conversation": summary_conversation,
+                            },
+                            trace_id=trace_id,
+                        )
+                    if streamer:
+                        if skill_result.success:
+                            phase_domain.done(f"order-flow — {len(ordering_segments)} order segment(s)")
+                        else:
+                            phase_domain.result("Failed", f"order-flow: {skill_result.error}", is_error=True)
+                else:
+                    # menu-query / rag-retrieve — pass query + candidates + details
+                    with span(skill_name):
+                        skill_result = await skill_instance.execute(
+                            {
+                                "query": message,
+                                "candidates": candidates,
+                                "details": topic_details if isinstance(topic_details, list) else [],
+                            },
+                            trace_id=trace_id,
+                        )
+                    if streamer:
+                        count = len(skill_result.value.get("items", [])) if skill_result.success else 0
+                        if skill_result.success:
+                            phase_domain.done(f"{skill_name} — {count} item(s)")
+                        else:
+                            phase_domain.result("Failed", f"{skill_name}: {skill_result.error}", is_error=True)
+
+                domain_results[skill_name] = skill_result
+                if skill_result.success:
+                    # Merge new items with existing, deduplicating by item_name
+                    new_items = skill_result.value.get("items", [])
+                    existing_names = {
+                        item.get("item_name") for item in extracted_info
+                        if item.get("item_name")
+                    }
+                    for item in new_items:
+                        name = item.get("item_name")
+                        if name and name not in existing_names:
+                            extracted_info.append(item)
+                            existing_names.add(name)
+                        elif name:
+                            # Already exists — prefer the newer result
+                            for i, existing in enumerate(extracted_info):
+                                if existing.get("item_name") == name:
+                                    extracted_info[i] = item
+                                    break
+
+                # Per-skill checkpoint (P3)
+                if settings.checkpointing_enabled:
+                    self._checkpoint_manager.save(
+                        session_id,
+                        Checkpoint(
+                            stage_name=skill_name,
+                            stage_index=len(domain_results),
+                            trace_id=trace_id,
+                            input_data={"skill": skill_name, "message": message[:200]},
+                            output_data={"success": skill_result.success},
+                            created_at=__import__("datetime").datetime.now(),
+                        ),
+                    )
                 top_k=5,
             ))
             if recall.semantic_results:
