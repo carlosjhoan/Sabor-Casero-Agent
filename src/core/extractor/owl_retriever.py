@@ -99,6 +99,35 @@ class OwlRetriever(RetrieverInterface):
             for detail in details
         ]
 
+    async def get_context(self, query: str, doc_name: str) -> str:
+        """
+        Retrieve context for a specific document.
+
+        Only ``menu.md`` is supported natively via SPARQL/OWL.
+        Any other document returns an empty string with a warning.
+
+        Args:
+            query: The user's search query.
+            doc_name: Target document filename.
+
+        Returns:
+            Context string or empty string if unsupported.
+        """
+        if doc_name != "menu.md":
+            logger.warning(
+                "OwlRetriever.get_context called for '%s' — "
+                "only menu.md is supported, returning empty.", doc_name,
+            )
+            return ""
+
+        # Delegate to the existing route-query flow via retrieve()
+        # ponytail: reuse single-doc retrieve for menu queries
+        from src.core.classifier.intent import Detail
+        details = await self.retrieve({"menu.md": [
+            Detail(segment=query, focus="", doc_name="menu.md", topic="menu"),
+        ]})
+        return details[0].info_extracted if details else ""
+
     # ------------------------------------------------------------------
     # Ruteo de consultas vía LLM asistido por tools
     # ------------------------------------------------------------------

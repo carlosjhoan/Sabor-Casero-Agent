@@ -75,3 +75,21 @@ class RetrieverInterface(ABC):
             List of RankedResult instances sorted by relevance.
         """
         return []
+
+    async def get_context(self, query: str, doc_name: str) -> str:
+        """
+        Retrieve relevant context from a specific document.
+
+        Public method intended for document-scoped search (used by the
+        ``search-docs`` skill). Each retriever implements it according
+        to its internal strategy (vector search, LLM extraction, etc.).
+
+        Args:
+            query: The user's search query.
+            doc_name: Target document filename (e.g. ``"service_info.txt"``).
+
+        Returns:
+            Relevant text chunks from the document, or empty string if
+            the document is not found or no relevant content exists.
+        """
+        return ""

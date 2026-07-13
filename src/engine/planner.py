@@ -22,8 +22,10 @@ import json
 import logging
 from dataclasses import dataclass, field
 from enum import Enum
+
 from typing import Any, Optional
 
+from src.engine.planner_fsm import PHASE_ALLOWED_TOOLS, PlannerFSM, PlannerPhase
 from src.engine.skill_registry import SkillRegistry
 from src.engine.skill_tools import SkillToolAdapter
 from src.utils.pipeline_streamer import PipelineStreamer
@@ -167,6 +169,9 @@ class Planner:
         # Internal state
         self._tool_call_count: int = 0
         self._state: PlannerState = PlannerState.THINKING
+        self._fsm: PlannerFSM = PlannerFSM()
+        self._status_label: str = ""
+        self._last_reasoning: str = ""  # latest LLM chain-of-thought
         self._messages: list[dict[str, Any]] = []
 
     # ------------------------------------------------------------------
@@ -204,6 +209,8 @@ class Planner:
             # Limit to ~12 messages (~1-2 turns of tool activity)
             if len(previous_messages) > 12:
                 previous_messages = previous_messages[-12:]
+            # Filter out any system messages — self._messages already has one
+            previous_messages = [m for m in previous_messages if m.get("role") != "system"]
             self._messages.extend(previous_messages)
         self._messages.append({"role": "user", "content": message})
 
@@ -223,6 +230,28 @@ class Planner:
                     p.result("Crashed", f"{type(exc).__name__}: {exc}", is_error=True)
             return FALLBACK_ERROR
 
+    # ── Live status ─────────────────────────────────────────────────
+    # _status_label is updated at every meaningful step in the tool
+    # loop so consumers (streamer, CLI, Gradio) can see what the system
+    # is doing RIGHT NOW without waiting for a phase to complete.
+
+    @property
+    def status_label(self) -> str:
+        """Current descriptive status of the planner."""
+        return self._status_label
+
+    def set_status(self, message: str, emoji: str = "🔧"):
+        """Update the live status label and stream it if possible.
+
+        Args:
+            message: Descriptive text of current action (e.g.
+                     "Ejecutando menu-query — buscando plato del día").
+            emoji: Emoji prefix for the status line.
+        """
+        self._status_label = message
+        if self._streamer:
+            self._streamer.status(message, emoji)
+
     # ------------------------------------------------------------------
     # Core tool-calling loop
     # ------------------------------------------------------------------
@@ -237,6 +266,9 @@ class Planner:
 
         while self._tool_call_count < MAX_TOOL_CALLS:
             self._state = PlannerState.THINKING
+
+            # ── Live status ──────────────────────────────────────────
+            self.set_status("🤔 Analizando mensaje y definiendo siguiente acción...", "🤔")
 
             # ── Phase: Planning ──────────────────────────────────────
             if self._streamer:
@@ -257,12 +289,14 @@ class Planner:
                     )
             except asyncio.TimeoutError:
                 logger.warning("LLM call timed out after 10s")
+                self.set_status("⚠️  Timeout — LLM no respondió, reintentando...", "⚠️")
                 if self._streamer:
                     with self._streamer.phase("Planning") as p:
                         p.result("Timeout", "LLM did not respond in time", is_error=True)
                 continue  # retry
             except Exception as exc:
                 logger.warning("LLM call failed: %s", exc)
+                self.set_status(f"⚠️  Error en LLM: {exc}", "⚠️")
                 if self._streamer:
                     with self._streamer.phase("Planning") as p:
                         p.result("Failed", str(exc), is_error=True)
@@ -279,13 +313,12 @@ class Planner:
                 if assistant_msg:
                     last_assistant_text = assistant_msg
 
-                # Show LLM reasoning in the Planning phase
-                if reasoning and self._streamer:
-                    with self._streamer.phase("Planning") as p:
-                        p.info("Thinking", reasoning)
-                elif assistant_msg and self._streamer:
-                    with self._streamer.phase("Planning") as p:
-                        p.info("Thinking", assistant_msg)
+                # ── Live status: LLM's own chain-of-thought ──────
+                self._last_reasoning = reasoning
+                if reasoning:
+                    self.set_status(f"🧠 {reasoning}", "🧠")
+                elif assistant_msg:
+                    self.set_status(f"💭 {assistant_msg}", "💭")
 
                 if not tool_calls:
                     # No tool calls despite tool_calls finish reason —
@@ -297,6 +330,12 @@ class Planner:
                         })
                         return assistant_msg
                     break
+
+                # ── Live status: tools to run (reasoning already set) ─
+                tool_names = ", ".join(tc.get("name", "?") for tc in tool_calls)
+                if not reasoning:
+                    # Only show plan if no reasoning content available
+                    self.set_status(f"🧠 Plan definido: ejecutar {tool_names}", "🧠")
 
                 # ── Build a SINGLE assistant message for ALL tool calls
                 #     from this turn (OpenAI-compatible format).
@@ -329,9 +368,26 @@ class Planner:
                     tool_args = tc.get("arguments", {})
                     tool_id = tc.get("id", "")
 
+                    # FSM phase check: reject tool if not allowed in current phase
+                    if not self._fsm.is_tool_allowed(tool_name):
+                        logger.warning(
+                            "Tool '%s' rejected by FSM in phase %s",
+                            tool_name, self._fsm.phase.value,
+                        )
+                        self._messages.append({
+                            "role": "tool",
+                            "tool_call_id": tool_id,
+                            "content": f"Error: {self._fsm.get_rejection_message(tool_name)}",
+                        })
+                        continue
+
+                    # FSM phase transition based on tool category
+                    self._transition_fsm_by_tool(tool_name)
+
                     # Built-in: respond → terminate
                     if tool_name == "respond":
                         self._state = PlannerState.TERMINATED
+                        self.set_status("💬 Generando respuesta final para el cliente...", "💬")
                         response_text = tool_args.get("response_text", "")
                         if not response_text:
                             response_text = last_assistant_text or FALLBACK_ERROR
@@ -344,12 +400,44 @@ class Planner:
                     self._state = PlannerState.EXECUTING
                     self._tool_call_count += 1
 
+                    # ── Live status: reasoning + tool ─────────────
+                    if self._last_reasoning:
+                        self.set_status(
+                            f"🔧 {self._last_reasoning} → {tool_name}",
+                            "🔧",
+                        )
+                    else:
+                        msg = self._describe_tool_call(tool_name, tool_args)
+                        self.set_status(f"🔧 {msg}", "🔧")
+
                     # Execute skill via SkillToolAdapter
                     tool_result = await SkillToolAdapter.execute_tool(
                         tool_name, tool_args, orchestration_context,
                     )
 
                     self._state = PlannerState.REFLECTING
+
+                    # FSM-based retry tracking (per tool)
+                    if not tool_result.get("success"):
+                        self._fsm.record_retry(tool_name)
+                        if not self._fsm.can_retry(tool_name):
+                            logger.warning(
+                                "Tool '%s' exceeded max retries — aborting loop",
+                                tool_name,
+                            )
+                            self.set_status(
+                                "⚠️  Demasiados reintentos fallidos en herramienta, "
+                                "usando respuesta de respaldo",
+                                "⚠️",
+                            )
+                            if self._streamer:
+                                with self._streamer.phase("Response") as p:
+                                    p.result(
+                                        "Capped",
+                                        f"{tool_name} exceeded retries",
+                                        is_error=True,
+                                    )
+                            return FALLBACK_ERROR
 
                     # Append tool result to conversation
                     if tool_result.get("success"):
@@ -371,16 +459,39 @@ class Planner:
                             "content": f"Error: {error_text}",
                         })
 
+                    # ── Live status after tool ────────────────────
+                    if self._last_reasoning:
+                        self.set_status(
+                            f"📊 {self._last_reasoning} → evaluando "
+                            f"respuesta de {tool_name}",
+                            "📊",
+                        )
+                    else:
+                        result_data = tool_result.get("result", {})
+                        summary = result_data.get("summary", "") if isinstance(result_data, dict) else ""
+                        if summary:
+                            self.set_status(f"📊 {summary}", "📊")
+                        else:
+                            self.set_status(
+                                f"📊 Evaluando resultado de {tool_name}...", "📊"
+                            )
+
                     # ── Phase: Reflection ─────────────────────────
                     if self._streamer:
                         with self._streamer.phase("Reflection") as p:
                             if tool_result.get("success"):
-                                result_preview = json.dumps(
-                                    tool_result.get("result", {}),
-                                    ensure_ascii=False,
-                                    default=str,
-                                )
-                                p.done(f"{tool_name} → {result_preview}")
+                                result_data = tool_result.get("result", {})
+                                summary = result_data.get("summary", "") if isinstance(result_data, dict) else ""
+                                if summary:
+                                    p.done(summary)
+                                else:
+                                    # Fallback: compact preview (first 200 chars)
+                                    result_preview = json.dumps(
+                                        result_data,
+                                        ensure_ascii=False,
+                                        default=str,
+                                    )
+                                    p.done(f"{tool_name} → {result_preview[:200]}")
                             else:
                                 p.result(
                                     "Failed",
@@ -394,6 +505,7 @@ class Planner:
 
             # Plain-text response (no tool calls)
             if isinstance(response, str) and response.strip():
+                self.set_status("💬 El LLM respondió directamente (sin herramientas)", "💬")
                 last_assistant_text = response
                 self._messages.append({
                     "role": "assistant",
@@ -414,6 +526,7 @@ class Planner:
 
         if self._tool_call_count >= MAX_TOOL_CALLS:
             logger.warning("Planner hard cap (%d tool calls) reached", MAX_TOOL_CALLS)
+            self.set_status("⚠️  Límite de herramientas alcanzado, usando respuesta de respaldo", "⚠️")
             if self._streamer:
                 with self._streamer.phase("Response") as p:
                     p.result("Capped", "Maximum tool calls reached", is_error=True)
@@ -421,11 +534,13 @@ class Planner:
 
         # Fallback: return the last assistant text we have
         if last_assistant_text:
+            self.set_status("💬 Usando respuesta parcial del LLM como fallback", "💬")
             if self._streamer:
                 with self._streamer.phase("Response") as p:
                     p.done("Using fallback response")
             return last_assistant_text
 
+        self.set_status("⚠️  No se pudo generar respuesta, usando mensaje de error", "⚠️")
         return FALLBACK_ERROR
 
     # ------------------------------------------------------------------
@@ -477,6 +592,52 @@ class Planner:
             desc = meta.trigger or "(sin descripción)"
             lines.append(f"- **{meta.display}** (`{meta.name}`): {desc}")
         return "\n".join(lines)
+
+    def _describe_tool_call(self, name: str, args: dict) -> str:
+        """Build a human-readable description of a tool call from SKILL.md metadata.
+
+        Uses the skill's ``display`` name from the registry, and ``query`` or
+        the first string arg as context. Falls back to synthetic tool descriptions
+        for built-in tools (respond, get-full-menu, order tools).
+
+        Returns a short string like ``"Consultar Fuentes..."`` or
+        ``"Menu Query — jugo incluido"``.
+        """
+        # 1. Try registry metadata first (all discovered skills)
+        meta = self._registry.get(name) if self._registry else None
+        if meta:
+            display = meta.display or meta.name
+            query = args.get("query", "")
+            if query:
+                return f"{display} — {query[:60]}"
+            return f"{display}..."
+
+        # 2. Synthetic tool descriptions (not backed by skills)
+        synthetic = {
+            "respond": lambda a: "Generando respuesta final...",
+            "get-full-menu": lambda a: "Obteniendo menú completo...",
+            "add-item": lambda a: f"Agregando {a.get('protein', '') or a.get('principle', '') or 'item'} al pedido",
+            "remove-item": lambda a: f"Eliminando item {a.get('item_id', '')}",
+            "update-item": lambda a: f"Actualizando item {a.get('item_id', '')}",
+            "get-order": lambda a: "Consultando estado del pedido...",
+            "confirm-order": lambda a: "Confirmando pedido...",
+            "cancel-order": lambda a: "Cancelando pedido...",
+            "update-order": lambda a: "Actualizando datos del pedido...",
+        }
+        builder = synthetic.get(name)
+        if builder:
+            return builder(args)
+
+        # 3. Generic fallback: show first relevant arg
+        if args:
+            first_val = next(
+                (str(v) for v in args.values() if isinstance(v, str) and v),
+                None,
+            )
+            if first_val:
+                preview = first_val[:60]
+                return f"{name} — {preview}{'…' if len(first_val) > 60 else ''}"
+        return f"Ejecutando {name}..."
 
     @staticmethod
     def _fallback_prompt_template() -> str:
@@ -539,6 +700,30 @@ class Planner:
         # response_builder, classifier, memory_hub, summarizer, etc.)
         base.update(self._skill_context)
         return base
+
+    # ------------------------------------------------------------------
+    # FSM integration
+    # ------------------------------------------------------------------
+
+    def _transition_fsm_by_tool(self, tool_name: str) -> None:
+        """Transition FSM phase based on tool category.
+
+        Infers the target phase from the tool name and attempts a
+        transition if valid. Silently skips if the transition is not
+        valid (the current phase is already correct).
+        """
+        # Determine target phase from tool category
+        if tool_name == "classify":
+            target = PlannerPhase.REASON
+        elif tool_name in PHASE_ALLOWED_TOOLS.get(PlannerPhase.RETRIEVE, set()):
+            target = PlannerPhase.RETRIEVE
+        elif tool_name in PHASE_ALLOWED_TOOLS.get(PlannerPhase.ACT, set()):
+            target = PlannerPhase.ACT
+        else:
+            return  # Unknown tool — skip transition
+
+        if self._fsm.can_transition(target):
+            self._fsm.transition_to(target)
 
     # ------------------------------------------------------------------
     # Accessors (for orchestrator inspection)
