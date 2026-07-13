@@ -119,8 +119,8 @@ class HybridRetriever(RetrieverInterface):
         with open(f"{folder}/{doc_name}", "r", encoding="utf-8") as f:
             return f.read()
 
-    def _get_context(self, query: str, doc_name: str) -> str:
-        """The main retrieval logic"""
+    async def get_context(self, query: str, doc_name: str) -> str:
+        """The main retrieval logic — public async interface."""
         # STEP 1: Route using your Registry
         target_file = doc_name
         if target_file == 'no-file':
@@ -172,6 +172,7 @@ class HybridRetriever(RetrieverInterface):
         self,
         query: str,
         candidates: List[str],
+        source: str = "",
     ) -> Dict[str, float]:
         """Vector similarity scores for the dense signal in RAG v2 pipeline.
 
@@ -181,6 +182,8 @@ class HybridRetriever(RetrieverInterface):
         Args:
             query: The user's search query.
             candidates: List of candidate item names to score.
+            source: Optional source document name to filter by. When provided,
+                adds ``where={"source": source}`` to the ChromaDB query.
 
         Returns:
             Dict mapping candidate name → similarity score (0.0–1.0).
@@ -190,10 +193,13 @@ class HybridRetriever(RetrieverInterface):
             return {c: 0.0 for c in candidates}
 
         query_vector = self.embedder.encode(query).tolist()
-        results = self.collection.query(
-            query_embeddings=[query_vector],
-            n_results=20,
-        )
+        query_kwargs: dict = {
+            "query_embeddings": [query_vector],
+            "n_results": 20,
+        }
+        if source:
+            query_kwargs["where"] = {"source": source}
+        results = self.collection.query(**query_kwargs)
 
         scores = {c: 0.0 for c in candidates}
         documents = results.get("documents", [[]])[0]
@@ -243,7 +249,7 @@ class HybridRetriever(RetrieverInterface):
             for detail in details:
                 try:
                     query = detail.segment
-                    extracted_info = self._get_context(query, doc_name)
+                    extracted_info = await self.get_context(query, doc_name)
                     detail.info_extracted = extracted_info
 
                 except Exception as e:

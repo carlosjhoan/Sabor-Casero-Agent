@@ -74,6 +74,7 @@ class PhaseContext:
         self._name = name
         self._emoji = emoji
         self._start: Optional[float] = None
+        self._has_error: bool = False
 
     def __enter__(self) -> 'PhaseContext':
         self._start = time.time()
@@ -86,7 +87,10 @@ class PhaseContext:
 
     def __exit__(self, *args) -> None:
         elapsed = time.time() - self._start if self._start else 0
-        print(f"    {Style.GREEN}✅{Style.RESET} Done  ({Style.DIM}{elapsed:.3f}s{Style.RESET})", flush=True)
+        if self._has_error:
+            print(f"    {Style.RED}✗{Style.RESET} Failed  ({Style.DIM}{elapsed:.3f}s{Style.RESET})", flush=True)
+        else:
+            print(f"    {Style.GREEN}✅{Style.RESET} Done  ({Style.DIM}{elapsed:.3f}s{Style.RESET})", flush=True)
         self._streamer._last_elapsed = elapsed
 
     # ── Streaming helpers ────────────────────────────────────────────────
@@ -101,6 +105,8 @@ class PhaseContext:
 
     def result(self, status: str, detail: str = '', is_error: bool = False):
         """Print a result with inline status."""
+        if is_error:
+            self._has_error = True
         icon = '✗' if is_error else '✓'
         color = Style.RED if is_error else Style.GREEN
         _wprint(f"    {color}{icon}{Style.RESET} {status}{': ' + detail if detail else ''}")
@@ -168,6 +174,25 @@ class PipelineStreamer:
     def note(self, message: str, emoji: str = '💬'):
         """Print an inline note outside any phase."""
         print(f"\n  {Style.DIM}{emoji}  {message}{Style.RESET}", flush=True)
+
+    def status(self, message: str, emoji: str = '🔧'):
+        """Print a live real-time status line outside any phase.
+
+        This is the primary mechanism for showing WHAT the system is doing
+        *right now* — used by the Planner to emit descriptive, continuous
+        status messages instead of just discrete phase boundaries.
+
+        Example output::
+
+            🔧   Status: Ejecutando menu-query — consultando plato del día
+            📊   Status: Procesando resultado de classify...
+            💬   Status: Generando respuesta final...
+
+        Args:
+            message: Descriptive text of current action.
+            emoji: Emoji to prefix the status (🤔 🔧 📊 💬).
+        """
+        print(f"  {emoji}  {Style.BOLD}Status:{Style.RESET} {message}", flush=True)
 
     def fire_and_forget(self, message: str):
         """Print a fire-and-forget notification (background task)."""

@@ -125,6 +125,17 @@ class CompositeRetriever(RetrieverInterface):
 
         return results
 
+    async def get_context(self, query: str, doc_name: str) -> str:
+        """
+        Retrieve context delegating to the primary or fallback retriever.
+
+        ``menu.md`` → primary (OwlRetriever).
+        Any other document → fallback (HybridRetriever).
+        """
+        if doc_name == "menu.md":
+            return await self._primary.get_context(query, doc_name)
+        return await self._fallback.get_context(query, doc_name)
+
     # ── RAG v2 pipeline ─────────────────────────────────────────────────
 
     async def retrieve_v2(
@@ -132,6 +143,7 @@ class CompositeRetriever(RetrieverInterface):
         query: str,
         candidates: List[str],
         details: Optional[List[Detail]] = None,
+        source: str = "",
     ) -> List[RankedResult]:
         """
         Multi-signal RAG v2 retrieval.
@@ -199,7 +211,7 @@ class CompositeRetriever(RetrieverInterface):
         # Dense signal (via fallback retriever — HybridRetriever with ChromaDB)
         try:
             if self._fallback and hasattr(self._fallback, "retrieve_dense"):
-                dense_raw = await self._fallback.retrieve_dense(query, candidates)
+                dense_raw = await self._fallback.retrieve_dense(query, candidates, source=source)
                 dense_scores = [
                     {"item_name": c, "score": s}
                     for c, s in dense_raw.items()

@@ -278,6 +278,30 @@ class InformationLlmExtractor(RetrieverInterface):
 
         return [detail for details in group_by_doc.values() for detail in details]
 
+    async def get_context(self, query: str, doc_name: str) -> str:
+        """
+        Retrieve relevant context using LLM extraction.
+
+        Loads the document and delegates to ``extract()`` for
+        LLM-powered Q&A over the content.
+
+        Args:
+            query: The user's search query.
+            doc_name: Target document filename.
+
+        Returns:
+            Extracted text relevant to the query, or empty string
+            if the document is not found or extraction fails.
+        """
+        try:
+            file_content = self._load_document(doc_name)
+            if not file_content or "no se encontró" in file_content.lower():
+                return ""
+            return await self.extract(query, file_content)
+        except Exception as e:
+            logger.error("Error in LLM get_context for '%s': %s", doc_name, e)
+            return ""
+
 # Usage Example
 if __name__ == "__main__":
     # Initialize extractor
