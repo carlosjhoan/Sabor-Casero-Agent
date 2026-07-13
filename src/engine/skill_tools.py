@@ -5,7 +5,7 @@ Converts the ``SkillRegistry`` index into OpenAI-compatible tool definitions
 and provides an async dispatcher that loads a skill, injects orchestration
 context, executes it, and returns a serializable result dict.
 
-Also provides built-in synthetic tools (``respond``, ``get-full-menu``) that
+Also provides built-in synthetic tools (``respond``, ``get-full-menu``, ``business-info``) that
 are not backed by a skill but are available to the Planner.
 
 Usage::
@@ -21,7 +21,26 @@ from typing import Any
 logger = logging.getLogger(__name__)
 
 
-# Built-in synthetic tool: full menu (not backed by a skill)
+# Built-in synthetic tool: business info (not backed by a skill)
+_BUSINESS_INFO_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "business-info",
+        "description": (
+            "Returns restaurant information: history, mission, values, delivery "
+            "zones, delivery costs, hours, payment methods, and contact info. "
+            "Use this when the user asks about who we are, our history, "
+            "delivery areas, hours, payment options, contact, or service policies. "
+            "Do NOT use menu-query or rag-retrieve for these questions."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {},
+            "required": [],
+        },
+    },
+}
+
 _FULL_MENU_TOOL = {
     "type": "function",
     "function": {
@@ -43,7 +62,7 @@ _FULL_MENU_TOOL = {
 }
 
 # --- Synthetic order tools (granular-order-tools) ---
-# These replace the order-flow skill when use_llm_planner=True.
+# These replace the order-flow skill.
 # Each maps to a CRUD method on OrderOrchestrator.
 
 _ADD_ITEM_TOOL = {
@@ -155,6 +174,70 @@ _UPDATE_ORDER_TOOL = {
     },
 }
 
+_SET_FIELD_NOTE_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "set-field-note",
+        "description": "Registra que preguntaste por un campo pero el usuario no respondió. "
+                       "Úsala cuando preguntes por un campo (protein, size, principle, etc.) "
+                       "y el usuario se desvíe a otro tema. La nota queda visible en el checklist "
+                       "para que no preguntes lo mismo dos veces.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "field": {
+                    "type": "string",
+                    "enum": ["protein", "size", "principle", "con_todo", "customer_name",
+                             "service_type", "address", "scheduled_time", "payment_method",
+                             "observations"],
+                    "description": "Nombre del campo que preguntaste y el usuario no respondió"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "Qué hizo el usuario en vez de responder (ej: 'preguntó por precios', 'pidió cambiar de plato')"
+                },
+            },
+            "required": ["field", "note"],
+        },
+    },
+}
+
+# --- Synthetic doc-query tool ---
+# Exposes the SummaryIndex + lazy RAG pipeline to the Planner.
+_DOC_QUERY_TOOL = {
+    "type": "function",
+    "function": {
+        "name": "doc-query",
+        "description": (
+            "Search restaurant documents for specific information using "
+            "semantic search across ALL documents (service info, waiter guide, "
+            "about us, policies, etc.). "
+            "Use this when business-info doesn't cover what the user needs, "
+            "or when you need specific details from ANY document. "
+            "Optionally narrow by topic for faster results."
+        ),
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The search query — what information you need",
+                },
+                "topic": {
+                    "type": "string",
+                    "enum": [
+                        "hours", "delivery", "payment", "complaint",
+                        "general", "about", "waiter", "ingredients",
+                        "special_offers", "menu",
+                    ],
+                    "description": "Optional: narrow search to a specific topic",
+                },
+            },
+            "required": ["query"],
+        },
+    },
+}
+
 # All synthetic order tools in a list for iteration
 _SYNTHETIC_ORDER_TOOLS = [
     _ADD_ITEM_TOOL,
@@ -164,6 +247,7 @@ _SYNTHETIC_ORDER_TOOLS = [
     _CONFIRM_ORDER_TOOL,
     _CANCEL_ORDER_TOOL,
     _UPDATE_ORDER_TOOL,
+    _SET_FIELD_NOTE_TOOL,
 ]
 
 # Mapping from tool name to constant for dispatch
@@ -233,8 +317,16 @@ class SkillToolAdapter:
         # when OwlClient is not available (USE_OWL=false).
         skill_tools.append(_FULL_MENU_TOOL)
 
+        # Always add business-info — reads about_us.txt and service_info.txt
+        # directly from disk, no OWL dependency.
+        skill_tools.append(_BUSINESS_INFO_TOOL)
+
+        # Always add doc-query — uses SummaryIndex for routing + lazy ChromaDB RAG.
+        # No dependencies on OWL or menu structure.
+        skill_tools.append(_DOC_QUERY_TOOL)
+
         # Add synthetic order tools (granular-order-tools) — these replace
-        # the order-flow skill when use_llm_planner=True.
+        # the order-flow skill.
         skill_tools.extend(_SYNTHETIC_ORDER_TOOLS)
 
         return skill_tools
@@ -255,8 +347,8 @@ class SkillToolAdapter:
         Loads the skill via ``SkillOrchestrator.load_skill()``, injects relevant
         context fields into the input data, and calls ``skill.execute()``.
 
-        Also handles built-in synthetic tools (``get-full-menu``) that are not
-        backed by a skill module.
+        Also handles built-in synthetic tools (``get-full-menu``, ``business-info``)
+        that are not backed by a skill module.
 
         Args:
             name: Registered skill name (e.g. ``"classify"``, ``"menu-query"``).
@@ -292,6 +384,28 @@ class SkillToolAdapter:
                     logger.debug("Full menu fallback failed: %s", e)
                 return {"success": False, "error": "Full menu not available"}
 
+            # ── Built-in: doc-query (SummaryIndex + lazy ChromaDB RAG) ──
+            if name == "doc-query":
+                return cls._execute_doc_query(args, context)
+
+            # ── Built-in: business-info (not backed by a skill) ──────────
+            if name == "business-info":
+                try:
+                    from src.config.environment import settings
+                    doc_path = getattr(settings, "documents_path", "data/documents") or "data/documents"
+                    import os
+                    result = {}
+                    for fname in ("about_us.txt", "service_info.txt"):
+                        fpath = os.path.join(doc_path, fname)
+                        if os.path.exists(fpath):
+                            with open(fpath, "r", encoding="utf-8") as f:
+                                result[fname.replace(".txt", "")] = f.read()
+                    if result:
+                        return {"success": True, "result": result}
+                except Exception as e:
+                    logger.debug("Business info fallback failed: %s", e)
+                return {"success": False, "error": "Business information not available"}
+
             # ── Synthetic order tools ──────────────────────────────
             if name in _SYNTHETIC_ORDER_TOOL_MAP:
                 order_orchestrator = context.get("order_orchestrator")
@@ -317,6 +431,10 @@ class SkillToolAdapter:
                     result = await order_orchestrator.cancel_order(session_id)
                 elif name == "update-order":
                     result = await order_orchestrator.update_order(session_id, args)
+                elif name == "set-field-note":
+                    result = await order_orchestrator.set_field_note(
+                        session_id, args.get("field", ""), args.get("note", "")
+                    )
                 else:
                     return {"success": False, "error": f"Unknown synthetic order tool: {name}"}
 
@@ -354,6 +472,94 @@ class SkillToolAdapter:
     # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
+
+    @classmethod
+    async def _execute_doc_query(
+        cls,
+        args: dict[str, Any],
+        context: dict[str, Any],
+    ) -> dict[str, Any]:
+        """doc-query execution: SummaryIndex routing → lazy ChromaDB RAG.
+
+        Args:
+            args: {"query": str, "topic"?: str} from the LLM tool call.
+            context: Full orchestration context (needs 'summary_index').
+
+        Returns:
+            {"success": True, "result": {"content": ..., "source": ...}}
+            o {"success": False, "error": "..."}
+        """
+        try:
+            query = args.get("query", "").strip()
+            topic = args.get("topic", "").strip()
+            if not query:
+                return {"success": False, "error": "query is required"}
+
+            # 1. Get SummaryIndex from orchestration context
+            summary_index = context.get("summary_index")
+            if not summary_index:
+                return {"success": False, "error": "summary_index not available"}
+
+            # 2. Route query to relevant document(s)
+            # If topic given, incorporate it for better routing
+            search_query = f"{topic}: {query}" if topic else query
+            relevant_docs = summary_index.query(search_query, top_k=2)
+            if not relevant_docs:
+                # Fallback: no summary matched — try direct topic→doc mapping
+                if topic:
+                    mapping = {
+                        "hours": "service_info.txt", "delivery": "service_info.txt",
+                        "payment": "service_info.txt", "complaint": "service_info.txt",
+                        "general": "service_info.txt", "about": "about_us.txt",
+                        "waiter": "waiter_guide.txt", "menu": "menu.md",
+                        "ingredients": "menu.md", "special_offers": "menu.md",
+                    }
+                    doc = mapping.get(topic)
+                    if doc and doc in summary_index.list_documents():
+                        relevant_docs = [doc]
+
+            if not relevant_docs:
+                return {"success": True, "result": {
+                    "content": "", "source": "",
+                    "note": "No relevant documents found for this query.",
+                }}
+
+            # 3. Get retriever for ChromaDB queries
+            retriever = context.get("retriever")
+            if not retriever:
+                return {"success": False, "error": "retriever not available"}
+
+            # Extract HybridRetriever (might be wrapped in CompositeRetriever)
+            hybrid = getattr(retriever, "_fallback", retriever)
+            if not hasattr(hybrid, "query_document"):
+                return {"success": False, "error": "retriever does not support query_document"}
+
+            # 4. Lazy RAG: query each relevant document
+            content_parts = []
+            sources = []
+            for doc in relevant_docs:
+                # Lazy: ensure the doc has a summary (it should if it's in the index)
+                result = hybrid.query_document(query, doc_name=doc)
+                if result:
+                    content_parts.append(f"--- {doc} ---\n{result}")
+                    sources.append(doc)
+
+            if not content_parts:
+                # Fallback: return raw summary as context
+                for doc in relevant_docs:
+                    summary = summary_index.get_summary(doc)
+                    if summary:
+                        content_parts.append(f"--- {doc} ---\n{summary}")
+                        sources.append(doc)
+
+            return {"success": True, "result": {
+                "content": "\n\n".join(content_parts) if content_parts else "",
+                "source": ", ".join(sources) if sources else "",
+            }}
+
+        except Exception as exc:
+            logger.exception("doc-query failed")
+            return {"success": False, "error": f"{type(exc).__name__}: {exc}"}
 
     @classmethod
     def _inject_context(
@@ -398,6 +604,9 @@ SkillToolAdapter._GET_ORDER_TOOL = _GET_ORDER_TOOL
 SkillToolAdapter._CONFIRM_ORDER_TOOL = _CONFIRM_ORDER_TOOL
 SkillToolAdapter._CANCEL_ORDER_TOOL = _CANCEL_ORDER_TOOL
 SkillToolAdapter._UPDATE_ORDER_TOOL = _UPDATE_ORDER_TOOL
+SkillToolAdapter._SET_FIELD_NOTE_TOOL = _SET_FIELD_NOTE_TOOL
+SkillToolAdapter._BUSINESS_INFO_TOOL = _BUSINESS_INFO_TOOL
+SkillToolAdapter._DOC_QUERY_TOOL = _DOC_QUERY_TOOL
 SkillToolAdapter._SYNTHETIC_ORDER_TOOLS = _SYNTHETIC_ORDER_TOOLS
 SkillToolAdapter._SYNTHETIC_ORDER_TOOL_MAP = _SYNTHETIC_ORDER_TOOL_MAP
 

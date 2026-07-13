@@ -1,9 +1,21 @@
 import logging
+import os
 
 from .retriever_interface import RetrieverInterface
 from src.config.environment import settings
 
 logger = logging.getLogger(__name__)
+
+
+def _read_doc(folder: str, doc_name: str) -> str:
+    """Lee un documento del disco. Helper para lazy ingestion."""
+    path = os.path.join(folder, doc_name)
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+    except FileNotFoundError:
+        logger.warning("Document not found: %s", path)
+        return ""
 
 
 class RetrieverFactory:
@@ -25,7 +37,12 @@ class RetrieverFactory:
         elif way == 'vector_db':
             from src.core.extractor.vector_extractor import HybridRetriever
             retriever = HybridRetriever()
-            retriever.ingest_all_documents(folder_save_docs=settings.documents_path)
+            # Lazy: solo menu.md eager (rag-retrieve lo necesita).
+            # El resto de documentos se cargan bajo demanda via doc-query.
+            retriever._ingest_single_document(
+                "menu.md",
+                _read_doc(settings.documents_path, "menu.md"),
+            )
             return retriever
 
         elif way == 'owl':
@@ -49,8 +66,10 @@ class RetrieverFactory:
 
             # ── 2. Vector retriever (ChromaDB + internal CrossEncoder) ──
             hybrid_retriever = HybridRetriever()
-            hybrid_retriever.ingest_all_documents(
-                folder_save_docs=settings.documents_path
+            # Lazy: solo menu.md eager (rag-retrieve lo necesita).
+            hybrid_retriever._ingest_single_document(
+                "menu.md",
+                _read_doc(settings.documents_path, "menu.md"),
             )
 
             # ── 3. BM25 keyword signal ──────────────────────────────────
@@ -107,10 +126,11 @@ class RetrieverFactory:
         from src.core.extractor.cross_encoder_reranker import CrossEncoderReranker
         from src.infrastructure.owl_client import OwlClient
 
-        # Vector retriever (ChromaDB)
+        # Vector retriever (ChromaDB) — lazy: solo menu.md eager
         hybrid_retriever = HybridRetriever()
-        hybrid_retriever.ingest_all_documents(
-            folder_save_docs=settings.documents_path
+        hybrid_retriever._ingest_single_document(
+            "menu.md",
+            _read_doc(settings.documents_path, "menu.md"),
         )
 
         # Extract item names from menu.md directly (no OwlClient needed).

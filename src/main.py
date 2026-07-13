@@ -16,25 +16,12 @@ def _run_gradio_impl():
     from src.core.assistant import SaborCaseroAssistant
     from src.core.extractor.retriever_factory import RetrieverFactory
     import gradio as gr
-    # from src.utils.config import load_config
-    from src.config.environment import settings
-    from src.core.order.infrastructure.json_oder_repository import JsonOrderRepository
-    from src.core.order.infrastructure.json_session_repository import JsonSessionRepository
-    from src.core.order.application.processor import OrderProcessor
-    from src.core.order.application.orchestrator import OrderOrchestrator
-    from src.core.conversation_log.application.conversation_logger import ConversationLogger
-    from src.core.conversation_log.infrastructure.conversation_json_repository import JsonConversationLogRepository
-    
-
-    # config = load_config()
-
     way = settings.retriever_type
     extractor = RetrieverFactory.get_retriever(way=way)
 
     session_repository = JsonSessionRepository(file_path=settings.sessions_path)
     order_repository = JsonOrderRepository(storage_dir=settings.orders_path)
     order_orhestrator = OrderOrchestrator(order_repository=order_repository, session_repository=session_repository)
-    order_processor = OrderProcessor(order_repository=order_repository, session_repository=session_repository)
     
     log_repository = JsonConversationLogRepository(base_path=settings.conversation_logs_path)
     logger_conversation = ConversationLogger(repository=log_repository)

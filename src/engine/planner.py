@@ -694,6 +694,7 @@ class Planner:
             "rrf_fuser": getattr(extractor, "_rrf_fuser", None) if extractor else None,
             "cross_encoder": getattr(extractor, "_cross_encoder", None) if extractor else None,
             "ontology_gate": getattr(extractor, "_ontology_gate", None) if extractor else None,
+            "summary_index": self._skill_context.get("summary_index"),
         }
         # Merge with assistant-level skill context (order_orchestrator,
         # response_builder, classifier, memory_hub, summarizer, etc.)

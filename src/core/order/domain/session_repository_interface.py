@@ -15,6 +15,7 @@ class SessionData:
     last_activity: datetime = None
     turn_number: int = 0
     metadata: dict = None
+    field_status: dict = None  # field_name → {state, notes[], created_at}
 
 class SessionRepository(ABC):
     """Puerto/Interfaz para el repositorio de sesiones.
